@@ -47,13 +47,30 @@ const LocationSection = () => {
 
       try {
         console.log('Inicializuji mapu do elementu:', mapRef.current)
+        const mapCenter = { lat: 49.6853, lng: 18.3483 }; // Frýdek-Místek, ulice F. Čejky
         mapInstanceRef.current = new window.google.maps.Map(mapRef.current, {
-          center: { lat: 49.6853, lng: 18.3483 }, // Frýdek-Místek, ulice F. Čejky
+          center: mapCenter,
           zoom: 15,
           disableDefaultUI: true,
           gestureHandling: "cooperative",
           styles: DARK_STYLE,
         })
+        
+        // Přidání vlastního markeru na pozici
+        const marker = new window.google.maps.Marker({
+          position: mapCenter,
+          map: mapInstanceRef.current,
+          title: 'Ecohau Riverside - F. Čejky, Frýdek-Místek',
+          icon: {
+            path: window.google.maps.SymbolPath.CIRCLE,
+            fillColor: '#00D9B5',
+            fillOpacity: 1,
+            strokeColor: '#FFFFFF',
+            strokeWeight: 3,
+            scale: 12
+          }
+        })
+        
         console.log('Mapa úspěšně inicializována!', mapInstanceRef.current)
         setIsLoading(false)
         setMapError(null)

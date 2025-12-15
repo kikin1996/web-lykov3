@@ -7,3 +7,8 @@ export const isGoogleMapsConfigured = () => {
   return GOOGLE_MAPS_API_KEY && GOOGLE_MAPS_API_KEY !== 'your_api_key_here'
 }
 
+
+
+
+
+

@@ -21,9 +21,9 @@
 
 @layer utilities {
   .text-hero {
-    font-size: 72px;
+    font-size: 113px;
     line-height: 1.1;
-    font-weight: 700;
+    font-weight: 400;
     font-family: 'Playfair Display', serif;
     color: #FFFFFF;
     letter-spacing: 0.02em;
@@ -88,10 +88,11 @@
   }
 
   .text-script {
-    font-size: 48px;
+    font-size: 72px;
     font-weight: 400;
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Allura', cursive;
     color: #00D9B5;
+    margin-top: -40px;
   }
 
   .text-overline {
@@ -102,6 +103,13 @@
     color: #00D9B5;
     letter-spacing: 0.1em;
     text-transform: uppercase;
+  }
+
+  .text-stats {
+    font-size: 48px;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+    color: #00D9B5;
   }
 }
 

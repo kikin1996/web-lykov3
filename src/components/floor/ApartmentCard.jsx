@@ -73,3 +73,8 @@ ApartmentCard.propTypes = {
 
 export default ApartmentCard
 
+
+
+
+
+

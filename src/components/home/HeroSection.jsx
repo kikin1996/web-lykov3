@@ -24,11 +24,11 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="relative z-10 text-center max-w-4xl px-5 pb-32" style={{ paddingTop: '228px' }}>
-        <div className="inline-block mb-6 px-6 py-2 border-2 border-white rounded text-sm font-semibold text-white uppercase tracking-widest">
+        <div className="inline-block mb-6 px-6 py-2 border border-white rounded text-sm font-normal text-white uppercase tracking-widest">
           Rezidenční
         </div>
         <h1 className="text-hero mb-4">
-          ECOHAU RIVERSIDE
+          ECOHAU<br />RIVERSIDE
         </h1>
         <p className="text-script mb-8">
           Váš nový domov
@@ -36,11 +36,11 @@ const HeroSection = () => {
         
         {/* Scroll Indicator */}
         <div className="flex justify-center" style={{ marginBottom: '228px' }}>
-          <div className="w-[60px] h-[60px] border-2 border-white rounded-full flex items-center justify-center animate-bounce-custom">
-            <span className="text-[10px] font-semibold text-white uppercase tracking-widest" style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}>
-              Scroll
-            </span>
-          </div>
+          <img
+            src="/images/scroll-button.png"
+            alt="Scroll indicator"
+            className="w-24 h-24 object-contain animate-bounce-custom"
+          />
         </div>
       </div>
 

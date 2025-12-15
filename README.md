@@ -29,6 +29,14 @@ Aplikace poběží na `http://localhost:5173`
 npm run build
 ```
 
+## Stagewise (VS Code + CLI)
+
+- V editoru VS Code nainstalujte rozšíření `stagewise.stagewise-vscode-extension` (viz doporučení v `.vscode/extensions.json`).
+- Spusťte vývojový server: `npm run dev`.
+- V druhém terminálu v kořeni projektu spusťte Stagewise nástroj: `npm run stagewise` (alias pro `npx stagewise@latest`).
+- Následujte průvodce v CLI, který propojí vaši relaci s prohlížečem a AI agentem (funguje i s Cursor/GitHub Copilot).
+- Po načtení stránky se zobrazí lišta Stagewise – klikněte na prvek, zadejte požadavek a nechte agenta změny propsat do kódu.
+
 ## Struktura projektu
 
 ```
@@ -78,4 +86,9 @@ Aplikace používá design systém definovaný v `design.json` s následujícím
 - Aplikace používá mock data pro simulaci API
 - Obrázky jsou placeholder - nahraďte skutečnými obrázky v `public/images/`
 - Formuláře simulují odesílání (data se logují do konzole)
+
+
+
+
+
 

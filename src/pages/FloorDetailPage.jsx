@@ -84,3 +84,8 @@ const FloorDetailPage = () => {
 
 export default FloorDetailPage
 
+
+
+
+
+

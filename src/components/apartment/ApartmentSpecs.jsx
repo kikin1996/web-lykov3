@@ -50,3 +50,8 @@ ApartmentSpecs.propTypes = {
 
 export default ApartmentSpecs
 
+
+
+
+
+

@@ -151,3 +151,8 @@ FloorPlan.propTypes = {
 
 export default FloorPlan
 
+
+
+
+
+

@@ -101,3 +101,8 @@ const InterestForm = ({ apartment, onClose }) => {
 
 export default InterestForm
 
+
+
+
+
+

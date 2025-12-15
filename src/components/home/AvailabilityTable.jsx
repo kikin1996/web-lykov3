@@ -36,22 +36,22 @@ const AvailabilityTable = () => {
             <table className="w-full border-collapse">
               <thead>
                 <tr className="bg-neutral-lightGray">
-                  <th className="text-left py-4 px-6 text-body-small font-semibold text-neutral-darkNavy uppercase tracking-wider">
+                  <th className="text-left py-4 px-6 text-body-small uppercase tracking-wider" style={{ color: '#000000', fontWeight: 'bold' }}>
                     RESIDENCE
                   </th>
-                  <th className="text-left py-4 px-6 text-body-small font-semibold text-neutral-darkNavy uppercase tracking-wider">
+                  <th className="text-left py-4 px-6 text-body-small uppercase tracking-wider" style={{ color: '#000000', fontWeight: 'bold' }}>
                     BED/BATH
                   </th>
-                  <th className="text-left py-4 px-6 text-body-small font-semibold text-neutral-darkNavy uppercase tracking-wider">
+                  <th className="text-left py-4 px-6 text-body-small uppercase tracking-wider" style={{ color: '#000000', fontWeight: 'bold' }}>
                     M²
                   </th>
-                  <th className="text-left py-4 px-6 text-body-small font-semibold text-neutral-darkNavy uppercase tracking-wider">
+                  <th className="text-left py-4 px-6 text-body-small uppercase tracking-wider" style={{ color: '#000000', fontWeight: 'bold' }}>
                     SALE PRICE
                   </th>
-                  <th className="text-left py-4 px-6 text-body-small font-semibold text-neutral-darkNavy uppercase tracking-wider">
+                  <th className="text-left py-4 px-6 text-body-small uppercase tracking-wider" style={{ color: '#000000', fontWeight: 'bold' }}>
                     RENT PRICE
                   </th>
-                  <th className="text-left py-4 px-6 text-body-small font-semibold text-neutral-darkNavy uppercase tracking-wider">
+                  <th className="text-left py-4 px-6 text-body-small uppercase tracking-wider" style={{ color: '#000000', fontWeight: 'bold' }}>
                     FLOOR PLAN
                   </th>
                 </tr>

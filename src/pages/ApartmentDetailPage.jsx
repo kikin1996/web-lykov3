@@ -157,3 +157,8 @@ const ApartmentDetailPage = () => {
 
 export default ApartmentDetailPage
 
+
+
+
+
+
