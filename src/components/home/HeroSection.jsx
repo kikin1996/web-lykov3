@@ -10,11 +10,11 @@ const HeroSection = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <div 
-          className="absolute inset-0"
+          className="absolute inset-0 transition-transform duration-700 ease-out hover:scale-110"
           style={{ 
-            backgroundImage: "url('/images/hero-bg.jpg?v=2')",
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
+            backgroundImage: "url('/images/hero-bg.jpg?v=4')",
+            backgroundSize: 'contain',
+            backgroundPosition: 'center top',
             backgroundRepeat: 'no-repeat'
           }}
         ></div>
@@ -23,29 +23,42 @@ const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center max-w-4xl px-5 pb-32" style={{ paddingTop: '228px' }}>
-        <div className="inline-block mb-6 px-6 py-2 border border-white rounded text-sm font-normal text-white uppercase tracking-widest">
-          Rezidenční
-        </div>
-        <h1 className="text-hero mb-4">
-          ECOHAU<br />RIVERSIDE
+      <div className="relative z-10 text-center max-w-4xl px-5 pb-32" style={{ paddingTop: '80px' }}>
+        <h1 className="text-hero mb-4 mt-4">
+          Luční Háj
         </h1>
-        <p className="text-script mb-8">
+        <p className="text-script mb-8 mt-2">
           Váš nový domov
         </p>
         
-        {/* Scroll Indicator */}
-        <div className="flex justify-center" style={{ marginBottom: '228px' }}>
+        {/* First part of empty space */}
+        <div className="h-16"></div>
+        
+        {/* Scroll Indicator - enlarged */}
+        <div className="flex justify-center">
           <img
             src="/images/scroll-button.png"
             alt="Scroll indicator"
-            className="w-24 h-24 object-contain animate-bounce-custom"
+            className="w-32 h-32 object-contain animate-bounce-custom"
           />
         </div>
+        
+        {/* Second part of empty space */}
+        <div className="h-32"></div>
+        
+        {/* Third part of empty space */}
+        <div className="h-16"></div>
+        
+        {/* Empty space instead of scroll indicator */}
+        <div className="h-24" style={{ marginBottom: '228px' }}></div>
+
+
+
+
       </div>
 
       {/* Gradient Transition to Next Section - stronger gradient */}
-      <div className="absolute left-0 right-0 h-80 bg-gradient-to-b from-transparent via-neutral-darkNavy/90 to-neutral-darkNavy z-0" style={{ bottom: '0px' }}></div>
+      <div className="absolute left-0 right-0 h-[488px] bg-gradient-to-b from-transparent via-neutral-darkNavy/50 to-neutral-darkNavy z-0" style={{ bottom: '488px' }}></div>
     </section>
   )
 }

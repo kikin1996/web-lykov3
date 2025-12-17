@@ -9,7 +9,7 @@ const StatsSection = () => {
   ]
 
   return (
-    <section className="py-20 bg-neutral-darkNavy text-white relative pb-80">
+    <section className="pt-8 pb-20 bg-neutral-darkNavy text-white relative pb-80">
       <div className="container mx-auto px-5 lg:px-20 relative z-10">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat, index) => (

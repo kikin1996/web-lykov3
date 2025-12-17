@@ -1,6 +1,6 @@
 const ProjectIntroSection = () => {
   return (
-    <section className="py-20 bg-neutral-darkNavy relative -mt-32 pt-32">
+    <section className="py-20 bg-neutral-darkNavy relative -mt-[488px] pt-16">
       <div className="container mx-auto px-5 lg:px-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - Text Content */}
