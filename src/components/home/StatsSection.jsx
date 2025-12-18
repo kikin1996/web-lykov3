@@ -1,11 +1,9 @@
-import { projectStats } from '../../data/mockData'
-
 const StatsSection = () => {
   const stats = [
-    { value: projectStats.totalArea.toLocaleString('cs-CZ'), label: 'm² celková plocha', suffix: '' },
-    { value: projectStats.totalApartments, label: 'bytů', suffix: '' },
-    { value: projectStats.totalBlocks, label: 'bloků', suffix: '' },
-    { value: projectStats.parkingSpaces.toLocaleString('cs-CZ'), label: 'parkovacích míst', suffix: '' },
+    { value: '800–1 300 m²', label: 'Velikost pozemků' },
+    { value: '12', label: 'Rodinných domů' },
+    { value: 'A / B', label: 'Energetická třída' },
+    { value: '2026', label: 'Rok dokončení' },
   ]
 
   return (

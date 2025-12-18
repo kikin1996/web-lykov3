@@ -9,7 +9,14 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Logo & Description */}
           <div>
-            <h3 className="text-xl font-primary font-bold mb-4">ECOHAU RIVERSIDE</h3>
+            <div className="mb-4">
+              <img
+                src="/photos/lucni_haj_logo.svg"
+                alt="Luční háj"
+                style={{ height: '42px', width: 'auto' }}
+                className="mb-3"
+              />
+            </div>
             <p className="text-body-small text-white text-opacity-80">
               Moderní rezidenční bytový komplex s výjimečným designem a prvotřídním vybavením.
             </p>

@@ -5,26 +5,22 @@ const ProjectIntroSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - Text Content */}
           <div className="text-left">
-            <p className="text-overline mb-4 text-white">ECOHAU RIVERSIDE</p>
+            <p className="text-overline mb-4 text-white">TÝNEC NAD SÁZAVOU</p>
             <h2 className="text-h1 mb-6 leading-tight" style={{ color: '#FFFFFF' }}>
-              NEJLEPŠÍ
+              Moderní bydlení v
               <br />
-              EKOLOGICKÁ
-              <br />
-              MĚSTSKÁ OBLAST
-              <br />
-              V PRAZE
+              harmonii s přírodou
             </h2>
             <div className="space-y-4 text-body-regular text-white text-opacity-80 mb-6">
               <p>
-                S filozofií udržitelného rozvoje prosperujícího sídliště s romantickým dechem 
-                a krásou v harmonii s přírodou ve stylu benátského města v Itálii. Podél řeky 
-                v Praze.
+                Projekt Luční háj přináší klidné a komfortní bydlení v jedné z nejžádanějších
+                lokalit středních Čech – Týnec nad Sázavou. Spojuje moderní stavební technologie,
+                důraz na kvalitu provedení a výjimečnou polohu v blízkosti řeky Sázavy, lesů
+                a turistických tras.
               </p>
               <p>
-                Ecohau Riverside je moderní rezidenční bytový komplex navržený s důrazem na 
-                kvalitu, udržitelnost a komfortní bydlení. Projekt se nachází v klidné lokalitě 
-                s výbornou dopravní dostupností a blízkostí přírody.
+                Bydlení je navrženo pro ty, kteří hledají ticho, soukromí a dlouhodobě úsporný
+                domov, a zároveň chtějí mít přírodu doslova za dveřmi.
               </p>
             </div>
           </div>

@@ -47,10 +47,10 @@ const LocationSection = () => {
 
       try {
         console.log('Inicializuji mapu do elementu:', mapRef.current)
-        const mapCenter = { lat: 49.6853, lng: 18.3483 }; // Frýdek-Místek, ulice F. Čejky
+        const mapCenter = { lat: 49.839666, lng: 14.611472 }; // 49°50'22.8"N 14°36'41.3"E
         mapInstanceRef.current = new window.google.maps.Map(mapRef.current, {
           center: mapCenter,
-          zoom: 15,
+          zoom: 13,
           disableDefaultUI: true,
           gestureHandling: "cooperative",
           styles: DARK_STYLE,
@@ -60,7 +60,7 @@ const LocationSection = () => {
         const marker = new window.google.maps.Marker({
           position: mapCenter,
           map: mapInstanceRef.current,
-          title: 'Ecohau Riverside - F. Čejky, Frýdek-Místek',
+          title: 'Luční háj',
           icon: {
             path: window.google.maps.SymbolPath.CIRCLE,
             fillColor: '#00D9B5',
@@ -219,39 +219,42 @@ const LocationSection = () => {
 
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center p-6">
-              {/* School Icon - SVG in white */}
-              <div className="mb-4 flex justify-center">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white">
-                  <path d="M5 13.18V17.18L12 21L19 17.18V13.18L12 17L5 13.18ZM12 3L1 9L12 15L21 10.09V17H23V9L12 3Z" fill="currentColor"/>
-                </svg>
+              {/* School Icon */}
+              <div className="mb-2 flex justify-center">
+                <img
+                  src="/photos/icon1.png"
+                  alt="Školy"
+                  className="w-12 h-12 object-contain"
+                />
               </div>
-              <h3 className="text-h4 mb-2 text-white">Školy</h3>
               <p className="text-body-small text-white text-opacity-90">
-                Základní a střední školy v okolí
+                Základní a mateřské školky - 5min
               </p>
             </div>
             <div className="text-center p-6">
-              {/* Shopping Cart Icon - SVG in white */}
-              <div className="mb-4 flex justify-center">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white">
-                  <path d="M7 18C5.9 18 5.01 18.9 5.01 20C5.01 21.1 5.9 22 7 22C8.1 22 9 21.1 9 20C9 18.9 8.1 18 7 18ZM1 2V4H3L6.6 11.59L5.25 14.04C5.09 14.32 5 14.65 5 15C5 16.1 5.9 17 7 17H19V15H7.42C7.28 15 7.17 14.89 7.17 14.75L7.2 14.63L8.1 13H15.55C16.3 13 16.96 12.59 17.3 11.97L20.88 5.48C20.96 5.34 21 5.17 21 5C21 4.45 20.55 4 20 4H5.21L4.27 2H1ZM17 18C15.9 18 15.01 18.9 15.01 20C15.01 21.1 15.9 22 17 22C18.1 22 19 21.1 19 20C19 18.9 18.1 18 17 18Z" fill="currentColor"/>
-                </svg>
+              {/* Shopping Cart Icon */}
+              <div className="mb-2 flex justify-center">
+                <img
+                  src="/photos/icon2.png"
+                  alt="Obchody"
+                  className="w-12 h-12 object-contain"
+                />
               </div>
-              <h3 className="text-h4 mb-2 text-white">Obchody</h3>
               <p className="text-body-small text-white text-opacity-90">
-                Obchodní centra a supermarkety
+                Supermarket Lidl - 5 min
               </p>
             </div>
             <div className="text-center p-6">
-              {/* Train/Transport Icon - SVG in white */}
-              <div className="mb-4 flex justify-center">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white">
-                  <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" fill="currentColor"/>
-                </svg>
+              {/* Transport Icon */}
+              <div className="mb-2 flex justify-center">
+                <img
+                  src="/photos/icon3.png"
+                  alt="Doprava"
+                  className="w-12 h-12 object-contain"
+                />
               </div>
-              <h3 className="text-h4 mb-2 text-white">Doprava</h3>
               <p className="text-body-small text-white text-opacity-90">
-                Výborná dopravní dostupnost
+                Nájezd na dálnici D1 - 18 min
               </p>
             </div>
           </div>

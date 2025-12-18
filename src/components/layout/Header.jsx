@@ -42,10 +42,13 @@ const Header = () => {
     return location.pathname.startsWith(path)
   }
 
+  const isDarkBackground =
+    isScrolled || location.pathname !== '/'
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
+        isDarkBackground
           ? 'bg-neutral-darkNavy bg-opacity-95 backdrop-blur-md border-b border-white border-opacity-10'
           : 'bg-transparent'
       }`}
@@ -53,8 +56,12 @@ const Header = () => {
       <nav className="container mx-auto px-5 lg:px-20 py-5">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center">
-            <span className="text-white text-sm font-secondary font-normal">ECOHAU RIVERSIDE</span>
+          <Link to="/" className="flex items-center gap-3">
+            <img
+              src="/photos/lucni_haj_logo.svg"
+              alt="Luční háj"
+              style={{ height: '40px', width: 'auto' }}
+            />
           </Link>
 
           {/* Desktop Navigation */}

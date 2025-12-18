@@ -1,0 +1,272 @@
+import { useState } from 'react'
+
+const ContactForm = () => {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    message: '',
+  })
+  const [errors, setErrors] = useState({})
+  const [success, setSuccess] = useState(false)
+
+  const handleChange = (e) => {
+    const { name, value } = e.target
+    setFormData(prev => ({ ...prev, [name]: value }))
+    if (errors[name]) {
+      setErrors(prev => ({ ...prev, [name]: '' }))
+    }
+    if (success) {
+      setSuccess(false)
+    }
+  }
+
+  const validate = () => {
+    const newErrors = {}
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+    if (!formData.firstName.trim()) {
+      newErrors.firstName = 'First name is required'
+    }
+    if (!formData.lastName.trim()) {
+      newErrors.lastName = 'Last name is required'
+    }
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required'
+    } else if (!emailRegex.test(formData.email)) {
+      newErrors.email = 'Please enter a valid email'
+    }
+    if (!formData.message.trim()) {
+      newErrors.message = 'Message is required'
+    }
+
+    setErrors(newErrors)
+    return Object.keys(newErrors).length === 0
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    if (!validate()) return
+
+    // Simulace odeslání
+    setSuccess(true)
+    setFormData({
+      firstName: '',
+      lastName: '',
+      email: '',
+      phone: '',
+      message: '',
+    })
+  }
+
+  const messageLength = formData.message.length
+  const maxLength = 300
+
+  return (
+    <div className="rounded-[28px] bg-white border border-slate-200/70 shadow-[0_18px_50px_rgba(15,23,42,0.08)] p-8">
+      <h2 className="text-[34px] leading-[1.1] font-semibold tracking-tight text-slate-900 mb-2 font-serif">
+        Let's Get In Touch.
+      </h2>
+      <p className="text-slate-600 text-[15px] leading-6 mb-6">
+        Or just reach out manually to{' '}
+        <a href="mailto:hello@luchnihaj.cz" className="text-indigo-600 underline underline-offset-2 hover:text-indigo-700">
+          hello@luchnihaj.cz
+        </a>
+      </p>
+
+      {success && (
+        <div className="mb-6 p-4 rounded-xl bg-green-50 border border-green-200 text-green-800 text-sm">
+          Formulář byl úspěšně odeslán! Děkujeme za váš zájem.
+        </div>
+      )}
+
+      <form onSubmit={handleSubmit} className="space-y-5">
+        {/* First Name & Last Name */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {/* First Name */}
+          <div>
+            <div className="relative">
+              <div className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                  />
+                </svg>
+              </div>
+              <input
+                type="text"
+                name="firstName"
+                value={formData.firstName}
+                onChange={handleChange}
+                placeholder="Enter your first name..."
+                className={`w-full h-12 pl-11 pr-4 rounded-full bg-white border ${
+                  errors.firstName ? 'border-red-300' : 'border-slate-200'
+                } focus:outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-300 text-slate-900 placeholder:text-slate-400`}
+              />
+            </div>
+            {errors.firstName && (
+              <p className="mt-1 text-sm text-red-600">{errors.firstName}</p>
+            )}
+          </div>
+
+          {/* Last Name */}
+          <div>
+            <div className="relative">
+              <div className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                  />
+                </svg>
+              </div>
+              <input
+                type="text"
+                name="lastName"
+                value={formData.lastName}
+                onChange={handleChange}
+                placeholder="Enter your last name..."
+                className={`w-full h-12 pl-11 pr-4 rounded-full bg-white border ${
+                  errors.lastName ? 'border-red-300' : 'border-slate-200'
+                } focus:outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-300 text-slate-900 placeholder:text-slate-400`}
+              />
+            </div>
+            {errors.lastName && (
+              <p className="mt-1 text-sm text-red-600">{errors.lastName}</p>
+            )}
+          </div>
+        </div>
+
+        {/* Email Address */}
+        <div>
+          <div className="relative">
+            <div className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                />
+              </svg>
+            </div>
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="Enter your email address..."
+              className={`w-full h-12 pl-11 pr-4 rounded-full bg-white border ${
+                errors.email ? 'border-red-300' : 'border-slate-200'
+              } focus:outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-300 text-slate-900 placeholder:text-slate-400`}
+            />
+          </div>
+          {errors.email && (
+            <p className="mt-1 text-sm text-red-600">{errors.email}</p>
+          )}
+        </div>
+
+        {/* Phone Number */}
+        <div>
+          <div className="relative flex items-center">
+            <div className="absolute left-4 flex items-center gap-2">
+              <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-medium">
+                CZ +420
+              </span>
+            </div>
+            <input
+              type="tel"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              placeholder="(000) 000-0000"
+              className="w-full h-12 pl-24 pr-4 rounded-full bg-white border border-slate-200 focus:outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-300 text-slate-900 placeholder:text-slate-400"
+            />
+          </div>
+        </div>
+
+        {/* Message */}
+        <div>
+          <div className="relative">
+            <div className="absolute left-4 top-4 text-slate-400">
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+                />
+              </svg>
+            </div>
+            <textarea
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              placeholder="Enter your main text here...."
+              maxLength={maxLength}
+              className={`w-full min-h-[170px] pl-11 pr-20 p-4 rounded-2xl bg-white border ${
+                errors.message ? 'border-red-300' : 'border-slate-200'
+              } focus:outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-300 text-slate-900 placeholder:text-slate-400 resize-none`}
+            />
+            <div className="absolute bottom-3 right-4 text-xs text-slate-400">
+              {messageLength}/{maxLength}
+            </div>
+          </div>
+          {errors.message && (
+            <p className="mt-1 text-sm text-red-600">{errors.message}</p>
+          )}
+        </div>
+
+        {/* Submit Button */}
+        <button
+          type="submit"
+          className="w-full h-12 rounded-full bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-600 hover:to-indigo-600 text-white font-medium transition-all duration-200 shadow-[0_14px_30px_rgba(79,70,229,0.25)] hover:shadow-[0_16px_35px_rgba(79,70,229,0.3)] flex items-center justify-center gap-2"
+        >
+          Submit Form
+          <svg
+            className="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M9 5l7 7-7 7"
+            />
+          </svg>
+        </button>
+      </form>
+    </div>
+  )
+}
+
+export default ContactForm
+
