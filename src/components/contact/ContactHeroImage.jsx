@@ -1,6 +1,6 @@
 const ContactHeroImage = () => {
   return (
-    <div className="relative rounded-[28px] overflow-hidden border border-slate-200/70 shadow-[0_18px_50px_rgba(15,23,42,0.08)] h-[340px] md:h-[380px] lg:h-[420px]">
+    <div className="relative h-full w-full min-h-[420px] overflow-hidden">
       {/* Skeleton photo - gradient + texture */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-100 via-slate-50 to-slate-200">
         {/* Jemný šum efekt přes pseudo-element */}
@@ -18,7 +18,7 @@ const ContactHeroImage = () => {
       <img
         src="/images/contact-building.jpg"
         alt="Contact building"
-        className="w-full h-full object-cover"
+        className="w-full h-full min-h-[420px] object-cover"
         onError={(e) => {
           e.target.style.display = 'none'
         }}

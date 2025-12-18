@@ -123,7 +123,7 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden mt-4 pb-4 border-t border-white border-opacity-10">
+          <div className="lg:hidden mt-4 pb-4 border-t border-white border-opacity-10 bg-neutral-darkNavy bg-opacity-95 backdrop-blur-md -mx-5 lg:-mx-20 px-5 lg:px-20 -mb-5 lg:-mb-20">
             {navLinks.map((link) => (
               <div key={link.path}>
                 <Link

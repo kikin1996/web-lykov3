@@ -64,8 +64,8 @@ const ContactForm = () => {
   const maxLength = 300
 
   return (
-    <div className="rounded-[28px] bg-white border border-slate-200/70 shadow-[0_18px_50px_rgba(15,23,42,0.08)] p-8">
-      <h2 className="text-[34px] leading-[1.1] font-semibold tracking-tight text-slate-900 mb-2 font-serif">
+    <div>
+      <h2 className="text-[34px] leading-[1.1] font-semibold tracking-tight text-slate-900 mb-2 font-serif mt-8">
         Let's Get In Touch.
       </h2>
       <p className="text-slate-600 text-[15px] leading-6 mb-6">
@@ -109,7 +109,7 @@ const ContactForm = () => {
                 onChange={handleChange}
                 placeholder="Enter your first name..."
                 className={`w-full h-12 pl-11 pr-4 rounded-full bg-white border ${
-                  errors.firstName ? 'border-red-300' : 'border-slate-200'
+                  errors.firstName ? 'border-red-300' : 'border-slate-200/80'
                 } focus:outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-300 text-slate-900 placeholder:text-slate-400`}
               />
             </div>
@@ -143,7 +143,7 @@ const ContactForm = () => {
                 onChange={handleChange}
                 placeholder="Enter your last name..."
                 className={`w-full h-12 pl-11 pr-4 rounded-full bg-white border ${
-                  errors.lastName ? 'border-red-300' : 'border-slate-200'
+                  errors.lastName ? 'border-red-300' : 'border-slate-200/80'
                 } focus:outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-300 text-slate-900 placeholder:text-slate-400`}
               />
             </div>
@@ -178,7 +178,7 @@ const ContactForm = () => {
               onChange={handleChange}
               placeholder="Enter your email address..."
               className={`w-full h-12 pl-11 pr-4 rounded-full bg-white border ${
-                errors.email ? 'border-red-300' : 'border-slate-200'
+                errors.email ? 'border-red-300' : 'border-slate-200/80'
               } focus:outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-300 text-slate-900 placeholder:text-slate-400`}
             />
           </div>
@@ -201,7 +201,7 @@ const ContactForm = () => {
               value={formData.phone}
               onChange={handleChange}
               placeholder="(000) 000-0000"
-              className="w-full h-12 pl-24 pr-4 rounded-full bg-white border border-slate-200 focus:outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-300 text-slate-900 placeholder:text-slate-400"
+              className="w-full h-12 pl-24 pr-4 rounded-full bg-white border border-slate-200/80 focus:outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-300 text-slate-900 placeholder:text-slate-400"
             />
           </div>
         </div>
@@ -230,8 +230,8 @@ const ContactForm = () => {
               onChange={handleChange}
               placeholder="Enter your main text here...."
               maxLength={maxLength}
-              className={`w-full min-h-[170px] pl-11 pr-20 p-4 rounded-2xl bg-white border ${
-                errors.message ? 'border-red-300' : 'border-slate-200'
+              className={`w-full min-h-[160px] pl-11 pr-20 p-4 rounded-2xl bg-white border ${
+                errors.message ? 'border-red-300' : 'border-slate-200/80'
               } focus:outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-300 text-slate-900 placeholder:text-slate-400 resize-none`}
             />
             <div className="absolute bottom-3 right-4 text-xs text-slate-400">
@@ -246,22 +246,9 @@ const ContactForm = () => {
         {/* Submit Button */}
         <button
           type="submit"
-          className="w-full h-12 rounded-full bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-600 hover:to-indigo-600 text-white font-medium transition-all duration-200 shadow-[0_14px_30px_rgba(79,70,229,0.25)] hover:shadow-[0_16px_35px_rgba(79,70,229,0.3)] flex items-center justify-center gap-2"
+          className="w-full h-12 rounded-full bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-600 hover:to-indigo-600 text-white font-medium transition-all duration-200 shadow-[0_18px_40px_rgba(79,70,229,0.28)] hover:shadow-[0_20px_45px_rgba(79,70,229,0.32)] flex items-center justify-center gap-2"
         >
-          Submit Form
-          <svg
-            className="w-5 h-5"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M9 5l7 7-7 7"
-            />
-          </svg>
+          Submit Form →
         </button>
       </form>
     </div>

@@ -13,6 +13,7 @@ import GalleryPage from './pages/GalleryPage'
 import AboutProjectPage from './pages/AboutProjectPage'
 import AboutUsPage from './pages/AboutUsPage'
 import ContactPage from './pages/ContactPage'
+import AktualityPage from './pages/AktualityPage'
 import NotFoundPage from './pages/NotFoundPage'
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
               <Route path="/o-projektu" element={<AboutProjectPage />} />
               <Route path="/o-nas" element={<AboutUsPage />} />
               <Route path="/kontakt" element={<ContactPage />} />
+              <Route path="/aktuality" element={<AktualityPage />} />
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </main>
