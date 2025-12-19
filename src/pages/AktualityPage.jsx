@@ -68,42 +68,96 @@ const aktualityData = [
 ]
 
 const AktualityPage = () => {
+  // Najít nejnovější datum pro "Aktualizováno"
+  const getLatestDate = () => {
+    const sorted = [...aktualityData].sort((a, b) => {
+      const dateA = new Date(a.sortDate || a.date)
+      const dateB = new Date(b.sortDate || b.date)
+      return dateB - dateA
+    })
+    return sorted[0]?.date || 'Únor 2025'
+  }
+
+  const latestDate = getLatestDate()
+
   return (
-    <div className="min-h-screen bg-[#F5F7FB] pt-24 pb-20">
-      <div className="max-w-5xl mx-auto px-4 py-20">
-        {/* Hlavička stránky */}
-        <div className="text-center mb-16">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-50 text-indigo-700 text-xs font-medium mb-6">
-            <svg
-              className="w-4 h-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M13 10V3L4 14h7v7l9-11h-7z"
+    <div className="min-h-screen bg-[#F5F7FB] pt-20 pb-10 px-4">
+      <div className="max-w-6xl mx-auto">
+        {/* Jeden hlavní white card wrapper – hero + timeline */}
+        <div className="bg-white rounded-[28px] border border-slate-200/70 shadow-[0_20px_60px_rgba(15,23,42,0.12)] overflow-hidden">
+          {/* Hero sekce - 2 sloupce ve stylu Kontaktu */}
+          <div className="grid grid-cols-1 lg:grid-cols-2">
+            {/* Levý sloupec - foto */}
+            <div className="relative h-full w-full min-h-[380px] lg:min-h-[420px] overflow-hidden">
+              {/* Gradient placeholder s jemným šumem */}
+              <div className="absolute inset-0 bg-gradient-to-br from-slate-100 via-slate-50 to-slate-200">
+                {/* Jemný šum efekt přes pseudo-element */}
+                <div 
+                  className="absolute inset-0 opacity-[0.15]"
+                  style={{
+                    backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+                    backgroundSize: '200px 200px'
+                  }}
+                />
+                {/* Jemný gradient overlay pro hloubku */}
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/5 via-transparent to-transparent" />
+              </div>
+              {/* Pokud existuje obrázek, použij ho */}
+              <img
+                src="/images/hero-bg.jpg"
+                alt="Průběh výstavby"
+                className="w-full h-full min-h-[380px] lg:min-h-[420px] object-cover"
+                onError={(e) => {
+                  e.target.style.display = 'none'
+                }}
               />
-            </svg>
-            Aktuality stavby
+            </div>
+
+            {/* Pravý sloupec - texty */}
+            <div className="p-10 lg:p-12 flex flex-col justify-center">
+              {/* Badge */}
+              <div className="inline-flex items-center gap-2 rounded-full bg-indigo-50 text-indigo-700 px-3 py-1 text-xs font-medium mb-6 w-fit">
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13 10V3L4 14h7v7l9-11h-7z"
+                  />
+                </svg>
+                Aktuality stavby
+              </div>
+
+              {/* H1 */}
+              <h1 className="text-4xl lg:text-5xl font-semibold tracking-tight text-slate-900 mb-6 font-serif">
+                Průběh výstavby
+              </h1>
+
+              {/* Subtitle */}
+              <p className="text-slate-600 text-base lg:text-lg leading-7 mb-4">
+                Sledujte aktuální postup výstavby od zahájení až po dokončení.
+              </p>
+
+              {/* Aktualizováno */}
+              <p className="text-sm text-slate-500">
+                Aktualizováno: {latestDate}
+              </p>
+            </div>
           </div>
 
-          {/* H1 */}
-          <h1 className="text-4xl font-semibold tracking-tight text-slate-900 mb-4">
-            Průběh výstavby
-          </h1>
+          {/* Jemný přechod mezi hero a timeline */}
+          <div className="border-t border-slate-100" />
 
-          {/* Subtitle */}
-          <p className="text-slate-600 text-lg max-w-2xl mx-auto">
-            Sledujte aktuální postup výstavby od zahájení až po dokončení.
-          </p>
+          {/* Timeline část uvnitř stejného wrapperu – větší vertikální mezera od hero */}
+          <div className="p-8 md:p-10 lg:p-12 pt-10 md:pt-12 lg:pt-14">
+            <Timeline items={aktualityData} />
+          </div>
         </div>
-
-        {/* Timeline */}
-        <Timeline items={aktualityData} />
       </div>
     </div>
   )

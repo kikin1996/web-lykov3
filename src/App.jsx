@@ -14,6 +14,7 @@ import AboutProjectPage from './pages/AboutProjectPage'
 import AboutUsPage from './pages/AboutUsPage'
 import ContactPage from './pages/ContactPage'
 import AktualityPage from './pages/AktualityPage'
+import VyberDomuPage from './pages/VyberDomuPage'
 import NotFoundPage from './pages/NotFoundPage'
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
               <Route path="/o-nas" element={<AboutUsPage />} />
               <Route path="/kontakt" element={<ContactPage />} />
               <Route path="/aktuality" element={<AktualityPage />} />
+              <Route path="/vyber-domu" element={<VyberDomuPage />} />
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </main>
