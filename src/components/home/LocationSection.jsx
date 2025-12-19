@@ -56,18 +56,54 @@ const LocationSection = () => {
           styles: DARK_STYLE,
         })
         
+        // Vytvoření custom markeru s kolečkem a ikonou domu
+        const createMarkerWithHouse = () => {
+          const canvas = document.createElement('canvas')
+          canvas.width = 60
+          canvas.height = 60
+          const ctx = canvas.getContext('2d')
+          
+          // Kreslení zeleného kolečka (kruh)
+          ctx.beginPath()
+          ctx.arc(30, 30, 25, 0, 2 * Math.PI)
+          ctx.fillStyle = '#00D9B5'
+          ctx.fill()
+          ctx.strokeStyle = '#FFFFFF'
+          ctx.lineWidth = 3
+          ctx.stroke()
+          
+          // Kreslení ikony domu (bílá)
+          ctx.fillStyle = '#FFFFFF'
+          ctx.strokeStyle = '#FFFFFF'
+          ctx.lineWidth = 2
+          
+          // Střecha (trojúhelník)
+          ctx.beginPath()
+          ctx.moveTo(30, 15)
+          ctx.lineTo(20, 22)
+          ctx.lineTo(40, 22)
+          ctx.closePath()
+          ctx.fill()
+          
+          // Dům (čtverec)
+          ctx.fillRect(20, 22, 20, 18)
+          
+          // Dveře
+          ctx.fillStyle = '#00D9B5'
+          ctx.fillRect(26, 30, 8, 10)
+          
+          return canvas.toDataURL()
+        }
+        
         // Přidání vlastního markeru na pozici
         const marker = new window.google.maps.Marker({
           position: mapCenter,
           map: mapInstanceRef.current,
           title: 'Luční háj',
           icon: {
-            path: window.google.maps.SymbolPath.CIRCLE,
-            fillColor: '#00D9B5',
-            fillOpacity: 1,
-            strokeColor: '#FFFFFF',
-            strokeWeight: 3,
-            scale: 12
+            url: createMarkerWithHouse(),
+            scaledSize: new window.google.maps.Size(60, 60),
+            anchor: new window.google.maps.Point(30, 30),
           }
         })
         

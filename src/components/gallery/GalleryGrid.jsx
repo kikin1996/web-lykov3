@@ -5,7 +5,7 @@ const GalleryGrid = ({ images, onImageClick }) => {
   if (images.length === 0) {
     return (
       <div className="text-center py-20">
-        <p className="text-body-large text-neutral-mediumGray">
+        <p className="text-slate-600">
           V této kategorii nejsou žádné obrázky.
         </p>
       </div>

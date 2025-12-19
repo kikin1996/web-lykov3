@@ -73,7 +73,7 @@ const TimelineItem = ({ item, index, isLast }) => {
           {[1, 2].map((i) => (
             <div
               key={i}
-              className="rounded-2xl border border-white/60 shadow-[0_14px_40px_rgba(15,23,42,0.10)] aspect-[4/3] bg-gradient-to-br from-indigo-100 via-purple-50 to-pink-100"
+              className="rounded-2xl border border-white/60 shadow-[0_14px_40px_rgba(15,23,42,0.10)] aspect-[4/3] bg-gradient-to-br from-[#B2F5EA] via-[#E6FFFA] to-[#B2F5EA]"
             />
           ))}
         </div>
@@ -119,7 +119,7 @@ const TimelineItem = ({ item, index, isLast }) => {
   const TimelineAxis = () => (
     <div className="relative flex flex-col items-center">
       {/* Bod s glow efektem */}
-      <div className="relative z-10 mt-2 h-4 w-4 rounded-full bg-indigo-600 shadow-[0_0_0_6px_rgba(99,102,241,0.12)]" />
+      <div className="relative z-10 mt-2 h-4 w-4 rounded-full bg-[#00D9B5] shadow-[0_0_0_6px_rgba(0,217,181,0.12)]" />
       
       {/* Datum label - zarovnání podle pozice karty */}
       <div
@@ -169,7 +169,7 @@ const TimelineItem = ({ item, index, isLast }) => {
       {/* Mobile: 1 sloupec, osa vlevo (sdílená linka je v rodiči Timeline) */}
       <div className="md:hidden relative pl-8">
         {/* Bod na sdílené ose vlevo */}
-        <div className="absolute left-4 top-2 h-4 w-4 rounded-full bg-indigo-600 shadow-[0_0_0_6px_rgba(99,102,241,0.12)] -translate-x-1/2" />
+        <div className="absolute left-4 top-2 h-4 w-4 rounded-full bg-[#00D9B5] shadow-[0_0_0_6px_rgba(0,217,181,0.12)] -translate-x-1/2" />
         
         {/* Datum label nad kartou */}
         <div className="mb-3 text-xs font-semibold text-slate-700 rounded-full px-3 py-1 border border-slate-200/70 bg-white shadow-sm inline-block">

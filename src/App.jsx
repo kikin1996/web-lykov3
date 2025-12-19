@@ -7,14 +7,11 @@ import Modal from './components/shared/Modal'
 
 // Pages
 import HomePage from './pages/HomePage'
-import FloorDetailPage from './pages/FloorDetailPage'
-import ApartmentDetailPage from './pages/ApartmentDetailPage'
 import GalleryPage from './pages/GalleryPage'
-import AboutProjectPage from './pages/AboutProjectPage'
-import AboutUsPage from './pages/AboutUsPage'
 import ContactPage from './pages/ContactPage'
 import AktualityPage from './pages/AktualityPage'
 import VyberDomuPage from './pages/VyberDomuPage'
+import StandardyPage from './pages/StandardyPage'
 import NotFoundPage from './pages/NotFoundPage'
 
 function App() {
@@ -26,14 +23,11 @@ function App() {
           <main className="flex-grow">
             <Routes>
               <Route path="/" element={<HomePage />} />
-              <Route path="/patro/:floorId" element={<FloorDetailPage />} />
-              <Route path="/byt/:floorId/:apartmentId" element={<ApartmentDetailPage />} />
               <Route path="/galerie" element={<GalleryPage />} />
-              <Route path="/o-projektu" element={<AboutProjectPage />} />
-              <Route path="/o-nas" element={<AboutUsPage />} />
               <Route path="/kontakt" element={<ContactPage />} />
               <Route path="/aktuality" element={<AktualityPage />} />
               <Route path="/vyber-domu" element={<VyberDomuPage />} />
+              <Route path="/standardy" element={<StandardyPage />} />
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </main>

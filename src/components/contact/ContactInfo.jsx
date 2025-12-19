@@ -2,7 +2,7 @@ const ContactInfo = () => {
   return (
     <div className="space-y-6">
       {/* Badge */}
-      <div className="inline-flex items-center rounded-full bg-indigo-50 text-indigo-700 px-3 py-1 text-xs font-medium">
+      <div className="inline-flex items-center rounded-full bg-[#E6FFFA] text-[#00B89A] px-3 py-1 text-xs font-medium">
         Reach Out To Us
       </div>
 
@@ -14,7 +14,7 @@ const ContactInfo = () => {
       {/* Email link */}
       <p className="text-slate-600 text-[15px] leading-6">
         Or just reach out manually to{' '}
-        <a href="mailto:hello@luchnihaj.cz" className="text-indigo-600 underline underline-offset-2 hover:text-indigo-700">
+        <a href="mailto:hello@luchnihaj.cz" className="text-[#00D9B5] underline underline-offset-2 hover:text-[#00B89A]">
           hello@luchnihaj.cz
         </a>
       </p>
@@ -24,7 +24,7 @@ const ContactInfo = () => {
         {/* Email Support */}
         <div className="rounded-2xl bg-white border border-slate-200/70 p-5 shadow-none hover:shadow-[0_12px_30px_rgba(15,23,42,0.08)] transition">
           <div className="flex items-start gap-3">
-            <div className="h-10 w-10 rounded-full bg-indigo-50 text-indigo-600 grid place-items-center flex-shrink-0">
+            <div className="h-10 w-10 rounded-full bg-[#E6FFFA] text-[#00D9B5] grid place-items-center flex-shrink-0">
               <svg
                 className="w-5 h-5"
                 fill="none"
@@ -42,7 +42,7 @@ const ContactInfo = () => {
             <div>
               <h3 className="text-sm font-semibold text-slate-900 mb-1">Email Support</h3>
               <p className="text-xs text-slate-500 mb-1">Our team can respond in real time.</p>
-              <a href="mailto:hello@luchnihaj.cz" className="text-sm text-indigo-600 hover:text-indigo-700">
+              <a href="mailto:hello@luchnihaj.cz" className="text-sm text-[#00D9B5] hover:text-[#00B89A]">
                 hello@luchnihaj.cz
               </a>
             </div>
@@ -52,7 +52,7 @@ const ContactInfo = () => {
         {/* Visit Our Office */}
         <div className="rounded-2xl bg-white border border-slate-200/70 p-5 shadow-none hover:shadow-[0_12px_30px_rgba(15,23,42,0.08)] transition">
           <div className="flex items-start gap-3">
-            <div className="h-10 w-10 rounded-full bg-indigo-50 text-indigo-600 grid place-items-center flex-shrink-0">
+            <div className="h-10 w-10 rounded-full bg-[#E6FFFA] text-[#00D9B5] grid place-items-center flex-shrink-0">
               <svg
                 className="w-5 h-5"
                 fill="none"
@@ -84,7 +84,7 @@ const ContactInfo = () => {
         {/* Call Us Directly */}
         <div className="rounded-2xl bg-white border border-slate-200/70 p-5 shadow-none hover:shadow-[0_12px_30px_rgba(15,23,42,0.08)] transition sm:col-span-2">
           <div className="flex items-start gap-3">
-            <div className="h-10 w-10 rounded-full bg-indigo-50 text-indigo-600 grid place-items-center flex-shrink-0">
+            <div className="h-10 w-10 rounded-full bg-[#E6FFFA] text-[#00D9B5] grid place-items-center flex-shrink-0">
               <svg
                 className="w-5 h-5"
                 fill="none"
@@ -102,7 +102,7 @@ const ContactInfo = () => {
             <div>
               <h3 className="text-sm font-semibold text-slate-900 mb-1">Call Us Directly</h3>
               <p className="text-xs text-slate-500 mb-1">Available during working hours.</p>
-              <a href="tel:+420123456789" className="text-sm text-indigo-600 hover:text-indigo-700">
+              <a href="tel:+420123456789" className="text-sm text-[#00D9B5] hover:text-[#00B89A]">
                 (+420) 123 - 456 - 789
               </a>
             </div>

@@ -32,8 +32,8 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/patro/1" className="text-body-small text-white text-opacity-80 hover:text-primary-teal transition-colors">
-                  Byty
+                <Link to="/vyber-domu" className="text-body-small text-white text-opacity-80 hover:text-primary-teal transition-colors">
+                  Výběr domu
                 </Link>
               </li>
               <li>
@@ -42,8 +42,8 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/o-projektu" className="text-body-small text-white text-opacity-80 hover:text-primary-teal transition-colors">
-                  O projektu
+                <Link to="/standardy" className="text-body-small text-white text-opacity-80 hover:text-primary-teal transition-colors">
+                  Standardy
                 </Link>
               </li>
               <li>

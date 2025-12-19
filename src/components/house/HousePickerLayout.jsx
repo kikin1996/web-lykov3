@@ -191,8 +191,8 @@ const HousePickerLayout = () => {
   // })
 
   return (
-    <div className="bg-[#F5F7FB] min-h-screen">
-      <div className="max-w-7xl mx-auto px-4 py-10">
+    <div className="bg-[#F5F7FB] min-h-screen pt-20">
+      <div className="max-w-7xl mx-auto px-4 py-12">
         {/* Jeden hlavní white card wrapper */}
         <div className="bg-white rounded-[28px] border border-slate-200/70 shadow-[0_20px_60px_rgba(15,23,42,0.12)] overflow-hidden p-8 md:p-10 lg:p-12">
           {/* Horní část: nadpis + mapa */}
@@ -303,7 +303,7 @@ const HousePickerLayout = () => {
                       href={selectedHouse.houseCardPdf}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-2 w-full px-6 py-3 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-sm transition-all duration-200 shadow-[0_4px_12px_rgba(99,102,241,0.3)] hover:shadow-[0_6px_16px_rgba(99,102,241,0.4)]"
+                      className="inline-flex items-center justify-center gap-2 w-full px-6 py-3 rounded-lg bg-[#00D9B5] hover:bg-[#00B89A] text-white font-semibold text-sm transition-all duration-200 shadow-[0_4px_12px_rgba(0,217,181,0.3)] hover:shadow-[0_6px_16px_rgba(0,217,181,0.4)]"
                     >
                       <svg
                         className="w-5 h-5"

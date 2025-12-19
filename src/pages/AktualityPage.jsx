@@ -81,10 +81,10 @@ const AktualityPage = () => {
   const latestDate = getLatestDate()
 
   return (
-    <div className="min-h-screen bg-[#F5F7FB] pt-20 pb-10 px-4">
-      <div className="max-w-6xl mx-auto">
+    <div className="min-h-screen bg-[#F5F7FB] pt-20 pb-12">
+      <div className="max-w-7xl mx-auto px-4 py-12">
         {/* Jeden hlavní white card wrapper – hero + timeline */}
-        <div className="bg-white rounded-[28px] border border-slate-200/70 shadow-[0_20px_60px_rgba(15,23,42,0.12)] overflow-hidden">
+        <div className="bg-white rounded-[28px] border border-slate-200/70 shadow-[0_20px_60px_rgba(15,23,42,0.08)] overflow-hidden">
           {/* Hero sekce - 2 sloupce ve stylu Kontaktu */}
           <div className="grid grid-cols-1 lg:grid-cols-2">
             {/* Levý sloupec - foto */}
@@ -116,7 +116,7 @@ const AktualityPage = () => {
             {/* Pravý sloupec - texty */}
             <div className="p-10 lg:p-12 flex flex-col justify-center">
               {/* Badge */}
-              <div className="inline-flex items-center gap-2 rounded-full bg-indigo-50 text-indigo-700 px-3 py-1 text-xs font-medium mb-6 w-fit">
+              <div className="inline-flex items-center gap-2 rounded-full bg-[#E6FFFA] text-[#00B89A] px-3 py-1 text-xs font-medium mb-6 w-fit">
                 <svg
                   className="w-4 h-4"
                   fill="none"

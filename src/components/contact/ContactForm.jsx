@@ -70,7 +70,7 @@ const ContactForm = () => {
       </h2>
       <p className="text-slate-600 text-[15px] leading-6 mb-6">
         Or just reach out manually to{' '}
-        <a href="mailto:hello@luchnihaj.cz" className="text-indigo-600 underline underline-offset-2 hover:text-indigo-700">
+        <a href="mailto:hello@luchnihaj.cz" className="text-[#00D9B5] underline underline-offset-2 hover:text-[#00B89A]">
           hello@luchnihaj.cz
         </a>
       </p>
@@ -110,7 +110,7 @@ const ContactForm = () => {
                 placeholder="Enter your first name..."
                 className={`w-full h-12 pl-11 pr-4 rounded-full bg-white border ${
                   errors.firstName ? 'border-red-300' : 'border-slate-200/80'
-                } focus:outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-300 text-slate-900 placeholder:text-slate-400`}
+                } focus:outline-none focus:ring-4 focus:ring-[#00D9B5]/10 focus:border-[#00D9B5] text-slate-900 placeholder:text-slate-400`}
               />
             </div>
             {errors.firstName && (
@@ -144,7 +144,7 @@ const ContactForm = () => {
                 placeholder="Enter your last name..."
                 className={`w-full h-12 pl-11 pr-4 rounded-full bg-white border ${
                   errors.lastName ? 'border-red-300' : 'border-slate-200/80'
-                } focus:outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-300 text-slate-900 placeholder:text-slate-400`}
+                } focus:outline-none focus:ring-4 focus:ring-[#00D9B5]/10 focus:border-[#00D9B5] text-slate-900 placeholder:text-slate-400`}
               />
             </div>
             {errors.lastName && (
@@ -179,7 +179,7 @@ const ContactForm = () => {
               placeholder="Enter your email address..."
               className={`w-full h-12 pl-11 pr-4 rounded-full bg-white border ${
                 errors.email ? 'border-red-300' : 'border-slate-200/80'
-              } focus:outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-300 text-slate-900 placeholder:text-slate-400`}
+              } focus:outline-none focus:ring-4 focus:ring-[#00D9B5]/10 focus:border-[#00D9B5] text-slate-900 placeholder:text-slate-400`}
             />
           </div>
           {errors.email && (
@@ -201,7 +201,7 @@ const ContactForm = () => {
               value={formData.phone}
               onChange={handleChange}
               placeholder="(000) 000-0000"
-              className="w-full h-12 pl-24 pr-4 rounded-full bg-white border border-slate-200/80 focus:outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-300 text-slate-900 placeholder:text-slate-400"
+              className="w-full h-12 pl-24 pr-4 rounded-full bg-white border border-slate-200/80 focus:outline-none focus:ring-4 focus:ring-[#00D9B5]/10 focus:border-[#00D9B5] text-slate-900 placeholder:text-slate-400"
             />
           </div>
         </div>
@@ -246,7 +246,7 @@ const ContactForm = () => {
         {/* Submit Button */}
         <button
           type="submit"
-          className="w-full h-12 rounded-full bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-600 hover:to-indigo-600 text-white font-medium transition-all duration-200 shadow-[0_18px_40px_rgba(79,70,229,0.28)] hover:shadow-[0_20px_45px_rgba(79,70,229,0.32)] flex items-center justify-center gap-2"
+          className="w-full h-12 rounded-full bg-gradient-to-r from-[#00D9B5] to-[#00D9B5] hover:from-[#00B89A] hover:to-[#00B89A] text-white font-medium transition-all duration-200 shadow-[0_18px_40px_rgba(0,217,181,0.28)] hover:shadow-[0_20px_45px_rgba(0,217,181,0.32)] flex items-center justify-center gap-2"
         >
           Submit Form →
         </button>

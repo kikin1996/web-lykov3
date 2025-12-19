@@ -19,19 +19,10 @@ const Header = () => {
 
   const navLinks = [
     { path: '/', label: 'Domů' },
-    { 
-      path: '/patro/1', 
-      label: 'Byty',
-      dropdown: [
-        { path: '/patro/1', label: 'Patro 1' },
-        { path: '/patro/2', label: 'Patro 2' },
-        { path: '/patro/3', label: 'Patro 3' },
-        { path: '/patro/4', label: 'Patro 4' },
-      ]
-    },
+    { path: '/vyber-domu', label: 'Výběr domu' },
     { path: '/galerie', label: 'Galerie' },
-    { path: '/o-projektu', label: 'O projektu' },
-    { path: '/o-nas', label: 'O nás' },
+    { path: '/standardy', label: 'Standardy' },
+    { path: '/aktuality', label: 'Aktuality' },
     { path: '/kontakt', label: 'Kontakt' },
   ]
 
