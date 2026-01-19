@@ -1,8 +1,27 @@
+import { useState, useEffect } from 'react'
+
 const ProjectIntroSection = () => {
+  const [showImage, setShowImage] = useState(false)
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(min-width: 1251px)')
+    
+    const updateDisplay = () => {
+      setShowImage(mediaQuery.matches)
+    }
+    
+    updateDisplay()
+    mediaQuery.addEventListener('change', updateDisplay)
+    
+    return () => {
+      mediaQuery.removeEventListener('change', updateDisplay)
+    }
+  }, [])
+
   return (
     <section className="py-20 bg-neutral-darkNavy relative -mt-[488px] pt-16">
       <div className="container mx-auto px-5 lg:px-20">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className={`grid grid-cols-1 ${showImage ? 'grid-cols-2' : ''} gap-12 items-center`}>
           {/* Left Side - Text Content */}
           <div className="text-left">
             <p className="text-overline mb-4 text-white">TÝNEC NAD SÁZAVOU</p>
@@ -11,7 +30,7 @@ const ProjectIntroSection = () => {
               <br />
               harmonii s přírodou
             </h2>
-            <div className="space-y-4 text-body-regular text-white text-opacity-80 mb-6">
+            <div className="space-y-4 text-body-regular text-white mb-6">
               <p>
                 Projekt Luční háj přináší klidné a komfortní bydlení v jedné z nejžádanějších
                 lokalit středních Čech – Týnec nad Sázavou. Spojuje moderní stavební technologie,
@@ -26,6 +45,7 @@ const ProjectIntroSection = () => {
           </div>
 
           {/* Right Side - Tilted Image */}
+          {showImage && (
           <div className="relative">
             {/* Decorative Background Pattern */}
             <div className="absolute inset-0 opacity-10">
@@ -45,7 +65,19 @@ const ProjectIntroSection = () => {
             {/* Tilted Image Container */}
             <div className="relative transform rotate-3 hover:rotate-2 transition-transform duration-300">
               <div className="aspect-[4/3] rounded-xl overflow-hidden shadow-large">
-                <div className="w-full h-full bg-gradient-to-br from-primary-teal/20 via-neutral-darkSlate to-primary-teal/10 flex items-center justify-center">
+                <img
+                  src="/images/project-intro.jpg"
+                  alt="Moderní budovy podél řeky"
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    e.target.style.display = 'none'
+                    if (e.target.nextElementSibling) {
+                      e.target.nextElementSibling.style.display = 'flex'
+                    }
+                  }}
+                />
+                {/* Fallback placeholder, když obrázek neexistuje */}
+                <div className="hidden w-full h-full bg-gradient-to-br from-primary-teal/20 via-neutral-darkSlate to-primary-teal/10 items-center justify-center">
                   <div className="text-center p-8">
                     <p className="text-white text-opacity-60 text-sm mb-2">Obrázek projektu</p>
                     <p className="text-white text-opacity-40 text-xs">
@@ -59,6 +91,7 @@ const ProjectIntroSection = () => {
             {/* Decorative Element Behind Image */}
             <div className="absolute -left-8 -bottom-8 w-full h-full bg-neutral-darkSlate rounded-xl opacity-30 -z-10 transform rotate-[-2deg]"></div>
           </div>
+          )}
         </div>
       </div>
     </section>

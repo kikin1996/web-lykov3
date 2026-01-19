@@ -18,7 +18,7 @@ const Footer = () => {
               />
             </div>
             <p className="text-body-small text-white text-opacity-80">
-              Moderní rezidenční bytový komplex s výjimečným designem a prvotřídním vybavením.
+              Moderní rezidenční komplex s výjimečným designem a prvotřídním vybavením.
             </p>
           </div>
 

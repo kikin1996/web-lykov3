@@ -1,11 +1,11 @@
 const ImageBannerSection = () => {
   return (
-    <section className="relative w-full h-[300px] overflow-hidden">
+    <section className="relative w-full h-[300px] overflow-hidden mt-16">
       {/* Background Image */}
       <div 
         className="absolute inset-0 w-full h-full"
         style={{
-          backgroundImage: "url('/images/long-photo.jpg')",
+          backgroundImage: "url('/images/bungalow_wide_shot.jpg')",
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
@@ -20,9 +20,7 @@ const ImageBannerSection = () => {
         <div className="container mx-auto px-5 lg:px-20">
           <div className="max-w-4xl">
             <h2 className="text-white text-5xl md:text-6xl lg:text-7xl font-serif font-bold leading-tight">
-              POOLS
-              <br />
-              ROOFTOP
+              Premiový&nbsp;interiér
             </h2>
           </div>
         </div>
