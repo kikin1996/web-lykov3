@@ -30,7 +30,7 @@ const HeroSection = () => {
           <div 
             className="absolute inset-0 transition-transform duration-700 ease-out hover:scale-110"
             style={{ 
-              backgroundImage: "url('/images/hero-bg.jpg?v=4')",
+              backgroundImage: "url('/images/hero-bg2.webp')",
               backgroundSize: 'contain',
               backgroundPosition: 'center top',
               backgroundRepeat: 'no-repeat'
@@ -58,7 +58,7 @@ const HeroSection = () => {
         {!showImage && (
           <div className="mt-8 mb-8 w-full max-w-4xl mx-auto">
             <img
-              src="/images/hero-bg.jpg?v=4"
+              src="/images/hero-bg2.webp"
               alt="Luční Háj - moderní bydlení"
               className="w-full h-auto rounded-xl shadow-large object-cover"
               style={{ maxHeight: '400px' }}

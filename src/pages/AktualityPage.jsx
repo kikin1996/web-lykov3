@@ -104,7 +104,7 @@ const AktualityPage = () => {
               </div>
               {/* Pokud existuje obrázek, použij ho */}
               <img
-                src="/images/hero-bg.jpg"
+                src="/images/hero-bg2.webp"
                 alt="Průběh výstavby"
                 className="w-full h-full min-h-[380px] lg:min-h-[420px] object-cover"
                 onError={(e) => {

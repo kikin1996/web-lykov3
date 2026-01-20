@@ -23,13 +23,10 @@ const InteractiveBuilding = () => {
 
             {/* Image column – stylizovaný tvar podle vzoru */}
             <div className="relative w-full max-w-2xl mx-auto">
-              {/* Horní „výřez" */}
-              <div className="hidden md:block absolute -top-10 right-10 w-2/3 h-40 rounded-[32px] bg-neutral-offWhite border border-neutral-lightGray/60 z-20" />
-
-              {/* Hlavní obrázek */}
-              <div className="relative overflow-hidden rounded-[40px] bg-neutral-darkNavy shadow-large z-10">
+              {/* Hlavní obrázek bez rámu */}
+              <div className="relative overflow-hidden z-10">
                 <img
-                  src="/images/office-hero.jpg"
+                  src="/images/hero_photo.png"
                   alt="Modern office interior"
                   className="w-full h-full object-cover"
                   onError={(e) => {
@@ -47,8 +44,6 @@ const InteractiveBuilding = () => {
                 </div>
               </div>
 
-              {/* Spodní „výřez" */}
-              <div className="hidden md:block absolute -bottom-10 left-10 w-2/3 h-40 rounded-[32px] bg-neutral-offWhite border border-neutral-lightGray/60 z-0" />
             </div>
           </div>
         </div>

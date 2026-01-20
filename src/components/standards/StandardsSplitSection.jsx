@@ -49,7 +49,7 @@ const StandardsSplitSection = ({
 
           {/* Image */}
           <div className={reverse ? 'lg:col-start-1 lg:col-end-2 lg:row-start-1' : ''}>
-            <div className="rounded-2xl overflow-hidden border border-slate-200/70 h-[220px] md:h-[280px]">
+            <div className="rounded-2xl overflow-hidden border border-slate-200/70 h-[260px] md:h-[340px]">
               <img
                 src={image}
                 alt={imageAlt || title}

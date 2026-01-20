@@ -22,7 +22,20 @@ const GalleryGrid = ({ images, onImageClick }) => {
           onClick={() => onImageClick(image)}
         >
           <div className="aspect-square bg-neutral-lightGray overflow-hidden">
-            <div className="w-full h-full bg-gradient-to-br from-primary-teal/20 to-primary-teal/5 flex items-center justify-center">
+            {/* Skutečný obrázek */}
+            <img
+              src={image.thumbnail || image.url}
+              alt={image.caption || 'Obrázek galerie'}
+              className="w-full h-full object-cover"
+              onError={(e) => {
+                e.target.style.display = 'none'
+                if (e.target.nextElementSibling) {
+                  e.target.nextElementSibling.style.display = 'flex'
+                }
+              }}
+            />
+            {/* Placeholder pokud se obrázek nenačte */}
+            <div className="w-full h-full bg-gradient-to-br from-primary-teal/20 to-primary-teal/5 hidden items-center justify-center">
               <span className="text-neutral-mediumGray text-sm">Obrázek</span>
             </div>
           </div>

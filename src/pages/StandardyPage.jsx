@@ -45,7 +45,7 @@ const StandardyPage = () => {
                     'Fotovoltaické panely na střeše (volitelné)',
                     'Rekuperační jednotka s účinností nad 85 %'
                   ]}
-                  image="/images/standardy-vytapeni.jpg"
+                  image="/images/standardy-vytapeni.webp"
                   imageAlt="Vytápění a technologie"
                   reverse={true}
                 />
@@ -102,7 +102,7 @@ const StandardyPage = () => {
                     'Kvalitní sanitární keramika a baterie',
                     'Podlahové topení pod všemi podlahovými krytinami'
                   ]}
-                  image="/images/standardy-interier.jpg"
+                  image="/images/standardy-interier.jpeg"
                   imageAlt="Koupelny a podlahy"
                   reverse={false}
                 />
@@ -121,7 +121,7 @@ const StandardyPage = () => {
                     'Elektrické přípojky pro pračku, sušičku a myčku',
                     'Příprava na nabíjecí stanici pro elektromobil (volitelné)'
                   ]}
-                  image="/images/standardy-elektro.jpg"
+                  image="/images/standardy-elektro.webp"
                   imageAlt="Elektroinstalace"
                   reverse={true}
                 />

@@ -12,9 +12,9 @@ const GalleryPage = () => {
   const categories = [
     { value: 'all', label: 'Všechny' },
     { value: 'exterior', label: 'Exteriér' },
-    { value: 'interior', label: 'Interiér' },
+    { value: 'bungalov-interier', label: 'Interiér Bungalov' },
+    { value: 'dvojdomek-interier', label: 'Interiér Dvojdomek' },
     { value: 'location', label: 'Okolí' },
-    { value: 'amenities', label: 'Vybavení' },
   ]
 
   const [allImages, setAllImages] = useState([])
@@ -52,13 +52,13 @@ const GalleryPage = () => {
               {/* Levý sloupec - hero foto */}
               <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden">
                 <img
-                  src={heroImage?.url || heroImage?.thumbnail || '/images/gallery/exterior-1.jpg' || '/images/hero-bg.jpg'}
+                  src={heroImage?.url || heroImage?.thumbnail || '/images/gallery/exterior-1.jpg' || '/images/hero-bg2.webp'}
                   alt={heroImage?.caption || 'Fotogalerie projektu'}
                   className="w-full h-full object-cover"
                   onError={(e) => {
                     // Pokud selže první obrázek, zkus fallback
-                    if (e.target.src !== '/images/hero-bg.jpg') {
-                      e.target.src = '/images/hero-bg.jpg'
+                    if (e.target.src !== '/images/hero-bg2.webp') {
+                      e.target.src = '/images/hero-bg2.webp'
                     } else {
                       e.target.style.display = 'none'
                       if (e.target.nextElementSibling) {
