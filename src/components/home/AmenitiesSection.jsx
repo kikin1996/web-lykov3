@@ -2,24 +2,24 @@ import Card from '../shared/Card'
 
 const amenities = [
   {
-    title: 'Bazén a wellness',
-    description: 'Moderní bazén s relaxační zónou a wellness centrem pro vaše pohodlí.',
-    image: '/images/amenities/pool.jpg',
+    title: 'Vytápění a energetika',
+    description: 'Moderní energeticky úsporné řešení s tepelným čerpadlem, podlahovým vytápěním a přípravou na fotovoltaiku.',
+    image: '/images/standardy-vytapeni.webp',
   },
   {
-    title: 'Fitness centrum',
-    description: 'Plně vybavené fitness centrum s moderními stroji a cvičebními prostory.',
-    image: '/images/amenities/fitness.jpg',
+    title: 'Okna a stínění',
+    description: 'Kvalitní okna s trojskly a venkovním stíněním pro příjemné klima v interiéru po celý rok.',
+    image: '/images/standardy-okna.jpg',
   },
   {
-    title: 'Zahrada a terasy',
-    description: 'Rozlehlé zahrady a terasy pro relaxaci a setkávání s přáteli.',
-    image: '/images/amenities/garden.jpg',
+    title: 'Akustika a izolace',
+    description: 'Důkladné odhlučnění konstrukcí a bytových příček pro maximální klid a soukromí.',
+    image: '/images/standardy-akustika.jpg',
   },
   {
-    title: 'Parkování',
-    description: 'Bezpečné podzemní parkování s dostatečným počtem míst pro všechny rezidenty.',
-    image: '/images/amenities/parking.jpg',
+    title: 'Konstrukce a zdivo',
+    description: 'Kvalitní keramické zdivo, důkladné zateplení a robustní střešní konstrukce pro dlouhodobou životnost a komfort.',
+    image: '/images/standardy-konstrukce.jpg',
   },
 ]
 
@@ -29,18 +29,29 @@ const AmenitiesSection = () => {
       <div className="container mx-auto px-5 lg:px-20">
         <div className="text-center mb-12">
           <p className="text-overline mb-4">Vybavení</p>
-          <h2 className="text-h1 mb-4">ECOHAU'S AMENITIES</h2>
+          <h2 className="text-h1 mb-4">Standardy stavby</h2>
           <p className="text-body-large max-w-2xl mx-auto">
-            Objevte prvotřídní vybavení, které Ecohau Riverside nabízí svým rezidentům.
+            Objevte prvotřídní vybavení, které dodá vašemu domovu ještě větší klid.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {amenities.map((amenity, index) => (
             <Card key={index} hover className="overflow-hidden">
-              <div className="aspect-[4/3] bg-neutral-lightGray overflow-hidden">
-                <div className="w-full h-full bg-gradient-to-br from-primary-teal/20 to-primary-teal/5 flex items-center justify-center">
-                  <span className="text-neutral-mediumGray text-sm">Obrázek</span>
+              <div className="rounded-2xl overflow-hidden border border-slate-200/70 h-[220px]">
+                <img
+                  src={amenity.image}
+                  alt={amenity.title}
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    e.target.style.display = 'none'
+                    if (e.target.nextElementSibling) {
+                      e.target.nextElementSibling.style.display = 'flex'
+                    }
+                  }}
+                />
+                <div className="w-full h-full bg-gradient-to-br from-primary-teal/10 to-primary-teal/5 hidden items-center justify-center">
+                  <span className="text-neutral-mediumGray text-sm">{amenity.title}</span>
                 </div>
               </div>
               <div className="p-6">

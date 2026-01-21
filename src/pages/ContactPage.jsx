@@ -204,16 +204,16 @@ const ContactPage = () => {
           {/* Nadpis sekce */}
           <div className="mb-12">
             <div className="inline-flex items-center rounded-full bg-[#E6FFFA] text-[#00B89A] px-3 py-1 text-xs font-medium mb-6">
-              Reach Out To Us
+              Kontaktujte nás
             </div>
             <h2 className="text-[34px] leading-[1.1] font-semibold tracking-tight text-slate-900 font-serif mb-6">
-              We'd Love to Hear From You.
+              Rádi se vám ozveme.
             </h2>
             <p className="text-slate-600 text-[15px] leading-6 mb-3">
-              Have a question or want to get in touch? We're here to help and would love to hear from you.
+              Máte dotaz nebo se chcete spojit? Jsme tu pro vás.
             </p>
             <p className="text-slate-600 text-[15px] leading-6 mb-8">
-              Feel free to reach out through any of the contact methods below, and we'll get back to you as soon as possible.
+              Napište nám jakoukoli z níže uvedených možností, ozveme se co nejdříve.
             </p>
           </div>
 
@@ -235,8 +235,8 @@ const ContactPage = () => {
                   />
                 </svg>
               </div>
-              <h3 className="text-sm font-semibold text-slate-900 mb-1">Email Support</h3>
-              <p className="text-sm text-slate-600 mb-1">Our team can respond in real time.</p>
+              <h3 className="text-sm font-semibold text-slate-900 mb-1">E-mail podpora</h3>
+              <p className="text-sm text-slate-600 mb-1">Odpovíme co nejdříve.</p>
               <a href="mailto:hello@luchnihaj.cz" className="text-sm text-[#00D9B5] underline hover:text-[#00B89A]">
                 hello@luchnihaj.cz
               </a>
@@ -265,8 +265,8 @@ const ContactPage = () => {
                   />
                 </svg>
               </div>
-              <h3 className="text-sm font-semibold text-slate-900 mb-1">Visit Office</h3>
-              <p className="text-sm text-slate-600 mb-1">Visit our location in real life.</p>
+              <h3 className="text-sm font-semibold text-slate-900 mb-1">Navštivte nás</h3>
+              <p className="text-sm text-slate-600 mb-1">Přijďte za námi osobně.</p>
               <p className="text-sm text-[#00D9B5] underline">Týnec nad Sázavou, Česká republika</p>
             </div>
 
@@ -287,8 +287,8 @@ const ContactPage = () => {
                   />
                 </svg>
               </div>
-              <h3 className="text-sm font-semibold text-slate-900 mb-1">Call Us</h3>
-              <p className="text-sm text-slate-600 mb-1">Available during working hours.</p>
+              <h3 className="text-sm font-semibold text-slate-900 mb-1">Zavolejte nám</h3>
+              <p className="text-sm text-slate-600 mb-1">K dispozici v pracovní době.</p>
               <a href="tel:+420123456789" className="text-sm text-[#00D9B5] underline hover:text-[#00B89A]">
                 (+420) 123 - 456 - 789
               </a>

@@ -11,13 +11,12 @@ const InteractiveBuilding = () => {
             {/* Text column */}
             <div className="space-y-6">
               <h2 className="text-4xl md:text-6xl font-semibold tracking-tight leading-tight text-neutral-darkNavy">
-                Highest Results Comes From
-                <br />
-                Better Workplaces.
+                <span className="block mb-4">Nejlepších výsledků</span>
+                <span className="block mb-4">dosáhnete</span>
+                <span className="block">v lepším prostředí.</span>
               </h2>
               <p className="text-body-regular text-neutral-mediumGray max-w-xl">
-                We offer a range of workplace services from office relocation, office design,
-                office fit out, office refurbishment to workplace consultancy services.
+                Interiéry jsou připravené pro všechny vaše velké představy a plány.
               </p>
             </div>
 
@@ -53,12 +52,11 @@ const InteractiveBuilding = () => {
       <section className="pt-20 pb-32 bg-neutral-offWhite">
         <div className="container mx-auto px-5 lg:px-20">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
-              <span className="text-neutral-mediumGray">WORK IN</span>{' '}
-              <span className="text-neutral-darkNavy">PROGRESS</span>
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 text-neutral-darkNavy">
+              Interiér, co pohladí na duši
             </h2>
             <p className="text-body-regular text-neutral-mediumGray max-w-2xl mx-auto">
-              You can download our brochure about us and our working methods from this link. We are innovative and...
+              Prohlédněte si návrhy interiéru, které máme pro vás připravené, a nechte se inspirovat.
             </p>
           </div>
 
@@ -66,11 +64,11 @@ const InteractiveBuilding = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {/* První obrázek */}
             <div className="relative overflow-hidden rounded-2xl bg-white shadow-medium hover:shadow-large transition-shadow">
-              <div className="aspect-[4/3] overflow-hidden">
+              <div className="aspect-[4/3] overflow-hidden group">
                 <img
                   src="/images/work-progress-1.jpg"
                   alt="Modern office space"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
                   onError={(e) => {
                     e.target.style.display = 'none'
                     if (e.target.nextElementSibling) {
@@ -86,11 +84,11 @@ const InteractiveBuilding = () => {
 
             {/* Druhý obrázek */}
             <div className="relative overflow-hidden rounded-2xl bg-white shadow-medium hover:shadow-large transition-shadow">
-              <div className="aspect-[4/3] overflow-hidden">
+              <div className="aspect-[4/3] overflow-hidden group">
                 <img
                   src="/images/work-progress-2.jpg"
                   alt="Music Hall"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
                   onError={(e) => {
                     e.target.style.display = 'none'
                     if (e.target.nextElementSibling) {
@@ -106,11 +104,11 @@ const InteractiveBuilding = () => {
 
             {/* Třetí obrázek */}
             <div className="relative overflow-hidden rounded-2xl bg-white shadow-medium hover:shadow-large transition-shadow">
-              <div className="aspect-[4/3] overflow-hidden">
+              <div className="aspect-[4/3] overflow-hidden group">
                 <img
                   src="/images/work-progress-3.jpg"
                   alt="Modern living space"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
                   onError={(e) => {
                     e.target.style.display = 'none'
                     if (e.target.nextElementSibling) {

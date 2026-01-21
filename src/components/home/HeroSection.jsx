@@ -30,7 +30,7 @@ const HeroSection = () => {
           <div 
             className="absolute inset-0 transition-transform duration-700 ease-out hover:scale-110"
             style={{ 
-              backgroundImage: "url('/images/hero-bg2.webp')",
+              backgroundImage: "url('/images/main_background.jpg')",
               backgroundSize: 'contain',
               backgroundPosition: 'center top',
               backgroundRepeat: 'no-repeat'

@@ -27,18 +27,18 @@ const ContactForm = () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
     if (!formData.firstName.trim()) {
-      newErrors.firstName = 'First name is required'
+      newErrors.firstName = 'Křestní jméno je povinné'
     }
     if (!formData.lastName.trim()) {
-      newErrors.lastName = 'Last name is required'
+      newErrors.lastName = 'Příjmení je povinné'
     }
     if (!formData.email.trim()) {
-      newErrors.email = 'Email is required'
+      newErrors.email = 'E-mail je povinný'
     } else if (!emailRegex.test(formData.email)) {
-      newErrors.email = 'Please enter a valid email'
+      newErrors.email = 'Zadejte platný e-mail'
     }
     if (!formData.message.trim()) {
-      newErrors.message = 'Message is required'
+      newErrors.message = 'Zpráva je povinná'
     }
 
     setErrors(newErrors)
@@ -66,10 +66,10 @@ const ContactForm = () => {
   return (
     <div>
       <h2 className="text-[34px] leading-[1.1] font-semibold tracking-tight text-slate-900 mb-2 font-serif mt-8">
-        Let's Get In Touch.
+        Ozvěte se nám.
       </h2>
       <p className="text-slate-600 text-[15px] leading-6 mb-6">
-        Or just reach out manually to{' '}
+        Nebo nám napište přímo na{' '}
         <a href="mailto:hello@luchnihaj.cz" className="text-[#00D9B5] underline underline-offset-2 hover:text-[#00B89A]">
           hello@luchnihaj.cz
         </a>
@@ -107,7 +107,7 @@ const ContactForm = () => {
                 name="firstName"
                 value={formData.firstName}
                 onChange={handleChange}
-                placeholder="Enter your first name..."
+                placeholder="Zadejte křestní jméno..."
                 className={`w-full h-12 pl-11 pr-4 rounded-full bg-white border ${
                   errors.firstName ? 'border-red-300' : 'border-slate-200/80'
                 } focus:outline-none focus:ring-4 focus:ring-[#00D9B5]/10 focus:border-[#00D9B5] text-slate-900 placeholder:text-slate-400`}
@@ -141,7 +141,7 @@ const ContactForm = () => {
                 name="lastName"
                 value={formData.lastName}
                 onChange={handleChange}
-                placeholder="Enter your last name..."
+                placeholder="Zadejte příjmení..."
                 className={`w-full h-12 pl-11 pr-4 rounded-full bg-white border ${
                   errors.lastName ? 'border-red-300' : 'border-slate-200/80'
                 } focus:outline-none focus:ring-4 focus:ring-[#00D9B5]/10 focus:border-[#00D9B5] text-slate-900 placeholder:text-slate-400`}
@@ -176,7 +176,7 @@ const ContactForm = () => {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              placeholder="Enter your email address..."
+                placeholder="Zadejte svůj e-mail..."
               className={`w-full h-12 pl-11 pr-4 rounded-full bg-white border ${
                 errors.email ? 'border-red-300' : 'border-slate-200/80'
               } focus:outline-none focus:ring-4 focus:ring-[#00D9B5]/10 focus:border-[#00D9B5] text-slate-900 placeholder:text-slate-400`}
@@ -200,7 +200,7 @@ const ContactForm = () => {
               name="phone"
               value={formData.phone}
               onChange={handleChange}
-              placeholder="(000) 000-0000"
+                placeholder="777 000 000"
               className="w-full h-12 pl-24 pr-4 rounded-full bg-white border border-slate-200/80 focus:outline-none focus:ring-4 focus:ring-[#00D9B5]/10 focus:border-[#00D9B5] text-slate-900 placeholder:text-slate-400"
             />
           </div>
@@ -228,7 +228,7 @@ const ContactForm = () => {
               name="message"
               value={formData.message}
               onChange={handleChange}
-              placeholder="Enter your main text here...."
+                placeholder="Napište zprávu..."
               maxLength={maxLength}
               className={`w-full min-h-[160px] pl-11 pr-20 p-4 rounded-2xl bg-white border ${
                 errors.message ? 'border-red-300' : 'border-slate-200/80'
@@ -248,7 +248,7 @@ const ContactForm = () => {
           type="submit"
           className="w-full h-12 rounded-full bg-gradient-to-r from-[#00D9B5] to-[#00D9B5] hover:from-[#00B89A] hover:to-[#00B89A] text-white font-medium transition-all duration-200 shadow-[0_18px_40px_rgba(0,217,181,0.28)] hover:shadow-[0_20px_45px_rgba(0,217,181,0.32)] flex items-center justify-center gap-2"
         >
-          Submit Form →
+          Odeslat formulář →
         </button>
       </form>
     </div>

@@ -66,8 +66,8 @@ const ProjectIntroSection = () => {
             <div className="relative transform rotate-3 hover:rotate-2 transition-transform duration-300">
               <div className="aspect-[4/3] rounded-xl overflow-hidden shadow-large">
                 <img
-                  src="/images/project-intro.jpg"
-                  alt="Moderní budovy podél řeky"
+                  src="/images/bungalov_hero.jpg"
+                  alt="Vizualizace bungalovu Luční háj"
                   className="w-full h-full object-cover"
                   onError={(e) => {
                     e.target.style.display = 'none'
@@ -81,7 +81,7 @@ const ProjectIntroSection = () => {
                   <div className="text-center p-8">
                     <p className="text-white text-opacity-60 text-sm mb-2">Obrázek projektu</p>
                     <p className="text-white text-opacity-40 text-xs">
-                      Moderní budovy podél řeky
+                      Vizualizace bungalovu Luční háj
                     </p>
                   </div>
                 </div>
