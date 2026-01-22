@@ -27,8 +27,8 @@ const AvailabilityTableOnly = () => {
     <div>
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-8">
-          <p className="text-overline mb-2 text-primary-teal">OTHER OFFERS</p>
-          <h2 className="text-h1 mb-6">SELECT AVAILABILITY</h2>
+          <p className="text-overline mb-2 text-primary-teal">Další nabídky</p>
+          <h2 className="text-h1 mb-6">Výběr dostupnosti</h2>
         </div>
 
         <div className="overflow-x-auto">
@@ -36,22 +36,22 @@ const AvailabilityTableOnly = () => {
             <thead>
               <tr className="bg-neutral-lightGray">
                 <th className="text-left py-4 px-6 text-body-small uppercase tracking-wider" style={{ color: '#000000', fontWeight: 'bold' }}>
-                  RESIDENCE
+                  Byt
                 </th>
                 <th className="text-left py-4 px-6 text-body-small uppercase tracking-wider" style={{ color: '#000000', fontWeight: 'bold' }}>
-                  BED/BATH
+                  Ložnice/Koupelny
                 </th>
                 <th className="text-left py-4 px-6 text-body-small uppercase tracking-wider" style={{ color: '#000000', fontWeight: 'bold' }}>
                   M²
                 </th>
                 <th className="text-left py-4 px-6 text-body-small uppercase tracking-wider" style={{ color: '#000000', fontWeight: 'bold' }}>
-                  SALE PRICE
+                  Prodejní cena
                 </th>
                 <th className="text-left py-4 px-6 text-body-small uppercase tracking-wider" style={{ color: '#000000', fontWeight: 'bold' }}>
-                  RENT PRICE
+                  Cena pronájmu
                 </th>
                 <th className="text-left py-4 px-6 text-body-small uppercase tracking-wider" style={{ color: '#000000', fontWeight: 'bold' }}>
-                  FLOOR PLAN
+                  Půdorys
                 </th>
               </tr>
             </thead>
@@ -62,7 +62,7 @@ const AvailabilityTableOnly = () => {
                   className="border-b border-neutral-lightGray hover:bg-neutral-offWhite transition-colors"
                 >
                   <td className="py-4 px-6 text-body-regular text-neutral-darkNavy font-semibold">
-                    RESIDENCE {apartment.apartmentNumber}
+                    Byt {apartment.apartmentNumber}
                   </td>
                   <td className="py-4 px-6 text-body-regular text-neutral-mediumGray">
                     {getBedBath(apartment)}
@@ -85,7 +85,7 @@ const AvailabilityTableOnly = () => {
                           : 'bg-neutral-lightGray text-neutral-darkNavy hover:bg-neutral-mediumGray hover:text-white'
                       }`}
                     >
-                      VIEW NOW
+                      Zobrazit
                     </Link>
                   </td>
                 </tr>

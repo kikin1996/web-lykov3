@@ -385,112 +385,112 @@ export const gallery = [
     url: "/images/gallery/bungalov-interier/f (1).jpg",
     thumbnail: "/images/gallery/bungalov-interier/f (1).jpg",
     category: "bungalov-interier",
-    caption: "f (1).jpg"
+    caption: "Ložnice"
   },
   {
     id: 12,
     url: "/images/gallery/bungalov-interier/f (2).jpg",
     thumbnail: "/images/gallery/bungalov-interier/f (2).jpg",
     category: "bungalov-interier",
-    caption: "f (2).jpg"
+    caption: "Ložnice"
   },
   {
     id: 13,
     url: "/images/gallery/bungalov-interier/f (3).jpg",
     thumbnail: "/images/gallery/bungalov-interier/f (3).jpg",
     category: "bungalov-interier",
-    caption: "f (3).jpg"
+    caption: "Ložnice"
   },
   {
     id: 14,
     url: "/images/gallery/bungalov-interier/f (4).jpg",
     thumbnail: "/images/gallery/bungalov-interier/f (4).jpg",
     category: "bungalov-interier",
-    caption: "f (4).jpg"
+    caption: "Ložnice"
   },
   {
     id: 15,
     url: "/images/gallery/bungalov-interier/g_ (1).jpg",
     thumbnail: "/images/gallery/bungalov-interier/g_ (1).jpg",
     category: "bungalov-interier",
-    caption: "g_ (1).jpg"
+    caption: "Obyvací pokoj s kuchyní"
   },
   {
     id: 16,
     url: "/images/gallery/bungalov-interier/g_ (2)2.jpg",
     thumbnail: "/images/gallery/bungalov-interier/g_ (2)2.jpg",
     category: "bungalov-interier",
-    caption: "g_ (2)2.jpg"
+    caption: "Obyvací pokoj s kuchyní"
   },
   {
     id: 17,
     url: "/images/gallery/bungalov-interier/g_ (3)3.jpg",
     thumbnail: "/images/gallery/bungalov-interier/g_ (3)3.jpg",
     category: "bungalov-interier",
-    caption: "g_ (3)3.jpg"
+    caption: "Obyvací pokoj s kuchyní"
   },
   {
     id: 18,
     url: "/images/gallery/bungalov-interier/g_ (4).jpg",
     thumbnail: "/images/gallery/bungalov-interier/g_ (4).jpg",
     category: "bungalov-interier",
-    caption: "g_ (4).jpg"
+    caption: "Obyvací pokoj s kuchyní"
   },
   {
     id: 19,
     url: "/images/gallery/bungalov-interier/g_ (5).jpg",
     thumbnail: "/images/gallery/bungalov-interier/g_ (5).jpg",
     category: "bungalov-interier",
-    caption: "g_ (5).jpg"
+    caption: "Obyvací pokoj s kuchyní"
   },
   {
     id: 20,
     url: "/images/gallery/bungalov-interier/g_ (6).jpg",
     thumbnail: "/images/gallery/bungalov-interier/g_ (6).jpg",
     category: "bungalov-interier",
-    caption: "g_ (6).jpg"
+    caption: "Obyvací pokoj s kuchyní"
   },
   {
     id: 21,
     url: "/images/gallery/bungalov-interier/g_ (7)2.jpg",
     thumbnail: "/images/gallery/bungalov-interier/g_ (7)2.jpg",
     category: "bungalov-interier",
-    caption: "g_ (7)2.jpg"
+    caption: "Obyvací pokoj s kuchyní"
   },
   {
     id: 22,
     url: "/images/gallery/bungalov-interier/h (1).jpg",
     thumbnail: "/images/gallery/bungalov-interier/h (1).jpg",
     category: "bungalov-interier",
-    caption: "h (1).jpg"
+    caption: "Dětský pokoj"
   },
   {
     id: 23,
     url: "/images/gallery/bungalov-interier/h (2).jpg",
     thumbnail: "/images/gallery/bungalov-interier/h (2).jpg",
     category: "bungalov-interier",
-    caption: "h (2).jpg"
+    caption: "Dětský pokoj"
   },
   {
     id: 24,
     url: "/images/gallery/bungalov-interier/h (3).jpg",
     thumbnail: "/images/gallery/bungalov-interier/h (3).jpg",
     category: "bungalov-interier",
-    caption: "h (3).jpg"
+    caption: "Dětský pokoj"
   },
   {
     id: 25,
     url: "/images/gallery/bungalov-interier/h (4).jpg",
     thumbnail: "/images/gallery/bungalov-interier/h (4).jpg",
     category: "bungalov-interier",
-    caption: "h (4).jpg"
+    caption: "Dětský pokoj"
   },
   {
     id: 26,
     url: "/images/gallery/bungalov-interier/h (5).jpg",
     thumbnail: "/images/gallery/bungalov-interier/h (5).jpg",
     category: "bungalov-interier",
-    caption: "h (5).jpg"
+    caption: "Dětský pokoj"
   },
   // Interiér Dvojdomek – všechny nahrané fotky, caption = název souboru
   {
@@ -498,196 +498,196 @@ export const gallery = [
     url: "/images/gallery/dvojdomek-interier/a (1).jpg",
     thumbnail: "/images/gallery/dvojdomek-interier/a (1).jpg",
     category: "dvojdomek-interier",
-    caption: "a (1).jpg"
+    caption: "Obývací pokoj s kuchyní"
   },
   {
     id: 28,
     url: "/images/gallery/dvojdomek-interier/a (2).jpg",
     thumbnail: "/images/gallery/dvojdomek-interier/a (2).jpg",
     category: "dvojdomek-interier",
-    caption: "a (2).jpg"
+    caption: "Obývací pokoj s kuchyní"
   },
   {
     id: 29,
     url: "/images/gallery/dvojdomek-interier/a (3).jpg",
     thumbnail: "/images/gallery/dvojdomek-interier/a (3).jpg",
     category: "dvojdomek-interier",
-    caption: "a (3).jpg"
+    caption: "Obývací pokoj s kuchyní"
   },
   {
     id: 30,
     url: "/images/gallery/dvojdomek-interier/a (4).jpg",
     thumbnail: "/images/gallery/dvojdomek-interier/a (4).jpg",
     category: "dvojdomek-interier",
-    caption: "a (4).jpg"
+    caption: "Obývací pokoj s kuchyní"
   },
   {
     id: 31,
     url: "/images/gallery/dvojdomek-interier/a (5).jpg",
     thumbnail: "/images/gallery/dvojdomek-interier/a (5).jpg",
     category: "dvojdomek-interier",
-    caption: "a (5).jpg"
+    caption: "Obývací pokoj s kuchyní"
   },
   {
     id: 32,
     url: "/images/gallery/dvojdomek-interier/a (6).jpg",
     thumbnail: "/images/gallery/dvojdomek-interier/a (6).jpg",
     category: "dvojdomek-interier",
-    caption: "a (6).jpg"
+    caption: "Obývací pokoj s kuchyní"
   },
   {
     id: 33,
     url: "/images/gallery/dvojdomek-interier/a (7).jpg",
     thumbnail: "/images/gallery/dvojdomek-interier/a (7).jpg",
     category: "dvojdomek-interier",
-    caption: "a (7).jpg"
+    caption: "Obývací pokoj s kuchyní"
   },
   {
     id: 34,
     url: "/images/gallery/dvojdomek-interier/b (1).jpg",
     thumbnail: "/images/gallery/dvojdomek-interier/b (1).jpg",
     category: "dvojdomek-interier",
-    caption: "b (1).jpg"
+    caption: "Dětský pokoj"
   },
   {
     id: 35,
     url: "/images/gallery/dvojdomek-interier/b (2).jpg",
     thumbnail: "/images/gallery/dvojdomek-interier/b (2).jpg",
     category: "dvojdomek-interier",
-    caption: "b (2).jpg"
+    caption: "Dětský pokoj"
   },
   {
     id: 36,
     url: "/images/gallery/dvojdomek-interier/b (3).jpg",
     thumbnail: "/images/gallery/dvojdomek-interier/b (3).jpg",
     category: "dvojdomek-interier",
-    caption: "b (3).jpg"
+    caption: "Dětský pokoj"
   },
   {
     id: 37,
     url: "/images/gallery/dvojdomek-interier/b (4).jpg",
     thumbnail: "/images/gallery/dvojdomek-interier/b (4).jpg",
     category: "dvojdomek-interier",
-    caption: "b (4).jpg"
+    caption: "Dětský pokoj"
   },
   {
     id: 38,
     url: "/images/gallery/dvojdomek-interier/b (5).jpg",
     thumbnail: "/images/gallery/dvojdomek-interier/b (5).jpg",
     category: "dvojdomek-interier",
-    caption: "b (5).jpg"
+    caption: "Dětský pokoj"
   },
   {
     id: 39,
     url: "/images/gallery/dvojdomek-interier/c (1).jpg",
     thumbnail: "/images/gallery/dvojdomek-interier/c (1).jpg",
     category: "dvojdomek-interier",
-    caption: "c (1).jpg"
+    caption: "Ložnice"
   },
   {
     id: 40,
     url: "/images/gallery/dvojdomek-interier/c (2).jpg",
     thumbnail: "/images/gallery/dvojdomek-interier/c (2).jpg",
     category: "dvojdomek-interier",
-    caption: "c (2).jpg"
+    caption: "Ložnice"
   },
   {
     id: 41,
     url: "/images/gallery/dvojdomek-interier/c (3).jpg",
     thumbnail: "/images/gallery/dvojdomek-interier/c (3).jpg",
     category: "dvojdomek-interier",
-    caption: "c (3).jpg"
+    caption: "Ložnice"
   },
   {
     id: 42,
     url: "/images/gallery/dvojdomek-interier/c (4).jpg",
     thumbnail: "/images/gallery/dvojdomek-interier/c (4).jpg",
     category: "dvojdomek-interier",
-    caption: "c (4).jpg"
+    caption: "Ložnice"
   },
   {
     id: 43,
     url: "/images/gallery/dvojdomek-interier/c (5).jpg",
     thumbnail: "/images/gallery/dvojdomek-interier/c (5).jpg",
     category: "dvojdomek-interier",
-    caption: "c (5).jpg"
+    caption: "Ložnice"
   },
   {
     id: 44,
     url: "/images/gallery/dvojdomek-interier/d (1).jpg",
     thumbnail: "/images/gallery/dvojdomek-interier/d (1).jpg",
     category: "dvojdomek-interier",
-    caption: "d (1).jpg"
+    caption: "Obývací pokoj s kuchyní (Podzemní byt)"
   },
   {
     id: 45,
     url: "/images/gallery/dvojdomek-interier/d (2).jpg",
     thumbnail: "/images/gallery/dvojdomek-interier/d (2).jpg",
     category: "dvojdomek-interier",
-    caption: "d (2).jpg"
+    caption: "Obývací pokoj s kuchyní (Podzemní byt)"
   },
   {
     id: 46,
     url: "/images/gallery/dvojdomek-interier/d (3).jpg",
     thumbnail: "/images/gallery/dvojdomek-interier/d (3).jpg",
     category: "dvojdomek-interier",
-    caption: "d (3).jpg"
+    caption: "Obývací pokoj s kuchyní (Podzemní byt)"
   },
   {
     id: 47,
     url: "/images/gallery/dvojdomek-interier/d (4).jpg",
     thumbnail: "/images/gallery/dvojdomek-interier/d (4).jpg",
     category: "dvojdomek-interier",
-    caption: "d (4).jpg"
+    caption: "Obývací pokoj s kuchyní (Podzemní byt)"
   },
   {
     id: 48,
     url: "/images/gallery/dvojdomek-interier/d (5).jpg",
     thumbnail: "/images/gallery/dvojdomek-interier/d (5).jpg",
     category: "dvojdomek-interier",
-    caption: "d (5).jpg"
+    caption: "Obývací pokoj s kuchyní (Podzemní byt)"
   },
   {
     id: 49,
     url: "/images/gallery/dvojdomek-interier/d (6).jpg",
     thumbnail: "/images/gallery/dvojdomek-interier/d (6).jpg",
     category: "dvojdomek-interier",
-    caption: "d (6).jpg"
+    caption: "Obývací pokoj s kuchyní (Podzemní byt)"
   },
   {
     id: 50,
     url: "/images/gallery/dvojdomek-interier/e (1).jpg",
     thumbnail: "/images/gallery/dvojdomek-interier/e (1).jpg",
     category: "dvojdomek-interier",
-    caption: "e (1).jpg"
+    caption: "Ložnice (Podzemní byt)"
   },
   {
     id: 51,
     url: "/images/gallery/dvojdomek-interier/e (2).jpg",
     thumbnail: "/images/gallery/dvojdomek-interier/e (2).jpg",
     category: "dvojdomek-interier",
-    caption: "e (2).jpg"
+    caption: "Ložnice (Podzemní byt)"
   },
   {
     id: 52,
     url: "/images/gallery/dvojdomek-interier/e (3).jpg",
     thumbnail: "/images/gallery/dvojdomek-interier/e (3).jpg",
     category: "dvojdomek-interier",
-    caption: "e (3).jpg"
+    caption: "Ložnice (Podzemní byt)"
   },
   {
     id: 53,
     url: "/images/gallery/dvojdomek-interier/e (4).jpg",
     thumbnail: "/images/gallery/dvojdomek-interier/e (4).jpg",
     category: "dvojdomek-interier",
-    caption: "e (4).jpg"
+    caption: "Ložnice (Podzemní byt)"
   },
   {
     id: 54,
     url: "/images/gallery/dvojdomek-interier/e (5).jpg",
     thumbnail: "/images/gallery/dvojdomek-interier/e (5).jpg",
     category: "dvojdomek-interier",
-    caption: "e (5).jpg"
+    caption: "Ložnice (Podzemní byt)"
   },
   // Exteriér
   {
@@ -695,28 +695,28 @@ export const gallery = [
     url: "/images/gallery/exterior/ex (1).jpg",
     thumbnail: "/images/gallery/exterior/ex (1).jpg",
     category: "exterior",
-    caption: "ex (1).jpg"
+    caption: "Vizualizace všech domů"
   },
   {
     id: 56,
     url: "/images/gallery/exterior/ex (2).jpg",
     thumbnail: "/images/gallery/exterior/ex (2).jpg",
     category: "exterior",
-    caption: "ex (2).jpg"
+    caption: "Vizualizace všech domů"
   },
   {
     id: 57,
     url: "/images/gallery/exterior/ex (3).jpg",
     thumbnail: "/images/gallery/exterior/ex (3).jpg",
     category: "exterior",
-    caption: "ex (3).jpg"
+    caption: "Dvojdomek"
   },
   {
     id: 58,
     url: "/images/gallery/exterior/ex (4).jpg",
     thumbnail: "/images/gallery/exterior/ex (4).jpg",
     category: "exterior",
-    caption: "ex (4).jpg"
+    caption: "Bungalov"
   },
   // Okolí / Location
   {
@@ -724,70 +724,70 @@ export const gallery = [
     url: "/images/gallery/location/barokni statek.jpg",
     thumbnail: "/images/gallery/location/barokni statek.jpg",
     category: "location",
-    caption: "barokni statek.jpg"
+    caption: "Barokní statek"
   },
   {
     id: 60,
     url: "/images/gallery/location/hrad tynec nad sazavou.jpg",
     thumbnail: "/images/gallery/location/hrad tynec nad sazavou.jpg",
     category: "location",
-    caption: "hrad tynec nad sazavou.jpg"
+    caption: "Hrad Týnec nad Sázavou"
   },
   {
     id: 61,
     url: "/images/gallery/location/Hrad Zbořený Kostelec.jpg",
     thumbnail: "/images/gallery/location/Hrad Zbořený Kostelec.jpg",
     category: "location",
-    caption: "Hrad Zbořený Kostelec.jpg"
+    caption: "Hrad Zbořený Kostelec"
   },
   {
     id: 62,
     url: "/images/gallery/location/ondrejovska hvezdarna.jpg",
     thumbnail: "/images/gallery/location/ondrejovska hvezdarna.jpg",
     category: "location",
-    caption: "ondrejovska hvezdarna.jpg"
+    caption: "Ondřejovská hvězdárna"
   },
   {
     id: 63,
     url: "/images/gallery/location/sazava tynec.jpg",
     thumbnail: "/images/gallery/location/sazava tynec.jpg",
     category: "location",
-    caption: "sazava tynec.jpg"
+    caption: "Sázava - Týnec"
   },
   {
     id: 64,
     url: "/images/gallery/location/sazava.jpg",
     thumbnail: "/images/gallery/location/sazava.jpg",
     category: "location",
-    caption: "sazava.jpg"
+    caption: "Sázava"
   },
   {
     id: 65,
     url: "/images/gallery/location/svet skodovek.webp",
     thumbnail: "/images/gallery/location/svet skodovek.webp",
     category: "location",
-    caption: "svet skodovek.webp"
+    caption: "Svět Škodovek"
   },
   {
     id: 66,
     url: "/images/gallery/location/tynec nad sazavou.jpg",
     thumbnail: "/images/gallery/location/tynec nad sazavou.jpg",
     category: "location",
-    caption: "tynec nad sazavou.jpg"
+    caption: "Týnec nad Sázavou"
   },
   {
     id: 67,
     url: "/images/gallery/location/zakladni skola tynec.jpeg",
     thumbnail: "/images/gallery/location/zakladni skola tynec.jpeg",
     category: "location",
-    caption: "zakladni skola tynec.jpeg"
+    caption: "Základní škola Týnec"
   },
   {
     id: 68,
     url: "/images/gallery/location/zricenina hradu zlenice.jpg",
     thumbnail: "/images/gallery/location/zricenina hradu zlenice.jpg",
     category: "location",
-    caption: "zricenina hradu zlenice.jpg"
+    caption: "Zřícenina hradu Zlenice"
   },
 ]
 

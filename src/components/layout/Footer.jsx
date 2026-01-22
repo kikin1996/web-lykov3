@@ -69,7 +69,7 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <p>Ecohau Riverside<br />Praha, Česká republika</p>
+                <p>Luční Háj<br />Praha, Česká republika</p>
               </li>
             </ul>
           </div>
@@ -78,7 +78,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-white border-opacity-10 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-body-small text-white text-opacity-60">
-            © {currentYear} Ecohau Riverside. Všechna práva vyhrazena.
+            © {currentYear} Luční Háj. Všechna práva vyhrazena.
           </p>
           <div className="flex gap-4">
             {/* Social Media Icons - placeholder */}

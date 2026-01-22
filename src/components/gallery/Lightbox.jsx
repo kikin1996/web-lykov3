@@ -52,7 +52,20 @@ const Lightbox = ({ images, currentIndex, onClose, onNavigate }) => {
         {/* Image */}
         <div className="max-h-[90vh] flex items-center justify-center">
           <div className="bg-neutral-lightGray rounded-lg overflow-hidden max-w-full max-h-full">
-            <div className="w-full h-full bg-gradient-to-br from-primary-teal/20 to-primary-teal/5 flex items-center justify-center" style={{ minHeight: '60vh', minWidth: '60vw' }}>
+            {currentImage?.url ? (
+              <img
+                src={currentImage.url}
+                alt={currentImage.caption || `Obrázek ${currentIndex + 1}`}
+                className="max-w-full max-h-[90vh] object-contain"
+                onError={(e) => {
+                  e.target.style.display = 'none'
+                  if (e.target.nextElementSibling) {
+                    e.target.nextElementSibling.style.display = 'flex'
+                  }
+                }}
+              />
+            ) : null}
+            <div className="w-full h-full bg-gradient-to-br from-primary-teal/20 to-primary-teal/5 hidden items-center justify-center" style={{ minHeight: '60vh', minWidth: '60vw' }}>
               <span className="text-white text-lg">Obrázek: {currentImage?.caption || `Obrázek ${currentIndex + 1}`}</span>
             </div>
           </div>

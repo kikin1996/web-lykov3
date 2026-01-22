@@ -30,6 +30,10 @@ export default defineConfig(({ mode }) => {
     define: {
       'import.meta.env.VITE_GOOGLE_MAPS_API_KEY': JSON.stringify(googleMapsApiKey),
     },
+    server: {
+      port: 3000,
+      host: true
+    }
   }
 })
 

@@ -1,6 +1,6 @@
-# Ecohau Riverside - Real Estate Frontend Application
+# Luční Háj - Real Estate Frontend Application
 
-Moderní webová aplikace pro realitní projekt "Ecohau Riverside" - rezidenční bytový komplex se 4 patry a 4 byty na každém patře.
+Moderní webová aplikace pro realitní projekt "Luční Háj" - rezidenční bytový komplex se 4 patry a 4 byty na každém patře.
 
 ## Technologie
 

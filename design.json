@@ -1,6 +1,6 @@
 {
     "designSystem": {
-      "name": "Ecohau Riverside Design Language",
+      "name": "Luční Háj Design Language",
       "version": "1.0.0",
       
       "colorPalette": {
@@ -51,7 +51,7 @@
             "color": "#FFFFFF",
             "letterSpacing": "0.02em",
             "textTransform": "uppercase",
-            "usage": "Main hero titles like 'ECOHAU RIVERSIDE'"
+            "usage": "Main hero titles like 'LUČNÍ HÁJ'"
           },
           "h1": {
             "fontSize": "48px",
@@ -68,7 +68,7 @@
             "fontWeight": "600",
             "fontFamily": "'Playfair Display', serif",
             "color": "#1E2738",
-            "usage": "Subsection headers like 'ECOHAU'S AMENITIES'"
+            "usage": "Subsection headers like 'LUČNÍ HÁJ AMENITIES'"
           },
           "h3": {
             "fontSize": "24px",
