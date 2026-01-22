@@ -752,7 +752,7 @@ export const gallery = [
     url: "/images/gallery/location/sazava tynec.jpg",
     thumbnail: "/images/gallery/location/sazava tynec.jpg",
     category: "location",
-    caption: "Sázava - Týnec"
+    caption: "Sázava Týnec"
   },
   {
     id: 64,

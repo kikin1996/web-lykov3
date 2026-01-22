@@ -4,10 +4,10 @@ Moderní webová aplikace pro realitní projekt "Luční Háj" - rezidenční by
 
 ## Technologie
 
+- **Next.js 14** - React framework s App Router
 - **React 18** - UI framework
-- **React Router v6** - Routing
 - **Tailwind CSS** - Styling
-- **Vite** - Build tool
+- **React Helmet Async** - SEO meta tagy
 
 ## Instalace
 
@@ -21,13 +21,15 @@ npm install
 npm run dev
 ```
 
-Aplikace poběží na `http://localhost:5173`
+Aplikace poběží na `http://localhost:3001`
 
 ## Build pro produkci
 
 ```bash
 npm run build
 ```
+
+Statické soubory budou v `out/` složce (pokud je povolen `output: 'export'` v `next.config.js`).
 
 ## Stagewise (VS Code + CLI)
 
@@ -40,30 +42,36 @@ npm run build
 ## Struktura projektu
 
 ```
+app/                    # Next.js App Router stránky
+├── layout.jsx          # Root layout
+├── page.jsx           # Domovská stránka (/)
+├── galerie/           # Galerie stránka
+├── kontakt/           # Kontakt stránka
+├── aktuality/         # Aktuality stránka
+├── standardy/         # Standardy stránka
+└── vyber-domu/        # Výběr domu stránka
+
 src/
-├── components/          # React komponenty
-│   ├── apartment/      # Komponenty pro detaily bytů
-│   ├── floor/          # Komponenty pro patra
-│   ├── gallery/        # Komponenty galerie
-│   ├── home/           # Komponenty domovské stránky
-│   ├── layout/         # Layout komponenty (Header, Footer, Breadcrumbs)
-│   └── shared/         # Sdílené komponenty (Button, Modal, Input, atd.)
-├── context/            # React Context pro globální state
-├── data/               # Mock data
-├── pages/              # Stránky aplikace
-├── services/           # API služby (mock)
-└── App.jsx             # Hlavní komponenta
+├── components/        # React komponenty
+│   ├── apartment/    # Komponenty pro detaily bytů
+│   ├── floor/        # Komponenty pro patra
+│   ├── gallery/      # Komponenty galerie
+│   ├── home/         # Komponenty domovské stránky
+│   ├── layout/       # Layout komponenty (Header, Footer)
+│   └── shared/       # Sdílené komponenty (Button, Modal, Input, atd.)
+├── context/          # React Context pro globální state
+├── data/             # Mock data
+└── services/         # API služby (mock)
 ```
 
 ## Stránky
 
 - `/` - Domovská stránka
-- `/patro/:floorId` - Detail patra
-- `/byt/:floorId/:apartmentId` - Detail bytu
 - `/galerie` - Fotogalerie
-- `/o-projektu` - O projektu
-- `/o-nas` - O nás
 - `/kontakt` - Kontakt
+- `/aktuality` - Aktuality a průběh výstavby
+- `/standardy` - Standardy bydlení
+- `/vyber-domu` - Výběr domu a bytů
 
 ## Design System
 
@@ -80,15 +88,20 @@ Aplikace používá design systém definovaný v `design.json` s následujícím
 - ✅ Kontaktní formuláře
 - ✅ Responzivní design
 - ✅ Český jazyk
+- ✅ SEO optimalizace (SSR/SSG)
+- ✅ Automatická optimalizace obrázků
+
+## Environment Variables
+
+Pro Google Maps API klíč vytvořte `.env.local` soubor:
+
+```
+NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=your_api_key_here
+```
 
 ## Poznámky
 
 - Aplikace používá mock data pro simulaci API
-- Obrázky jsou placeholder - nahraďte skutečnými obrázky v `public/images/`
+- Obrázky jsou v `public/images/` složce
 - Formuláře simulují odesílání (data se logují do konzole)
-
-
-
-
-
-
+- Next.js používá App Router (Next.js 13+)

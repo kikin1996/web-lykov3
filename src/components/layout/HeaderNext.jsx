@@ -72,19 +72,6 @@ const Header = () => {
                 >
                   {link.label}
                 </Link>
-                {link.dropdown && (
-                  <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-large opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-                    {link.dropdown.map((item) => (
-                      <Link
-                        key={item.path}
-                        href={item.path}
-                        className="block px-4 py-3 text-sm text-neutral-darkNavy hover:bg-neutral-offWhite hover:text-primary-teal transition-colors first:rounded-t-lg last:rounded-b-lg"
-                      >
-                        {item.label}
-                      </Link>
-                    ))}
-                  </div>
-                )}
               </div>
             ))}
           </div>
@@ -129,20 +116,6 @@ const Header = () => {
                 >
                   {link.label}
                 </Link>
-                {link.dropdown && (
-                  <div className="pl-4">
-                    {link.dropdown.map((item) => (
-                      <Link
-                        key={item.path}
-                        href={item.path}
-                        onClick={() => setIsMobileMenuOpen(false)}
-                        className="block py-2 text-sm text-white text-opacity-80 hover:text-primary-teal"
-                      >
-                        {item.label}
-                      </Link>
-                    ))}
-                  </div>
-                )}
               </div>
             ))}
             <div className="mt-4">

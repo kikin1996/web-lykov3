@@ -1,3 +1,5 @@
+'use client'
+
 import { useEffect, useRef, useState } from 'react'
 import { GOOGLE_MAPS_API_KEY, isGoogleMapsConfigured } from '../../config/api'
 

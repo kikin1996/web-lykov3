@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+
+# Sitemap
+Sitemap: https://domypecerady.cz/sitemap.xml
+
+# Crawl-delay (volitelné)
+Crawl-delay: 1
+

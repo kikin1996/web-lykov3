@@ -1,4 +1,6 @@
-import { Link } from 'react-router-dom'
+'use client'
+
+import Link from 'next/link'
 import PropTypes from 'prop-types'
 
 const Breadcrumbs = ({ items }) => {
@@ -12,7 +14,7 @@ const Breadcrumbs = ({ items }) => {
             )}
             {item.path ? (
               <Link
-                to={item.path}
+                href={item.path}
                 className={`transition-colors ${
                   index === items.length - 1
                     ? 'text-primary-teal font-semibold'

@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom'
+'use client'
+
 import { useState, useEffect } from 'react'
 import Button from '../shared/Button'
 import { useApp } from '../../context/AppContext'

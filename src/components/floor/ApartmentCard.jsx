@@ -1,4 +1,6 @@
-import { Link } from 'react-router-dom'
+'use client'
+
+import Link from 'next/link'
 import PropTypes from 'prop-types'
 import Button from '../shared/Button'
 
@@ -57,7 +59,7 @@ const ApartmentCard = ({ apartment }) => {
       </div>
 
       {apartment.status !== 'sold' && (
-        <Link to={`/byt/${apartment.floorId}/${apartment.id}`}>
+        <Link href={`/byt/${apartment.floorId}/${apartment.id}`}>
           <Button variant="secondary" className="w-full text-sm py-2">
             Zobrazit detail
           </Button>

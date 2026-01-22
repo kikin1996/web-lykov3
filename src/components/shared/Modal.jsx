@@ -1,3 +1,5 @@
+'use client'
+
 import { useEffect } from 'react'
 import { useApp } from '../../context/AppContext'
 import InterestForm from '../apartment/InterestForm'

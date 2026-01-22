@@ -12,7 +12,7 @@ const StatsSection = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
             <div key={index} className="text-center">
-              <div className="text-stats mb-2">
+              <div className="text-stats mb-2 whitespace-nowrap">
                 {stat.value}
               </div>
               <div className="text-body-small text-white text-opacity-80 uppercase tracking-wider">

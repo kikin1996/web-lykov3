@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import { apartments } from '../../data/mockData'
 
 const AvailabilityTableOnly = () => {
@@ -78,7 +78,7 @@ const AvailabilityTableOnly = () => {
                   </td>
                   <td className="py-4 px-6">
                     <Link
-                      to={`/byt/${apartment.floorId}/${apartment.id}`}
+                      href={`/byt/${apartment.floorId}/${apartment.id}`}
                       className={`inline-block px-6 py-2 rounded text-body-small font-semibold transition-colors ${
                         index === 1 
                           ? 'bg-primary-teal text-white hover:bg-primary-tealDark' 

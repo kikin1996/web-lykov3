@@ -1,10 +1,12 @@
+'use client'
+
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useRouter } from 'next/navigation'
 import PropTypes from 'prop-types'
 
 const FloorPlan = ({ floor, apartments }) => {
   const [hoveredApartment, setHoveredApartment] = useState(null)
-  const navigate = useNavigate()
+  const router = useRouter()
 
   const getStatusColor = (status) => {
     switch (status) {
@@ -20,7 +22,7 @@ const FloorPlan = ({ floor, apartments }) => {
   }
 
   const handleApartmentClick = (apartmentId) => {
-    navigate(`/byt/${floor.id}/${apartmentId}`)
+    router.push(`/byt/${floor.id}/${apartmentId}`)
   }
 
   // Simple SVG floor plan layout - 4 apartments in a 2x2 grid
