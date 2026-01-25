@@ -165,10 +165,6 @@ const AvailabilityTableOnly = () => {
     return Number(size).toFixed(1)
   }
 
-  const getRoomsBathrooms = (house) => {
-    return `${house.rooms}/${house.bathrooms}`
-  }
-
   return (
     <div>
       <div className="max-w-7xl mx-auto">
@@ -185,19 +181,16 @@ const AvailabilityTableOnly = () => {
                   Dům
                 </th>
                 <th className="text-left py-4 px-6 text-body-small uppercase tracking-wider" style={{ color: '#000000', fontWeight: 'bold' }}>
-                  Ložnice/Koupelny
+                  Plocha pozemku
                 </th>
                 <th className="text-left py-4 px-6 text-body-small uppercase tracking-wider" style={{ color: '#000000', fontWeight: 'bold' }}>
-                  M²
+                  Užitná plocha
                 </th>
                 <th className="text-left py-4 px-6 text-body-small uppercase tracking-wider" style={{ color: '#000000', fontWeight: 'bold' }}>
                   Prodejní cena
                 </th>
                 <th className="text-left py-4 px-6 text-body-small uppercase tracking-wider" style={{ color: '#000000', fontWeight: 'bold' }}>
-                  Cena pronájmu
-                </th>
-                <th className="text-left py-4 px-6 text-body-small uppercase tracking-wider" style={{ color: '#000000', fontWeight: 'bold' }}>
-                  Půdorys
+                  Karta k domu
                 </th>
               </tr>
             </thead>
@@ -211,16 +204,13 @@ const AvailabilityTableOnly = () => {
                     {house.name}
                   </td>
                   <td className="py-4 px-6 text-body-regular text-neutral-mediumGray">
-                    {getRoomsBathrooms(house)}
+                    {formatSize(house.plotArea)} m²
                   </td>
                   <td className="py-4 px-6 text-body-regular text-neutral-mediumGray">
-                    {formatSize(house.usableArea)}
+                    {formatSize(house.usableArea)} m²
                   </td>
                   <td className="py-4 px-6 text-body-regular text-neutral-mediumGray">
                     {formatPrice(house.price) ? (house.price === 'Na dotaz' ? 'Na dotaz' : `${formatPrice(house.price)} Kč`) : ''}
-                  </td>
-                  <td className="py-4 px-6 text-body-regular text-neutral-mediumGray">
-                    
                   </td>
                   <td className="py-4 px-6">
                     {house.floorplanImage || house.houseCardPdf ? (
