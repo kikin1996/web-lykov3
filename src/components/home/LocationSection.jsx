@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import Image from 'next/image'
 import { GOOGLE_MAPS_API_KEY, isGoogleMapsConfigured } from '../../config/api'
 
 const LocationSection = () => {
@@ -259,9 +260,11 @@ const LocationSection = () => {
             <div className="text-center p-6">
               {/* School Icon */}
               <div className="mb-2 flex justify-center">
-                <img
+                <Image
                   src="/photos/icon1.png"
                   alt="Školy"
+                  width={48}
+                  height={48}
                   className="w-12 h-12 object-contain"
                 />
               </div>
@@ -272,9 +275,11 @@ const LocationSection = () => {
             <div className="text-center p-6">
               {/* Shopping Cart Icon */}
               <div className="mb-2 flex justify-center">
-                <img
+                <Image
                   src="/photos/icon2.png"
                   alt="Obchody"
+                  width={48}
+                  height={48}
                   className="w-12 h-12 object-contain"
                 />
               </div>
@@ -285,9 +290,11 @@ const LocationSection = () => {
             <div className="text-center p-6">
               {/* Transport Icon */}
               <div className="mb-2 flex justify-center">
-                <img
+                <Image
                   src="/photos/icon3.png"
                   alt="Doprava"
+                  width={48}
+                  height={48}
                   className="w-12 h-12 object-contain"
                 />
               </div>

@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import Timeline from '../../src/components/timeline/Timeline'
 import SEO from '../../src/components/seo/SEO'
 
@@ -95,13 +96,13 @@ export default function AktualityPage() {
           <div className="bg-white rounded-[28px] border border-slate-200/70 shadow-[0_20px_60px_rgba(15,23,42,0.08)] overflow-hidden">
             <div className="grid grid-cols-1 lg:grid-cols-2">
               <div className="relative h-full w-full min-h-[380px] lg:min-h-[420px] overflow-hidden">
-                <img
+                <Image
                   src="/images/stavba.jpg"
                   alt="Průběh výstavby – aktuální stav domu"
+                  width={1200}
+                  height={420}
                   className="w-full h-full min-h-[380px] lg:min-h-[420px] object-cover"
-                  onError={(e) => {
-                    e.target.style.display = 'none'
-                  }}
+                  priority
                 />
               </div>
 
@@ -138,4 +139,5 @@ export default function AktualityPage() {
     </>
   )
 }
+
 

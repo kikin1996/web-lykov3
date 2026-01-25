@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import Image from 'next/image'
 import { getAllImages, getImagesByCategory } from '../../src/services/galleryService'
 import GalleryGrid from '../../src/components/gallery/GalleryGrid'
 import Lightbox from '../../src/components/gallery/Lightbox'
@@ -20,8 +21,6 @@ export default function GalleryPage() {
     { value: 'location', label: 'Okolí' },
   ]
 
-  const [allImages, setAllImages] = useState([])
-
   useEffect(() => {
     const loadImages = async () => {
       setLoading(true)
@@ -33,16 +32,6 @@ export default function GalleryPage() {
     }
     loadImages()
   }, [selectedCategory])
-
-  useEffect(() => {
-    const loadAllImages = async () => {
-      const data = await getAllImages()
-      setAllImages(data)
-    }
-    loadAllImages()
-  }, [])
-
-  const heroImage = allImages.length > 0 ? allImages[0] : null
 
   return (
     <>
@@ -59,25 +48,14 @@ export default function GalleryPage() {
             <div className="px-6 md:px-10 py-10">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-10">
                 <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden">
-                  <img
-                    src={heroImage?.url || heroImage?.thumbnail || '/images/gallery/exterior-1.jpg' || '/images/hero-bg2.webp'}
-                    alt={heroImage?.caption || 'Fotogalerie projektu'}
+                  <Image
+                    src="/images/gallery_main.jpg"
+                    alt="Fotogalerie projektu Luční Háj"
+                    width={1200}
+                    height={900}
                     className="w-full h-full object-cover"
-                    onError={(e) => {
-                      if (e.target.src !== '/images/hero-bg2.webp') {
-                        e.target.src = '/images/hero-bg2.webp'
-                      } else {
-                        e.target.style.display = 'none'
-                        if (e.target.nextElementSibling) {
-                          e.target.nextElementSibling.classList.remove('hidden')
-                          e.target.nextElementSibling.classList.add('flex')
-                        }
-                      }
-                    }}
+                    priority
                   />
-                  <div className="absolute inset-0 bg-gradient-to-br from-slate-100 via-slate-50 to-slate-200 hidden items-center justify-center">
-                    <p className="text-slate-400 text-sm">Obrázek galerie</p>
-                  </div>
                 </div>
 
                 <div className="flex flex-col justify-center">
@@ -139,4 +117,5 @@ export default function GalleryPage() {
     </>
   )
 }
+
 

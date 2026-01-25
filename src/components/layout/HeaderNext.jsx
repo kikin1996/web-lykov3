@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useApp } from '../../context/AppContext'
 import Button from '../shared/Button'
@@ -51,10 +52,13 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
-            <img
+            <Image
               src="/photos/lucni_haj_logo.svg"
               alt="Luční háj"
+              width={120}
+              height={40}
               style={{ height: '40px', width: 'auto' }}
+              priority
             />
           </Link>
 
@@ -137,4 +141,5 @@ const Header = () => {
 }
 
 export default Header
+
 

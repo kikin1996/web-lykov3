@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 const StandardsHero = () => {
   return (
     <div>
@@ -16,21 +18,13 @@ const StandardsHero = () => {
 
       {/* Hero Image - součást stejné karty, jen rounded blok */}
       <div className="rounded-[28px] overflow-hidden border border-slate-200/70 h-[260px] md:h-[420px] mt-8">
-        <img
+        <Image
           src="/images/standardy-hero.jpg"
           alt="Standardy provedení"
+          width={1200}
+          height={420}
           className="w-full h-full object-cover"
-          onError={(e) => {
-            e.target.style.display = 'none'
-            if (e.target.nextElementSibling) {
-              e.target.nextElementSibling.style.display = 'flex'
-            }
-          }}
         />
-        {/* Gradient Placeholder */}
-        <div className="w-full h-full bg-gradient-to-br from-slate-100 to-slate-200 hidden items-center justify-center">
-          <p className="text-slate-400 text-sm">Obrázek standardů</p>
-        </div>
       </div>
     </div>
   )

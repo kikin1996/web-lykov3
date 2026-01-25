@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Card from '../shared/Card'
 
 const AboutSection = () => {
@@ -26,20 +27,13 @@ const AboutSection = () => {
                       Řeka Sázava a příroda
                     </h4>
                     <div className="w-full h-[320px] mb-4 overflow-hidden rounded-lg bg-neutral-lightGray">
-                      <img
+                      <Image
                         src="/images/nature-sazava-01.jpg"
                         alt="Řeka Sázava a okolní příroda"
+                        width={800}
+                        height={320}
                         className="w-full h-full object-cover"
-                        onError={(e) => {
-                          e.target.style.display = 'none'
-                          if (e.target.nextElementSibling) {
-                            e.target.nextElementSibling.style.display = 'flex'
-                          }
-                        }}
                       />
-                      <div className="hidden w-full h-full bg-gradient-to-br from-neutral-lightGray to-neutral-offWhite flex items-center justify-center">
-                        <span className="text-neutral-mediumGray text-xs">Landscape / Nature</span>
-                      </div>
                     </div>
                     <p className="text-body-small text-neutral-mediumGray">
                       Blízkost řeky Sázavy, lesů a přírodních tras nabízí ideální prostředí pro relaxaci, sport
@@ -56,20 +50,13 @@ const AboutSection = () => {
                       Turistika a rekreace
                     </h4>
                     <div className="w-full h-[420px] mb-4 overflow-hidden rounded-lg bg-neutral-lightGray">
-                      <img
+                      <Image
                         src="/images/trails-rekreace-02.jpg"
                         alt="Turistické a cyklistické stezky u Sázavy"
+                        width={800}
+                        height={420}
                         className="w-full h-full object-cover"
-                        onError={(e) => {
-                          e.target.style.display = 'none'
-                          if (e.target.nextElementSibling) {
-                            e.target.nextElementSibling.style.display = 'flex'
-                          }
-                        }}
                       />
-                      <div className="hidden w-full h-full bg-gradient-to-br from-neutral-lightGray to-neutral-offWhite flex items-center justify-center">
-                        <span className="text-neutral-mediumGray text-xs">Aerial / Trails</span>
-                      </div>
                     </div>
                     <p className="text-body-small text-neutral-mediumGray">
                       Oblíbená turistická oblast s cyklostezkami, pěšími trasami a možností vodní rekreace včetně
@@ -86,20 +73,13 @@ const AboutSection = () => {
                       Občanská vybavenost
                     </h4>
                     <div className="w-full h-[380px] mb-4 overflow-hidden rounded-lg bg-neutral-lightGray">
-                      <img
+                      <Image
                         src="/images/town-amenities-tynec-04.jpg"
                         alt="Občanská vybavenost v Týnci nad Sázavou"
+                        width={800}
+                        height={380}
                         className="w-full h-full object-cover"
-                        onError={(e) => {
-                          e.target.style.display = 'none'
-                          if (e.target.nextElementSibling) {
-                            e.target.nextElementSibling.style.display = 'flex'
-                          }
-                        }}
                       />
-                      <div className="hidden w-full h-full bg-gradient-to-br from-neutral-lightGray to-neutral-offWhite flex items-center justify-center">
-                        <span className="text-neutral-mediumGray text-xs">Town / Amenities</span>
-                      </div>
                     </div>
                     <p className="text-body-small text-neutral-mediumGray">
                       Kompletní občanská vybavenost v Týnci nad Sázavou – školy, obchody, restaurace i sportovní

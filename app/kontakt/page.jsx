@@ -218,8 +218,8 @@ const ContactPageContent = () => {
                 </div>
                 <h3 className="text-sm font-semibold text-slate-900 mb-1">E-mail podpora</h3>
                 <p className="text-sm text-slate-600 mb-1">Odpovíme co nejdříve.</p>
-                <a href="mailto:hello@luchnihaj.cz" className="text-sm text-[#00D9B5] underline hover:text-[#00B89A]">
-                  hello@luchnihaj.cz
+                <a href="mailto:info@domypecerady.cz" className="text-sm text-[#00D9B5] underline hover:text-[#00B89A]">
+                  info@domypecerady.cz
                 </a>
               </div>
 
@@ -243,9 +243,23 @@ const ContactPageContent = () => {
                 </div>
                 <h3 className="text-sm font-semibold text-slate-900 mb-1">Zavolejte nám</h3>
                 <p className="text-sm text-slate-600 mb-1">K dispozici v pracovní době.</p>
-                <a href="tel:+420123456789" className="text-sm text-[#00D9B5] underline hover:text-[#00B89A]">
-                  (+420) 123 - 456 - 789
+                <a href="tel:+420725734095" className="text-sm text-[#00D9B5] underline hover:text-[#00B89A]">
+                  (+420) 725 734 095
                 </a>
+              </div>
+            </div>
+
+            {/* Developer Info */}
+            <div className="mt-12 pt-10 border-t border-slate-100">
+              <div className="mb-6">
+                <div className="inline-flex items-center rounded-full bg-[#E6FFFA] text-[#00B89A] px-3 py-1 text-xs font-medium mb-4">
+                  Developer projektu
+                </div>
+                <h3 className="text-lg font-semibold text-slate-900 mb-2">NIKASTAR s.r.o.</h3>
+                <p className="text-sm text-slate-600">
+                  Kmochova 858/11, Smíchov<br />
+                  150 00 Praha
+                </p>
               </div>
             </div>
 

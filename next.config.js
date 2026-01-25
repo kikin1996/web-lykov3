@@ -6,10 +6,10 @@ const nextConfig = {
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    unoptimized: false, // Povolit optimalizaci obrázků
+    unoptimized: true, // Pro statický export musí být true - obrázky se optimalizují během buildu
   },
-  // Pro statické exporty (SSG) - zakomentováno pro dev server
-  // output: 'export',
+  // Pro statické exporty (SSG) - pouze při buildu, ne v dev režimu
+  ...(process.env.NODE_ENV === 'production' && { output: 'export' }),
   trailingSlash: true,
   // Zajistí, že všechny cesty fungují
   skipTrailingSlashRedirect: true,

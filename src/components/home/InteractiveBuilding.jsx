@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 const InteractiveBuilding = () => {
   return (
     <>
@@ -24,23 +26,13 @@ const InteractiveBuilding = () => {
             <div className="relative w-full max-w-2xl mx-auto">
               {/* Hlavní obrázek bez rámu */}
               <div className="relative overflow-hidden z-10">
-                <img
+                <Image
                   src="/images/hero_photo.png"
                   alt="Modern office interior"
+                  width={1200}
+                  height={675}
                   className="w-full h-full object-cover"
-                  onError={(e) => {
-                    e.target.style.display = 'none'
-                    if (e.target.nextElementSibling) {
-                      e.target.nextElementSibling.style.display = 'flex'
-                    }
-                  }}
                 />
-                {/* Fallback, když obrázek neexistuje */}
-                <div className="hidden w-full aspect-[16/9] items-center justify-center bg-gradient-to-br from-neutral-lightGray to-neutral-offWhite">
-                  <p className="text-neutral-mediumGray text-sm">
-                    Office hero image
-                  </p>
-                </div>
               </div>
 
             </div>
@@ -65,60 +57,39 @@ const InteractiveBuilding = () => {
             {/* První obrázek */}
             <div className="relative overflow-hidden rounded-2xl bg-white shadow-medium hover:shadow-large transition-shadow">
               <div className="aspect-[4/3] overflow-hidden group">
-                <img
+                <Image
                   src="/images/work-progress-1.jpg"
                   alt="Modern office space"
+                  width={800}
+                  height={600}
                   className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-                  onError={(e) => {
-                    e.target.style.display = 'none'
-                    if (e.target.nextElementSibling) {
-                      e.target.nextElementSibling.style.display = 'flex'
-                    }
-                  }}
                 />
-                <div className="hidden w-full h-full items-center justify-center bg-gradient-to-br from-neutral-lightGray to-neutral-offWhite">
-                  <p className="text-neutral-mediumGray text-sm">Office space image</p>
-                </div>
               </div>
             </div>
 
             {/* Druhý obrázek */}
             <div className="relative overflow-hidden rounded-2xl bg-white shadow-medium hover:shadow-large transition-shadow">
               <div className="aspect-[4/3] overflow-hidden group">
-                <img
+                <Image
                   src="/images/work-progress-2.jpg"
                   alt="Music Hall"
+                  width={800}
+                  height={600}
                   className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-                  onError={(e) => {
-                    e.target.style.display = 'none'
-                    if (e.target.nextElementSibling) {
-                      e.target.nextElementSibling.style.display = 'flex'
-                    }
-                  }}
                 />
-                <div className="hidden w-full h-full items-center justify-center bg-gradient-to-br from-neutral-lightGray to-neutral-offWhite">
-                  <p className="text-neutral-mediumGray text-sm">Music Hall image</p>
-                </div>
               </div>
             </div>
 
             {/* Třetí obrázek */}
             <div className="relative overflow-hidden rounded-2xl bg-white shadow-medium hover:shadow-large transition-shadow">
               <div className="aspect-[4/3] overflow-hidden group">
-                <img
+                <Image
                   src="/images/work-progress-3.jpg"
                   alt="Modern living space"
+                  width={800}
+                  height={600}
                   className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-                  onError={(e) => {
-                    e.target.style.display = 'none'
-                    if (e.target.nextElementSibling) {
-                      e.target.nextElementSibling.style.display = 'flex'
-                    }
-                  }}
                 />
-                <div className="hidden w-full h-full items-center justify-center bg-gradient-to-br from-neutral-lightGray to-neutral-offWhite">
-                  <p className="text-neutral-mediumGray text-sm">Living space image</p>
-                </div>
               </div>
             </div>
           </div>

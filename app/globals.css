@@ -191,6 +191,19 @@
   stroke: #00b192;
 }
 
+/* Vybraný dům - výrazné označení */
+.lh-zone-selected {
+  fill: rgba(0, 217, 181, 0.50) !important;
+  stroke: #00D9B5 !important;
+  stroke-width: 5 !important;
+  filter: drop-shadow(0 0 8px rgba(0, 217, 181, 0.6));
+}
+
+.lh-zone-selected:hover {
+  fill: rgba(0, 217, 181, 0.60) !important;
+  stroke: #00B89A !important;
+}
+
 .lh-zone-label {
   fill: #ffffff;
   font-size: 80px;

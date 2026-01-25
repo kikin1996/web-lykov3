@@ -61,13 +61,13 @@ const Footer = () => {
             <h4 className="text-h4 mb-4">Kontakt</h4>
             <ul className="space-y-2 text-body-small text-white text-opacity-80">
               <li>
-                <a href="tel:+5435682625" className="hover:text-primary-teal transition-colors">
-                  +54 3568 26 25
+                <a href="tel:+420725734095" className="hover:text-primary-teal transition-colors">
+                  +420 725 734 095
                 </a>
               </li>
               <li>
-                <a href="mailto:robert@luxgroup.us" className="hover:text-primary-teal transition-colors">
-                  robert@luxgroup.us
+                <a href="mailto:info@domypecerady.cz" className="hover:text-primary-teal transition-colors">
+                  info@domypecerady.cz
                 </a>
               </li>
               <li>

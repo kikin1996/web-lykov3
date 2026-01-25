@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 
 const ProjectIntroSection = () => {
   const [showImage, setShowImage] = useState(false)
@@ -67,26 +68,13 @@ const ProjectIntroSection = () => {
             {/* Tilted Image Container */}
             <div className="relative transform rotate-3 hover:rotate-2 transition-transform duration-300">
               <div className="aspect-[4/3] rounded-xl overflow-hidden shadow-large">
-                <img
+                <Image
                   src="/images/bungalov_hero.jpg"
                   alt="Vizualizace bungalovu Luční háj"
+                  width={800}
+                  height={600}
                   className="w-full h-full object-cover"
-                  onError={(e) => {
-                    e.target.style.display = 'none'
-                    if (e.target.nextElementSibling) {
-                      e.target.nextElementSibling.style.display = 'flex'
-                    }
-                  }}
                 />
-                {/* Fallback placeholder, když obrázek neexistuje */}
-                <div className="hidden w-full h-full bg-gradient-to-br from-primary-teal/20 via-neutral-darkSlate to-primary-teal/10 items-center justify-center">
-                  <div className="text-center p-8">
-                    <p className="text-white text-opacity-60 text-sm mb-2">Obrázek projektu</p>
-                    <p className="text-white text-opacity-40 text-xs">
-                      Vizualizace bungalovu Luční háj
-                    </p>
-                  </div>
-                </div>
               </div>
             </div>
 

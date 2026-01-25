@@ -14,8 +14,8 @@ const ContactInfo = () => {
       {/* Email link */}
       <p className="text-slate-600 text-[15px] leading-6">
         Or just reach out manually to{' '}
-        <a href="mailto:hello@luchnihaj.cz" className="text-[#00D9B5] underline underline-offset-2 hover:text-[#00B89A]">
-          hello@luchnihaj.cz
+        <a href="mailto:info@domypecerady.cz" className="text-[#00D9B5] underline underline-offset-2 hover:text-[#00B89A]">
+          info@domypecerady.cz
         </a>
       </p>
 
@@ -42,8 +42,8 @@ const ContactInfo = () => {
             <div>
               <h3 className="text-sm font-semibold text-slate-900 mb-1">Email Support</h3>
               <p className="text-xs text-slate-500 mb-1">Our team can respond in real time.</p>
-              <a href="mailto:hello@luchnihaj.cz" className="text-sm text-[#00D9B5] hover:text-[#00B89A]">
-                hello@luchnihaj.cz
+              <a href="mailto:info@domypecerady.cz" className="text-sm text-[#00D9B5] hover:text-[#00B89A]">
+                info@domypecerady.cz
               </a>
             </div>
           </div>
@@ -102,8 +102,8 @@ const ContactInfo = () => {
             <div>
               <h3 className="text-sm font-semibold text-slate-900 mb-1">Call Us Directly</h3>
               <p className="text-xs text-slate-500 mb-1">Available during working hours.</p>
-              <a href="tel:+420123456789" className="text-sm text-[#00D9B5] hover:text-[#00B89A]">
-                (+420) 123 - 456 - 789
+              <a href="tel:+420725734095" className="text-sm text-[#00D9B5] hover:text-[#00B89A]">
+                (+420) 725 734 095
               </a>
             </div>
           </div>

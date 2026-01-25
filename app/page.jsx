@@ -32,9 +32,9 @@ export default function HomePage() {
     },
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+420-123-456-789",
+      "telephone": "+420-725-734-095",
       "contactType": "customer service",
-      "email": "hello@luchnihaj.cz"
+      "email": "info@domypecerady.cz"
     }
   }
 

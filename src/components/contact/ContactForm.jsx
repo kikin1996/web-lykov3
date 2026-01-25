@@ -1,3 +1,5 @@
+'use client'
+
 import { useState } from 'react'
 
 const ContactForm = () => {
@@ -45,19 +47,51 @@ const ContactForm = () => {
     return Object.keys(newErrors).length === 0
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     if (!validate()) return
 
-    // Simulace odeslání
-    setSuccess(true)
-    setFormData({
-      firstName: '',
-      lastName: '',
-      email: '',
-      phone: '',
-      message: '',
-    })
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+          subject: 'Nová zpráva z kontaktního formuláře',
+        }),
+      })
+
+      const result = await response.json()
+
+      if (!response.ok) {
+        throw new Error(result.message || 'Chyba při odesílání')
+      }
+
+      setSuccess(true)
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        message: '',
+      })
+    } catch (error) {
+      console.error('Error submitting form:', error)
+      // Lepší chybová zpráva pro uživatele
+      let errorMessage = 'Chyba při odesílání formuláře. Zkuste to prosím znovu.'
+      if (error.message && error.message.includes('testing emails')) {
+        errorMessage = 'Email byl odeslán na testovací adresu. Pro odesílání na info@domypecerady.cz je potřeba ověřit doménu v Resend.'
+      } else if (error.message) {
+        errorMessage = error.message
+      }
+      setErrors({ submit: errorMessage })
+    }
   }
 
   const messageLength = formData.message.length
@@ -70,14 +104,20 @@ const ContactForm = () => {
       </h2>
       <p className="text-slate-600 text-[15px] leading-6 mb-6">
         Nebo nám napište přímo na{' '}
-        <a href="mailto:hello@luchnihaj.cz" className="text-[#00D9B5] underline underline-offset-2 hover:text-[#00B89A]">
-          hello@luchnihaj.cz
+        <a href="mailto:info@domypecerady.cz" className="text-[#00D9B5] underline underline-offset-2 hover:text-[#00B89A]">
+          info@domypecerady.cz
         </a>
       </p>
 
       {success && (
         <div className="mb-6 p-4 rounded-xl bg-green-50 border border-green-200 text-green-800 text-sm">
           Formulář byl úspěšně odeslán! Děkujeme za váš zájem.
+        </div>
+      )}
+
+      {errors.submit && (
+        <div className="mb-6 p-4 rounded-xl bg-red-50 border border-red-200 text-red-800 text-sm">
+          {errors.submit}
         </div>
       )}
 

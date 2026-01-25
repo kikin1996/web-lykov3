@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 import Button from '../shared/Button'
 import { useApp } from '../../context/AppContext'
 
@@ -58,11 +59,14 @@ const HeroSection = () => {
         {/* Image below title on smaller screens */}
         {!showImage && (
           <div className="mt-8 mb-8 w-full max-w-4xl mx-auto">
-            <img
+            <Image
               src="/images/hero-bg2.webp"
               alt="Luční Háj - moderní bydlení"
+              width={1200}
+              height={400}
               className="w-full h-auto rounded-xl shadow-large object-cover"
               style={{ maxHeight: '400px' }}
+              priority
             />
           </div>
         )}
@@ -72,9 +76,11 @@ const HeroSection = () => {
         
         {/* Scroll Indicator - enlarged */}
         <div className="flex justify-center">
-          <img
+          <Image
             src="/images/scroll-button.png"
             alt="Scroll indicator"
+            width={128}
+            height={128}
             className="w-32 h-32 object-contain animate-bounce-custom"
           />
         </div>
