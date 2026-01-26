@@ -6,6 +6,7 @@ import { getAllImages, getImagesByCategory } from '../../src/services/gallerySer
 import GalleryGrid from '../../src/components/gallery/GalleryGrid'
 import Lightbox from '../../src/components/gallery/Lightbox'
 import SEO from '../../src/components/seo/SEO'
+import StructuredData from '../../src/components/seo/StructuredData'
 
 export default function GalleryPage() {
   const [images, setImages] = useState([])
@@ -33,15 +34,24 @@ export default function GalleryPage() {
     loadImages()
   }, [selectedCategory])
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "ImageGallery",
+    "name": "Fotogalerie projektu Luční Háj",
+    "description": "Prohlédněte si fotografie exteriéru, interiéru a vybavení projektu Luční Háj. Galerie obsahuje vizualizace domů, interiéry bytů a okolí projektu.",
+    "url": "https://domypecerady.cz/galerie"
+  }
+
   return (
     <>
       <SEO
         title="Fotogalerie"
         description="Prohlédněte si fotografie exteriéru, interiéru a vybavení projektu Luční Háj. Galerie obsahuje vizualizace domů, interiéry bytů a okolí projektu."
-        keywords="galerie, fotografie, interiér, exteriér, vizualizace, Luční Háj"
+        keywords="galerie, fotografie, interiér, exteriér, vizualizace, Luční Háj, Týnec nad Sázavou"
         image="/images/gallery_main.jpg"
         url="/galerie"
       />
+      <StructuredData data={structuredData} />
       <div className="min-h-screen bg-[#F5F7FB] pt-20 pb-12">
         <div className="max-w-7xl mx-auto px-4 py-12">
           <div className="bg-white rounded-[28px] border border-slate-200/70 shadow-[0_20px_60px_rgba(15,23,42,0.08)] overflow-hidden">

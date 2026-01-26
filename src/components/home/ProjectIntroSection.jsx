@@ -33,7 +33,7 @@ const ProjectIntroSection = () => {
               <br />
               harmonii s přírodou
             </h2>
-            <div className="space-y-4 text-body-regular text-white mb-6">
+            <div className="space-y-4 text-body-regular text-white mb-6 hidden md:block">
               <p>
                 Projekt Luční háj přináší klidné a komfortní bydlení v jedné z nejžádanějších
                 lokalit středních Čech – Týnec nad Sázavou. Spojuje moderní stavební technologie,

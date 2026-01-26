@@ -7,7 +7,7 @@ const StatsSection = () => {
   ]
 
   return (
-    <section className="pt-8 pb-20 bg-neutral-darkNavy text-white relative" style={{paddingBottom: 'calc(20rem - 15px)'}}>
+    <section className="pt-8 pb-20 bg-neutral-darkNavy text-white relative hidden md:block" style={{paddingBottom: 'calc(20rem - 15px)'}}>
       <div className="container mx-auto px-5 lg:px-20 relative z-10">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat, index) => (

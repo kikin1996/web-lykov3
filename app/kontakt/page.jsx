@@ -5,6 +5,7 @@ import ContactForm from '../../src/components/contact/ContactForm'
 import ContactHeroImage from '../../src/components/contact/ContactHeroImage'
 import { GOOGLE_MAPS_API_KEY, isGoogleMapsConfigured } from '../../src/config/api'
 import SEO from '../../src/components/seo/SEO'
+import StructuredData from '../../src/components/seo/StructuredData'
 
 // Dynamicky načíst ContactPage kvůli Google Maps
 const ContactPageContent = () => {
@@ -204,7 +205,7 @@ const ContactPageContent = () => {
               <p className="text-slate-600 text-[15px] leading-6 mb-3">
                 Máte dotaz nebo se chcete spojit? Jsme tu pro vás.
               </p>
-              <p className="text-slate-600 text-[15px] leading-6 mb-8">
+              <p className="text-slate-600 text-[15px] leading-6 mb-8 hidden md:block">
                 Napište nám jakoukoli z níže uvedených možností, ozveme se co nejdříve.
               </p>
             </div>
@@ -217,7 +218,7 @@ const ContactPageContent = () => {
                   </svg>
                 </div>
                 <h3 className="text-sm font-semibold text-slate-900 mb-1">E-mail podpora</h3>
-                <p className="text-sm text-slate-600 mb-1">Odpovíme co nejdříve.</p>
+                <p className="text-sm text-slate-600 mb-1 hidden md:block">Odpovíme co nejdříve.</p>
                 <a href="mailto:info@domypecerady.cz" className="text-sm text-[#00D9B5] underline hover:text-[#00B89A]">
                   info@domypecerady.cz
                 </a>
@@ -231,7 +232,7 @@ const ContactPageContent = () => {
                   </svg>
                 </div>
                 <h3 className="text-sm font-semibold text-slate-900 mb-1">Navštivte nás</h3>
-                <p className="text-sm text-slate-600 mb-1">Přijďte za námi osobně.</p>
+                <p className="text-sm text-slate-600 mb-1 hidden md:block">Přijďte za námi osobně.</p>
                 <p className="text-sm text-[#00D9B5] underline">Týnec nad Sázavou, Česká republika</p>
               </div>
 
@@ -242,7 +243,7 @@ const ContactPageContent = () => {
                   </svg>
                 </div>
                 <h3 className="text-sm font-semibold text-slate-900 mb-1">Zavolejte nám</h3>
-                <p className="text-sm text-slate-600 mb-1">K dispozici v pracovní době.</p>
+                <p className="text-sm text-slate-600 mb-1 hidden md:block">K dispozici v pracovní době.</p>
                 <a href="tel:+420725734095" className="text-sm text-[#00D9B5] underline hover:text-[#00B89A]">
                   (+420) 725 734 095
                 </a>
@@ -250,7 +251,7 @@ const ContactPageContent = () => {
             </div>
 
             {/* Developer Info */}
-            <div className="mt-12 pt-10 border-t border-slate-100">
+            <div className="mt-12 pt-10 border-t border-slate-100 hidden md:block">
               <div className="mb-6">
                 <div className="inline-flex items-center rounded-full bg-[#E6FFFA] text-[#00B89A] px-3 py-1 text-xs font-medium mb-4">
                   Developer projektu
@@ -264,7 +265,7 @@ const ContactPageContent = () => {
             </div>
 
             <div className="mt-10">
-              <h3 className="text-lg font-semibold text-slate-900 mb-4">Luční háj lokalita</h3>
+              <h3 className="text-lg font-semibold text-slate-900 mb-4 hidden md:block">Luční háj lokalita</h3>
               <div className="mb-4">
                 <a
                   href="https://www.google.com/maps/dir/?api=1&destination=49.839666,14.611472"
@@ -313,15 +314,35 @@ const ContactPageContent = () => {
 }
 
 export default function ContactPage() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Kontakt - Luční Háj",
+    "description": "Kontaktujte nás ohledně projektu Luční Háj. Jsme k dispozici na emailu, telefonu nebo nás můžete navštívit osobně v Týnci nad Sázavou.",
+    "url": "https://domypecerady.cz/kontakt",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "Luční Háj",
+      "email": "info@domypecerady.cz",
+      "telephone": "+420-725-734-095",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Týnec nad Sázavou",
+        "addressCountry": "CZ"
+      }
+    }
+  }
+
   return (
     <>
       <SEO
         title="Kontakt"
         description="Kontaktujte nás ohledně projektu Luční Háj. Jsme k dispozici na emailu, telefonu nebo nás můžete navštívit osobně v Týnci nad Sázavou."
-        keywords="kontakt, Luční Háj, realitní projekt, dotaz, informace"
+        keywords="kontakt, Luční Háj, realitní projekt, dotaz, informace, Týnec nad Sázavou"
         image="/images/contact_hero.jpg"
         url="/kontakt"
       />
+      <StructuredData data={structuredData} />
       <ContactPageContent />
     </>
   )

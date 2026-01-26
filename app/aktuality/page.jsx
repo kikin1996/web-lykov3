@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import Timeline from '../../src/components/timeline/Timeline'
 import SEO from '../../src/components/seo/SEO'
+import StructuredData from '../../src/components/seo/StructuredData'
 
 const aktualityData = [
   {
@@ -82,15 +83,30 @@ export default function AktualityPage() {
 
   const latestDate = getLatestDate()
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Aktuality a průběh výstavby - Luční Háj",
+    "description": "Sledujte aktuální průběh výstavby projektu Luční Háj. Aktuality o stavbě, milníky projektu a plánované termíny dokončení.",
+    "url": "https://domypecerady.cz/aktuality",
+    "blogPost": aktualityData.map(item => ({
+      "@type": "BlogPosting",
+      "headline": item.title,
+      "datePublished": item.sortDate,
+      "description": item.description
+    }))
+  }
+
   return (
     <>
       <SEO
         title="Aktuality a průběh výstavby"
         description="Sledujte aktuální průběh výstavby projektu Luční Háj. Aktuality o stavbě, milníky projektu a plánované termíny dokončení."
-        keywords="aktuality, výstavba, průběh stavby, milníky, Luční Háj"
+        keywords="aktuality, výstavba, průběh stavby, milníky, Luční Háj, Týnec nad Sázavou"
         image="/images/stavba.jpg"
         url="/aktuality"
       />
+      <StructuredData data={structuredData} />
       <div className="min-h-screen bg-[#F5F7FB] pt-20 pb-12">
         <div className="max-w-7xl mx-auto px-4 py-12">
           <div className="bg-white rounded-[28px] border border-slate-200/70 shadow-[0_20px_60px_rgba(15,23,42,0.08)] overflow-hidden">

@@ -93,10 +93,24 @@ Aplikace používá design systém definovaný v `design.json` s následujícím
 
 ## Environment Variables
 
-Pro Google Maps API klíč vytvořte `.env.local` soubor:
+Pro správné fungování aplikace vytvořte `.env.local` soubor s následujícími proměnnými:
 
 ```
-NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=your_api_key_here
+# Google Maps API klíč (pro zobrazení mapy)
+NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=your_google_maps_api_key_here
+
+# Resend.com API klíč (pro odesílání emailů z kontaktního formuláře)
+RESEND_API_KEY=your_resend_api_key_here
+
+# Volitelné: Testovací email pro Resend
+RESEND_TEST_EMAIL=your_test_email@example.com
+
+# FTP přístupové údaje (pro deploy)
+FTP_HOST=ftp.domypecerady.cz
+FTP_PORT=21
+FTP_USER=kopka@domypecerady.cz
+FTP_PASSWORD=your_ftp_password
+FTP_REMOTE_DIR=web_7
 ```
 
 ## Poznámky

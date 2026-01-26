@@ -3,17 +3,32 @@
 import StandardsHero from '../../src/components/standards/StandardsHero'
 import StandardsSplitSection from '../../src/components/standards/StandardsSplitSection'
 import SEO from '../../src/components/seo/SEO'
+import StructuredData from '../../src/components/seo/StructuredData'
 
 export default function StandardyPage() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Standardy bydlení - Luční Háj",
+    "description": "Přečtěte si o standardech bydlení v projektu Luční Háj. Kvalitní konstrukce, moderní technologie, akustická izolace a prvotřídní vybavení.",
+    "url": "https://domypecerady.cz/standardy",
+    "about": {
+      "@type": "Thing",
+      "name": "Standardy bydlení",
+      "description": "Kvalitní konstrukce, moderní technologie, akustická izolace a prvotřídní vybavení v projektu Luční Háj"
+    }
+  }
+
   return (
     <>
       <SEO
         title="Standardy bydlení"
         description="Přečtěte si o standardech bydlení v projektu Luční Háj. Kvalitní konstrukce, moderní technologie, akustická izolace a prvotřídní vybavení."
-        keywords="standardy bydlení, kvalita, technologie, konstrukce, vybavení, Luční Háj"
+        keywords="standardy bydlení, kvalita, technologie, konstrukce, vybavení, Luční Háj, Týnec nad Sázavou"
         image="/images/standardy-hero.jpg"
         url="/standardy"
       />
+      <StructuredData data={structuredData} />
       <div className="min-h-screen bg-[#F5F7FB] pt-20 pb-12">
         <div className="max-w-7xl mx-auto px-4 py-12">
           <div className="bg-white rounded-[28px] border border-slate-200/70 shadow-[0_20px_60px_rgba(15,23,42,0.08)] overflow-hidden">
@@ -105,7 +120,7 @@ export default function StandardyPage() {
                       'Kvalitní sanitární keramika a baterie',
                       'Podlahové topení pod všemi podlahovými krytinami'
                     ]}
-                    image="/images/standardy-interier.jpeg"
+                    image="/images/obklady.jpeg"
                     imageAlt="Koupelny a podlahy"
                     reverse={false}
                   />

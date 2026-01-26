@@ -25,7 +25,7 @@ const amenities = [
 
 const AmenitiesSection = () => {
   return (
-    <section className="py-20 bg-neutral-offWhite relative pb-80">
+    <section className="py-20 bg-neutral-offWhite relative pb-80 hidden md:block">
       <div className="container mx-auto px-5 lg:px-20">
         <div className="text-center mb-12">
           <p className="text-overline mb-4">Vybavení</p>
@@ -35,7 +35,7 @@ const AmenitiesSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 hidden md:grid">
           {amenities.map((amenity, index) => (
             <Card key={index} hover className="overflow-hidden">
               <div className="rounded-2xl overflow-hidden border border-slate-200/70 h-[220px]">

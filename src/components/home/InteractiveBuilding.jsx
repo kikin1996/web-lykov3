@@ -5,7 +5,7 @@ const InteractiveBuilding = () => {
     <>
       <section
         id="building"
-        className="py-24 bg-neutral-offWhite -mt-12 border-0 relative z-10"
+        className="pt-24 pb-12 md:pb-24 bg-neutral-offWhite -mt-12 border-0 relative z-10"
         style={{ border: 'none', borderTop: 'none', borderBottom: 'none' }}
       >
         <div className="container mx-auto px-5 lg:px-20" style={{ border: 'none' }}>
@@ -28,7 +28,7 @@ const InteractiveBuilding = () => {
               <div className="relative overflow-hidden z-10">
                 <Image
                   src="/images/hero_photo.png"
-                  alt="Modern office interior"
+                  alt="Projekt Luční Háj - moderní rezidenční komplex v Týnci nad Sázavou"
                   width={1200}
                   height={675}
                   className="w-full h-full object-cover"
@@ -59,7 +59,7 @@ const InteractiveBuilding = () => {
               <div className="aspect-[4/3] overflow-hidden group">
                 <Image
                   src="/images/work-progress-1.jpg"
-                  alt="Modern office space"
+                  alt="Návrh interiéru projektu Luční Háj - moderní obývací prostor"
                   width={800}
                   height={600}
                   className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
@@ -72,7 +72,7 @@ const InteractiveBuilding = () => {
               <div className="aspect-[4/3] overflow-hidden group">
                 <Image
                   src="/images/work-progress-2.jpg"
-                  alt="Music Hall"
+                  alt="Návrh interiéru projektu Luční Háj - jídelna a kuchyň"
                   width={800}
                   height={600}
                   className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
@@ -85,7 +85,7 @@ const InteractiveBuilding = () => {
               <div className="aspect-[4/3] overflow-hidden group">
                 <Image
                   src="/images/work-progress-3.jpg"
-                  alt="Modern living space"
+                  alt="Návrh interiéru projektu Luční Háj - ložnice a odpočinkový prostor"
                   width={800}
                   height={600}
                   className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"

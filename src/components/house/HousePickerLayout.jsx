@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import EmbeddedSitePreview from './EmbeddedSitePreview'
 import AvailabilityTableOnly from './AvailabilityTableOnly'
+import Lightbox from '../gallery/Lightbox'
 
 // Mock data - 12 domů s fotkami a půdorysy
 const houses = [
@@ -13,7 +14,7 @@ const houses = [
     bathrooms: 2,
     heroImage: '/photos/web_f2.jpg',
     floorplanImage: '/photos/F1 resize.jpg',
-    description: 'Moderní dvojdům s velkou zahradou a kvalitním vybavením. Ideální pro rodinu, která hledá komfort a klidné prostředí.',
+    description: 'Rodinný dům s velkou obývací plochou a přímým vstupem na terasu.',
     status: 'Volný',
     price: 'Na dotaz',
     houseCardPdf: '/documents/dum-01-karta.pdf' // URL k PDF dokumentu
@@ -27,7 +28,7 @@ const houses = [
     bathrooms: 2,
     heroImage: '/photos/F1 resize.jpg',
     floorplanImage: '/photos/web_f2.jpg',
-    description: 'Prostorný rodinný dům s garáží a velkorysou terasou orientovanou do zahrady.',
+    description: 'Rodinný dům s velkou obývací plochou a přímým vstupem na terasu.',
     status: 'Volný',
     price: 'Na dotaz',
     houseCardPdf: '/documents/dum-02-karta.pdf'
@@ -41,7 +42,7 @@ const houses = [
     bathrooms: 2,
     heroImage: null,
     floorplanImage: null,
-    description: 'Kompaktní dům ideální pro menší rodiny nebo pár, který ocení nízké provozní náklady.',
+    description: 'Rodinný dům s velkou obývací plochou a přímým vstupem na terasu.',
     status: 'Volný',
     price: 'Na dotaz',
     houseCardPdf: null
@@ -55,7 +56,7 @@ const houses = [
     bathrooms: 2,
     heroImage: null,
     floorplanImage: null,
-    description: 'Luxusní dům s velkým pozemkem, bazénem a prémiovými materiály v interiéru.',
+    description: 'Rodinný dům s velkou obývací plochou a přímým vstupem na terasu.',
     status: 'Volný',
     price: 'Na dotaz',
     houseCardPdf: null
@@ -69,7 +70,7 @@ const houses = [
     bathrooms: 2,
     heroImage: null,
     floorplanImage: null,
-    description: 'Úsporný dům s moderním designem a důrazem na přirozené osvětlení.',
+    description: 'Rodinný dům s velkou obývací plochou a přímým vstupem na terasu.',
     status: 'Volný',
     price: 'Na dotaz',
     houseCardPdf: null
@@ -97,7 +98,7 @@ const houses = [
     bathrooms: 2,
     heroImage: null,
     floorplanImage: null,
-    description: 'Dům s otevřeným prostorem a prostornou zahradou pro rodinné aktivity.',
+    description: 'Rodinný dům s velkou obývací plochou a přímým vstupem na terasu.',
     status: 'Volný',
     price: 'Na dotaz',
     houseCardPdf: null
@@ -111,7 +112,7 @@ const houses = [
     bathrooms: 2,
     heroImage: null,
     floorplanImage: null,
-    description: 'Prostorný dům s garáží, sklepem a flexibilním dispozičním řešením.',
+    description: 'Rodinný dům s velkou obývací plochou a přímým vstupem na terasu.',
     status: 'Volný',
     price: 'Na dotaz',
     houseCardPdf: null
@@ -125,7 +126,7 @@ const houses = [
     bathrooms: 2,
     heroImage: null,
     floorplanImage: null,
-    description: 'Moderní dům s energeticky úsporným řešením a chytrými technologiemi.',
+    description: 'Rodinný dům s velkou obývací plochou a přímým vstupem na terasu.',
     status: 'Volný',
     price: 'Na dotaz',
     houseCardPdf: null
@@ -139,7 +140,7 @@ const houses = [
     bathrooms: 2,
     heroImage: null,
     floorplanImage: null,
-    description: 'Velkorysý dům pro vícegenerační bydlení nebo početnou rodinu.',
+    description: 'Rodinný dům s velkou obývací plochou a přímým vstupem na terasu.',
     status: 'Volný',
     price: 'Na dotaz',
     houseCardPdf: null
@@ -153,7 +154,7 @@ const houses = [
     bathrooms: 2,
     heroImage: null,
     floorplanImage: null,
-    description: 'Kompaktní dům s malou zahradou, ideální jako startovací bydlení.',
+    description: 'Rodinný dům s velkou obývací plochou a přímým vstupem na terasu.',
     status: 'Volný',
     price: 'Na dotaz',
     houseCardPdf: null
@@ -167,7 +168,7 @@ const houses = [
     bathrooms: 2,
     heroImage: null,
     floorplanImage: null,
-    description: 'Luxusní dům s velkým pozemkem, dostatkem soukromí a krásným výhledem.',
+    description: 'Rodinný dům s velkou obývací plochou a přímým vstupem na terasu.',
     status: 'Volný',
     price: 'Na dotaz',
     houseCardPdf: null
@@ -190,10 +191,111 @@ const hotspotPositions = {
   '12': { top: '62%', left: '70%' }
 }
 
+// Funkce pro získání půdorysů podle ID domu
+const getFloorplansForHouse = (houseId) => {
+  const id = parseInt(houseId)
+  
+  // Domy 1,3,5,7: A1_P, A2_P
+  if ([1, 3, 5, 7].includes(id)) {
+    return ['/images/pudorysy/A1_P.jpg', '/images/pudorysy/A2_P.jpg']
+  }
+  
+  // Domy 2,4,6,8: A1_L, A2_L
+  if ([2, 4, 6, 8].includes(id)) {
+    return ['/images/pudorysy/A1_L.jpg', '/images/pudorysy/A2_L.jpg']
+  }
+  
+  // Dům 9: B0_P, B1_P, B2_P
+  if (id === 9) {
+    return ['/images/pudorysy/B0_P.jpg', '/images/pudorysy/B1_P.jpg', '/images/pudorysy/B2_P.jpg']
+  }
+  
+  // Dům 10: B0_L, B1_L, B2_L
+  if (id === 10) {
+    return ['/images/pudorysy/B0_L.jpg', '/images/pudorysy/B1_L.jpg', '/images/pudorysy/B2_L.jpg']
+  }
+  
+  // Dům 11: C1_L
+  if (id === 11) {
+    return ['/images/pudorysy/C1_L.jpg']
+  }
+  
+  // Dům 12: C1_P
+  if (id === 12) {
+    return ['/images/pudorysy/C1_P.jpg']
+  }
+  
+  return []
+}
+
+// Funkce pro získání pohledu na dům podle ID domu
+const getHouseViewImage = (houseId) => {
+  const id = parseInt(houseId)
+  
+  // Domy 1,3,5,7,9: PA_P
+  if ([1, 3, 5, 7, 9].includes(id)) {
+    return '/images/pohled na dum/PA_P.jpg'
+  }
+  
+  // Domy 2,4,6,8,10: PA_L
+  if ([2, 4, 6, 8, 10].includes(id)) {
+    return '/images/pohled na dum/PA_L.jpg'
+  }
+  
+  // Dům 11: PC_L
+  if (id === 11) {
+    return '/images/pohled na dum/PC_L.jpg'
+  }
+  
+  // Dům 12: PC_P
+  if (id === 12) {
+    return '/images/pohled na dum/PC_P.jpg'
+  }
+  
+  return null
+}
+
 const HousePickerLayout = () => {
   // Defaultně vybrán Dům 01
   const [selectedHouseId, setSelectedHouseId] = useState('1')
   const selectedHouse = houses.find((house) => house.id === selectedHouseId)
+  const floorplans = getFloorplansForHouse(selectedHouseId)
+  const houseViewImage = getHouseViewImage(selectedHouseId)
+  
+  // Lightbox state
+  const [lightboxOpen, setLightboxOpen] = useState(false)
+  const [lightboxIndex, setLightboxIndex] = useState(0)
+  
+  // Příprava obrázků pro lightbox (pohled + půdorysy)
+  const getLightboxImages = () => {
+    const images = []
+    
+    // Přidat pohled na dům jako první
+    if (houseViewImage) {
+      images.push({
+        url: houseViewImage,
+        caption: `${selectedHouse?.name} - Pohled na dům`
+      })
+    }
+    
+    // Přidat půdorysy
+    floorplans.forEach((floorplan, index) => {
+      images.push({
+        url: floorplan,
+        caption: `${selectedHouse?.name} - Půdorys ${index + 1}`
+      })
+    })
+    
+    return images
+  }
+  
+  const lightboxImages = getLightboxImages()
+  
+  // Funkce pro otevření lightboxu při kliknutí na obrázek
+  const openLightbox = (index) => {
+    setLightboxIndex(index)
+    setLightboxOpen(true)
+  }
 
   // TODO: napojit na message from iframe / polygon click
   // Příklad: window.addEventListener('message', (event) => {
@@ -204,11 +306,11 @@ const HousePickerLayout = () => {
 
   return (
     <div className="bg-[#F5F7FB] min-h-screen pt-20">
-      <div className="max-w-7xl mx-auto px-4 py-12">
+      <div className="max-w-7xl mx-auto px-4 py-4 md:py-12">
         {/* Jeden hlavní white card wrapper */}
-        <div className="bg-white rounded-[28px] border border-slate-200/70 shadow-[0_20px_60px_rgba(15,23,42,0.12)] overflow-hidden p-8 md:p-10 lg:p-12">
+        <div className="bg-white rounded-[28px] border border-slate-200/70 shadow-[0_20px_60px_rgba(15,23,42,0.12)] overflow-hidden p-3 md:p-10 lg:p-12">
           {/* Horní část: nadpis + mapa */}
-          <div className="space-y-6">
+          <div className="space-y-2 md:space-y-6">
             {/* Nadpis */}
             <div>
               <h1 className="text-h1 mb-2">
@@ -229,18 +331,21 @@ const HousePickerLayout = () => {
           </div>
 
           {/* Spodní část: 3 sloupce s detailem vybraného domu */}
-          <div className="mt-10 grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+          <div className="mt-0 md:mt-10 grid grid-cols-1 lg:grid-cols-3 gap-1 md:gap-6 items-start">
             {/* Sloupec 1: Foto domu zblízka */}
-            <div>
-              <h3 className="text-sm font-semibold text-slate-900 mb-3">
+            <div className="order-2 lg:order-1">
+              <h3 className="text-sm font-semibold text-slate-900 mb-1 md:mb-3">
                 Pohled na dům
               </h3>
               <div className="border border-slate-200/70 rounded-2xl overflow-hidden bg-slate-50">
-                <div className="relative w-full aspect-[4/3] overflow-hidden">
-                  {selectedHouse?.heroImage ? (
+                <div 
+                  className={`relative w-full aspect-[4/3] overflow-hidden ${houseViewImage ? 'cursor-pointer hover:opacity-90 transition-opacity' : ''}`}
+                  onClick={() => houseViewImage && openLightbox(0)}
+                >
+                  {houseViewImage ? (
                     <img
-                      src={selectedHouse.heroImage}
-                      alt={selectedHouse.name}
+                      src={houseViewImage}
+                      alt={`Pohled na dům ${selectedHouse?.name} v projektu Luční Háj`}
                       className="w-full h-full object-cover"
                     />
                   ) : (
@@ -253,30 +358,37 @@ const HousePickerLayout = () => {
             </div>
 
             {/* Sloupec 2: Půdorysy */}
-            <div>
+            <div className="order-3 lg:order-2">
               <h3 className="text-sm font-semibold text-slate-900 mb-3">
                 Půdorysy
               </h3>
-              <div className="border border-slate-200/70 rounded-2xl overflow-hidden bg-slate-50">
-                <div className="relative w-full aspect-[4/3] overflow-hidden">
-                  {selectedHouse?.floorplanImage ? (
-                    <img
-                      src={selectedHouse.floorplanImage}
-                      alt={`${selectedHouse.name} – půdorys`}
-                      className="w-full h-full object-cover"
-                    />
-                  ) : (
-                    <div className="w-full h-full bg-gradient-to-br from-slate-100 via-slate-50 to-slate-200 flex items-center justify-center">
-                      <p className="text-slate-400 text-sm">Půdorys bude doplněn</p>
-                    </div>
-                  )}
-                </div>
-                {/* TODO: lightbox pro detailní zobrazení půdorysu */}
+              <div className="border border-slate-200/70 rounded-2xl overflow-hidden bg-slate-50 p-4">
+                {floorplans.length > 0 ? (
+                  <div className="space-y-4">
+                    {floorplans.map((floorplan, index) => (
+                      <div 
+                        key={index} 
+                        className="relative w-full aspect-[4/3] overflow-hidden rounded-lg cursor-pointer hover:opacity-90 transition-opacity"
+                        onClick={() => openLightbox(houseViewImage ? index + 1 : index)}
+                      >
+                        <img
+                          src={floorplan}
+                          alt={`Půdorys ${index + 1} domu ${selectedHouse?.name} v projektu Luční Háj`}
+                          className="w-full h-full object-contain bg-white"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="w-full aspect-[4/3] bg-gradient-to-br from-slate-100 via-slate-50 to-slate-200 flex items-center justify-center rounded-lg">
+                    <p className="text-slate-400 text-sm">Půdorys bude doplněn</p>
+                  </div>
+                )}
               </div>
             </div>
 
             {/* Sloupec 3: Informace o domu */}
-            <div>
+            <div className="order-1 lg:order-3">
               <h3 className="text-sm font-semibold text-slate-900 mb-3">
                 Informace o domě
               </h3>
@@ -309,31 +421,29 @@ const HousePickerLayout = () => {
                 </p>
 
                 {/* Tlačítko Karta domu */}
-                {selectedHouse?.houseCardPdf && (
-                  <div className="mb-6">
-                    <a
-                      href={selectedHouse.houseCardPdf}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-2 w-full px-6 py-3 rounded-lg bg-[#00D9B5] hover:bg-[#00B89A] text-white font-semibold text-sm transition-all duration-200 shadow-[0_4px_12px_rgba(0,217,181,0.3)] hover:shadow-[0_6px_16px_rgba(0,217,181,0.4)]"
+                <div className="mb-6">
+                  <a
+                    href={selectedHouse?.houseCardPdf || `/documents/dum-${selectedHouse?.id.padStart(2, '0')}-karta.pdf`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 w-full px-6 py-3 rounded-lg bg-[#00D9B5] hover:bg-[#00B89A] text-white font-semibold text-sm transition-all duration-200 shadow-[0_4px_12px_rgba(0,217,181,0.3)] hover:shadow-[0_6px_16px_rgba(0,217,181,0.4)]"
+                  >
+                    <svg
+                      className="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
                     >
-                      <svg
-                        className="w-5 h-5"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                        />
-                      </svg>
-                      Karta domu (PDF)
-                    </a>
-                  </div>
-                )}
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                      />
+                    </svg>
+                    Karta domu (PDF)
+                  </a>
+                </div>
 
                 {/* Metriky */}
                 <div className="grid grid-cols-2 gap-4">
@@ -378,6 +488,16 @@ const HousePickerLayout = () => {
           </div>
         </div>
       </div>
+      
+      {/* Lightbox pro zobrazení půdorysů a pohledu na dům */}
+      {lightboxOpen && lightboxImages.length > 0 && (
+        <Lightbox
+          images={lightboxImages}
+          currentIndex={lightboxIndex}
+          onClose={() => setLightboxOpen(false)}
+          onNavigate={(index) => setLightboxIndex(index)}
+        />
+      )}
     </div>
   )
 }

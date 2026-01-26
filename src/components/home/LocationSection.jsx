@@ -256,13 +256,13 @@ const LocationSection = () => {
             )}
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 hidden md:grid">
             <div className="text-center p-6">
               {/* School Icon */}
               <div className="mb-2 flex justify-center">
                 <Image
                   src="/photos/icon1.png"
-                  alt="Školy"
+                  alt="Ikona škol - základní a mateřské školy v blízkosti projektu Luční Háj"
                   width={48}
                   height={48}
                   className="w-12 h-12 object-contain"
@@ -277,7 +277,7 @@ const LocationSection = () => {
               <div className="mb-2 flex justify-center">
                 <Image
                   src="/photos/icon2.png"
-                  alt="Obchody"
+                  alt="Ikona obchodů - supermarket Lidl v blízkosti projektu Luční Háj"
                   width={48}
                   height={48}
                   className="w-12 h-12 object-contain"
@@ -292,7 +292,7 @@ const LocationSection = () => {
               <div className="mb-2 flex justify-center">
                 <Image
                   src="/photos/icon3.png"
-                  alt="Doprava"
+                  alt="Ikona dopravy - dostupnost veřejné dopravy v projektu Luční Háj"
                   width={48}
                   height={48}
                   className="w-12 h-12 object-contain"

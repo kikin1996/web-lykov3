@@ -213,22 +213,14 @@ const AvailabilityTableOnly = () => {
                     {formatPrice(house.price) ? (house.price === 'Na dotaz' ? 'Na dotaz' : `${formatPrice(house.price)} Kč`) : ''}
                   </td>
                   <td className="py-4 px-6">
-                    {house.floorplanImage || house.houseCardPdf ? (
-                      <Link
-                        href={house.houseCardPdf || house.floorplanImage}
-                        target={house.houseCardPdf ? '_blank' : undefined}
-                        rel={house.houseCardPdf ? 'noopener noreferrer' : undefined}
-                        className={`inline-block px-6 py-2 rounded text-body-small font-semibold transition-colors ${
-                          index === 1 
-                            ? 'bg-primary-teal text-white hover:bg-primary-tealDark' 
-                            : 'bg-neutral-lightGray text-neutral-darkNavy hover:bg-neutral-mediumGray hover:text-white'
-                        }`}
-                      >
-                        Zobrazit
-                      </Link>
-                    ) : (
-                      <span className="text-neutral-mediumGray text-body-small">-</span>
-                    )}
+                    <Link
+                      href={house.houseCardPdf || `/documents/dum-${house.id.padStart(2, '0')}-karta.pdf`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block px-6 py-2 rounded text-body-small font-semibold transition-colors bg-primary-teal !text-white hover:bg-primary-tealDark"
+                    >
+                      Zobrazit
+                    </Link>
                   </td>
                 </tr>
               ))}

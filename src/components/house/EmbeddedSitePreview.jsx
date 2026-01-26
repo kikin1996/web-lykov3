@@ -2,7 +2,7 @@ const EmbeddedSitePreview = ({ selectedHouseId, onSelectHouse }) => {
   return (
     <div className="border border-slate-200/70 rounded-2xl overflow-hidden bg-slate-50">
       {/* Výška karty – embed vyplňuje celou plochu */}
-      <div className="h-[520px] lg:h-[720px] w-full">
+      <div className="h-[300px] md:h-[520px] lg:h-[720px] w-full">
         {/* Přesný embed mapy z homepage (AvailabilityTable) */}
         <div className="luchnihaj-map-box h-full w-full">
           <div id="interactive-map" className="luchnihaj-map-wrapper h-full w-full">
@@ -13,8 +13,8 @@ const EmbeddedSitePreview = ({ selectedHouseId, onSelectHouse }) => {
               className="luchnihaj-map-svg"
             >
               <image
-                xlinkHref="/photos/podklad.jpg"
-                href="/photos/podklad.jpg"
+                xlinkHref="/images/hero-bg2.webp"
+                href="/images/hero-bg2.webp"
                 x="0"
                 y="0"
                 width="1920"

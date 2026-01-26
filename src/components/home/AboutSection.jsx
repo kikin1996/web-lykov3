@@ -3,7 +3,7 @@ import Card from '../shared/Card'
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-20 bg-white border-0" style={{ border: 'none', borderTop: 'none', borderBottom: 'none' }}>
+    <section id="about" className="py-20 bg-white border-0 hidden md:block" style={{ border: 'none', borderTop: 'none', borderBottom: 'none' }}>
       <div className="container mx-auto px-5 lg:px-20" style={{ border: 'none' }}>
         <div className="max-w-7xl mx-auto">
           <div className="prose prose-lg max-w-none">
@@ -18,7 +18,7 @@ const AboutSection = () => {
               </div>
 
               {/* Grid se třemi kartami v jednom řádku na velkých displejích */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 items-start w-full">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 items-start w-full hidden md:grid">
                 {/* Column 01 – base level */}
                 <Card hover className="overflow-hidden border border-neutral-lightGray/70 rounded-xl lg:mt-[0px]">
                   <div className="p-6 flex flex-col h-full">

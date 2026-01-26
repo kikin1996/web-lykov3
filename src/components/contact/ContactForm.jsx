@@ -102,7 +102,7 @@ const ContactForm = () => {
       <h2 className="text-[34px] leading-[1.1] font-semibold tracking-tight text-slate-900 mb-2 font-serif mt-8">
         Ozvěte se nám.
       </h2>
-      <p className="text-slate-600 text-[15px] leading-6 mb-6">
+      <p className="text-slate-600 text-[15px] leading-6 mb-6 hidden md:block">
         Nebo nám napište přímo na{' '}
         <a href="mailto:info@domypecerady.cz" className="text-[#00D9B5] underline underline-offset-2 hover:text-[#00B89A]">
           info@domypecerady.cz
