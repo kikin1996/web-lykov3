@@ -13,13 +13,15 @@ FTP_PASSWORD=VAŠE_FTP_HESLO_ZDE
 FTP_REMOTE_DIR=web_7
 
 # Google Maps API klíč (pro zobrazení mapy)
+# NEXT_PUBLIC_ prefix je důležitý - umožňuje přístup k proměnné v prohlížeči
 NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=VAŠE_GOOGLE_MAPS_API_KEY_ZDE
 
 # Resend.com API klíč (pro odesílání emailů z kontaktního formuláře)
-RESEND_API_KEY=VAŠE_RESEND_API_KEY_ZDE
+# NEXT_PUBLIC_ prefix je důležitý - formulář volá API přímo z klienta
+NEXT_PUBLIC_RESEND_API_KEY=VAŠE_RESEND_API_KEY_ZDE
 
 # Volitelné: Testovací email pro Resend (pokud ještě nemáte ověřenou doménu)
-RESEND_TEST_EMAIL=kristian.karas22@gmail.com
+NEXT_PUBLIC_RESEND_TEST_EMAIL=kristian.karas22@gmail.com
 ```
 
 **Důležité:** 

@@ -32,7 +32,7 @@ async function deployToFTP() {
 
     console.log('✅ Připojeno k FTP serveru')
     
-    const remoteDir = process.env.FTP_REMOTE_DIR || 'web_7'
+    const remoteDir = process.env.FTP_REMOTE_DIR || 'web'
     const localDir = path.join(process.cwd(), 'out')
 
     // Zkontroluj, zda existuje out složka
@@ -43,22 +43,20 @@ async function deployToFTP() {
 
     console.log(`📁 Nahrávání souborů z ${localDir} do ${remoteDir}...`)
 
-    // Vytvoř vzdálenou složku, pokud neexistuje
+    // Vytvoř vzdálenou složku a přejdi do ní (ensureDir už přejde do složky)
     try {
       await client.ensureDir(remoteDir)
       console.log(`✅ Vzdálená složka ${remoteDir} připravena`)
     } catch (err) {
-      console.log(`ℹ️  Složka ${remoteDir} již existuje nebo byla vytvořena`)
+      console.log(`ℹ️  Složka ${remoteDir} již existuje, přecházím do ní...`)
+      await client.cd(remoteDir)
     }
 
-    // Přejdi do vzdálené složky
-    await client.cd(remoteDir)
-
-    // Nahraj všechny soubory
+    // Nahraj všechny soubory (jsme už ve správné složce)
     await client.uploadFromDir(localDir, '.')
     
     console.log('✅ Všechny soubory byly úspěšně nahrány!')
-    console.log(`🌐 Web je dostupný na: https://domypecerady.cz/${remoteDir}/`)
+    console.log(`🌐 Web je dostupný na: https://domypecerady.cz/${remoteDir === 'web' ? '' : remoteDir + '/'}`)
 
   } catch (err) {
     console.error('❌ Chyba při nahrávání:', err.message)
