@@ -233,7 +233,14 @@ const ContactPageContent = () => {
                 </div>
                 <h3 className="text-sm font-semibold text-slate-900 mb-1">Navštivte nás</h3>
                 <p className="text-sm text-slate-600 mb-1 hidden md:block">Přijďte za námi osobně.</p>
-                <p className="text-sm text-[#00D9B5] underline">Týnec nad Sázavou, Česká republika</p>
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Pecerady+31%2C+257+41+T%C3%BDnec+nad+S%C3%A1zavou"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-[#00D9B5] underline hover:text-[#00B89A]"
+                >
+                  Pecerady 31, 257 41 Týnec nad Sázavou
+                </a>
               </div>
 
               <div className="text-left">

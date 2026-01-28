@@ -152,6 +152,19 @@ const AvailabilityTableOnly = () => {
   // Zobrazit všechny domy
   const availableHouses = houses
 
+  const getStatusColor = (status) => {
+    switch (status) {
+      case 'Volný':
+        return 'bg-emerald-500'
+      case 'Rezervovaný':
+        return 'bg-amber-400'
+      case 'Prodaný':
+        return 'bg-neutral-mediumGray'
+      default:
+        return 'bg-neutral-mediumGray'
+    }
+  }
+
   const formatPrice = (price) => {
     if (!price) return ''
     if (typeof price === 'string' && price === 'Na dotaz') return 'Na dotaz'
@@ -190,6 +203,9 @@ const AvailabilityTableOnly = () => {
                   Prodejní cena
                 </th>
                 <th className="text-left py-4 px-6 text-body-small uppercase tracking-wider" style={{ color: '#000000', fontWeight: 'bold' }}>
+                  Stav
+                </th>
+                <th className="text-left py-4 px-6 text-body-small uppercase tracking-wider" style={{ color: '#000000', fontWeight: 'bold' }}>
                   Karta k domu
                 </th>
               </tr>
@@ -211,6 +227,16 @@ const AvailabilityTableOnly = () => {
                   </td>
                   <td className="py-4 px-6 text-body-regular text-neutral-mediumGray">
                     {formatPrice(house.price) ? (house.price === 'Na dotaz' ? 'Na dotaz' : `${formatPrice(house.price)} Kč`) : ''}
+                  </td>
+                  <td className="py-4 px-6">
+                    <span className="inline-flex items-center gap-2">
+                      <span
+                        className={`inline-block w-2.5 h-2.5 rounded-full ${getStatusColor(house.status)}`}
+                      />
+                      <span className="text-body-regular text-neutral-darkNavy">
+                        {house.status}
+                      </span>
+                    </span>
                   </td>
                   <td className="py-4 px-6">
                     <Link
