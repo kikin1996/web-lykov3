@@ -11,10 +11,10 @@ const StandardsSplitSection = ({
     <div className={`grid grid-cols-1 lg:grid-cols-2 gap-10 items-start ${reverse ? 'lg:grid-flow-dense' : ''}`}>
           {/* Text Content */}
           <div className={reverse ? 'lg:col-start-2 lg:col-end-3' : ''}>
-            {/* Pill Label */}
+            {/* Pill Label – číslo v kolečku */}
             {pillLabel && (
               <div className="mb-4">
-                <span className="inline-flex items-center rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-700 border border-slate-200/70">
+                <span className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-slate-100 text-sm font-semibold text-slate-700 border-2 border-slate-200/70">
                   {pillLabel}
                 </span>
               </div>

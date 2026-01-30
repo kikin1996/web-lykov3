@@ -10,7 +10,7 @@ const HeroSection = () => {
   const [showImage, setShowImage] = useState(false)
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia('(min-width: 1251px)')
+    const mediaQuery = window.matchMedia('(min-width: 1700px)')
     
     const updateDisplay = () => {
       setShowImage(mediaQuery.matches)
@@ -48,11 +48,17 @@ const HeroSection = () => {
       )}
 
       {/* Content */}
-      <div className="relative z-10 text-center max-w-4xl px-5 pb-32" style={{ paddingTop: '80px' }}>
-        <h1 className="text-hero mb-4 mt-4">
+      <div
+        className="relative z-10 text-center max-w-4xl px-5 pb-32"
+        style={{
+          paddingTop: '80px',
+          ...(showImage && { marginTop: '-220px' })
+        }}
+      >
+        <h1 className={`text-hero mb-4 mt-4 ${!showImage ? '!text-[67px]' : ''}`}>
           Luční Háj
         </h1>
-        <p className="text-script mb-8 mt-2">
+        <p className={`text-script mb-8 mt-2 ${!showImage ? '!text-[42.5px]' : ''}`}>
           Váš nový domov
         </p>
         
@@ -73,17 +79,6 @@ const HeroSection = () => {
         
         {/* First part of empty space */}
         <div className="h-16"></div>
-        
-        {/* Scroll Indicator - enlarged */}
-        <div className="flex justify-center">
-          <Image
-            src="/images/scroll-button.png"
-            alt="Scroll indicator"
-            width={128}
-            height={128}
-            className="w-32 h-32 object-contain animate-bounce-custom"
-          />
-        </div>
         
         {/* Second part of empty space */}
         {showImage && <div className="h-32"></div>}

@@ -255,6 +255,66 @@ const getHouseViewImage = (houseId) => {
   return null
 }
 
+// Vizualizace interiéru: složky podle typu domu (domy-1-3-5-7, domy-2-4-6-8, dum-9, dum-10, dum-11, dum-12)
+const INTERIOR_FILES = {
+  'domy-1-3-5-7': [
+    'a (1)_domy1357.jpg', 'a (2)_domy1357.jpg', 'a (3)_domy1357.jpg', 'a (4)_domy1357.jpg', 'a (5)_domy1357.jpg', 'a (6)_domy1357.jpg', 'a (7)_domy1357.jpg',
+    'b (1)_domy1357.jpg', 'b (2)_domy1357.jpg', 'b (3)_domy1357.jpg', 'b (4)_domy1357.jpg', 'b (5)_domy1357.jpg',
+    'c (1)_domy1357.jpg', 'c (2)_domy1357.jpg', 'c (3)_domy1357.jpg', 'c (4)_domy1357.jpg', 'c (5)_domy1357.jpg'
+  ],
+  'domy-2-4-6-8': [
+    'a (1)_domy2468.jpg', 'a (2)_domy2468.jpg', 'a (3)_domy2468.jpg', 'a (4)_domy2468.jpg', 'a (5)_domy2468.jpg', 'a (6)_domy2468.jpg', 'a (7)_domy2468.jpg',
+    'b (1)_domy2468.jpg', 'b (2)_domy2468.jpg', 'b (3)_domy2468.jpg', 'b (4)_domy2468.jpg', 'b (5)_domy2468.jpg',
+    'c (1)_domy2468.jpg', 'c (2)_domy2468.jpg', 'c (3)_domy2468.jpg', 'c (4)_domy2468.jpg', 'c (5)_domy2468.jpg'
+  ],
+  'dum-9': [
+    'a (1)_dum9.jpg', 'a (2)_dum9.jpg', 'a (3)_dum9.jpg', 'a (4)_dum9.jpg', 'a (5)_dum9.jpg', 'a (6)_dum9.jpg', 'a (7)_dum9.jpg',
+    'b (1)_dum9.jpg', 'b (2)_dum9.jpg', 'b (3)_dum9.jpg', 'b (4)_dum9.jpg', 'b (5)_dum9.jpg',
+    'c (1)_dum9.jpg', 'c (2)_dum9.jpg', 'c (3)_dum9.jpg', 'c (4)_dum9.jpg', 'c (5)_dum9.jpg',
+    'd (1)_dum9.jpg', 'd (2)_dum9.jpg', 'd (3)_dum9.jpg', 'd (4)_dum9.jpg', 'd (5)_dum9.jpg', 'd (6)_dum9.jpg',
+    'e (1)_dum9.jpg', 'e (2)_dum9.jpg', 'e (3)_dum9.jpg', 'e (4)_dum9.jpg', 'e (5)_dum9.jpg'
+  ],
+  'dum-10': [
+    'a (1)_dum10.jpg', 'a (2)_dum10.jpg', 'a (3)_dum10.jpg', 'a (4)_dum10.jpg', 'a (5)_dum10.jpg', 'a (6)_dum10.jpg', 'a (7)_dum10.jpg',
+    'b (1)_dum10.jpg', 'b (2)_dum10.jpg', 'b (3)_dum10.jpg', 'b (4)_dum10.jpg', 'b (5)_dum10.jpg',
+    'c (1)_dum10.jpg', 'c (2)_dum10.jpg', 'c (3)_dum10.jpg', 'c (4)_dum10.jpg', 'c (5)_dum10.jpg',
+    'd (1)_dum10.jpg', 'd (2)_dum10.jpg', 'd (3)_dum10.jpg', 'd (4)_dum10.jpg', 'd (5)_dum10.jpg', 'd (6)_dum10.jpg',
+    'e (1)_dum10.jpg', 'e (2)_dum10.jpg', 'e (3)_dum10.jpg', 'e (4)_dum10.jpg', 'e (5)_dum10.jpg'
+  ],
+  'dum-11': [
+    'f (1)_dum11.jpg', 'f (2)_dum11.jpg', 'f (3)_dum11.jpg', 'f (4)_dum11.jpg',
+    'g_ (1)_dum11.jpg', 'g_ (2)2_dum11.jpg', 'g_ (3)3_dum11.jpg', 'g_ (4)_dum11.jpg', 'g_ (5)_dum11.jpg', 'g_ (6)_dum11.jpg', 'g_ (7)2_dum11.jpg',
+    'h (1)_dum11.jpg', 'h (2)_dum11.jpg', 'h (3)_dum11.jpg', 'h (4)_dum11.jpg', 'h (5)_dum11.jpg'
+  ],
+  'dum-12': [
+    'f (1)_dum12.jpg', 'f (2)_dum12.jpg', 'f (3)_dum12.jpg', 'f (4)_dum12.jpg',
+    'g_ (1)_dum12.jpg', 'g_ (2)2_dum12.jpg', 'g_ (3)3_dum12.jpg', 'g_ (4)_dum12.jpg', 'g_ (5)_dum12.jpg', 'g_ (6)_dum12.jpg', 'g_ (7)2_dum12.jpg',
+    'h (1)_dum12.jpg', 'h (2)_dum12.jpg', 'h (3)_dum12.jpg', 'h (4)_dum12.jpg', 'h (5)_dum12.jpg'
+  ]
+}
+
+const getInteriorFolderForHouse = (houseId) => {
+  const id = parseInt(houseId)
+  if ([1, 3, 5, 7].includes(id)) return 'domy-1-3-5-7'
+  if ([2, 4, 6, 8].includes(id)) return 'domy-2-4-6-8'
+  if (id === 9) return 'dum-9'
+  if (id === 10) return 'dum-10'
+  if (id === 11) return 'dum-11'
+  if (id === 12) return 'dum-12'
+  return null
+}
+
+const getInteriorImagesForHouse = (houseId, houseName) => {
+  const folder = getInteriorFolderForHouse(houseId)
+  if (!folder || !INTERIOR_FILES[folder]) return []
+  const base = `/images/gallery/${folder}/`
+  const files = INTERIOR_FILES[folder]
+  return files.map((file, i) => ({
+    url: base + encodeURIComponent(file),
+    caption: `${houseName} – vizualizace interiéru ${i + 1}`
+  }))
+}
+
 const HousePickerLayout = () => {
   // Defaultně vybrán Dům 01
   const [selectedHouseId, setSelectedHouseId] = useState('1')
@@ -265,6 +325,12 @@ const HousePickerLayout = () => {
   // Lightbox state
   const [lightboxOpen, setLightboxOpen] = useState(false)
   const [lightboxIndex, setLightboxIndex] = useState(0)
+  // Rozkliknutí vizualizací interiéru
+  const [interiorExpanded, setInteriorExpanded] = useState(false)
+  const [interiorLightboxOpen, setInteriorLightboxOpen] = useState(false)
+  const [interiorLightboxIndex, setInteriorLightboxIndex] = useState(0)
+
+  const interiorImages = getInteriorImagesForHouse(selectedHouseId, selectedHouse?.name || '')
   
   // Příprava obrázků pro lightbox (pohled + půdorysy)
   const getLightboxImages = () => {
@@ -295,6 +361,11 @@ const HousePickerLayout = () => {
   const openLightbox = (index) => {
     setLightboxIndex(index)
     setLightboxOpen(true)
+  }
+
+  const openInteriorLightbox = (index) => {
+    setInteriorLightboxIndex(index)
+    setInteriorLightboxOpen(true)
   }
 
   // TODO: napojit na message from iframe / polygon click
@@ -479,6 +550,31 @@ const HousePickerLayout = () => {
             </div>
           </div>
 
+          {/* Vizualizace interiéru – celý řádek miniatur, rozkliknutelné */}
+          <div className="mt-8 md:mt-10">
+            <h3 className="text-base font-semibold text-slate-900 mb-3">Vizualizace interiéru</h3>
+            {/* Řádek větších miniatur (3× větší kostičky) */}
+            <div className="flex flex-wrap gap-3">
+              {interiorImages.map((img, index) => (
+                <button
+                  key={index}
+                  type="button"
+                  onClick={() => openInteriorLightbox(index)}
+                  className="w-20 h-20 sm:w-28 sm:h-28 md:w-40 md:h-40 rounded-xl overflow-hidden border-2 border-slate-200/70 bg-white hover:border-[#00D9B5] hover:ring-2 hover:ring-[#00D9B5]/30 transition-all focus:outline-none focus:ring-2 focus:ring-[#00D9B5] focus:ring-offset-2 flex-shrink-0"
+                >
+                  <img
+                    src={img.url}
+                    alt={img.caption}
+                    className="w-full h-full object-cover"
+                  />
+                </button>
+              ))}
+            </div>
+            <p className="text-slate-500 text-sm mt-2">
+              Kliknutím na obrázek zobrazíte vizualizaci v plné velikosti.
+            </p>
+          </div>
+
           {/* Divider před tabulkou */}
           <div className="mt-12 border-t border-slate-100" />
 
@@ -496,6 +592,15 @@ const HousePickerLayout = () => {
           currentIndex={lightboxIndex}
           onClose={() => setLightboxOpen(false)}
           onNavigate={(index) => setLightboxIndex(index)}
+        />
+      )}
+      {/* Lightbox pro vizualizace interiéru */}
+      {interiorLightboxOpen && interiorImages.length > 0 && (
+        <Lightbox
+          images={interiorImages}
+          currentIndex={interiorLightboxIndex}
+          onClose={() => setInteriorLightboxOpen(false)}
+          onNavigate={(index) => setInteriorLightboxIndex(index)}
         />
       )}
     </div>

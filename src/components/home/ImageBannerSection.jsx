@@ -23,7 +23,7 @@ const ImageBannerSection = () => {
           <div className="container mx-auto px-5 lg:px-20">
             <div className="max-w-4xl">
               <h2 className="text-white text-5xl md:text-6xl lg:text-7xl font-serif font-bold leading-tight">
-                Premiový&nbsp;interiér
+                Promyšlené dispozice
               </h2>
             </div>
           </div>

@@ -33,7 +33,7 @@ const ProjectIntroSection = () => {
               <br />
               harmonii s přírodou
             </h2>
-            <div className="space-y-4 text-body-regular text-white mb-6 hidden md:block">
+            <div className="space-y-4 text-lg text-white/95 mb-6 hidden md:block">
               <p>
                 Projekt Luční háj přináší klidné a komfortní bydlení v jedné z nejžádanějších
                 lokalit středních Čech – Týnec nad Sázavou. Spojuje moderní stavební technologie,
@@ -69,7 +69,7 @@ const ProjectIntroSection = () => {
             <div className="relative transform rotate-3 hover:rotate-2 transition-transform duration-300">
               <div className="aspect-[4/3] rounded-xl overflow-hidden shadow-large">
                 <Image
-                  src="/images/bungalov_hero.jpg"
+                  src="/images/gallery/exterior/ex%20(1).jpg"
                   alt="Vizualizace bungalovu Luční háj"
                   width={800}
                   height={600}

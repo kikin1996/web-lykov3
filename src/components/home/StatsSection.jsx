@@ -1,9 +1,9 @@
 const StatsSection = () => {
   const stats = [
-    { value: '800–1 300 m²', label: 'Velikost pozemků' },
+    { value: '400 – 1 300 m²', label: 'Velikost pozemků' },
     { value: '12', label: 'Rodinných domů' },
     { value: 'A / B', label: 'Energetická třída' },
-    { value: '2026', label: 'Rok dokončení' },
+    { value: 'Srpen 2026', label: 'Datum kolaudace' },
   ]
 
   return (
