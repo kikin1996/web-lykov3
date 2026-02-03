@@ -4,145 +4,145 @@ import Link from 'next/link'
 const houses = [
   {
     id: '1',
-    name: 'Dům 01',
+    name: 'Šalvěj',
     usableArea: 119.4,
     plotArea: 411,
     rooms: 5,
     bathrooms: 2,
     status: 'Volný',
-    price: 'Na dotaz',
+    price: 11490000,
     floorplanImage: '/photos/F1 resize.jpg',
     houseCardPdf: '/documents/dum-01-karta.pdf'
   },
   {
     id: '2',
-    name: 'Dům 02',
+    name: 'Chrpa',
     usableArea: 119.4,
     plotArea: 410,
     rooms: 5,
     bathrooms: 2,
     status: 'Volný',
-    price: 'Na dotaz',
+    price: 11590000,
     floorplanImage: '/photos/web_f2.jpg',
     houseCardPdf: '/documents/dum-02-karta.pdf'
   },
   {
     id: '3',
-    name: 'Dům 03',
+    name: 'Trézalce',
     usableArea: 119.4,
     plotArea: 403,
     rooms: 5,
     bathrooms: 2,
     status: 'Volný',
-    price: 'Na dotaz',
+    price: 10890000,
     floorplanImage: null,
     houseCardPdf: null
   },
   {
     id: '4',
-    name: 'Dům 04',
+    name: 'Hvozdík',
     usableArea: 119.4,
     plotArea: 402,
     rooms: 5,
     bathrooms: 2,
     status: 'Volný',
-    price: 'Na dotaz',
+    price: 10890000,
     floorplanImage: null,
     houseCardPdf: null
   },
   {
     id: '5',
-    name: 'Dům 05',
+    name: 'Mateřídouška',
     usableArea: 119.4,
     plotArea: 401,
     rooms: 5,
     bathrooms: 2,
     status: 'Volný',
-    price: 'Na dotaz',
+    price: 11190000,
     floorplanImage: null,
     houseCardPdf: null
   },
   {
     id: '6',
-    name: 'Dům 06',
+    name: 'Zvonek',
     usableArea: 119.4,
     plotArea: 401,
     rooms: 5,
     bathrooms: 2,
     status: 'Volný',
-    price: 'Na dotaz',
+    price: 11490000,
     floorplanImage: null,
     houseCardPdf: null
   },
   {
     id: '7',
-    name: 'Dům 07',
+    name: 'Prvosenka',
     usableArea: 119.4,
     plotArea: 401,
     rooms: 5,
     bathrooms: 2,
     status: 'Volný',
-    price: 'Na dotaz',
+    price: 11490000,
     floorplanImage: null,
     houseCardPdf: null
   },
   {
     id: '8',
-    name: 'Dům 08',
+    name: 'Violka',
     usableArea: 119.4,
     plotArea: 401,
     rooms: 5,
     bathrooms: 2,
     status: 'Volný',
-    price: 'Na dotaz',
+    price: 11590000,
     floorplanImage: null,
     houseCardPdf: null
   },
   {
     id: '9',
-    name: 'Dům 09',
+    name: 'Pomněnka',
     usableArea: 177.7,
     plotArea: 401,
     rooms: 7,
     bathrooms: 2,
     status: 'Volný',
-    price: 'Na dotaz',
+    price: 14990000,
     floorplanImage: null,
     houseCardPdf: null
   },
   {
     id: '10',
-    name: 'Dům 10',
+    name: 'Jetel',
     usableArea: 177.7,
     plotArea: 401,
     rooms: 7,
     bathrooms: 2,
     status: 'Volný',
-    price: 'Na dotaz',
+    price: 15290000,
     floorplanImage: null,
     houseCardPdf: null
   },
   {
     id: '11',
-    name: 'Dům 11',
+    name: 'Sedmikráska',
     usableArea: 147.7,
     plotArea: 1304,
     rooms: 5,
     bathrooms: 2,
     status: 'Volný',
-    price: 'Na dotaz',
+    price: 15590000,
     floorplanImage: null,
     houseCardPdf: null
   },
   {
     id: '12',
-    name: 'Dům 12',
+    name: 'Kopretina',
     usableArea: 147.7,
     plotArea: 978,
     rooms: 5,
     bathrooms: 2,
     status: 'Volný',
-    price: 'Na dotaz',
+    price: 14900000,
     floorplanImage: null,
     houseCardPdf: null
   }
@@ -191,7 +191,7 @@ const AvailabilityTableOnly = () => {
             <thead>
               <tr className="bg-neutral-lightGray">
                 <th className="text-left py-4 px-6 text-body-small uppercase tracking-wider" style={{ color: '#000000', fontWeight: 'bold' }}>
-                  Dům
+                  Květina
                 </th>
                 <th className="text-left py-4 px-6 text-body-small uppercase tracking-wider" style={{ color: '#000000', fontWeight: 'bold' }}>
                   Plocha pozemku
@@ -226,7 +226,12 @@ const AvailabilityTableOnly = () => {
                     {formatSize(house.usableArea)} m²
                   </td>
                   <td className="py-4 px-6 text-body-regular text-neutral-mediumGray">
-                    {formatPrice(house.price) ? (house.price === 'Na dotaz' ? 'Na dotaz' : `${formatPrice(house.price)} Kč`) : ''}
+                    <span className="block">{formatPrice(house.price) ? (house.price === 'Na dotaz' ? 'Na dotaz' : `${formatPrice(house.price)} Kč`) : ''}</span>
+                    {['3', '4', '5'].includes(house.id) && (
+                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-red-100 text-red-700 border border-red-200 mt-1.5">
+                        Zvýhodněná cena
+                      </span>
+                    )}
                   </td>
                   <td className="py-4 px-6">
                     <span className="inline-flex items-center gap-2">

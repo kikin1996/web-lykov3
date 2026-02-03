@@ -7,7 +7,7 @@ import Lightbox from '../gallery/Lightbox'
 const houses = [
   {
     id: '1',
-    name: 'Dům 01',
+    name: 'Šalvěj',
     usableArea: 119.4,
     plotArea: 411,
     rooms: 5,
@@ -16,12 +16,12 @@ const houses = [
     floorplanImage: '/photos/F1 resize.jpg',
     description: 'Rodinný dům s velkou obývací plochou a přímým vstupem na terasu.',
     status: 'Volný',
-    price: 'Na dotaz',
+    price: 11490000,
     houseCardPdf: '/documents/dum-01-karta.pdf' // URL k PDF dokumentu
   },
   {
     id: '2',
-    name: 'Dům 02',
+    name: 'Chrpa',
     usableArea: 119.4,
     plotArea: 410,
     rooms: 5,
@@ -30,12 +30,12 @@ const houses = [
     floorplanImage: '/photos/web_f2.jpg',
     description: 'Rodinný dům s velkou obývací plochou a přímým vstupem na terasu.',
     status: 'Volný',
-    price: 'Na dotaz',
+    price: 11590000,
     houseCardPdf: '/documents/dum-02-karta.pdf'
   },
   {
     id: '3',
-    name: 'Dům 03',
+    name: 'Trézalce',
     usableArea: 119.4,
     plotArea: 403,
     rooms: 5,
@@ -44,12 +44,12 @@ const houses = [
     floorplanImage: null,
     description: 'Rodinný dům s velkou obývací plochou a přímým vstupem na terasu.',
     status: 'Volný',
-    price: 'Na dotaz',
+    price: 10890000,
     houseCardPdf: null
   },
   {
     id: '4',
-    name: 'Dům 04',
+    name: 'Hvozdík',
     usableArea: 119.4,
     plotArea: 402,
     rooms: 5,
@@ -58,12 +58,12 @@ const houses = [
     floorplanImage: null,
     description: 'Rodinný dům s velkou obývací plochou a přímým vstupem na terasu.',
     status: 'Volný',
-    price: 'Na dotaz',
+    price: 10890000,
     houseCardPdf: null
   },
   {
     id: '5',
-    name: 'Dům 05',
+    name: 'Mateřídouška',
     usableArea: 119.4,
     plotArea: 401,
     rooms: 5,
@@ -72,12 +72,12 @@ const houses = [
     floorplanImage: null,
     description: 'Rodinný dům s velkou obývací plochou a přímým vstupem na terasu.',
     status: 'Volný',
-    price: 'Na dotaz',
+    price: 11190000,
     houseCardPdf: null
   },
   {
     id: '6',
-    name: 'Dům 06',
+    name: 'Zvonek',
     usableArea: 119.4,
     plotArea: 401,
     rooms: 5,
@@ -86,12 +86,12 @@ const houses = [
     floorplanImage: null,
     description: 'Rodinný dům s velkou obývací plochou a přímým vstupem na terasu.',
     status: 'Volný',
-    price: 'Na dotaz',
+    price: 11490000,
     houseCardPdf: null
   },
   {
     id: '7',
-    name: 'Dům 07',
+    name: 'Prvosenka',
     usableArea: 119.4,
     plotArea: 401,
     rooms: 5,
@@ -100,12 +100,12 @@ const houses = [
     floorplanImage: null,
     description: 'Rodinný dům s velkou obývací plochou a přímým vstupem na terasu.',
     status: 'Volný',
-    price: 'Na dotaz',
+    price: 11490000,
     houseCardPdf: null
   },
   {
     id: '8',
-    name: 'Dům 08',
+    name: 'Violka',
     usableArea: 119.4,
     plotArea: 401,
     rooms: 5,
@@ -114,12 +114,12 @@ const houses = [
     floorplanImage: null,
     description: 'Rodinný dům s velkou obývací plochou a přímým vstupem na terasu.',
     status: 'Volný',
-    price: 'Na dotaz',
+    price: 11590000,
     houseCardPdf: null
   },
   {
     id: '9',
-    name: 'Dům 09',
+    name: 'Pomněnka',
     usableArea: 177.7,
     plotArea: 401,
     rooms: 7,
@@ -128,12 +128,12 @@ const houses = [
     floorplanImage: null,
     description: 'Rodinný dům s velkou obývací plochou a přímým vstupem na terasu.',
     status: 'Volný',
-    price: 'Na dotaz',
+    price: 14990000,
     houseCardPdf: null
   },
   {
     id: '10',
-    name: 'Dům 10',
+    name: 'Jetel',
     usableArea: 177.7,
     plotArea: 401,
     rooms: 7,
@@ -142,12 +142,12 @@ const houses = [
     floorplanImage: null,
     description: 'Rodinný dům s velkou obývací plochou a přímým vstupem na terasu.',
     status: 'Volný',
-    price: 'Na dotaz',
+    price: 15290000,
     houseCardPdf: null
   },
   {
     id: '11',
-    name: 'Dům 11',
+    name: 'Sedmikráska',
     usableArea: 147.7,
     plotArea: 1304,
     rooms: 5,
@@ -156,12 +156,12 @@ const houses = [
     floorplanImage: null,
     description: 'Rodinný dům s velkou obývací plochou a přímým vstupem na terasu.',
     status: 'Volný',
-    price: 'Na dotaz',
+    price: 15590000,
     houseCardPdf: null
   },
   {
     id: '12',
-    name: 'Dům 12',
+    name: 'Kopretina',
     usableArea: 147.7,
     plotArea: 978,
     rooms: 5,
@@ -170,7 +170,7 @@ const houses = [
     floorplanImage: null,
     description: 'Rodinný dům s velkou obývací plochou a přímým vstupem na terasu.',
     status: 'Volný',
-    price: 'Na dotaz',
+    price: 14900000,
     houseCardPdf: null
   }
 ]
@@ -315,7 +315,9 @@ const getInteriorImagesForHouse = (houseId, houseName) => {
   }))
 }
 
-const HousePickerLayout = () => {
+// EmbeddedPreviewComponent je volitelný – umožňuje na testovací stránce
+// použít jinou mapu/polygony bez zásahu do hlavní stránky.
+const HousePickerLayout = ({ EmbeddedPreviewComponent = EmbeddedSitePreview }) => {
   // Defaultně vybrán Dům 01
   const [selectedHouseId, setSelectedHouseId] = useState('1')
   const selectedHouse = houses.find((house) => house.id === selectedHouseId)
@@ -394,7 +396,7 @@ const HousePickerLayout = () => {
 
             {/* Mapa s polygony (klik na polygon vybírá dům) */}
             <div className="relative">
-              <EmbeddedSitePreview
+              <EmbeddedPreviewComponent
                 selectedHouseId={selectedHouseId}
                 onSelectHouse={setSelectedHouseId}
               />
@@ -544,6 +546,20 @@ const HousePickerLayout = () => {
                     <p className="text-lg font-semibold text-slate-900">
                       {selectedHouse?.bathrooms}
                     </p>
+                  </div>
+
+                  <div className="bg-white rounded-lg p-4 border border-slate-200/70 col-span-2">
+                    <p className="text-xs text-slate-500 mb-1">Prodejní cena</p>
+                    <p className="text-lg font-semibold text-slate-900">
+                      {selectedHouse?.price != null && selectedHouse?.price !== 'Na dotaz'
+                        ? `${new Intl.NumberFormat('cs-CZ', { maximumFractionDigits: 0 }).format(selectedHouse.price)} Kč`
+                        : 'Na dotaz'}
+                    </p>
+                    {selectedHouse?.id && ['3', '4', '5'].includes(selectedHouse.id) && (
+                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-red-100 text-red-700 border border-red-200 mt-2">
+                        Zvýhodněná cena
+                      </span>
+                    )}
                   </div>
                 </div>
               </div>

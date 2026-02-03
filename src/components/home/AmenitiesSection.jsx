@@ -1,25 +1,37 @@
 import Card from '../shared/Card'
 
+// Přehledová sekce „Standardy stavby“ na homepage
+// Obsah i fotky jsou sladěné se stránkou /standardy
 const amenities = [
   {
-    title: 'Vytápění a energetika',
-    description: 'Moderní energeticky úsporné řešení s tepelným čerpadlem, podlahovým vytápěním a přípravou na fotovoltaiku.',
-    image: '/images/standardy-vytapeni.webp',
+    title: 'Konstrukce a zdivo',
+    description:
+      'Keramické broušené zdivo a monolitické stropy pro maximální stabilitu, dlouhou životnost a skvělý útlum hluku mezi patry.',
+    image: '/standardy/zdivo.jpg',
   },
   {
-    title: 'Okna a stínění',
-    description: 'Kvalitní okna s trojskly a venkovním stíněním pro příjemné klima v interiéru po celý rok.',
+    title: 'Tepelné čerpadlo a vytápění',
+    description:
+      'Moderní tepelné čerpadlo a podlahové vytápění s individuální regulací zajišťují úsporný provoz a vysoký komfort.',
+    image: '/standardy/tepelko.jpg',
+  },
+  {
+    title: 'Okna pro pasivní standard',
+    description:
+      'Okna vyšší třídy splňují parametry pro pasivní domy – výborně izolují, tlumí hluk a podporují energetickou třídu A/B.',
     image: '/images/standardy-okna.jpg',
   },
   {
-    title: 'Akustika a izolace',
-    description: 'Důkladné odhlučnění konstrukcí a bytových příček pro maximální klid a soukromí.',
-    image: '/images/standardy-akustika.jpg',
+    title: 'Akustika a soukromí',
+    description:
+      'Domy jsou konstrukčně oddělené vlastními nosnými stěnami s akustickou vatou, takže eliminují přenos hluku mezi sousedy.',
+    image: '/standardy/' + encodeURIComponent('Akustická zeď mezi hudbou a spánkem.jpg'),
   },
   {
-    title: 'Konstrukce a zdivo',
-    description: 'Kvalitní keramické zdivo, důkladné zateplení a robustní střešní konstrukce pro dlouhodobou životnost a komfort.',
-    image: '/images/standardy-konstrukce.jpg',
+    title: 'Elektroinstalace a data',
+    description:
+      'Nadstandardní počet zásuvek a kompletní kabelové datové rozvody připravené na moderní technologie v celém domě.',
+    image: '/images/standardy-elektro.webp',
   },
 ]
 
@@ -28,10 +40,11 @@ const AmenitiesSection = () => {
     <section className="py-20 bg-neutral-offWhite relative pb-80 hidden md:block">
       <div className="container mx-auto px-5 lg:px-20">
         <div className="text-center mb-12">
-          <p className="text-overline mb-4">Vybavení</p>
+          <p className="text-overline mb-4">Standardy</p>
           <h2 className="text-h1 mb-4">Standardy stavby</h2>
           <p className="text-body-large max-w-2xl mx-auto">
-            Objevte prvotřídní vybavení, které dodá vašemu domovu ještě větší klid.
+            Základní technické parametry a vybavení, které zajišťují kvalitu,
+            úspornost a dlouhodobý komfort bydlení v projektu Luční Háj.
           </p>
         </div>
 

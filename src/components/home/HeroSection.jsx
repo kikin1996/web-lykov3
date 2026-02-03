@@ -10,7 +10,7 @@ const HeroSection = () => {
   const [showImage, setShowImage] = useState(false)
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia('(min-width: 1700px)')
+    const mediaQuery = window.matchMedia('(min-width: 1400px)')
     
     const updateDisplay = () => {
       setShowImage(mediaQuery.matches)
@@ -27,7 +27,7 @@ const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 bg-neutral-darkNavy">
         {showImage && (
           <div 
             className="absolute inset-0 transition-transform duration-700 ease-out hover:scale-110"
