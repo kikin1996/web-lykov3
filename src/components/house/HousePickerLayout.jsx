@@ -7,7 +7,7 @@ import Lightbox from '../gallery/Lightbox'
 const houses = [
   {
     id: '1',
-    name: 'Šalvěj',
+    name: 'Dům 1 – Šalvěj',
     usableArea: 119.4,
     plotArea: 411,
     rooms: 5,
@@ -21,7 +21,7 @@ const houses = [
   },
   {
     id: '2',
-    name: 'Chrpa',
+    name: 'Dům 2 – Chrpa',
     usableArea: 119.4,
     plotArea: 410,
     rooms: 5,
@@ -35,7 +35,7 @@ const houses = [
   },
   {
     id: '3',
-    name: 'Trézalce',
+    name: 'Dům 3 – Trézalce',
     usableArea: 119.4,
     plotArea: 403,
     rooms: 5,
@@ -49,7 +49,7 @@ const houses = [
   },
   {
     id: '4',
-    name: 'Hvozdík',
+    name: 'Dům 4 – Hvozdík',
     usableArea: 119.4,
     plotArea: 402,
     rooms: 5,
@@ -63,7 +63,7 @@ const houses = [
   },
   {
     id: '5',
-    name: 'Mateřídouška',
+    name: 'Dům 5 – Mateřídouška',
     usableArea: 119.4,
     plotArea: 401,
     rooms: 5,
@@ -77,7 +77,7 @@ const houses = [
   },
   {
     id: '6',
-    name: 'Zvonek',
+    name: 'Dům 6 – Zvonek',
     usableArea: 119.4,
     plotArea: 401,
     rooms: 5,
@@ -91,7 +91,7 @@ const houses = [
   },
   {
     id: '7',
-    name: 'Prvosenka',
+    name: 'Dům 7 – Prvosenka',
     usableArea: 119.4,
     plotArea: 401,
     rooms: 5,
@@ -105,7 +105,7 @@ const houses = [
   },
   {
     id: '8',
-    name: 'Violka',
+    name: 'Dům 8 – Violka',
     usableArea: 119.4,
     plotArea: 401,
     rooms: 5,
@@ -119,7 +119,7 @@ const houses = [
   },
   {
     id: '9',
-    name: 'Pomněnka',
+    name: 'Dům 9 – Pomněnka',
     usableArea: 177.7,
     plotArea: 401,
     rooms: 7,
@@ -133,7 +133,7 @@ const houses = [
   },
   {
     id: '10',
-    name: 'Jetel',
+    name: 'Dům 10 – Jetel',
     usableArea: 177.7,
     plotArea: 401,
     rooms: 7,
@@ -147,7 +147,7 @@ const houses = [
   },
   {
     id: '11',
-    name: 'Sedmikráska',
+    name: 'Dům 11 – Sedmikráska',
     usableArea: 147.7,
     plotArea: 1304,
     rooms: 5,
@@ -161,7 +161,7 @@ const houses = [
   },
   {
     id: '12',
-    name: 'Kopretina',
+    name: 'Dům 12 – Kopretina',
     usableArea: 147.7,
     plotArea: 978,
     rooms: 5,

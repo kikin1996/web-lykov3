@@ -22,7 +22,7 @@ const ProjectIntroSection = () => {
   }, [])
 
   return (
-    <section className="py-20 bg-neutral-darkNavy relative -mt-[488px] pt-16">
+    <section className="py-20 bg-neutral-darkNavy relative -mt-[488px] pt-[130px] md:pt-[170px]">
       <div className="container mx-auto px-5 lg:px-20">
         <div className={`grid grid-cols-1 ${showImage ? 'grid-cols-2' : ''} gap-12 items-center`}>
           {/* Left Side - Text Content */}

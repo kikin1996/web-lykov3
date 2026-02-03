@@ -48,7 +48,7 @@ export default function GalleryPage() {
         title="Fotogalerie"
         description="Prohlédněte si fotografie exteriéru, interiéru a vybavení projektu Luční Háj. Galerie obsahuje vizualizace domů, interiéry bytů a okolí projektu."
         keywords="galerie, fotografie, interiér, exteriér, vizualizace, Luční Háj, Týnec nad Sázavou"
-        image="/images/gallery_main.jpg"
+        image={"/images/gallery/dum-9/" + encodeURIComponent("d (5)_dum9.jpg")}
         url="/galerie"
       />
       <StructuredData data={structuredData} />
@@ -59,11 +59,11 @@ export default function GalleryPage() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-10">
                 <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden">
                   <Image
-                    src="/images/gallery_main.jpg"
+                    src={"/images/gallery/dum-9/" + encodeURIComponent("d (5)_dum9.jpg")}
                     alt="Fotogalerie projektu Luční Háj"
                     width={1200}
                     height={900}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-bottom"
                     priority
                   />
                 </div>

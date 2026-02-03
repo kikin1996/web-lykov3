@@ -1,37 +1,54 @@
 import Card from '../shared/Card'
 
-// Přehledová sekce „Standardy stavby“ na homepage
-// Obsah i fotky jsou sladěné se stránkou /standardy
+// Přehledová sekce „Standardy stavby“ na homepage – pořadí: 1) podlaha, 2) obklady, 3) čerpadlo, 4) okna, 5–8) další
 const amenities = [
   {
-    title: 'Konstrukce a zdivo',
+    title: 'Podlahy z masivního dřeva',
     description:
-      'Keramické broušené zdivo a monolitické stropy pro maximální stabilitu, dlouhou životnost a skvělý útlum hluku mezi patry.',
-    image: '/standardy/zdivo.jpg',
+      'Dřevěné podlahy 14 mm z přírodního dřeva – vyšší stabilita, dlouhá životnost, možnost renovace a nadčasová elegance.',
+    image: '/standardy/standardy2/' + encodeURIComponent('Podlahy z masivního dřeva – tloušťka 14 mm.jpg'),
   },
   {
-    title: 'Tepelné čerpadlo a vytápění',
+    title: 'Obklady a dlažby Halcón',
     description:
-      'Moderní tepelné čerpadlo a podlahové vytápění s individuální regulací zajišťují úsporný provoz a vysoký komfort.',
+      'Luxusní španělská keramika s nadčasovým designem. Prémiové obklady a dlažby – vysoká odolnost, precizní zpracování a dlouhá životnost.',
+    image: '/standardy/standardy2/' + encodeURIComponent('Obklady a dlažby Halcón.jpg'),
+  },
+  {
+    title: 'Tepelné čerpadlo Midea',
+    description:
+      'Vytápění a ohřev teplé vody. Vysoká účinnost, úsporný provoz a podlahové topení s individuální regulací.',
     image: '/standardy/tepelko.jpg',
   },
   {
     title: 'Okna pro pasivní standard',
     description:
-      'Okna vyšší třídy splňují parametry pro pasivní domy – výborně izolují, tlumí hluk a podporují energetickou třídu A/B.',
-    image: '/images/standardy-okna.jpg',
+      'Okna vyšší třídy splňují parametry pasivních staveb a podtrhují vysoký standard provedení domu.',
+    image: '/standardy/standardy2/' + encodeURIComponent('Okna pro pasivní standard.jpg'),
   },
   {
-    title: 'Akustika a soukromí',
+    title: 'Precizní keramické zdivo',
     description:
-      'Domy jsou konstrukčně oddělené vlastními nosnými stěnami s akustickou vatou, takže eliminují přenos hluku mezi sousedy.',
-    image: '/standardy/' + encodeURIComponent('Akustická zeď mezi hudbou a spánkem.jpg'),
+      'Nosné konstrukce z keramického broušeného zdiva 300 mm – přesnost provedení, dlouhá životnost a celková stabilita domu.',
+    image: '/standardy/standardy2/Precizni keramicke zdivo.jpg',
   },
   {
-    title: 'Elektroinstalace a data',
+    title: 'Konstrukčně oddělené domy',
     description:
-      'Nadstandardní počet zásuvek a kompletní kabelové datové rozvody připravené na moderní technologie v celém domě.',
-    image: '/images/standardy-elektro.webp',
+      'Vlastní nosná akustická stěna a akustická vata mezi domy. Nižší přenos hluku, více soukromí a klidu jako v samostatném domě.',
+    image: '/standardy/standardy2/' + encodeURIComponent('Konstrukčně oddělené domy.jpg'),
+  },
+  {
+    title: 'Tepelná izolace stavby',
+    description:
+      'Zateplení fasády 200 mm EPS a minerální vata 320 mm nad 2NP. Energetický standard A/B a stabilní teplota po celý rok.',
+    image: '/standardy/standardy2/' + encodeURIComponent('Tepelná izolace stavby.jpg'),
+  },
+  {
+    title: 'Energetická náročnost A/B',
+    description:
+      'Dvojdomy třída A, bungalovy třída B. Nižší náklady na energie, stabilní klima a vyšší hodnota nemovitosti.',
+    image: '/standardy/standardy2/' + encodeURIComponent('Energetická náročnost AB.jpg'),
   },
 ]
 
