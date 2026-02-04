@@ -6,13 +6,13 @@ const amenities = [
     title: 'Podlahy z masivního dřeva',
     description:
       'Dřevěné podlahy 14 mm z přírodního dřeva – vyšší stabilita, dlouhá životnost, možnost renovace a nadčasová elegance.',
-    image: '/standardy/standardy2/' + encodeURIComponent('Podlahy z masivního dřeva – tloušťka 14 mm.jpg'),
+    image: '/podlaha_1.jpg',
   },
   {
     title: 'Obklady a dlažby Halcón',
     description:
       'Luxusní španělská keramika s nadčasovým designem. Prémiové obklady a dlažby – vysoká odolnost, precizní zpracování a dlouhá životnost.',
-    image: '/standardy/standardy2/' + encodeURIComponent('Obklady a dlažby Halcón.jpg'),
+    image: '/obklady_1.jpg',
   },
   {
     title: 'Tepelné čerpadlo Midea',
@@ -30,7 +30,7 @@ const amenities = [
     title: 'Precizní keramické zdivo',
     description:
       'Nosné konstrukce z keramického broušeného zdiva 300 mm – přesnost provedení, dlouhá životnost a celková stabilita domu.',
-    image: '/standardy/standardy2/Precizni keramicke zdivo.jpg',
+    image: '/stavba_1.jpg',
   },
   {
     title: 'Konstrukčně oddělené domy',
@@ -48,7 +48,7 @@ const amenities = [
     title: 'Energetická náročnost A/B',
     description:
       'Dvojdomy třída A, bungalovy třída B. Nižší náklady na energie, stabilní klima a vyšší hodnota nemovitosti.',
-    image: '/standardy/standardy2/' + encodeURIComponent('Energetická náročnost AB.jpg'),
+    image: '/standardy/fasada3.jpg',
   },
 ]
 

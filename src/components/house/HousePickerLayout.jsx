@@ -309,10 +309,221 @@ const getInteriorImagesForHouse = (houseId, houseName) => {
   if (!folder || !INTERIOR_FILES[folder]) return []
   const base = `/images/gallery/${folder}/`
   const files = INTERIOR_FILES[folder]
-  return files.map((file, i) => ({
-    url: base + encodeURIComponent(file),
-    caption: `${houseName} – vizualizace interiéru ${i + 1}`
-  }))
+  const getCaptionForFile = (fileName, index) => {
+    if (fileName.startsWith('a ')) return 'Obývací pokoj s kuchyní'
+    if (fileName.startsWith('b ')) return 'Dětský pokoj'
+    if (fileName.startsWith('c ')) return 'Ložnice'
+    if (fileName.startsWith('d ')) return 'Obývací pokoj s kuchyní (Podzemní byt)'
+    if (fileName.startsWith('e ')) return 'Ložnice (Podzemní byt)'
+    if (fileName.startsWith('f ')) return 'Ložnice'
+    if (fileName.startsWith('g_')) return 'Obývací pokoj s kuchyní'
+    if (fileName.startsWith('h ')) return 'Dětský pokoj'
+    return `${houseName} – vizualizace interiéru ${index + 1}`
+  }
+
+  const baseImages = files.map((file, i) => {
+    if (typeof file === 'string') {
+      return {
+        url: base + encodeURIComponent(file),
+        caption: getCaptionForFile(file, i)
+      }
+    }
+    return {
+      url: file.url,
+      caption: file.caption || `${houseName} – vizualizace interiéru ${i + 1}`
+    }
+  })
+
+  const id = parseInt(houseId)
+  if ([1, 3, 5, 7, 9].includes(id)) {
+    const leftBathrooms = [
+      ...baseImages,
+      {
+        url: '/images/koupelny/dvojdum/1-03_levy_dum/g1.jpg',
+        caption: 'Spodní koupelna'
+      },
+      {
+        url: '/images/koupelny/dvojdum/1-03_levy_dum/g2_2.jpg',
+        caption: 'Spodní koupelna'
+      },
+      {
+        url: '/images/koupelny/dvojdum/1-03_levy_dum/g3.jpg',
+        caption: 'Spodní koupelna'
+      },
+      {
+        url: '/images/koupelny/dvojdum/2-06_levy_dum/' + encodeURIComponent('h (1).jpg'),
+        caption: 'Vrchní koupelna'
+      },
+      {
+        url: '/images/koupelny/dvojdum/2-06_levy_dum/' + encodeURIComponent('h (1)-2.jpg'),
+        caption: 'Vrchní koupelna'
+      },
+      {
+        url: '/images/koupelny/dvojdum/2-06_levy_dum/' + encodeURIComponent('h (2).jpg'),
+        caption: 'Vrchní koupelna'
+      },
+      {
+        url: '/images/koupelny/dvojdum/2-06_levy_dum/' + encodeURIComponent('h (3).jpg'),
+        caption: 'Vrchní koupelna'
+      },
+      {
+        url: '/images/koupelny/dvojdum/2-06_levy_dum/' + encodeURIComponent('h (4).jpg'),
+        caption: 'Vrchní koupelna'
+      }
+    ]
+    if (id === 9) {
+      return [
+        ...leftBathrooms,
+        {
+          url: '/images/koupelny/prizemni-byt/levy_dum/' + encodeURIComponent('j (1).jpg'),
+          caption: 'Koupelna - přízemní byt'
+        },
+        {
+          url: '/images/koupelny/prizemni-byt/levy_dum/' + encodeURIComponent('j (2).jpg'),
+          caption: 'Koupelna - přízemní byt'
+        },
+        {
+          url: '/images/koupelny/prizemni-byt/levy_dum/' + encodeURIComponent('j (3).jpg'),
+          caption: 'Koupelna - přízemní byt'
+        },
+        {
+          url: '/images/koupelny/prizemni-byt/levy_dum/' + encodeURIComponent('j (4).jpg'),
+          caption: 'Koupelna - přízemní byt'
+        }
+      ]
+    }
+    return leftBathrooms
+  }
+
+  if ([2, 4, 6, 8, 10].includes(id)) {
+    const rightBathrooms = [
+      ...baseImages,
+      {
+        url: '/images/koupelny/dvojdum/1-03_pravy_dum/g1.jpg',
+        caption: 'Spodní koupelna'
+      },
+      {
+        url: '/images/koupelny/dvojdum/1-03_pravy_dum/g2_2.jpg',
+        caption: 'Spodní koupelna'
+      },
+      {
+        url: '/images/koupelny/dvojdum/1-03_pravy_dum/g3.jpg',
+        caption: 'Spodní koupelna'
+      },
+      {
+        url: '/images/koupelny/dvojdum/2-06_pravy_dum/' + encodeURIComponent('h (1).jpg'),
+        caption: 'Vrchní koupelna'
+      },
+      {
+        url: '/images/koupelny/dvojdum/2-06_pravy_dum/' + encodeURIComponent('h (1)-2.jpg'),
+        caption: 'Vrchní koupelna'
+      },
+      {
+        url: '/images/koupelny/dvojdum/2-06_pravy_dum/' + encodeURIComponent('h (2).jpg'),
+        caption: 'Vrchní koupelna'
+      },
+      {
+        url: '/images/koupelny/dvojdum/2-06_pravy_dum/' + encodeURIComponent('h (3).jpg'),
+        caption: 'Vrchní koupelna'
+      },
+      {
+        url: '/images/koupelny/dvojdum/2-06_pravy_dum/' + encodeURIComponent('h (4).jpg'),
+        caption: 'Vrchní koupelna'
+      }
+    ]
+    if (id === 10) {
+      return [
+        ...rightBathrooms,
+        {
+          url: '/images/koupelny/prizemni-byt/pravy_dum/' + encodeURIComponent('j (1).jpg'),
+          caption: 'Koupelna - přízemní byt'
+        },
+        {
+          url: '/images/koupelny/prizemni-byt/pravy_dum/' + encodeURIComponent('j (2).jpg'),
+          caption: 'Koupelna - přízemní byt'
+        },
+        {
+          url: '/images/koupelny/prizemni-byt/pravy_dum/' + encodeURIComponent('j (3).jpg'),
+          caption: 'Koupelna - přízemní byt'
+        },
+        {
+          url: '/images/koupelny/prizemni-byt/pravy_dum/' + encodeURIComponent('j (4).jpg'),
+          caption: 'Koupelna - přízemní byt'
+        }
+      ]
+    }
+    return rightBathrooms
+  }
+
+  if (id === 11) {
+    return [
+      ...baseImages,
+      {
+        url: '/images/koupelny/bungalov/1-07_levy_dum/e1.jpg',
+        caption: 'Menší koupelna'
+      },
+      {
+        url: '/images/koupelny/bungalov/1-07_levy_dum/e2.jpg',
+        caption: 'Menší koupelna'
+      },
+      {
+        url: '/images/koupelny/bungalov/1-07_levy_dum/e3.jpg',
+        caption: 'Menší koupelna'
+      },
+      {
+        url: '/images/koupelny/bungalov/1-11_levy_dum/' + encodeURIComponent('f (1).jpg'),
+        caption: 'Větší koupelna'
+      },
+      {
+        url: '/images/koupelny/bungalov/1-11_levy_dum/' + encodeURIComponent('f (1)-2.jpg'),
+        caption: 'Větší koupelna'
+      },
+      {
+        url: '/images/koupelny/bungalov/1-11_levy_dum/' + encodeURIComponent('f (2).jpg'),
+        caption: 'Větší koupelna'
+      },
+      {
+        url: '/images/koupelny/bungalov/1-11_levy_dum/' + encodeURIComponent('f (2)-2.jpg'),
+        caption: 'Větší koupelna'
+      }
+    ]
+  }
+
+  if (id === 12) {
+    return [
+      ...baseImages,
+      {
+        url: '/images/koupelny/bungalov/1-07_pravy_dum/e1.jpg',
+        caption: 'Menší koupelna'
+      },
+      {
+        url: '/images/koupelny/bungalov/1-07_pravy_dum/e2.jpg',
+        caption: 'Menší koupelna'
+      },
+      {
+        url: '/images/koupelny/bungalov/1-07_pravy_dum/e3.jpg',
+        caption: 'Menší koupelna'
+      },
+      {
+        url: '/images/koupelny/bungalov/1-11_pravy_dum/' + encodeURIComponent('f (1).jpg'),
+        caption: 'Větší koupelna'
+      },
+      {
+        url: '/images/koupelny/bungalov/1-11_pravy_dum/' + encodeURIComponent('f (1)-2.jpg'),
+        caption: 'Větší koupelna'
+      },
+      {
+        url: '/images/koupelny/bungalov/1-11_pravy_dum/' + encodeURIComponent('f (2).jpg'),
+        caption: 'Větší koupelna'
+      },
+      {
+        url: '/images/koupelny/bungalov/1-11_pravy_dum/' + encodeURIComponent('f (2)-2.jpg'),
+        caption: 'Větší koupelna'
+      }
+    ]
+  }
+
+  return baseImages
 }
 
 // EmbeddedPreviewComponent je volitelný – umožňuje na testovací stránce

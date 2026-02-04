@@ -5,7 +5,8 @@ const StandardsSplitSection = ({
   items = [], 
   image, 
   imageAlt = '',
-  reverse = false 
+  reverse = false,
+  imageClassName = ''
 }) => {
   return (
     <div className={`grid grid-cols-1 lg:grid-cols-2 gap-10 items-start ${reverse ? 'lg:grid-flow-dense' : ''}`}>
@@ -53,7 +54,7 @@ const StandardsSplitSection = ({
               <img
                 src={image}
                 alt={imageAlt || title}
-                className="w-full h-full object-cover"
+                className={`w-full h-full object-cover ${imageClassName}`}
                 onError={(e) => {
                   e.target.style.display = 'none'
                   if (e.target.nextElementSibling) {

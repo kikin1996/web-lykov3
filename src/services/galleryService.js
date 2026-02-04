@@ -3,7 +3,7 @@ import { gallery } from '../data/mockData'
 export const getAllImages = () => {
   return new Promise((resolve) => {
     setTimeout(() => {
-      resolve(gallery)
+      resolve(gallery.filter(img => !img.hidden))
     }, 300)
   })
 }
@@ -12,9 +12,9 @@ export const getImagesByCategory = (category) => {
   return new Promise((resolve) => {
     setTimeout(() => {
       if (category === 'all') {
-        resolve(gallery)
+        resolve(gallery.filter(img => !img.hidden))
       } else {
-        const filtered = gallery.filter(img => img.category === category)
+        const filtered = gallery.filter(img => img.category === category && !img.hidden)
         resolve(filtered)
       }
     }, 300)

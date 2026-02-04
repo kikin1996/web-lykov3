@@ -56,7 +56,7 @@ export default function StandardyPage() {
                     title="Precizní keramické zdivo"
                     description="Nosné konstrukce jsou z keramického broušeného zdiva o tloušťce 300 mm, které vyniká přesností provedení, dlouhou životností a celkovou stabilitou domu."
                     items={[]}
-                    image="/standardy/standardy2/Precizni keramicke zdivo.jpg"
+                    image="/standardy/stavba_3.jpg"
                     imageAlt="Precizní keramické zdivo"
                     reverse={false}
                   />
@@ -116,7 +116,7 @@ export default function StandardyPage() {
                     title="Energetická náročnost A/B"
                     description="Dvojdomy v projektu mají energetickou třídu A, bungalovy třídu B, což dnes v České republice představuje výrazný nadstandard. Znamená to nižší náklady na energie, stabilní vnitřní klima a vyšší komfort bydlení. Vysoká energetická třída zároveň zvyšuje hodnotu nemovitosti, usnadňuje financování hypotékou a chrání majitele před budoucím růstem cen energií i zpřísněním legislativy."
                     items={[]}
-                    image={"/standardy/standardy2/" + encodeURIComponent("Energetická náročnost AB.jpg")}
+                    image="/standardy/fasada3.jpg"
                     imageAlt="Energetická náročnost A/B"
                     reverse={true}
                   />
@@ -197,6 +197,7 @@ export default function StandardyPage() {
                     items={[]}
                     image={"/standardy/standardy2/" + encodeURIComponent("Podlahy z masivního dřeva – tloušťka 14 mm.jpg")}
                     imageAlt="Podlahy z masivního dřeva"
+                    imageClassName="object-[85%_center]"
                     reverse={false}
                   />
                   </div>

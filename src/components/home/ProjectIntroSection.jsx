@@ -67,13 +67,13 @@ const ProjectIntroSection = () => {
 
             {/* Tilted Image Container */}
             <div className="relative transform rotate-3 hover:rotate-2 transition-transform duration-300">
-              <div className="aspect-[4/3] rounded-xl overflow-hidden shadow-large">
+              <div className="rounded-xl overflow-hidden shadow-large">
                 <Image
                   src="/images/gallery/exterior/ex%20(1).jpg"
                   alt="Vizualizace bungalovu Luční háj"
                   width={800}
                   height={600}
-                  className="w-full h-full object-cover"
+                  className="w-full h-auto object-contain"
                 />
               </div>
             </div>
