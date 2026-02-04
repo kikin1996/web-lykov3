@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen min-[1279px]:min-h-[140vh] flex items-center justify-center overflow-hidden">
+    <section className="relative h-[1300px] min-[1279px]:h-[1400px] flex items-center justify-center overflow-hidden">
       {/* Background – tmavá barva vždy */}
       <div className="absolute inset-0 z-0 bg-neutral-darkNavy">
         {/* Pozadí obrázek jen od 1400px – čistě CSS, žádný JS */}
@@ -13,7 +13,7 @@ const HeroSection = () => {
           style={{
             backgroundImage: "url('/images/main_background2.jpg')",
             backgroundSize: 'cover',
-            backgroundPosition: 'center bottom',
+            backgroundPosition: 'center 70%',
             backgroundRepeat: 'no-repeat'
           }}
         />
@@ -22,7 +22,7 @@ const HeroSection = () => {
       </div>
 
       {/* Obsah – nadpis a tagline */}
-      <div className="relative z-10 text-center max-w-4xl px-5 pb-32 pt-20 min-[1279px]:-mt-[458px]">
+      <div className="relative z-10 text-center max-w-4xl px-5 pb-32 pt-8 -mt-[250px]">
         <h1
           className="mb-4 mt-4 font-primary font-normal uppercase text-white tracking-wide leading-tight"
           style={{
