@@ -1,17 +1,23 @@
+'use client'
+
+import { useState } from 'react'
+
 const TimelineItem = ({ item, index, isLast }) => {
   // Střídání: první vlevo (index 0), druhá vpravo (index 1), třetí vlevo (index 2)...
   const isLeft = index % 2 === 0
 
-  // Parsování data pro zobrazení měsíce a roku
+  // Parsování data pro zobrazení měsíce/dne a roku
   const parseDate = (dateString) => {
     if (!dateString) return { month: '', year: '' }
     
-    // Pokud je formát "Měsíc Rok" (např. "Březen 2024")
+    // Obecný formát jako "1. března 2025" nebo "Srpen 2026"
     const parts = dateString.trim().split(' ')
     if (parts.length >= 2) {
+      const year = parts[parts.length - 1]
+      const monthPart = parts.slice(0, parts.length - 1).join(' ')
       return {
-        month: parts[0],
-        year: parts[1]
+        month: monthPart,
+        year
       }
     }
     
@@ -26,27 +32,29 @@ const TimelineItem = ({ item, index, isLast }) => {
 
   const getStatusBadge = (status) => {
     const statusConfig = {
-      'hotovo': {
+      hotovo: {
         bg: 'bg-green-50',
         text: 'text-green-700',
-        label: 'Hotovo'
+        label: 'Hotovo',
       },
       'probíhá': {
         bg: 'bg-blue-50',
         text: 'text-blue-700',
-        label: 'Probíhá'
+        label: 'Probíhá',
       },
       'plánováno': {
         bg: 'bg-slate-50',
         text: 'text-slate-700',
-        label: 'Plánováno'
-      }
+        label: 'Plánováno',
+      },
     }
 
     const config = statusConfig[status?.toLowerCase()] || statusConfig['plánováno']
     
     return (
-      <span className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium ${config.bg} ${config.text}`}>
+      <span
+        className={`inline-flex items-center px-4 py-2 rounded-full text-sm md:text-base font-semibold tracking-wide uppercase ${config.bg} ${config.text}`}
+      >
         {config.label}
       </span>
     )
@@ -64,6 +72,9 @@ const TimelineItem = ({ item, index, isLast }) => {
   }
 
   const images = getImages()
+
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false)
+  const [activeImageIndex, setActiveImageIndex] = useState(0)
 
   // Komponenta pro fotky
   const PhotoStrip = () => {
@@ -83,16 +94,21 @@ const TimelineItem = ({ item, index, isLast }) => {
     return (
       <div className="grid grid-cols-2 gap-3">
         {images.map((img, idx) => (
-          <div
+          <button
             key={idx}
-            className="rounded-2xl border border-white/60 shadow-[0_14px_40px_rgba(15,23,42,0.10)] overflow-hidden aspect-[4/3]"
+            type="button"
+            className="rounded-2xl border border-white/60 shadow-[0_14px_40px_rgba(15,23,42,0.10)] overflow-hidden aspect-[4/3] focus:outline-none focus:ring-2 focus:ring-[#00D9B5]"
+            onClick={() => {
+              setActiveImageIndex(idx)
+              setIsLightboxOpen(true)
+            }}
           >
             <img
               src={img}
               alt={`${item.title} - ${idx + 1}`}
               className="w-full h-full object-cover"
             />
-          </div>
+          </button>
         ))}
       </div>
     )
@@ -132,11 +148,12 @@ const TimelineItem = ({ item, index, isLast }) => {
     </div>
   )
 
-  // Desktop verze - 3-sloupcový grid
+  // Desktop + mobile verze
   return (
-    <div className={`${isLast ? '' : 'mb-16'}`}>
-      {/* Desktop: 3-sloupcový grid */}
-      <div className="hidden md:grid grid-cols-[1fr_auto_1fr] gap-10 items-start">
+    <>
+      <div className={`${isLast ? '' : 'mb-16'}`}>
+        {/* Desktop: 3-sloupcový grid */}
+        <div className="hidden md:grid grid-cols-[1fr_auto_1fr] gap-10 items-start">
         {isLeft ? (
           <>
             {/* Levá strana: Content */}
@@ -164,10 +181,10 @@ const TimelineItem = ({ item, index, isLast }) => {
             </div>
           </>
         )}
-      </div>
+        </div>
 
-      {/* Mobile: 1 sloupec, osa vlevo (sdílená linka je v rodiči Timeline) */}
-      <div className="md:hidden relative pl-8">
+        {/* Mobile: 1 sloupec, osa vlevo (sdílená linka je v rodiči Timeline) */}
+        <div className="md:hidden relative pl-8">
         {/* Bod na sdílené ose vlevo */}
         <div className="absolute left-4 top-2 h-4 w-4 rounded-full bg-[#00D9B5] shadow-[0_0_0_6px_rgba(0,217,181,0.12)] -translate-x-1/2" />
         
@@ -182,13 +199,41 @@ const TimelineItem = ({ item, index, isLast }) => {
         </div>
 
         {/* Fotky pod kartou */}
-        {images.length > 0 && (
-          <div className="mb-6">
-            <PhotoStrip />
-          </div>
-        )}
+          {images.length > 0 && (
+            <div className="mb-6">
+              <PhotoStrip />
+            </div>
+          )}
+        </div>
       </div>
-    </div>
+
+      {/* Lightbox pro fotky */}
+      {isLightboxOpen && images.length > 0 && (
+        <div
+          className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center px-4"
+          onClick={() => setIsLightboxOpen(false)}
+        >
+          <div
+            className="relative max-w-5xl w-full"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              type="button"
+              aria-label="Zavřít náhled obrázku"
+              className="absolute -top-3 -right-3 bg-white text-neutral-darkNavy rounded-full w-8 h-8 flex items-center justify-center shadow-medium hover:bg-neutral-darkNavy hover:text-white transition-colors"
+              onClick={() => setIsLightboxOpen(false)}
+            >
+              ✕
+            </button>
+            <img
+              src={images[activeImageIndex]}
+              alt={`${item.title} – náhled`}
+              className="w-full h-auto max-h-[90vh] object-contain rounded-xl shadow-large bg-black"
+            />
+          </div>
+        </div>
+      )}
+    </>
   )
 }
 

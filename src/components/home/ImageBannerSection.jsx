@@ -22,7 +22,7 @@ const ImageBannerSection = () => {
         <div className="relative z-10 h-full flex items-end justify-start pb-2 md:pb-12">
           <div className="container mx-auto px-5 lg:px-20">
             <div className="max-w-4xl">
-              <h2 className="text-white text-5xl md:text-6xl lg:text-7xl font-serif font-bold leading-tight">
+              <h2 className="mb-4 leading-tight font-primary text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white">
                 Promyšlené dispozice
               </h2>
             </div>
@@ -48,7 +48,7 @@ const ImageBannerSection = () => {
             </div>
             {/* Text - nyní vpravo */}
             <div className="space-y-6">
-              <h2 className="text-4xl md:text-6xl font-semibold tracking-tight leading-tight text-neutral-darkNavy">
+              <h2 className="mb-6 leading-tight font-primary text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-neutral-darkNavy">
                 Místo do kterého se zamilujete
               </h2>
               <p className="text-body-regular text-neutral-mediumGray max-w-xl">

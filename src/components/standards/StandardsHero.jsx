@@ -10,9 +10,9 @@ const StandardsHero = () => {
         </span>
       </div>
 
-      {/* H1 Headline - dlouhý na 3 řádky, poslední část šedá */}
+      {/* H1 Headline - dvouřádkový, poslední část šedá */}
       <h1 className="text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05] mb-8 max-w-4xl">
-        <span className="text-slate-900">Standardy provedení pro dlouhodobou kvalitu a moderní bydlení.</span>{' '}
+        <span className="text-slate-900">Standardy pro moderní bydlení.</span>{' '}
         <span className="text-slate-300">Promyšlené detaily, které vydrží roky.</span>
       </h1>
 

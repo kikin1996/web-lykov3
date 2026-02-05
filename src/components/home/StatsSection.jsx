@@ -7,9 +7,12 @@ const StatsSection = () => {
   ]
 
   return (
-    <section className="pt-8 pb-20 bg-neutral-darkNavy text-white relative hidden md:block" style={{paddingBottom: 'calc(20rem - 15px)'}}>
+    <section
+      className="pt-8 pb-20 bg-neutral-darkNavy text-white relative hidden min-[1279px]:block"
+      style={{ paddingBottom: 'calc(20rem - 15px)' }}
+    >
       <div className="container mx-auto px-5 lg:px-20 relative z-10">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 min-[1279px]:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
             <div key={index} className="text-center">
               <div className="text-stats mb-2 whitespace-nowrap">

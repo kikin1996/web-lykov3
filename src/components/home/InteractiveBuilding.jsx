@@ -12,9 +12,9 @@ const InteractiveBuilding = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Text column */}
             <div className="space-y-6">
-              <h2 className="text-4xl md:text-6xl font-semibold tracking-tight leading-tight text-neutral-darkNavy">
-                <span className="block mb-4">Nejlepších výsledků</span>
-                <span className="block mb-4">dosáhnete</span>
+              <h2 className="mb-6 leading-tight font-primary text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-neutral-darkNavy">
+                <span className="block mb-1">Nejlepších výsledků</span>
+                <span className="block mb-1">dosáhnete</span>
                 <span className="block">v lepším prostředí.</span>
               </h2>
               <p className="text-body-regular text-neutral-mediumGray max-w-xl">
@@ -44,7 +44,7 @@ const InteractiveBuilding = () => {
       <section className="pt-20 pb-32 bg-neutral-offWhite">
         <div className="container mx-auto px-5 lg:px-20">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 text-neutral-darkNavy">
+            <h2 className="mb-6 leading-tight font-primary text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-neutral-darkNavy">
               Interiér, co pohladí na duši
             </h2>
             <p className="text-body-regular text-neutral-mediumGray max-w-2xl mx-auto">

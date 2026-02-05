@@ -210,7 +210,12 @@ const LocationSection = () => {
       <div className="container mx-auto px-5 lg:px-20">
         <div className="text-center mb-12">
           <p className="text-overline mb-4 text-primary-teal">Lokalita</p>
-          <h2 className="text-h1 mb-4" style={{ color: '#FFFFFF' }}>Umístění projektu</h2>
+          <h2
+            className="mb-6 leading-tight font-primary text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
+            style={{ color: '#FFFFFF' }}
+          >
+            Umístění projektu
+          </h2>
         </div>
 
         <div className="max-w-6xl mx-auto">
@@ -298,9 +303,14 @@ const LocationSection = () => {
                   className="w-12 h-12 object-contain"
                 />
               </div>
-              <p className="text-body-small text-white text-opacity-90">
-                Nájezd na dálnici D1 - 18 min
-              </p>
+              <div className="space-y-1">
+                <p className="text-body-small text-white text-opacity-90">
+                  OC Chodov – 30 min
+                </p>
+                <p className="text-body-small text-white text-opacity-90">
+                  Benešov – 12 min
+                </p>
+              </div>
             </div>
           </div>
         </div>

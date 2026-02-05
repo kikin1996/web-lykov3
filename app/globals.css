@@ -226,3 +226,20 @@
   transform-origin: center;
 }
 
+/* Hero background – full width behavior */
+.hero-main-bg {
+  background-image: url('/images/main_background2.jpg');
+  background-repeat: no-repeat;
+  background-position: center 70%;
+  background-size: cover;
+}
+
+@media (max-width: 1935px) and (min-width: 1279px) {
+  .hero-main-bg {
+    /* V tomto rozsahu šířek necháme fotku vyplnit šířku
+       a místo posouvání dolů ořezáváme spodek podle viewportu */
+    background-size: cover;
+    background-position: center 35%;
+  }
+}
+

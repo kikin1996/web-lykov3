@@ -5,6 +5,7 @@ import Image from 'next/image'
 
 const ProjectIntroSection = () => {
   const [showImage, setShowImage] = useState(false)
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false)
 
   useEffect(() => {
     const mediaQuery = window.matchMedia('(min-width: 1251px)')
@@ -22,34 +23,38 @@ const ProjectIntroSection = () => {
   }, [])
 
   return (
-    <section className="py-20 bg-neutral-darkNavy relative -mt-[488px] pt-[130px] md:pt-[170px]">
+    <section className="bg-neutral-darkNavy relative pt-4 md:pt-8 pb-16 md:pb-20 min-[1279px]:pt-[170px] min-[1279px]:-mt-[488px]">
       <div className="container mx-auto px-5 lg:px-20">
         <div className={`grid grid-cols-1 ${showImage ? 'grid-cols-2' : ''} gap-12 items-center`}>
           {/* Left Side - Text Content */}
           <div className="text-left">
             <p className="text-overline mb-4 text-white">TÝNEC NAD SÁZAVOU</p>
-            <h2 className="text-h1 mb-6 leading-tight" style={{ color: '#FFFFFF' }}>
+            <h2
+              className="mb-6 leading-tight font-primary text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
+              style={{ color: '#FFFFFF' }}
+            >
               Moderní bydlení v
               <br />
               harmonii s přírodou
             </h2>
             <div className="space-y-4 text-lg text-white/95 mb-6 hidden md:block">
               <p>
-                Projekt Luční háj přináší klidné a komfortní bydlení v jedné z nejžádanějších
-                lokalit středních Čech – Týnec nad Sázavou. Spojuje moderní stavební technologie,
-                důraz na kvalitu provedení a výjimečnou polohu v blízkosti řeky Sázavy, lesů
-                a turistických tras.
+                Projekt Luční háj vzniká v klidné obci Pecerady, jen pár minut od Týnce nad Sázavou –
+                na místě, kde má krajina Posázaví stále svůj přirozený rytmus. Moderní architektura zde
+                citlivě navazuje na okolní přírodu, lesy a blízkost řeky Sázavy a vytváří prostor
+                pro skutečně klidné bydlení.
               </p>
               <p>
-                Bydlení je navrženo pro ty, kteří hledají ticho, soukromí a dlouhodobě úsporný
-                domov, a zároveň chtějí mít přírodu doslova za dveřmi.
+                Luční háj je určen pro ty, kteří chtějí po návratu domů zpomalit, nadechnout se a mít
+                soukromí i přírodu doslova za dveřmi. Zároveň nabízí moderní technologie, kvalitní
+                provedení a dlouhodobě úsporné řešení pro pohodlný každodenní život.
               </p>
             </div>
           </div>
 
           {/* Right Side - Tilted Image */}
           {showImage && (
-          <div className="relative">
+          <div className="relative cursor-zoom-in" onClick={() => setIsLightboxOpen(true)}>
             {/* Decorative Background Pattern */}
             <div className="absolute inset-0 opacity-10">
               <svg width="100%" height="100%" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice">
@@ -84,6 +89,35 @@ const ProjectIntroSection = () => {
           )}
         </div>
       </div>
+
+      {/* Lightbox / view box po kliknutí na obrázek */}
+      {isLightboxOpen && (
+        <div
+          className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center px-4"
+          onClick={() => setIsLightboxOpen(false)}
+        >
+          <div
+            className="relative max-w-5xl w-full"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              type="button"
+              aria-label="Zavřít náhled obrázku"
+              className="absolute -top-3 -right-3 bg-white text-neutral-darkNavy rounded-full w-8 h-8 flex items-center justify-center shadow-medium hover:bg-neutral-darkNavy hover:text-white transition-colors"
+              onClick={() => setIsLightboxOpen(false)}
+            >
+              ✕
+            </button>
+            <Image
+              src="/images/gallery/exterior/ex%20(1).jpg"
+              alt="Vizualizace bungalovu Luční háj – zvětšený náhled"
+              width={1600}
+              height={900}
+              className="w-full h-auto max-h-[90vh] object-contain rounded-xl shadow-large bg-black"
+            />
+          </div>
+        </div>
+      )}
     </section>
   )
 }

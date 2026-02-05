@@ -46,7 +46,9 @@ export default function StandardyPage() {
 
                 {/* Sekce Standardy stavby – Konstrukce a zdivo */}
                 <div className="pt-8 pb-6 border-b-2 border-slate-200">
-                  <h2 className="text-h1 text-slate-900 mb-2">Standardy stavby</h2>
+                  <h2 className="mb-6 leading-tight font-primary text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-slate-900">
+                    Standardy stavby
+                  </h2>
                   <p className="text-slate-600 text-body-regular">Základní technické parametry zajišťující kvalitu a úsporu.</p>
                 </div>
 
@@ -137,7 +139,9 @@ export default function StandardyPage() {
                 {/* Sekce Nadstandardní vybavení domu – modré pozadí */}
                 <div className="bg-blue-50 -mx-6 md:-mx-10 pt-16 md:pt-20 pb-[6.5rem] md:pb-[8.5rem] px-6 md:px-10 -mb-10">
                   <div className="pb-6 border-b-2 border-blue-200/70">
-                    <h2 className="text-h1 text-slate-900 mb-2">Nadstandardní vybavení domu</h2>
+                    <h2 className="mb-6 leading-tight font-primary text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-slate-900">
+                      Nadstandardní vybavení domu
+                    </h2>
                     <p className="text-slate-600 text-body-regular">Prémiové materiály a chytrá řešení, která zvyšují hodnotu bydlení.</p>
                   </div>
 

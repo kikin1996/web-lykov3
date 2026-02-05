@@ -58,7 +58,9 @@ const AmenitiesSection = () => {
       <div className="container mx-auto px-5 lg:px-20">
         <div className="text-center mb-12">
           <p className="text-overline mb-4">Standardy</p>
-          <h2 className="text-h1 mb-4">Standardy stavby</h2>
+          <h2 className="mb-6 leading-tight font-primary text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-neutral-darkNavy">
+            Standardy stavby
+          </h2>
           <p className="text-body-large max-w-2xl mx-auto">
             Základní technické parametry a vybavení, které zajišťují kvalitu,
             úspornost a dlouhodobý komfort bydlení v projektu Luční Háj.

@@ -4,40 +4,35 @@ import Image from 'next/image'
 
 const HeroSection = () => {
   return (
-    <section className="relative h-[1300px] min-[1279px]:h-[1400px] flex items-center justify-center overflow-hidden">
+    <section className="relative pt-16 pb-2 sm:pt-20 sm:pb-20 min-[1279px]:h-[1600px] flex items-center justify-center overflow-hidden">
       {/* Background – tmavá barva vždy */}
       <div className="absolute inset-0 z-0 bg-neutral-darkNavy">
-        {/* Pozadí obrázek jen od 1400px – čistě CSS, žádný JS */}
-        <div
-          className="absolute inset-0 hidden min-[1279px]:block bg-no-repeat transition-transform duration-700 ease-out hover:scale-105"
-          style={{
-            backgroundImage: "url('/images/main_background2.jpg')",
-            backgroundSize: 'cover',
-            backgroundPosition: 'center 70%',
-            backgroundRepeat: 'no-repeat'
-          }}
-        />
+        {/* Pozadí obrázek jen od 1279px – přes CSS třídu */}
+        <div className="absolute inset-0 hidden min-[1279px]:block bg-no-repeat transition-transform duration-700 ease-out hover:scale-105 hero-main-bg" />
         {/* Přechod / overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-neutral-darkNavy/30 via-neutral-darkNavy/50 to-neutral-darkNavy/80 z-0" />
       </div>
 
       {/* Obsah – nadpis a tagline */}
-      <div className="relative z-10 text-center max-w-4xl px-5 pb-32 pt-8 -mt-[250px]">
+      <div className="relative z-10 text-center max-w-4xl px-5 pb-0 pt-12 sm:pt-32 md:pt-32 lg:pt-20 min-[1279px]:pt-8 min-[1279px]:-mt-[650px]">
         <h1
-          className="mb-4 mt-4 font-primary font-normal uppercase text-white tracking-wide leading-tight"
+          className="mb-0 mt-4 font-primary font-normal uppercase text-white tracking-wide leading-tight"
           style={{
             fontFamily: "'Playfair Display', Georgia, serif",
-            fontSize: 'clamp(2.25rem, 5vw + 1.5rem, 79px)'
+            // Větší, ale stále responzivní podle šířky
+            fontSize: 'clamp(2.2rem, 5vw + 1.2rem, 80px)'
           }}
         >
           Luční Háj
         </h1>
         <p
-          className="text-script mb-8 mt-2"
+          className="mb-0"
           style={{
             fontFamily: "'Allura', 'Brush Script MT', cursive",
-            fontSize: 'clamp(1.75rem, 3vw + 1rem, 50px)',
-            color: '#00D9B5'
+            // Vizuálně téměř „na sobě“ s H1
+            fontSize: 'clamp(1.4rem, 3.2vw + 0.7rem, 42px)',
+            color: '#00D9B5',
+            marginTop: '-0.6rem'
           }}
         >
           Váš nový domov
@@ -56,10 +51,11 @@ const HeroSection = () => {
           />
         </div>
 
-        <div className="h-16" />
+        {/* Spodní mezera před další sekcí – co nejmenší na mobilech */}
+        <div className="h-2 sm:h-4 min-[1279px]:h-16" />
         <div className="hidden min-[1279px]:block h-32" />
-        <div className="h-16" />
-        <div className="h-24 mb-[228px]" />
+        <div className="h-2 sm:h-4 min-[1279px]:h-16" />
+        <div className="mb-4 sm:mb-6 min-[1279px]:h-24 min-[1279px]:mb-[228px]" />
       </div>
 
       {/* Přechod do další sekce */}
