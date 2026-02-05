@@ -2,10 +2,12 @@
 
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
+import Lightbox from '../gallery/Lightbox'
 
 const ProjectIntroSection = () => {
   const [showImage, setShowImage] = useState(false)
-  const [isLightboxOpen, setIsLightboxOpen] = useState(false)
+  const [lightboxOpen, setLightboxOpen] = useState(false)
+  const [lightboxIndex, setLightboxIndex] = useState(0)
 
   useEffect(() => {
     const mediaQuery = window.matchMedia('(min-width: 1251px)')
@@ -54,7 +56,7 @@ const ProjectIntroSection = () => {
 
           {/* Right Side - Tilted Image */}
           {showImage && (
-          <div className="relative cursor-zoom-in" onClick={() => setIsLightboxOpen(true)}>
+          <div className="relative">
             {/* Decorative Background Pattern */}
             <div className="absolute inset-0 opacity-10">
               <svg width="100%" height="100%" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice">
@@ -73,13 +75,23 @@ const ProjectIntroSection = () => {
             {/* Tilted Image Container */}
             <div className="relative transform rotate-3 hover:rotate-2 transition-transform duration-300">
               <div className="rounded-xl overflow-hidden shadow-large">
-                <Image
-                  src="/images/gallery/exterior/ex%20(1).jpg"
-                  alt="Vizualizace bungalovu Luční háj"
-                  width={800}
-                  height={600}
-                  className="w-full h-auto object-contain"
-                />
+                <button
+                  type="button"
+                  onClick={() => {
+                    setLightboxIndex(0)
+                    setLightboxOpen(true)
+                  }}
+                  aria-label="Otevřít obrázek v plné velikosti"
+                  className="block w-full cursor-zoom-in"
+                >
+                  <Image
+                    src="/images/main_photo_2.jpg"
+                    alt="Vizualizace bungalovu Luční háj"
+                    width={800}
+                    height={600}
+                    className="w-full h-auto object-contain"
+                  />
+                </button>
               </div>
             </div>
 
@@ -88,36 +100,22 @@ const ProjectIntroSection = () => {
           </div>
           )}
         </div>
+
+        {lightboxOpen && (
+          <Lightbox
+            images={[
+              {
+                url: '/images/main_photo_2.jpg',
+                caption: 'Vizualizace bungalovu Luční háj'
+              }
+            ]}
+            currentIndex={lightboxIndex}
+            onClose={() => setLightboxOpen(false)}
+            onNavigate={(index) => setLightboxIndex(index)}
+          />
+        )}
       </div>
 
-      {/* Lightbox / view box po kliknutí na obrázek */}
-      {isLightboxOpen && (
-        <div
-          className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center px-4"
-          onClick={() => setIsLightboxOpen(false)}
-        >
-          <div
-            className="relative max-w-5xl w-full"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              type="button"
-              aria-label="Zavřít náhled obrázku"
-              className="absolute -top-3 -right-3 bg-white text-neutral-darkNavy rounded-full w-8 h-8 flex items-center justify-center shadow-medium hover:bg-neutral-darkNavy hover:text-white transition-colors"
-              onClick={() => setIsLightboxOpen(false)}
-            >
-              ✕
-            </button>
-            <Image
-              src="/images/gallery/exterior/ex%20(1).jpg"
-              alt="Vizualizace bungalovu Luční háj – zvětšený náhled"
-              width={1600}
-              height={900}
-              className="w-full h-auto max-h-[90vh] object-contain rounded-xl shadow-large bg-black"
-            />
-          </div>
-        </div>
-      )}
     </section>
   )
 }

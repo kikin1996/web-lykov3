@@ -41,7 +41,7 @@ const HeroSection = () => {
         {/* Obrázek pod nadpisem jen pod 1400px – čistě CSS */}
         <div className="mt-8 mb-8 w-full max-w-4xl mx-auto min-[1279px]:hidden">
           <Image
-            src="/images/hero-bg2.webp"
+            src="/images/main_background_mobile2.jpg"
             alt="Luční Háj - moderní bydlení"
             width={1200}
             height={400}

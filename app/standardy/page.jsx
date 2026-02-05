@@ -94,7 +94,7 @@ export default function StandardyPage() {
                     title="Monolitické stropy"
                     description="Zajišťují vysokou statickou stabilitu, dlouhou životnost a výrazně lepší akustický komfort oproti lehkým konstrukcím."
                     items={[]}
-                    image={"/standardy/standardy2/" + encodeURIComponent("Monolitické stropy.jpg")}
+                    image={"/standardy/standardy2/" + encodeURIComponent("Monolitické stropy_3.jpg")}
                     imageAlt="Monolitické stropy"
                     reverse={true}
                   />
@@ -187,7 +187,7 @@ export default function StandardyPage() {
                       title="Kompletace v černém designu"
                     description="Černé provedení dodává domu moderní a luxusní vzhled a představuje nadstandard oproti běžným projektům."
                     items={[]}
-                    image="/standardy/koupelna_obklady.jpg"
+                    image={"/images/koupelny/dvojdum/2-06_levy_dum/" + encodeURIComponent("h (3).jpg")}
                     imageAlt="Kompletace v černém designu"
                     reverse={true}
                   />
