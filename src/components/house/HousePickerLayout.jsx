@@ -8,7 +8,7 @@ const houses = [
   {
     id: '1',
     name: 'Dům 1 – Šalvěj',
-    usableArea: 119.4,
+    usableArea: 149.4,
     plotArea: 411,
     rooms: 5,
     bathrooms: 2,
@@ -17,12 +17,12 @@ const houses = [
     description: 'Rodinný dům s velkou obývací plochou a přímým vstupem na terasu.',
     status: 'Volný',
     price: 11490000,
-    houseCardPdf: '/documents/dum-01-karta.pdf' // URL k PDF dokumentu
+    houseCardPdf: '/karty domu/Dum 1.pdf' // URL k PDF dokumentu
   },
   {
     id: '2',
     name: 'Dům 2 – Chrpa',
-    usableArea: 119.4,
+    usableArea: 149.4,
     plotArea: 410,
     rooms: 5,
     bathrooms: 2,
@@ -31,12 +31,12 @@ const houses = [
     description: 'Rodinný dům s velkou obývací plochou a přímým vstupem na terasu.',
     status: 'Volný',
     price: 11590000,
-    houseCardPdf: '/documents/dum-02-karta.pdf'
+    houseCardPdf: '/karty domu/Dum 2.pdf'
   },
   {
     id: '3',
-    name: 'Dům 3 – Trézalce',
-    usableArea: 119.4,
+    name: 'Dům 3 – Pampeliška',
+    usableArea: 149.4,
     plotArea: 403,
     rooms: 5,
     bathrooms: 2,
@@ -45,12 +45,12 @@ const houses = [
     description: 'Rodinný dům s velkou obývací plochou a přímým vstupem na terasu.',
     status: 'Volný',
     price: 10890000,
-    houseCardPdf: null
+    houseCardPdf: '/karty domu/Dum 3.pdf'
   },
   {
     id: '4',
-    name: 'Dům 4 – Hvozdík',
-    usableArea: 119.4,
+    name: 'Dům 4 – Heřmánek',
+    usableArea: 149.4,
     plotArea: 402,
     rooms: 5,
     bathrooms: 2,
@@ -59,12 +59,12 @@ const houses = [
     description: 'Rodinný dům s velkou obývací plochou a přímým vstupem na terasu.',
     status: 'Volný',
     price: 10890000,
-    houseCardPdf: null
+    houseCardPdf: '/karty domu/Dum 4.pdf'
   },
   {
     id: '5',
     name: 'Dům 5 – Mateřídouška',
-    usableArea: 119.4,
+    usableArea: 149.4,
     plotArea: 401,
     rooms: 5,
     bathrooms: 2,
@@ -73,12 +73,12 @@ const houses = [
     description: 'Rodinný dům s velkou obývací plochou a přímým vstupem na terasu.',
     status: 'Volný',
     price: 11190000,
-    houseCardPdf: null
+    houseCardPdf: '/karty domu/Dum 5.pdf'
   },
   {
     id: '6',
     name: 'Dům 6 – Zvonek',
-    usableArea: 119.4,
+    usableArea: 149.4,
     plotArea: 401,
     rooms: 5,
     bathrooms: 2,
@@ -87,12 +87,12 @@ const houses = [
     description: 'Rodinný dům s velkou obývací plochou a přímým vstupem na terasu.',
     status: 'Volný',
     price: 11490000,
-    houseCardPdf: null
+    houseCardPdf: '/karty domu/Dum 6.pdf'
   },
   {
     id: '7',
     name: 'Dům 7 – Prvosenka',
-    usableArea: 119.4,
+    usableArea: 149.4,
     plotArea: 401,
     rooms: 5,
     bathrooms: 2,
@@ -101,12 +101,12 @@ const houses = [
     description: 'Rodinný dům s velkou obývací plochou a přímým vstupem na terasu.',
     status: 'Volný',
     price: 11490000,
-    houseCardPdf: null
+    houseCardPdf: '/karty domu/Dum 7.pdf'
   },
   {
     id: '8',
     name: 'Dům 8 – Violka',
-    usableArea: 119.4,
+    usableArea: 149.4,
     plotArea: 401,
     rooms: 5,
     bathrooms: 2,
@@ -115,12 +115,12 @@ const houses = [
     description: 'Rodinný dům s velkou obývací plochou a přímým vstupem na terasu.',
     status: 'Volný',
     price: 11590000,
-    houseCardPdf: null
+    houseCardPdf: '/karty domu/Dum 8.pdf'
   },
   {
     id: '9',
     name: 'Dům 9 – Pomněnka',
-    usableArea: 177.7,
+    usableArea: 207.7,
     plotArea: 401,
     rooms: 7,
     bathrooms: 2,
@@ -129,12 +129,12 @@ const houses = [
     description: 'Rodinný dům s velkou obývací plochou a přímým vstupem na terasu.',
     status: 'Volný',
     price: 14990000,
-    houseCardPdf: null
+    houseCardPdf: '/karty domu/dum 9.pdf'
   },
   {
     id: '10',
     name: 'Dům 10 – Jetel',
-    usableArea: 177.7,
+    usableArea: 207.7,
     plotArea: 401,
     rooms: 7,
     bathrooms: 2,
@@ -143,12 +143,12 @@ const houses = [
     description: 'Rodinný dům s velkou obývací plochou a přímým vstupem na terasu.',
     status: 'Volný',
     price: 15290000,
-    houseCardPdf: null
+    houseCardPdf: '/karty domu/dum 10.pdf'
   },
   {
     id: '11',
     name: 'Dům 11 – Sedmikráska',
-    usableArea: 147.7,
+    usableArea: 197.7,
     plotArea: 1304,
     rooms: 5,
     bathrooms: 2,
@@ -157,12 +157,12 @@ const houses = [
     description: 'Rodinný dům s velkou obývací plochou a přímým vstupem na terasu.',
     status: 'Volný',
     price: 15590000,
-    houseCardPdf: null
+    houseCardPdf: '/karty domu/Dum 11.pdf'
   },
   {
     id: '12',
     name: 'Dům 12 – Kopretina',
-    usableArea: 147.7,
+    usableArea: 197.7,
     plotArea: 978,
     rooms: 5,
     bathrooms: 2,
@@ -171,7 +171,7 @@ const houses = [
     description: 'Rodinný dům s velkou obývací plochou a přímým vstupem na terasu.',
     status: 'Volný',
     price: 14900000,
-    houseCardPdf: null
+    houseCardPdf: '/karty domu/Dum 12.pdf'
   }
 ]
 

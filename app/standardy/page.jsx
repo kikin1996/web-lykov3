@@ -9,13 +9,13 @@ export default function StandardyPage() {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "Standardy stavby - Luční Háj",
-    "description": "Standardy stavby a nadstandardní vybavení projektu Luční Háj. Konstrukce, zdivo, tepelná izolace, okna, energetická náročnost A/B a prémiové materiály.",
+    "name": "Konstrukční řešení stavby - Luční Háj",
+    "description": "Konstrukční řešení stavby a prémiové vybavení domu v projektu Luční Háj. Konstrukce, zdivo, tepelná izolace, okna, energetická náročnost A/B a prémiové materiály.",
     "url": "https://domypecerady.cz/standardy",
     "about": {
       "@type": "Thing",
-      "name": "Standardy stavby",
-      "description": "Základní technické parametry a nadstandardní vybavení v projektu Luční Háj"
+      "name": "Konstrukční řešení stavby",
+      "description": "Základní technické parametry a prémiové vybavení v projektu Luční Háj"
     }
   }
 
@@ -30,8 +30,8 @@ export default function StandardyPage() {
   return (
     <>
       <SEO
-        title="Standardy stavby"
-        description="Standardy stavby a nadstandardní vybavení projektu Luční Háj. Konstrukce, zdivo, tepelná izolace, okna, energetická náročnost A/B a prémiové materiály."
+        title="Konstrukční řešení stavby"
+        description="Konstrukční řešení stavby a prémiové vybavení domu v projektu Luční Háj. Konstrukce, zdivo, tepelná izolace, okna, energetická náročnost A/B a prémiové materiály."
         keywords="standardy stavby, konstrukce, zdivo, okna pasivní, energetická třída, nadstandard, Luční Háj, Týnec nad Sázavou"
         image="/images/standardy-hero.jpg"
         url="/standardy"
@@ -44,10 +44,10 @@ export default function StandardyPage() {
               <div className="space-y-12 md:space-y-16">
                 <StandardsHero />
 
-                {/* Sekce Standardy stavby – Konstrukce a zdivo */}
+                {/* Sekce Konstrukční řešení stavby – Konstrukce a zdivo */}
                 <div className="pt-8 pb-6 border-b-2 border-slate-200">
                   <h2 className="mb-6 leading-tight font-primary text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-slate-900">
-                    Standardy stavby
+                    Konstrukční řešení stavby
                   </h2>
                   <p className="text-slate-600 text-body-regular">Základní technické parametry zajišťující kvalitu a úsporu.</p>
                 </div>
@@ -136,11 +136,23 @@ export default function StandardyPage() {
                   />
                 </div>
 
-                {/* Sekce Nadstandardní vybavení domu – modré pozadí */}
+                <div className="pt-12 md:pt-16 border-t border-slate-200/60">
+                  <StandardsSplitSection
+                    pillLabel="8"
+                    title="Půdní prostory"
+                    description="Dvojdomky mají k dispozici cca 30 m² půdních prostorů. Bungalovy nabízí dva samostatné půdní prostory po 25 m², tedy dohromady 50 m² půdního prostoru."
+                    items={[]}
+                    image={"/standardy/standardy2/" + encodeURIComponent("pudni_prostor.jpg")}
+                    imageAlt="Půdní prostory"
+                    reverse={true}
+                  />
+                </div>
+
+                {/* Sekce Prémiové vybavení domu – modré pozadí */}
                 <div className="bg-blue-50 -mx-6 md:-mx-10 pt-16 md:pt-20 pb-[6.5rem] md:pb-[8.5rem] px-6 md:px-10 -mb-10">
                   <div className="pb-6 border-b-2 border-blue-200/70">
                     <h2 className="mb-6 leading-tight font-primary text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-slate-900">
-                      Nadstandardní vybavení domu
+                      Prémiové vybavení domu
                     </h2>
                     <p className="text-slate-600 text-body-regular">Prémiové materiály a chytrá řešení, která zvyšují hodnotu bydlení.</p>
                   </div>

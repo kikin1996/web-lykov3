@@ -13,8 +13,8 @@ const EmbeddedSitePreview = ({ selectedHouseId, onSelectHouse }) => {
               className="luchnihaj-map-svg"
             >
               <image
-                xlinkHref="/images/hero-bg2.webp"
-                href="/images/hero-bg2.webp"
+                xlinkHref="/images/main_background_mobile2.jpg"
+                href="/images/main_background_mobile2.jpg"
                 x="0"
                 y="0"
                 width="1920"
