@@ -13,8 +13,8 @@ const EmbeddedSitePreview = ({ selectedHouseId, onSelectHouse }) => {
               className="luchnihaj-map-svg"
             >
               <image
-                xlinkHref="/images/main_background_mobile2.jpg"
-                href="/images/main_background_mobile2.jpg"
+                xlinkHref="/images/vyber_domu_2.jpg"
+                href="/images/vyber_domu_2.jpg"
                 x="0"
                 y="0"
                 width="1920"

@@ -12,6 +12,7 @@ const houses = [
     status: 'Volný',
     price: 11490000,
     floorplanImage: '/photos/F1 resize.jpg',
+    herbIcon: '/images/byliny/salvej.png',
     houseCardPdf: '/karty domu/Dum 1.pdf'
   },
   {
@@ -24,6 +25,7 @@ const houses = [
     status: 'Volný',
     price: 11590000,
     floorplanImage: '/photos/web_f2.jpg',
+    herbIcon: '/images/byliny/chrpa.png',
     houseCardPdf: '/karty domu/Dum 2.pdf'
   },
   {
@@ -36,6 +38,7 @@ const houses = [
     status: 'Volný',
     price: 10890000,
     floorplanImage: null,
+    herbIcon: '/images/byliny/pampeliska.png',
     houseCardPdf: '/karty domu/Dum 3.pdf'
   },
   {
@@ -48,6 +51,7 @@ const houses = [
     status: 'Volný',
     price: 10890000,
     floorplanImage: null,
+    herbIcon: '/images/byliny/hermanek.png',
     houseCardPdf: '/karty domu/Dum 4.pdf'
   },
   {
@@ -60,6 +64,7 @@ const houses = [
     status: 'Volný',
     price: 11190000,
     floorplanImage: null,
+    herbIcon: '/images/byliny/materidouška.png',
     houseCardPdf: '/karty domu/Dum 5.pdf'
   },
   {
@@ -72,6 +77,7 @@ const houses = [
     status: 'Volný',
     price: 11490000,
     floorplanImage: null,
+    herbIcon: '/images/byliny/zvonek.png',
     houseCardPdf: '/karty domu/Dum 6.pdf'
   },
   {
@@ -84,6 +90,7 @@ const houses = [
     status: 'Volný',
     price: 11490000,
     floorplanImage: null,
+    herbIcon: '/images/byliny/prvosenka.png',
     houseCardPdf: '/karty domu/Dum 7.pdf'
   },
   {
@@ -96,6 +103,7 @@ const houses = [
     status: 'Volný',
     price: 11590000,
     floorplanImage: null,
+    herbIcon: '/images/byliny/violka.png',
     houseCardPdf: '/karty domu/Dum 8.pdf'
   },
   {
@@ -108,6 +116,7 @@ const houses = [
     status: 'Volný',
     price: 14990000,
     floorplanImage: null,
+    herbIcon: '/images/byliny/pomenka.png',
     houseCardPdf: '/karty domu/dum 9.pdf'
   },
   {
@@ -120,6 +129,7 @@ const houses = [
     status: 'Volný',
     price: 15290000,
     floorplanImage: null,
+    herbIcon: '/images/byliny/jetel.png',
     houseCardPdf: '/karty domu/dum 10.pdf'
   },
   {
@@ -132,6 +142,7 @@ const houses = [
     status: 'Volný',
     price: 15590000,
     floorplanImage: null,
+    herbIcon: '/images/byliny/sedmikraska.png',
     houseCardPdf: '/karty domu/Dum 11.pdf'
   },
   {
@@ -144,6 +155,7 @@ const houses = [
     status: 'Volný',
     price: 14900000,
     floorplanImage: null,
+    herbIcon: '/images/byliny/kopretina.png',
     houseCardPdf: '/karty domu/Dum 12.pdf'
   }
 ]
@@ -217,7 +229,17 @@ const AvailabilityTableOnly = () => {
                   className="border-b border-neutral-lightGray hover:bg-neutral-offWhite transition-colors"
                 >
                   <td className="py-4 px-6 text-body-regular text-neutral-darkNavy font-semibold">
-                    {house.name}
+                    <div className="flex items-center gap-2">
+                      {house.herbIcon && (
+                        <img
+                          src={house.herbIcon}
+                          alt=""
+                          className="w-12 h-12"
+                          aria-hidden="true"
+                        />
+                      )}
+                      <span>{house.name}</span>
+                    </div>
                   </td>
                   <td className="py-4 px-6 text-body-regular text-neutral-mediumGray">
                     {formatSize(house.plotArea)} m²

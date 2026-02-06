@@ -14,7 +14,8 @@ const houses = [
     bathrooms: 2,
     heroImage: '/photos/web_f2.jpg',
     floorplanImage: '/photos/F1 resize.jpg',
-    description: 'Rodinný dům s velkou obývací plochou a přímým vstupem na terasu.',
+    description: 'Síla, stabilita a moudrost. Moderní domov s důrazem na dlouhodobý komfort.',
+    herbIcon: '/images/byliny/salvej.png',
     status: 'Volný',
     price: 11490000,
     houseCardPdf: '/karty domu/Dum 1.pdf' // URL k PDF dokumentu
@@ -28,7 +29,8 @@ const houses = [
     bathrooms: 2,
     heroImage: '/photos/F1 resize.jpg',
     floorplanImage: '/photos/web_f2.jpg',
-    description: 'Rodinný dům s velkou obývací plochou a přímým vstupem na terasu.',
+    description: 'Výraz přírodní elegance a charakteru. Dům, který vyniká osobitostí a nadčasovým stylem.',
+    herbIcon: '/images/byliny/chrpa.png',
     status: 'Volný',
     price: 11590000,
     houseCardPdf: '/karty domu/Dum 2.pdf'
@@ -42,7 +44,8 @@ const houses = [
     bathrooms: 2,
     heroImage: null,
     floorplanImage: null,
-    description: 'Rodinný dům s velkou obývací plochou a přímým vstupem na terasu.',
+    description: 'Přirozenost, lehkost a volnost. Domov, který nabízí prostor pro nové začátky a radost z bydlení.',
+    herbIcon: '/images/byliny/pampeliska.png',
     status: 'Volný',
     price: 10890000,
     houseCardPdf: '/karty domu/Dum 3.pdf'
@@ -56,7 +59,8 @@ const houses = [
     bathrooms: 2,
     heroImage: null,
     floorplanImage: null,
-    description: 'Rodinný dům s velkou obývací plochou a přímým vstupem na terasu.',
+    description: 'Klid, harmonie a přirozená rovnováha. Ideální místo pro odpočinek a každodenní pohodu.',
+    herbIcon: '/images/byliny/hermanek.png',
     status: 'Volný',
     price: 10890000,
     houseCardPdf: '/karty domu/Dum 4.pdf'
@@ -70,7 +74,8 @@ const houses = [
     bathrooms: 2,
     heroImage: null,
     floorplanImage: null,
-    description: 'Rodinný dům s velkou obývací plochou a přímým vstupem na terasu.',
+    description: 'Teplo domova a blízkost přírody. Útulné bydlení s klidnou, rodinnou atmosférou.',
+    herbIcon: '/images/byliny/materidouška.png',
     status: 'Volný',
     price: 11190000,
     houseCardPdf: '/karty domu/Dum 5.pdf'
@@ -84,7 +89,8 @@ const houses = [
     bathrooms: 2,
     heroImage: null,
     floorplanImage: null,
-    description: 'Rodinný dům s velkou obývací plochou a přímým vstupem na terasu.',
+    description: 'Lehkost a vzdušnost propojená s okolní krajinou. Dům plný světla a otevřených výhledů.',
+    herbIcon: '/images/byliny/zvonek.png',
     status: 'Volný',
     price: 11490000,
     houseCardPdf: '/karty domu/Dum 6.pdf'
@@ -98,7 +104,8 @@ const houses = [
     bathrooms: 2,
     heroImage: null,
     floorplanImage: null,
-    description: 'Rodinný dům s velkou obývací plochou a přímým vstupem na terasu.',
+    description: 'Nové začátky a svěžest. Světlý domov, který vítá každý nový den.',
+    herbIcon: '/images/byliny/prvosenka.png',
     status: 'Volný',
     price: 11490000,
     houseCardPdf: '/karty domu/Dum 7.pdf'
@@ -112,7 +119,8 @@ const houses = [
     bathrooms: 2,
     heroImage: null,
     floorplanImage: null,
-    description: 'Rodinný dům s velkou obývací plochou a přímým vstupem na terasu.',
+    description: 'Něžnost a elegance s klidnou atmosférou. Domov pro pohodové a harmonické bydlení.',
+    herbIcon: '/images/byliny/violka.png',
     status: 'Volný',
     price: 11590000,
     houseCardPdf: '/karty domu/Dum 8.pdf'
@@ -126,7 +134,8 @@ const houses = [
     bathrooms: 2,
     heroImage: null,
     floorplanImage: null,
-    description: 'Rodinný dům s velkou obývací plochou a přímým vstupem na terasu.',
+    description: 'Jemnost a trvalé hodnoty. Místo, ke kterému se budete vždy rádi vracet.',
+    herbIcon: '/images/byliny/pomenka.png',
     status: 'Volný',
     price: 14990000,
     houseCardPdf: '/karty domu/dum 9.pdf'
@@ -140,7 +149,8 @@ const houses = [
     bathrooms: 2,
     heroImage: null,
     floorplanImage: null,
-    description: 'Rodinný dům s velkou obývací plochou a přímým vstupem na terasu.',
+    description: 'Symbol štěstí a hojnosti. Promyšlené bydlení s důrazem na praktičnost a pohodu.',
+    herbIcon: '/images/byliny/jetel.png',
     status: 'Volný',
     price: 15290000,
     houseCardPdf: '/karty domu/dum 10.pdf'
@@ -154,7 +164,8 @@ const houses = [
     bathrooms: 2,
     heroImage: null,
     floorplanImage: null,
-    description: 'Rodinný dům s velkou obývací plochou a přímým vstupem na terasu.',
+    description: 'Jemnost a klid v harmonickém prostředí. Ideální místo pro pohodové a vyvážené bydlení.',
+    herbIcon: '/images/byliny/sedmikraska.png',
     status: 'Volný',
     price: 15590000,
     houseCardPdf: '/karty domu/Dum 11.pdf'
@@ -168,7 +179,8 @@ const houses = [
     bathrooms: 2,
     heroImage: null,
     floorplanImage: null,
-    description: 'Rodinný dům s velkou obývací plochou a přímým vstupem na terasu.',
+    description: 'Symbol jednoduchosti, světla a otevřeného prostoru. Dům s příjemnou atmosférou pro každodenní rodinný život.',
+    herbIcon: '/images/byliny/kopretina.png',
     status: 'Volný',
     price: 14900000,
     houseCardPdf: '/karty domu/Dum 12.pdf'
@@ -695,8 +707,16 @@ const HousePickerLayout = ({ EmbeddedPreviewComponent = EmbeddedSitePreview }) =
                 )}
 
                 {/* Název domu */}
-                <h2 className="text-2xl font-semibold text-slate-900 mb-3">
-                  {selectedHouse?.name}
+                <h2 className="text-2xl font-semibold text-slate-900 mb-3 flex items-center gap-3">
+                  {selectedHouse?.herbIcon && (
+                    <img
+                      src={selectedHouse.herbIcon}
+                      alt=""
+                      className="w-[54px] h-[54px]"
+                      aria-hidden="true"
+                    />
+                  )}
+                  <span>{selectedHouse?.name}</span>
                 </h2>
 
                 {/* Popis */}
