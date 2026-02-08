@@ -62,19 +62,9 @@ foreach ($required as $field) {
 }
 
 // Prepare Resend API request
-// V testovacím režimu Resend může posílat jen na vlastní email
-// Pokud je příjemce info@domypecerady.cz, použijeme testovací adresu
+// V ostrém režimu posíláme přímo na cílový email
 $recipientEmail = is_array($data['to']) ? $data['to'][0] : $data['to'];
-$testEmail = 'kristian.karas22@gmail.com'; // Testovací email pro Resend
-
-// Pokud není doména ověřená, použijeme testovací email
-if (strpos($recipientEmail, '@domypecerady.cz') !== false) {
-    $recipientEmail = $testEmail;
-    // Přidáme informaci do předmětu
-    $subject = $data['subject'] . ' [Přesměrováno z info@domypecerady.cz]';
-} else {
-    $subject = $data['subject'];
-}
+$subject = $data['subject'];
 
 $resendData = [
     'from' => $data['from'] ?? 'onboarding@resend.dev',
