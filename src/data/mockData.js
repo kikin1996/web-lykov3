@@ -378,432 +378,238 @@ export const apartments = [
 
 // GALLERY DATA
 export const gallery = [
-  // Interiér Bungalov
-  // Interiér Bungalov – všechny nahrané fotky, caption = název souboru
+  // Interiér Bungalov (fotky z dum-12)
   {
     id: 11,
-    url: "/images/gallery/bungalov-interier/f (1).jpg",
-    thumbnail: "/images/gallery/bungalov-interier/f (1).jpg",
+    url: "/images/gallery/dum-12/" + encodeURIComponent("f (1)_dum12.jpg"),
+    thumbnail: "/images/gallery/dum-12/" + encodeURIComponent("f (1)_dum12.jpg"),
     category: "bungalov-interier",
     caption: "Ložnice"
   },
   {
     id: 12,
-    url: "/images/gallery/bungalov-interier/f (2).jpg",
-    thumbnail: "/images/gallery/bungalov-interier/f (2).jpg",
+    url: "/images/gallery/dum-12/" + encodeURIComponent("f (2)_dum12.jpg"),
+    thumbnail: "/images/gallery/dum-12/" + encodeURIComponent("f (2)_dum12.jpg"),
     category: "bungalov-interier",
     caption: "Ložnice"
   },
   {
     id: 13,
-    url: "/images/gallery/bungalov-interier/f (3).jpg",
-    thumbnail: "/images/gallery/bungalov-interier/f (3).jpg",
+    url: "/images/gallery/dum-12/" + encodeURIComponent("f (3)_dum12.jpg"),
+    thumbnail: "/images/gallery/dum-12/" + encodeURIComponent("f (3)_dum12.jpg"),
     category: "bungalov-interier",
     caption: "Ložnice"
   },
   {
     id: 14,
-    url: "/images/gallery/bungalov-interier/f (4).jpg",
-    thumbnail: "/images/gallery/bungalov-interier/f (4).jpg",
+    url: "/images/gallery/dum-12/" + encodeURIComponent("f (4)_dum12.jpg"),
+    thumbnail: "/images/gallery/dum-12/" + encodeURIComponent("f (4)_dum12.jpg"),
     category: "bungalov-interier",
     caption: "Ložnice"
   },
   {
     id: 15,
-    url: "/images/gallery/bungalov-interier/g_ (1).jpg",
-    thumbnail: "/images/gallery/bungalov-interier/g_ (1).jpg",
+    url: "/images/gallery/dum-12/" + encodeURIComponent("g_ (1)_dum12.jpg"),
+    thumbnail: "/images/gallery/dum-12/" + encodeURIComponent("g_ (1)_dum12.jpg"),
     category: "bungalov-interier",
-    caption: "Obyvací pokoj s kuchyní"
+    caption: "Obývací pokoj s kuchyní"
   },
   {
     id: 16,
-    url: "/images/gallery/bungalov-interier/g_ (2)2.jpg",
-    thumbnail: "/images/gallery/bungalov-interier/g_ (2)2.jpg",
+    url: "/images/gallery/dum-12/" + encodeURIComponent("g_ (2)2_dum12.jpg"),
+    thumbnail: "/images/gallery/dum-12/" + encodeURIComponent("g_ (2)2_dum12.jpg"),
     category: "bungalov-interier",
-    caption: "Obyvací pokoj s kuchyní"
+    caption: "Obývací pokoj s kuchyní"
   },
   {
     id: 17,
-    url: "/images/gallery/bungalov-interier/g_ (3)3.jpg",
-    thumbnail: "/images/gallery/bungalov-interier/g_ (3)3.jpg",
+    url: "/images/gallery/dum-12/" + encodeURIComponent("g_ (3)3_dum12.jpg"),
+    thumbnail: "/images/gallery/dum-12/" + encodeURIComponent("g_ (3)3_dum12.jpg"),
     category: "bungalov-interier",
-    caption: "Obyvací pokoj s kuchyní"
+    caption: "Obývací pokoj s kuchyní"
   },
   {
     id: 18,
-    url: "/images/gallery/bungalov-interier/g_ (4).jpg",
-    thumbnail: "/images/gallery/bungalov-interier/g_ (4).jpg",
+    url: "/images/gallery/dum-12/" + encodeURIComponent("g_ (4)_dum12.jpg"),
+    thumbnail: "/images/gallery/dum-12/" + encodeURIComponent("g_ (4)_dum12.jpg"),
     category: "bungalov-interier",
-    caption: "Obyvací pokoj s kuchyní"
+    caption: "Obývací pokoj s kuchyní"
   },
   {
     id: 19,
-    url: "/images/gallery/bungalov-interier/g_ (5).jpg",
-    thumbnail: "/images/gallery/bungalov-interier/g_ (5).jpg",
+    url: "/images/gallery/dum-12/" + encodeURIComponent("g_ (5)_dum12.jpg"),
+    thumbnail: "/images/gallery/dum-12/" + encodeURIComponent("g_ (5)_dum12.jpg"),
     category: "bungalov-interier",
-    caption: "Obyvací pokoj s kuchyní"
+    caption: "Obývací pokoj s kuchyní"
   },
   {
     id: 20,
-    url: "/images/gallery/bungalov-interier/g_ (6).jpg",
-    thumbnail: "/images/gallery/bungalov-interier/g_ (6).jpg",
+    url: "/images/gallery/dum-12/" + encodeURIComponent("g_ (6)_dum12.jpg"),
+    thumbnail: "/images/gallery/dum-12/" + encodeURIComponent("g_ (6)_dum12.jpg"),
     category: "bungalov-interier",
-    caption: "Obyvací pokoj s kuchyní"
+    caption: "Obývací pokoj s kuchyní"
   },
   {
     id: 21,
-    url: "/images/gallery/bungalov-interier/g_ (7)2.jpg",
-    thumbnail: "/images/gallery/bungalov-interier/g_ (7)2.jpg",
+    url: "/images/gallery/dum-12/" + encodeURIComponent("g_ (7)2_dum12.jpg"),
+    thumbnail: "/images/gallery/dum-12/" + encodeURIComponent("g_ (7)2_dum12.jpg"),
     category: "bungalov-interier",
-    caption: "Obyvací pokoj s kuchyní"
+    caption: "Obývací pokoj s kuchyní"
   },
   {
     id: 22,
-    url: "/images/gallery/bungalov-interier/h (1).jpg",
-    thumbnail: "/images/gallery/bungalov-interier/h (1).jpg",
+    url: "/images/gallery/dum-12/" + encodeURIComponent("h (1)_dum12.jpg"),
+    thumbnail: "/images/gallery/dum-12/" + encodeURIComponent("h (1)_dum12.jpg"),
     category: "bungalov-interier",
     caption: "Dětský pokoj"
   },
   {
     id: 23,
-    url: "/images/gallery/bungalov-interier/h (2).jpg",
-    thumbnail: "/images/gallery/bungalov-interier/h (2).jpg",
+    url: "/images/gallery/dum-12/" + encodeURIComponent("h (2)_dum12.jpg"),
+    thumbnail: "/images/gallery/dum-12/" + encodeURIComponent("h (2)_dum12.jpg"),
     category: "bungalov-interier",
     caption: "Dětský pokoj"
   },
   {
     id: 24,
-    url: "/images/gallery/bungalov-interier/h (3).jpg",
-    thumbnail: "/images/gallery/bungalov-interier/h (3).jpg",
+    url: "/images/gallery/dum-12/" + encodeURIComponent("h (3)_dum12.jpg"),
+    thumbnail: "/images/gallery/dum-12/" + encodeURIComponent("h (3)_dum12.jpg"),
     category: "bungalov-interier",
     caption: "Dětský pokoj"
   },
   {
     id: 25,
-    url: "/images/gallery/bungalov-interier/h (4).jpg",
-    thumbnail: "/images/gallery/bungalov-interier/h (4).jpg",
+    url: "/images/gallery/dum-12/" + encodeURIComponent("h (4)_dum12.jpg"),
+    thumbnail: "/images/gallery/dum-12/" + encodeURIComponent("h (4)_dum12.jpg"),
     category: "bungalov-interier",
     caption: "Dětský pokoj"
   },
   {
     id: 26,
-    url: "/images/gallery/bungalov-interier/h (5).jpg",
-    thumbnail: "/images/gallery/bungalov-interier/h (5).jpg",
+    url: "/images/gallery/dum-12/" + encodeURIComponent("h (5)_dum12.jpg"),
+    thumbnail: "/images/gallery/dum-12/" + encodeURIComponent("h (5)_dum12.jpg"),
     category: "bungalov-interier",
     caption: "Dětský pokoj"
   },
-  {
-    id: 69,
-    url: "/images/koupelny/bungalov/1-07_pravy_dum/e1.jpg",
-    thumbnail: "/images/koupelny/bungalov/1-07_pravy_dum/e1.jpg",
-    category: "bungalov-interier",
-    caption: "Menší koupelna"
-  },
-  {
-    id: 70,
-    url: "/images/koupelny/bungalov/1-07_pravy_dum/e2.jpg",
-    thumbnail: "/images/koupelny/bungalov/1-07_pravy_dum/e2.jpg",
-    category: "bungalov-interier",
-    caption: "Menší koupelna"
-  },
-  {
-    id: 71,
-    url: "/images/koupelny/bungalov/1-07_pravy_dum/e3.jpg",
-    thumbnail: "/images/koupelny/bungalov/1-07_pravy_dum/e3.jpg",
-    category: "bungalov-interier",
-    caption: "Menší koupelna"
-  },
-  {
-    id: 72,
-    url: "/images/koupelny/bungalov/1-11_pravy_dum/" + encodeURIComponent("f (1).jpg"),
-    thumbnail: "/images/koupelny/bungalov/1-11_pravy_dum/" + encodeURIComponent("f (1).jpg"),
-    category: "bungalov-interier",
-    caption: "Větší koupelna"
-  },
-  {
-    id: 73,
-    url: "/images/koupelny/bungalov/1-11_pravy_dum/" + encodeURIComponent("f (1)-2.jpg"),
-    thumbnail: "/images/koupelny/bungalov/1-11_pravy_dum/" + encodeURIComponent("f (1)-2.jpg"),
-    category: "bungalov-interier",
-    caption: "Větší koupelna"
-  },
-  {
-    id: 74,
-    url: "/images/koupelny/bungalov/1-11_pravy_dum/" + encodeURIComponent("f (2).jpg"),
-    thumbnail: "/images/koupelny/bungalov/1-11_pravy_dum/" + encodeURIComponent("f (2).jpg"),
-    category: "bungalov-interier",
-    caption: "Větší koupelna"
-  },
-  {
-    id: 75,
-    url: "/images/koupelny/bungalov/1-11_pravy_dum/" + encodeURIComponent("f (2)-2.jpg"),
-    thumbnail: "/images/koupelny/bungalov/1-11_pravy_dum/" + encodeURIComponent("f (2)-2.jpg"),
-    category: "bungalov-interier",
-    caption: "Větší koupelna"
-  },
-  // Interiér Dvojdomek – všechny nahrané fotky, caption = název souboru
+  // Interiér Dvojdomek (fotky z domy-2-4-6-8)
   {
     id: 27,
-    url: "/images/gallery/dvojdomek-interier/a (1).jpg",
-    thumbnail: "/images/gallery/dvojdomek-interier/a (1).jpg",
+    url: "/images/gallery/domy-2-4-6-8/" + encodeURIComponent("a (1)_domy2468.jpg"),
+    thumbnail: "/images/gallery/domy-2-4-6-8/" + encodeURIComponent("a (1)_domy2468.jpg"),
     category: "dvojdomek-interier",
     caption: "Obývací pokoj s kuchyní"
   },
   {
     id: 28,
-    url: "/images/gallery/dvojdomek-interier/a (2).jpg",
-    thumbnail: "/images/gallery/dvojdomek-interier/a (2).jpg",
+    url: "/images/gallery/domy-2-4-6-8/" + encodeURIComponent("a (2)_domy2468.jpg"),
+    thumbnail: "/images/gallery/domy-2-4-6-8/" + encodeURIComponent("a (2)_domy2468.jpg"),
     category: "dvojdomek-interier",
     caption: "Obývací pokoj s kuchyní"
   },
   {
     id: 29,
-    url: "/images/gallery/dvojdomek-interier/a (3).jpg",
-    thumbnail: "/images/gallery/dvojdomek-interier/a (3).jpg",
+    url: "/images/gallery/domy-2-4-6-8/" + encodeURIComponent("a (3)_domy2468.jpg"),
+    thumbnail: "/images/gallery/domy-2-4-6-8/" + encodeURIComponent("a (3)_domy2468.jpg"),
     category: "dvojdomek-interier",
     caption: "Obývací pokoj s kuchyní"
   },
   {
     id: 30,
-    url: "/images/gallery/dvojdomek-interier/a (4).jpg",
-    thumbnail: "/images/gallery/dvojdomek-interier/a (4).jpg",
+    url: "/images/gallery/domy-2-4-6-8/" + encodeURIComponent("a (4)_domy2468.jpg"),
+    thumbnail: "/images/gallery/domy-2-4-6-8/" + encodeURIComponent("a (4)_domy2468.jpg"),
     category: "dvojdomek-interier",
     caption: "Obývací pokoj s kuchyní"
   },
   {
     id: 31,
-    url: "/images/gallery/dvojdomek-interier/a (5).jpg",
-    thumbnail: "/images/gallery/dvojdomek-interier/a (5).jpg",
+    url: "/images/gallery/domy-2-4-6-8/" + encodeURIComponent("a (5)_domy2468.jpg"),
+    thumbnail: "/images/gallery/domy-2-4-6-8/" + encodeURIComponent("a (5)_domy2468.jpg"),
     category: "dvojdomek-interier",
     caption: "Obývací pokoj s kuchyní"
   },
   {
     id: 32,
-    url: "/images/gallery/dvojdomek-interier/a (6).jpg",
-    thumbnail: "/images/gallery/dvojdomek-interier/a (6).jpg",
+    url: "/images/gallery/domy-2-4-6-8/" + encodeURIComponent("a (6)_domy2468.jpg"),
+    thumbnail: "/images/gallery/domy-2-4-6-8/" + encodeURIComponent("a (6)_domy2468.jpg"),
     category: "dvojdomek-interier",
     caption: "Obývací pokoj s kuchyní"
   },
   {
     id: 33,
-    url: "/images/gallery/dvojdomek-interier/a (7).jpg",
-    thumbnail: "/images/gallery/dvojdomek-interier/a (7).jpg",
+    url: "/images/gallery/domy-2-4-6-8/" + encodeURIComponent("a (7)_domy2468.jpg"),
+    thumbnail: "/images/gallery/domy-2-4-6-8/" + encodeURIComponent("a (7)_domy2468.jpg"),
     category: "dvojdomek-interier",
     caption: "Obývací pokoj s kuchyní"
   },
   {
     id: 34,
-    url: "/images/gallery/dvojdomek-interier/b (1).jpg",
-    thumbnail: "/images/gallery/dvojdomek-interier/b (1).jpg",
+    url: "/images/gallery/domy-2-4-6-8/" + encodeURIComponent("b (1)_domy2468.jpg"),
+    thumbnail: "/images/gallery/domy-2-4-6-8/" + encodeURIComponent("b (1)_domy2468.jpg"),
     category: "dvojdomek-interier",
     caption: "Dětský pokoj"
   },
   {
     id: 35,
-    url: "/images/gallery/dvojdomek-interier/b (2).jpg",
-    thumbnail: "/images/gallery/dvojdomek-interier/b (2).jpg",
+    url: "/images/gallery/domy-2-4-6-8/" + encodeURIComponent("b (2)_domy2468.jpg"),
+    thumbnail: "/images/gallery/domy-2-4-6-8/" + encodeURIComponent("b (2)_domy2468.jpg"),
     category: "dvojdomek-interier",
     caption: "Dětský pokoj"
   },
   {
     id: 36,
-    url: "/images/gallery/dvojdomek-interier/b (3).jpg",
-    thumbnail: "/images/gallery/dvojdomek-interier/b (3).jpg",
+    url: "/images/gallery/domy-2-4-6-8/" + encodeURIComponent("b (3)_domy2468.jpg"),
+    thumbnail: "/images/gallery/domy-2-4-6-8/" + encodeURIComponent("b (3)_domy2468.jpg"),
     category: "dvojdomek-interier",
     caption: "Dětský pokoj"
   },
   {
     id: 37,
-    url: "/images/gallery/dvojdomek-interier/b (4).jpg",
-    thumbnail: "/images/gallery/dvojdomek-interier/b (4).jpg",
+    url: "/images/gallery/domy-2-4-6-8/" + encodeURIComponent("b (4)_domy2468.jpg"),
+    thumbnail: "/images/gallery/domy-2-4-6-8/" + encodeURIComponent("b (4)_domy2468.jpg"),
     category: "dvojdomek-interier",
     caption: "Dětský pokoj"
   },
   {
     id: 38,
-    url: "/images/gallery/dvojdomek-interier/b (5).jpg",
-    thumbnail: "/images/gallery/dvojdomek-interier/b (5).jpg",
+    url: "/images/gallery/domy-2-4-6-8/" + encodeURIComponent("b (5)_domy2468.jpg"),
+    thumbnail: "/images/gallery/domy-2-4-6-8/" + encodeURIComponent("b (5)_domy2468.jpg"),
     category: "dvojdomek-interier",
     caption: "Dětský pokoj"
   },
   {
     id: 39,
-    url: "/images/gallery/dvojdomek-interier/c (1).jpg",
-    thumbnail: "/images/gallery/dvojdomek-interier/c (1).jpg",
+    url: "/images/gallery/domy-2-4-6-8/" + encodeURIComponent("c (1)_domy2468.jpg"),
+    thumbnail: "/images/gallery/domy-2-4-6-8/" + encodeURIComponent("c (1)_domy2468.jpg"),
     category: "dvojdomek-interier",
     caption: "Ložnice"
   },
   {
     id: 40,
-    url: "/images/gallery/dvojdomek-interier/c (2).jpg",
-    thumbnail: "/images/gallery/dvojdomek-interier/c (2).jpg",
+    url: "/images/gallery/domy-2-4-6-8/" + encodeURIComponent("c (2)_domy2468.jpg"),
+    thumbnail: "/images/gallery/domy-2-4-6-8/" + encodeURIComponent("c (2)_domy2468.jpg"),
     category: "dvojdomek-interier",
     caption: "Ložnice"
   },
   {
     id: 41,
-    url: "/images/gallery/dvojdomek-interier/c (3).jpg",
-    thumbnail: "/images/gallery/dvojdomek-interier/c (3).jpg",
+    url: "/images/gallery/domy-2-4-6-8/" + encodeURIComponent("c (3)_domy2468.jpg"),
+    thumbnail: "/images/gallery/domy-2-4-6-8/" + encodeURIComponent("c (3)_domy2468.jpg"),
     category: "dvojdomek-interier",
     caption: "Ložnice"
   },
   {
     id: 42,
-    url: "/images/gallery/dvojdomek-interier/c (4).jpg",
-    thumbnail: "/images/gallery/dvojdomek-interier/c (4).jpg",
+    url: "/images/gallery/domy-2-4-6-8/" + encodeURIComponent("c (4)_domy2468.jpg"),
+    thumbnail: "/images/gallery/domy-2-4-6-8/" + encodeURIComponent("c (4)_domy2468.jpg"),
     category: "dvojdomek-interier",
     caption: "Ložnice"
   },
   {
     id: 43,
-    url: "/images/gallery/dvojdomek-interier/c (5).jpg",
-    thumbnail: "/images/gallery/dvojdomek-interier/c (5).jpg",
+    url: "/images/gallery/domy-2-4-6-8/" + encodeURIComponent("c (5)_domy2468.jpg"),
+    thumbnail: "/images/gallery/domy-2-4-6-8/" + encodeURIComponent("c (5)_domy2468.jpg"),
     category: "dvojdomek-interier",
     caption: "Ložnice"
-  },
-  {
-    id: 44,
-    url: "/images/gallery/dvojdomek-interier/d (1).jpg",
-    thumbnail: "/images/gallery/dvojdomek-interier/d (1).jpg",
-    category: "dvojdomek-interier",
-    caption: "Obývací pokoj s kuchyní (Podzemní byt)",
-    hidden: true
-  },
-  {
-    id: 45,
-    url: "/images/gallery/dvojdomek-interier/d (2).jpg",
-    thumbnail: "/images/gallery/dvojdomek-interier/d (2).jpg",
-    category: "dvojdomek-interier",
-    caption: "Obývací pokoj s kuchyní (Podzemní byt)",
-    hidden: true
-  },
-  {
-    id: 46,
-    url: "/images/gallery/dvojdomek-interier/d (3).jpg",
-    thumbnail: "/images/gallery/dvojdomek-interier/d (3).jpg",
-    category: "dvojdomek-interier",
-    caption: "Obývací pokoj s kuchyní (Podzemní byt)",
-    hidden: true
-  },
-  {
-    id: 47,
-    url: "/images/gallery/dvojdomek-interier/d (4).jpg",
-    thumbnail: "/images/gallery/dvojdomek-interier/d (4).jpg",
-    category: "dvojdomek-interier",
-    caption: "Obývací pokoj s kuchyní (Podzemní byt)",
-    hidden: true
-  },
-  {
-    id: 48,
-    url: "/images/gallery/dvojdomek-interier/d (5).jpg",
-    thumbnail: "/images/gallery/dvojdomek-interier/d (5).jpg",
-    category: "dvojdomek-interier",
-    caption: "Obývací pokoj s kuchyní (Podzemní byt)",
-    hidden: true
-  },
-  {
-    id: 49,
-    url: "/images/gallery/dvojdomek-interier/d (6).jpg",
-    thumbnail: "/images/gallery/dvojdomek-interier/d (6).jpg",
-    category: "dvojdomek-interier",
-    caption: "Obývací pokoj s kuchyní (Podzemní byt)",
-    hidden: true
-  },
-  {
-    id: 50,
-    url: "/images/gallery/dvojdomek-interier/e (1).jpg",
-    thumbnail: "/images/gallery/dvojdomek-interier/e (1).jpg",
-    category: "dvojdomek-interier",
-    caption: "Ložnice (Podzemní byt)",
-    hidden: true
-  },
-  {
-    id: 51,
-    url: "/images/gallery/dvojdomek-interier/e (2).jpg",
-    thumbnail: "/images/gallery/dvojdomek-interier/e (2).jpg",
-    category: "dvojdomek-interier",
-    caption: "Ložnice (Podzemní byt)",
-    hidden: true
-  },
-  {
-    id: 52,
-    url: "/images/gallery/dvojdomek-interier/e (3).jpg",
-    thumbnail: "/images/gallery/dvojdomek-interier/e (3).jpg",
-    category: "dvojdomek-interier",
-    caption: "Ložnice (Podzemní byt)",
-    hidden: true
-  },
-  {
-    id: 53,
-    url: "/images/gallery/dvojdomek-interier/e (4).jpg",
-    thumbnail: "/images/gallery/dvojdomek-interier/e (4).jpg",
-    category: "dvojdomek-interier",
-    caption: "Ložnice (Podzemní byt)",
-    hidden: true
-  },
-  {
-    id: 54,
-    url: "/images/gallery/dvojdomek-interier/e (5).jpg",
-    thumbnail: "/images/gallery/dvojdomek-interier/e (5).jpg",
-    category: "dvojdomek-interier",
-    caption: "Ložnice (Podzemní byt)",
-    hidden: true
-  },
-  {
-    id: 76,
-    url: "/images/koupelny/dvojdum/1-03_pravy_dum/g1.jpg",
-    thumbnail: "/images/koupelny/dvojdum/1-03_pravy_dum/g1.jpg",
-    category: "dvojdomek-interier",
-    caption: "Spodní koupelna"
-  },
-  {
-    id: 77,
-    url: "/images/koupelny/dvojdum/1-03_pravy_dum/g2_2.jpg",
-    thumbnail: "/images/koupelny/dvojdum/1-03_pravy_dum/g2_2.jpg",
-    category: "dvojdomek-interier",
-    caption: "Spodní koupelna"
-  },
-  {
-    id: 78,
-    url: "/images/koupelny/dvojdum/1-03_pravy_dum/g3.jpg",
-    thumbnail: "/images/koupelny/dvojdum/1-03_pravy_dum/g3.jpg",
-    category: "dvojdomek-interier",
-    caption: "Spodní koupelna"
-  },
-  {
-    id: 79,
-    url: "/images/koupelny/dvojdum/2-06_pravy_dum/" + encodeURIComponent("h (1).jpg"),
-    thumbnail: "/images/koupelny/dvojdum/2-06_pravy_dum/" + encodeURIComponent("h (1).jpg"),
-    category: "dvojdomek-interier",
-    caption: "Vrchní koupelna"
-  },
-  {
-    id: 80,
-    url: "/images/koupelny/dvojdum/2-06_pravy_dum/" + encodeURIComponent("h (1)-2.jpg"),
-    thumbnail: "/images/koupelny/dvojdum/2-06_pravy_dum/" + encodeURIComponent("h (1)-2.jpg"),
-    category: "dvojdomek-interier",
-    caption: "Vrchní koupelna"
-  },
-  {
-    id: 81,
-    url: "/images/koupelny/dvojdum/2-06_pravy_dum/" + encodeURIComponent("h (2).jpg"),
-    thumbnail: "/images/koupelny/dvojdum/2-06_pravy_dum/" + encodeURIComponent("h (2).jpg"),
-    category: "dvojdomek-interier",
-    caption: "Vrchní koupelna"
-  },
-  {
-    id: 82,
-    url: "/images/koupelny/dvojdum/2-06_pravy_dum/" + encodeURIComponent("h (3).jpg"),
-    thumbnail: "/images/koupelny/dvojdum/2-06_pravy_dum/" + encodeURIComponent("h (3).jpg"),
-    category: "dvojdomek-interier",
-    caption: "Vrchní koupelna"
-  },
-  {
-    id: 83,
-    url: "/images/koupelny/dvojdum/2-06_pravy_dum/" + encodeURIComponent("h (4).jpg"),
-    thumbnail: "/images/koupelny/dvojdum/2-06_pravy_dum/" + encodeURIComponent("h (4).jpg"),
-    category: "dvojdomek-interier",
-    caption: "Vrchní koupelna"
   },
   // Exteriér
   {

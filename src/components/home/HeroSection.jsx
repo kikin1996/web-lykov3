@@ -14,13 +14,13 @@ const HeroSection = () => {
       </div>
 
       {/* Obsah – nadpis a tagline */}
-      <div className="relative z-10 text-center max-w-4xl px-5 pb-0 pt-12 sm:pt-32 md:pt-32 lg:pt-20 min-[1279px]:pt-8 min-[1279px]:-mt-[650px]">
+      <div className="relative z-10 text-center max-w-4xl px-5 pb-0 pt-12 sm:pt-32 md:pt-32 lg:pt-20 min-[1279px]:pt-8 min-[1279px]:-mt-[550px]">
         <h1
           className="mb-0 mt-4 font-primary font-normal uppercase text-white tracking-wide leading-tight"
           style={{
             fontFamily: "'Playfair Display', Georgia, serif",
             // Větší, ale stále responzivní podle šířky
-            fontSize: 'clamp(2.2rem, 5vw + 1.2rem, 80px)'
+            fontSize: 'clamp(2.86rem, 6.5vw + 1.56rem, 104px)'
           }}
         >
           Luční Háj
@@ -30,7 +30,7 @@ const HeroSection = () => {
           style={{
             fontFamily: "'Allura', 'Brush Script MT', cursive",
             // Vizuálně téměř „na sobě“ s H1
-            fontSize: 'clamp(1.4rem, 3.2vw + 0.7rem, 42px)',
+            fontSize: 'clamp(1.82rem, 4.2vw + 0.9rem, 55px)',
             color: '#00D9B5',
             marginTop: '-0.6rem'
           }}

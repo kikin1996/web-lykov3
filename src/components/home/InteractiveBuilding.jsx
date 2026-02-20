@@ -40,8 +40,8 @@ const InteractiveBuilding = () => {
         </div>
       </section>
 
-      {/* Sekce WORK IN PROGRESS se třemi obrázky */}
-      <section className="pt-20 pb-32 bg-neutral-offWhite">
+      {/* Sekce WORK IN PROGRESS se třemi obrázky - skrytá na mobilech */}
+      <section className="hidden md:block pt-20 pb-32 bg-neutral-offWhite">
         <div className="container mx-auto px-5 lg:px-20">
           <div className="text-center mb-12">
             <h2 className="mb-6 leading-tight font-primary text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-neutral-darkNavy">

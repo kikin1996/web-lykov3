@@ -55,7 +55,7 @@ export const amenities = [
 
 const AmenitiesSection = () => {
   return (
-    <section className="py-12 md:py-20 bg-neutral-offWhite relative pb-40 md:pb-80">
+    <section className="hidden md:block py-12 md:py-20 bg-neutral-offWhite relative pb-40 md:pb-80">
       <div className="container mx-auto px-4 sm:px-5 lg:px-20">
         <div className="text-center mb-8 md:mb-12">
           <p className="text-overline mb-3 md:mb-4">Standardy</p>
