@@ -30,9 +30,9 @@ export default function StandardyPage() {
   return (
     <>
       <SEO
-        title="Konstrukční řešení stavby"
-        description="Konstrukční řešení stavby a prémiové vybavení domu v projektu Luční Háj. Konstrukce, zdivo, tepelná izolace, okna, energetická náročnost A/B a prémiové materiály."
-        keywords="standardy stavby, konstrukce, zdivo, okna pasivní, energetická třída, nadstandard, Luční Háj, Týnec nad Sázavou"
+        title="Standardy a Vybavení Domů"
+        description="Konstrukční standardy a prémiové vybavení domů Luční Háj. Energetická třída A/B, tepelné čerpadlo Midea, okna pro pasivní standard, dřevěné podlahy 14mm, keramika Halcón."
+        keywords="standardy rodinných domů, energeticky úsporné domy, tepelné čerpadlo, podlahové topení, pasivní domy, keramické zdivo, dřevěné podlahy, prémiové vybavení domu, Luční Háj standardy"
         image="/images/standardy-hero.jpg"
         url="/standardy"
       />
@@ -142,7 +142,7 @@ export default function StandardyPage() {
                     title="Půdní prostory"
                     description="Dvojdomky mají k dispozici cca 30 m² půdních prostorů. Bungalovy nabízí dva samostatné půdní prostory po 25 m², tedy dohromady 50 m² půdního prostoru."
                     items={[]}
-                    image={"/standardy/standardy2/" + encodeURIComponent("pudni_prostor.jpg")}
+                    image="/standardy/standardy2/puda.jpeg"
                     imageAlt="Půdní prostory"
                     reverse={true}
                   />

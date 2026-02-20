@@ -55,20 +55,50 @@ export const amenities = [
 
 const AmenitiesSection = () => {
   return (
-    <section className="py-20 bg-neutral-offWhite relative pb-80 hidden md:block">
-      <div className="container mx-auto px-5 lg:px-20">
-        <div className="text-center mb-12">
-          <p className="text-overline mb-4">Standardy</p>
-          <h2 className="mb-6 leading-tight font-primary text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-neutral-darkNavy">
+    <section className="py-12 md:py-20 bg-neutral-offWhite relative pb-40 md:pb-80">
+      <div className="container mx-auto px-4 sm:px-5 lg:px-20">
+        <div className="text-center mb-8 md:mb-12">
+          <p className="text-overline mb-3 md:mb-4">Standardy</p>
+          <h2 className="mb-4 md:mb-6 leading-tight font-primary text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-neutral-darkNavy">
             Standardy stavby
           </h2>
-          <p className="text-body-large max-w-2xl mx-auto">
+          <p className="text-body-regular md:text-body-large max-w-2xl mx-auto px-2">
             Základní technické parametry a vybavení, které zajišťují kvalitu,
             úspornost a dlouhodobý komfort bydlení v projektu Luční Háj.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 hidden md:grid">
+        {/* Mobilní verze - horizontální scroll */}
+        <div className="md:hidden overflow-x-auto pb-4 -mx-4 px-4 scrollbar-hide">
+          <div className="flex gap-4" style={{ width: 'max-content' }}>
+            {amenities.slice(0, 4).map((amenity, index) => (
+              <div key={index} className="w-[280px] flex-shrink-0">
+                <Card hover className="overflow-hidden h-full">
+                  <div className="rounded-2xl overflow-hidden border border-slate-200/70 h-[160px]">
+                    <img
+                      src={amenity.image}
+                      alt={amenity.title}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="p-4">
+                    <h3 className="text-base font-semibold text-neutral-darkNavy mb-2">{amenity.title}</h3>
+                    <p className="text-sm text-neutral-mediumGray line-clamp-3">
+                      {amenity.description}
+                    </p>
+                  </div>
+                </Card>
+              </div>
+            ))}
+          </div>
+          <p className="text-xs text-neutral-mediumGray mt-3 text-center">
+            Posuňte pro více →
+          </p>
+        </div>
+
+        {/* Desktop verze */}
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {amenities.map((amenity, index) => (
             <Card key={index} hover className="overflow-hidden">
               <div className="rounded-2xl overflow-hidden border border-slate-200/70 h-[220px]">
@@ -97,17 +127,76 @@ const AmenitiesSection = () => {
           ))}
         </div>
 
-        {/* Test2 sekce pod standardy stavby – obsah z LOKALITA včetně karet */}
-        <div className="mt-16">
-          <div className="text-center mb-12">
-            <p className="text-overline tracking-[0.2em] mb-3">LOKALITA</p>
-            <h3 className="text-h1 mb-4">Lokalita, která má hodnotu</h3>
-            <p className="text-body-regular max-w-2xl mx-auto mt-2 text-neutral-mediumGray">
+        {/* Sekce LOKALITA */}
+        <div className="mt-10 md:mt-16">
+          <div className="text-center mb-8 md:mb-12">
+            <p className="text-overline tracking-[0.2em] mb-2 md:mb-3">LOKALITA</p>
+            <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-primary font-semibold text-neutral-darkNavy mb-3 md:mb-4">Lokalita, která má hodnotu</h3>
+            <p className="text-body-small md:text-body-regular max-w-2xl mx-auto mt-2 text-neutral-mediumGray px-2">
               Pečlivě vybraná lokalita propojuje klid přírody s praktickou dostupností města a kompletní občanskou vybaveností.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 items-start w-full hidden md:grid">
+          {/* Mobilní verze - vertikální seznam */}
+          <div className="md:hidden space-y-4 px-1">
+            <div className="bg-white rounded-xl border border-neutral-lightGray/70 p-4 flex gap-4">
+              <div className="w-20 h-20 flex-shrink-0 rounded-lg overflow-hidden bg-neutral-lightGray">
+                <Image
+                  src="/images/nature-sazava-01.jpg"
+                  alt="Řeka Sázava"
+                  width={80}
+                  height={80}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="flex-1 min-w-0">
+                <span className="text-xs text-neutral-mediumGray">01</span>
+                <h4 className="text-sm font-semibold mb-1">Řeka Sázava a příroda</h4>
+                <p className="text-xs text-neutral-mediumGray line-clamp-2">
+                  Blízkost řeky Sázavy, lesů a přírodních tras.
+                </p>
+              </div>
+            </div>
+            <div className="bg-white rounded-xl border border-neutral-lightGray/70 p-4 flex gap-4">
+              <div className="w-20 h-20 flex-shrink-0 rounded-lg overflow-hidden bg-neutral-lightGray">
+                <Image
+                  src="/images/trails-rekreace-02.jpg"
+                  alt="Turistika"
+                  width={80}
+                  height={80}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="flex-1 min-w-0">
+                <span className="text-xs text-neutral-mediumGray">02</span>
+                <h4 className="text-sm font-semibold mb-1">Turistika a rekreace</h4>
+                <p className="text-xs text-neutral-mediumGray line-clamp-2">
+                  Cyklostezky, pěší trasy a vodní rekreace.
+                </p>
+              </div>
+            </div>
+            <div className="bg-white rounded-xl border border-neutral-lightGray/70 p-4 flex gap-4">
+              <div className="w-20 h-20 flex-shrink-0 rounded-lg overflow-hidden bg-neutral-lightGray">
+                <Image
+                  src="/images/town-amenities-tynec-04.jpg"
+                  alt="Občanská vybavenost"
+                  width={80}
+                  height={80}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="flex-1 min-w-0">
+                <span className="text-xs text-neutral-mediumGray">03</span>
+                <h4 className="text-sm font-semibold mb-1">Občanská vybavenost</h4>
+                <p className="text-xs text-neutral-mediumGray line-clamp-2">
+                  Školy, obchody, restaurace a sportovní zařízení.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Desktop verze */}
+          <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-10 items-start w-full">
             {/* Column 01 – Řeka Sázava a příroda */}
             <Card hover className="overflow-hidden border border-neutral-lightGray/70 rounded-xl lg:mt-[0px]">
               <div className="p-6 flex flex-col h-full">

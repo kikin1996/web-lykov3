@@ -834,6 +834,48 @@ export const gallery = [
     category: "exterior",
     caption: "Bungalov"
   },
+  {
+    id: 85,
+    url: "/images/gallery/exterior/bungalov_ex_2.png",
+    thumbnail: "/images/gallery/exterior/bungalov_ex_2.png",
+    category: "exterior",
+    caption: "Bungalov s rodinou"
+  },
+  {
+    id: 86,
+    url: "/images/gallery/exterior/bungalov_ex_3.png",
+    thumbnail: "/images/gallery/exterior/bungalov_ex_3.png",
+    category: "exterior",
+    caption: "Bungalov - terasa"
+  },
+  {
+    id: 88,
+    url: "/images/gallery/exterior/dvojdum_2.png",
+    thumbnail: "/images/gallery/exterior/dvojdum_2.png",
+    category: "exterior",
+    caption: "Dvojdomek - zahrada"
+  },
+  {
+    id: 89,
+    url: "/images/gallery/exterior/dvojdum_3.png",
+    thumbnail: "/images/gallery/exterior/dvojdum_3.png",
+    category: "exterior",
+    caption: "Dvojdomek - terasa a zahrada"
+  },
+  {
+    id: 90,
+    url: "/images/gallery/exterior/dvojdum_4.png",
+    thumbnail: "/images/gallery/exterior/dvojdum_4.png",
+    category: "exterior",
+    caption: "Bungalov - letecký pohled"
+  },
+  {
+    id: 91,
+    url: "/images/gallery/exterior/dvojdum_5.png",
+    thumbnail: "/images/gallery/exterior/dvojdum_5.png",
+    category: "exterior",
+    caption: "Dvojdomek s rodinou"
+  },
   // Okolí / Location
   {
     id: 59,

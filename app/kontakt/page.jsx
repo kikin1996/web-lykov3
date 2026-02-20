@@ -343,9 +343,9 @@ export default function ContactPage() {
   return (
     <>
       <SEO
-        title="Kontakt"
-        description="Kontaktujte nás ohledně projektu Luční Háj. Jsme k dispozici na emailu, telefonu nebo nás můžete navštívit osobně v Týnci nad Sázavou."
-        keywords="kontakt, Luční Háj, realitní projekt, dotaz, informace, Týnec nad Sázavou"
+        title="Kontakt - Prodej Domů"
+        description="Kontaktujte nás ohledně prodeje rodinných domů Luční Háj. Telefon +420 725 734 095, email info@domypecerady.cz. Sídlo: Pecerady 31, Týnec nad Sázavou."
+        keywords="kontakt Luční Háj, prodej domů Týnec, NIKASTAR kontakt, prohlídka vzorového domu, informace o prodeji domů"
         image="/images/contact_hero.jpg"
         url="/kontakt"
       />

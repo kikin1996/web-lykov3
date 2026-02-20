@@ -191,9 +191,9 @@ export default function AktualityPage() {
   return (
     <>
       <SEO
-        title="Aktuality a průběh výstavby"
-        description="Sledujte aktuální průběh výstavby projektu Luční Háj. Aktuality o stavbě, milníky projektu a plánované termíny dokončení."
-        keywords="aktuality, výstavba, průběh stavby, milníky, Luční Háj, Týnec nad Sázavou"
+        title="Průběh Výstavby a Aktuality"
+        description="Sledujte aktuální průběh výstavby rodinných domů Luční Háj. Fotodokumentace stavby, milníky projektu a plánované termíny dokončení v roce 2026."
+        keywords="průběh výstavby, stavba rodinných domů, aktuality Luční Háj, fotodokumentace stavby, termín dokončení, kolaudace domů 2026"
         image="/images/stavba.jpg"
         url="/aktuality"
       />

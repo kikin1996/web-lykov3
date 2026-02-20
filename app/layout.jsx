@@ -4,14 +4,29 @@ import './globals.css'
 export const metadata = {
   metadataBase: new URL('https://domypecerady.cz'),
   title: {
-    default: 'Luční Háj - Rezidenční bytový komplex',
-    template: '%s | Luční Háj'
+    default: 'Luční Háj - Rodinné domy u Prahy | Týnec nad Sázavou',
+    template: '%s | Luční Háj - Rodinné domy'
   },
-  description: 'Moderní rezidenční bytový komplex Luční Háj. Kvalitní bydlení s výjimečným designem a prvotřídním vybavením v klidném prostředí Týnce nad Sázavou.',
-  keywords: ['bytový komplex', 'byty', 'realitní projekt', 'Luční Háj', 'rezidenční bydlení', 'nové byty', 'Týnec nad Sázavou', 'bydlení Praha'],
-  authors: [{ name: 'Luční Háj' }],
+  description: 'Moderní rodinné domy Luční Háj v Týnci nad Sázavou, 30 minut od Prahy. Dvojdomy a bungalovy s energetickou třídou A/B, tepelným čerpadlem a prémiovým vybavením u řeky Sázavy.',
+  keywords: [
+    'rodinné domy Týnec nad Sázavou',
+    'domy u Prahy',
+    'novostavby Středočeský kraj',
+    'Luční Háj',
+    'dvojdomy na prodej',
+    'bungalovy na prodej',
+    'energeticky úsporné domy',
+    'domy u řeky Sázavy',
+    'nové domy Pecerady',
+    'moderní rodinné domy',
+    'domy s tepelným čerpadlem',
+    'pasivní domy',
+    'developerský projekt',
+    'bydlení u Prahy'
+  ],
+  authors: [{ name: 'NIKASTAR s.r.o.' }],
   creator: 'Luční Háj',
-  publisher: 'Luční Háj',
+  publisher: 'NIKASTAR s.r.o.',
   formatDetection: {
     email: false,
     address: false,
@@ -22,21 +37,21 @@ export const metadata = {
     locale: 'cs_CZ',
     url: 'https://domypecerady.cz',
     siteName: 'Luční Háj',
-    title: 'Luční Háj - Rezidenční bytový komplex',
-    description: 'Moderní rezidenční bytový komplex Luční Háj. Kvalitní bydlení s výjimečným designem a prvotřídním vybavením v klidném prostředí Týnce nad Sázavou.',
+    title: 'Luční Háj - Rodinné domy u Prahy | Týnec nad Sázavou',
+    description: 'Moderní rodinné domy v Týnci nad Sázavou, 30 min od Prahy. Dvojdomy a bungalovy s energetickou třídou A/B a prémiovým vybavením.',
     images: [
       {
         url: '/images/hero_photo.png',
         width: 1200,
         height: 630,
-        alt: 'Luční Háj - Rezidenční bytový komplex',
+        alt: 'Luční Háj - Moderní rodinné domy v Týnci nad Sázavou',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Luční Háj - Rezidenční bytový komplex',
-    description: 'Moderní rezidenční bytový komplex Luční Háj. Kvalitní bydlení s výjimečným designem a prvotřídním vybavením.',
+    title: 'Luční Háj - Rodinné domy u Prahy',
+    description: 'Moderní rodinné domy v Týnci nad Sázavou, 30 min od Prahy. Dvojdomy a bungalovy s energetickou třídou A/B.',
     images: ['/images/hero_photo.png'],
   },
   robots: {
@@ -51,11 +66,17 @@ export const metadata = {
     },
   },
   verification: {
-    // Přidejte zde Google Search Console verification code, pokud ho máte
+    // Přidejte zde Google Search Console verification code
     // google: 'your-verification-code',
   },
   alternates: {
     canonical: 'https://domypecerady.cz',
+  },
+  other: {
+    'geo.region': 'CZ-20',
+    'geo.placename': 'Týnec nad Sázavou',
+    'geo.position': '49.839666;14.611472',
+    'ICBM': '49.839666, 14.611472',
   },
 }
 

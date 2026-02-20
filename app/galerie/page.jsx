@@ -45,9 +45,9 @@ export default function GalleryPage() {
   return (
     <>
       <SEO
-        title="Fotogalerie"
-        description="Prohlédněte si fotografie exteriéru, interiéru a vybavení projektu Luční Háj. Galerie obsahuje vizualizace domů, interiéry bytů a okolí projektu."
-        keywords="galerie, fotografie, interiér, exteriér, vizualizace, Luční Háj, Týnec nad Sázavou"
+        title="Fotogalerie - Interiéry a Exteriéry"
+        description="Prohlédněte si fotografie rodinných domů Luční Háj. Vizualizace interiérů, exteriérů, koupelen a okolí projektu v Týnci nad Sázavou u řeky Sázavy."
+        keywords="fotogalerie rodinných domů, vizualizace interiéru, moderní koupelny, design interiéru, Luční Háj fotky, domy u Sázavy fotografie"
         image={"/images/gallery/dum-9/" + encodeURIComponent("d (5)_dum9.jpg")}
         url="/galerie"
       />

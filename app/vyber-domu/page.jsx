@@ -24,9 +24,9 @@ export default function VyberDomuPage() {
   return (
     <>
       <SEO
-        title="Výběr domu"
-        description="Vyberte si dům v projektu Luční Háj. Interaktivní mapa a detailní informace o každém domě včetně půdorysů, velikosti a dostupnosti."
-        keywords="výběr domu, domy, půdorysy, dostupnost, Luční Háj, interaktivní mapa, rodinné domy, Týnec nad Sázavou"
+        title="Výběr domu - Dvojdomy a Bungalovy"
+        description="Vyberte si rodinný dům v projektu Luční Háj. 12 domů - dvojdomy a bungalovy s různými dispozicemi. Interaktivní výběr s půdorysy, cenami a dostupností."
+        keywords="výběr rodinného domu, dvojdomy Týnec nad Sázavou, bungalovy na prodej, půdorysy domů, domy s pozemkem, novostavby u Prahy, Luční Háj domy, ceny rodinných domů"
         image="/images/bungalov_hero.jpg"
         url="/vyber-domu"
       />

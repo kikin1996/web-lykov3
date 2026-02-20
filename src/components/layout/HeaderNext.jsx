@@ -90,13 +90,14 @@ const Header = () => {
             </button>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button - větší touch target */}
           <button
-            className="lg:hidden text-white"
+            className="lg:hidden text-white p-2 -mr-2 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg active:bg-white/10 transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Menu"
+            aria-label={isMobileMenuOpen ? "Zavřít menu" : "Otevřít menu"}
+            aria-expanded={isMobileMenuOpen}
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-6 h-6 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               {isMobileMenuOpen ? (
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               ) : (
@@ -106,15 +107,19 @@ const Header = () => {
           </button>
         </div>
 
-        {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="lg:hidden mt-4 pb-4 border-t border-white border-opacity-10 bg-neutral-darkNavy bg-opacity-95 backdrop-blur-md -mx-5 lg:-mx-20 px-5 lg:px-20 -mb-5 lg:-mb-20">
-            {navLinks.map((link) => (
-              <div key={link.path}>
+        {/* Mobile Menu - vylepšené pro dotyk */}
+        <div 
+          className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+            isMobileMenuOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
+          }`}
+        >
+          <div className="mt-4 pb-6 pt-4 border-t border-white border-opacity-10 bg-neutral-darkNavy bg-opacity-95 backdrop-blur-md -mx-5 px-5">
+            {navLinks.map((link, index) => (
+              <div key={link.path} style={{ animationDelay: `${index * 50}ms` }}>
                 <Link
                   href={link.path}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`block py-3 text-xs font-normal font-secondary uppercase tracking-widest transition-colors ${
+                  className={`flex items-center min-h-[48px] py-3 text-sm font-normal font-secondary uppercase tracking-widest transition-colors active:bg-white/10 rounded-lg px-2 -mx-2 ${
                     isActive(link.path) ? 'text-primary-teal' : 'text-white hover:text-primary-teal'
                   }`}
                 >
@@ -122,19 +127,19 @@ const Header = () => {
                 </Link>
               </div>
             ))}
-            <div className="mt-4">
+            <div className="mt-4 pt-4 border-t border-white/10">
               <button
                 onClick={() => {
                   showModal('tour')
                   setIsMobileMenuOpen(false)
                 }}
-                className="w-full text-xs font-normal font-secondary uppercase tracking-widest px-4 py-2 border border-white text-white hover:bg-white hover:text-neutral-darkNavy transition-all duration-300"
+                className="w-full min-h-[48px] text-sm font-medium font-secondary uppercase tracking-widest px-4 py-3 border-2 border-primary-teal text-primary-teal hover:bg-primary-teal hover:text-neutral-darkNavy active:scale-[0.98] transition-all duration-200 rounded-lg"
               >
                 Naplánovat návštěvu
               </button>
             </div>
           </div>
-        )}
+        </div>
       </nav>
     </header>
   )

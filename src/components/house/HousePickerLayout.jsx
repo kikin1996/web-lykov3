@@ -207,34 +207,34 @@ const hotspotPositions = {
 const getFloorplansForHouse = (houseId) => {
   const id = parseInt(houseId)
   
-  // Domy 1,3,5,7: A1_P, A2_P
+  // Domy 1,3,5,7: A1_P, A2_P, A3_P (půdorys půdy)
   if ([1, 3, 5, 7].includes(id)) {
-    return ['/images/pudorysy/A1_P.jpg', '/images/pudorysy/A2_P.jpg']
+    return ['/images/pudorysy/A1_P.jpg', '/images/pudorysy/A2_P.jpg', '/images/pudorysy/A3_P.jpg']
   }
   
-  // Domy 2,4,6,8: A1_L, A2_L
+  // Domy 2,4,6,8: A1_L, A2_L, A3_L (půdorys půdy)
   if ([2, 4, 6, 8].includes(id)) {
-    return ['/images/pudorysy/A1_L.jpg', '/images/pudorysy/A2_L.jpg']
+    return ['/images/pudorysy/A1_L.jpg', '/images/pudorysy/A2_L.jpg', '/images/pudorysy/A3_L.jpg']
   }
   
-  // Dům 9: B0_P, B1_P, B2_P
+  // Dům 9: B0_P, B1_P, B2_P, B3_P (půdorys půdy)
   if (id === 9) {
-    return ['/images/pudorysy/B0_P.jpg', '/images/pudorysy/B1_P.jpg', '/images/pudorysy/B2_P.jpg']
+    return ['/images/pudorysy/B0_P.jpg', '/images/pudorysy/B1_P.jpg', '/images/pudorysy/B2_P.jpg', '/images/pudorysy/B3_P.jpg']
   }
   
-  // Dům 10: B0_L, B1_L, B2_L
+  // Dům 10: B0_L, B1_L, B2_L, B3_L (půdorys půdy)
   if (id === 10) {
-    return ['/images/pudorysy/B0_L.jpg', '/images/pudorysy/B1_L.jpg', '/images/pudorysy/B2_L.jpg']
+    return ['/images/pudorysy/B0_L.jpg', '/images/pudorysy/B1_L.jpg', '/images/pudorysy/B2_L.jpg', '/images/pudorysy/B3_L.jpg']
   }
   
-  // Dům 11: C1_L
+  // Dům 11: C1_L, C2_L (půdorys půdy)
   if (id === 11) {
-    return ['/images/pudorysy/C1_L.jpg']
+    return ['/images/pudorysy/C1_L.jpg', '/images/pudorysy/C2_L.jpg']
   }
   
-  // Dům 12: C1_P
+  // Dům 12: C1_P, C2_P (půdorys půdy)
   if (id === 12) {
-    return ['/images/pudorysy/C1_P.jpg']
+    return ['/images/pudorysy/C1_P.jpg', '/images/pudorysy/C2_P.jpg']
   }
   
   return []
