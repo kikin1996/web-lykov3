@@ -682,6 +682,13 @@ export const gallery = [
     category: "exterior",
     caption: "Dvojdomek s rodinou"
   },
+  {
+    id: 92,
+    url: "/images/gallery/exterior/dvojdum_3patra.png",
+    thumbnail: "/images/gallery/exterior/dvojdum_3patra.png",
+    category: "exterior",
+    caption: "Třípatrový dvojdomek"
+  },
   // Okolí / Location
   {
     id: 59,

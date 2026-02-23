@@ -240,31 +240,63 @@ const getFloorplansForHouse = (houseId) => {
   return []
 }
 
-// Funkce pro získání pohledu na dům podle ID domu
-const getHouseViewImage = (houseId) => {
+// Funkce pro získání dvou pohledů na dům podle ID domu (vždy dva obrázky pod sebou)
+// Dům 1,3,5,7 = 2patrový pravý (P), dům 2,4,6,8 = 2patrový levý (L)
+// Dům 9 = 3patrový pravý (P), dům 10 = 3patrový levý (L), dům 11 = bungalov levý (L), dům 12 = bungalov pravý (P)
+const POHLED_NA_DUM_BASE = '/images/pohled na dum'
+
+const getHouseViewImages = (houseId) => {
   const id = parseInt(houseId)
-  
-  // Domy 1,3,5,7,9: PA_P
-  if ([1, 3, 5, 7, 9].includes(id)) {
-    return '/images/pohled na dum/PA_P.jpg'
+
+  // Domy 1,3,5,7: dvoupatrový pravý – dva pohledy
+  if ([1, 3, 5, 7].includes(id)) {
+    return [
+      `${POHLED_NA_DUM_BASE}/dvojdum_2patra_1P.jpg`,
+      `${POHLED_NA_DUM_BASE}/dvojdum_2patra_2P.jpg`
+    ]
   }
-  
-  // Domy 2,4,6,8,10: PA_L
-  if ([2, 4, 6, 8, 10].includes(id)) {
-    return '/images/pohled na dum/PA_L.jpg'
+
+  // Domy 2,4,6,8: dvoupatrový levý – dva pohledy
+  if ([2, 4, 6, 8].includes(id)) {
+    return [
+      `${POHLED_NA_DUM_BASE}/dvojdum_2patra_1L.jpg`,
+      `${POHLED_NA_DUM_BASE}/dvojdum_2patra_2L.jpg`
+    ]
   }
-  
-  // Dům 11: PC_L
+
+  // Dům 9: třípatrový pravý – dva pohledy
+  if (id === 9) {
+    return [
+      `${POHLED_NA_DUM_BASE}/dvojdum_3patra_1P.jpg`,
+      `${POHLED_NA_DUM_BASE}/dvojdum_3patra_2P.jpg`
+    ]
+  }
+
+  // Dům 10: třípatrový levý – dva pohledy
+  if (id === 10) {
+    return [
+      `${POHLED_NA_DUM_BASE}/dvojdum_3patra_1L.jpg`,
+      `${POHLED_NA_DUM_BASE}/dvojdum_3patra_2L.jpg`
+    ]
+  }
+
+  // Dům 11: bungalov levý – dva pohledy
   if (id === 11) {
-    return '/images/pohled na dum/PC_L.jpg'
+    return [
+      `${POHLED_NA_DUM_BASE}/bungalov1_L.jpg`,
+      `${POHLED_NA_DUM_BASE}/bungalov2_L.jpg`
+    ]
   }
-  
-  // Dům 12: PC_P
+
+  // Dům 12: bungalov pravý – dva pohledy
   if (id === 12) {
-    return '/images/pohled na dum/PC_P.jpg'
+    return [
+      `${POHLED_NA_DUM_BASE}/bungalov1_P.jpg`,
+      `${POHLED_NA_DUM_BASE}/bungalov2_P.jpg`
+    ]
   }
-  
-  return null
+
+  return []
 }
 
 // Vizualizace interiéru: složky podle typu domu (domy-1-3-5-7, domy-2-4-6-8, dum-9, dum-10, dum-11, dum-12)
@@ -545,7 +577,7 @@ const HousePickerLayout = ({ EmbeddedPreviewComponent = EmbeddedSitePreview }) =
   const [selectedHouseId, setSelectedHouseId] = useState('1')
   const selectedHouse = houses.find((house) => house.id === selectedHouseId)
   const floorplans = getFloorplansForHouse(selectedHouseId)
-  const houseViewImage = getHouseViewImage(selectedHouseId)
+  const houseViewImages = getHouseViewImages(selectedHouseId)
   
   // Lightbox state
   const [lightboxOpen, setLightboxOpen] = useState(false)
@@ -557,18 +589,18 @@ const HousePickerLayout = ({ EmbeddedPreviewComponent = EmbeddedSitePreview }) =
 
   const interiorImages = getInteriorImagesForHouse(selectedHouseId, selectedHouse?.name || '')
   
-  // Příprava obrázků pro lightbox (pohled + půdorysy)
+  // Příprava obrázků pro lightbox (dva pohledy + půdorysy)
   const getLightboxImages = () => {
     const images = []
-    
-    // Přidat pohled na dům jako první
-    if (houseViewImage) {
+
+    // Přidat oba pohledy na dům jako první
+    houseViewImages.forEach((url, index) => {
       images.push({
-        url: houseViewImage,
-        caption: `${selectedHouse?.name} - Pohled na dům`
+        url,
+        caption: `${selectedHouse?.name} - Pohled na dům ${index + 1}`
       })
-    }
-    
+    })
+
     // Přidat půdorysy
     floorplans.forEach((floorplan, index) => {
       images.push({
@@ -576,7 +608,7 @@ const HousePickerLayout = ({ EmbeddedPreviewComponent = EmbeddedSitePreview }) =
         caption: `${selectedHouse?.name} - Půdorys ${index + 1}`
       })
     })
-    
+
     return images
   }
   
@@ -628,28 +660,33 @@ const HousePickerLayout = ({ EmbeddedPreviewComponent = EmbeddedSitePreview }) =
 
           {/* Spodní část: 3 sloupce s detailem vybraného domu */}
           <div className="mt-0 md:mt-10 grid grid-cols-1 lg:grid-cols-3 gap-1 md:gap-6 items-start">
-            {/* Sloupec 1: Foto domu zblízka */}
+            {/* Sloupec 1: Dva pohledy na dům pod sebou */}
             <div className="order-2 lg:order-1">
               <h3 className="text-sm font-semibold text-slate-900 mb-1 md:mb-3">
                 Pohled na dům
               </h3>
               <div className="border border-slate-200/70 rounded-2xl overflow-hidden bg-slate-50">
-                <div 
-                  className={`relative w-full aspect-[4/3] overflow-hidden ${houseViewImage ? 'cursor-pointer hover:opacity-90 transition-opacity' : ''}`}
-                  onClick={() => houseViewImage && openLightbox(0)}
-                >
-                  {houseViewImage ? (
-                    <img
-                      src={houseViewImage}
-                      alt={`Pohled na dům ${selectedHouse?.name} v projektu Luční Háj`}
-                      className="w-full h-full object-cover"
-                    />
-                  ) : (
-                    <div className="w-full h-full bg-gradient-to-br from-slate-100 via-slate-50 to-slate-200 flex items-center justify-center">
-                      <p className="text-slate-400 text-sm">{selectedHouse?.name}</p>
-                    </div>
-                  )}
-                </div>
+                {houseViewImages.length > 0 ? (
+                  <div className="space-y-2 md:space-y-3">
+                    {houseViewImages.map((src, index) => (
+                      <div
+                        key={index}
+                        className="relative w-full aspect-[4/3] overflow-hidden cursor-pointer hover:opacity-90 transition-opacity"
+                        onClick={() => openLightbox(index)}
+                      >
+                        <img
+                          src={src}
+                          alt={`Pohled na dům ${selectedHouse?.name} v projektu Luční Háj – pohled ${index + 1}`}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="w-full aspect-[4/3] bg-gradient-to-br from-slate-100 via-slate-50 to-slate-200 flex items-center justify-center">
+                    <p className="text-slate-400 text-sm">{selectedHouse?.name}</p>
+                  </div>
+                )}
               </div>
             </div>
 
@@ -665,7 +702,7 @@ const HousePickerLayout = ({ EmbeddedPreviewComponent = EmbeddedSitePreview }) =
                       <div 
                         key={index} 
                         className="relative w-full aspect-[4/3] overflow-hidden rounded-lg cursor-pointer hover:opacity-90 transition-opacity"
-                        onClick={() => openLightbox(houseViewImage ? index + 1 : index)}
+                        onClick={() => openLightbox(houseViewImages.length + index)}
                       >
                         <img
                           src={floorplan}
