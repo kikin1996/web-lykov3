@@ -1,0 +1,6 @@
+{
+  "//": "Vercel config for Next.js app – fix 'No Output Directory named \"dist\"' error.",
+  "framework": "nextjs",
+  "buildCommand": "npm run build",
+  "outputDirectory": ".next"
+}
