@@ -38,7 +38,7 @@ const ImageBannerSection = () => {
             <div className="relative w-full max-w-2xl mx-auto mt-16 md:mt-0">
               <div className="relative overflow-hidden z-10 rounded-xl group">
                 <Image
-                  src="/images/pohled na dum/PA_L.jpg"
+                  src="/images/pohled na dum/dvojdum_2patra_2L.jpg"
                   alt="Rodinný dům v projektu Luční Háj - moderní architektura v klidném prostředí"
                   width={1200}
                   height={675}

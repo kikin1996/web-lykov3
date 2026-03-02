@@ -642,15 +642,15 @@ export const gallery = [
   },
   {
     id: 85,
-    url: "/images/gallery/exterior/bungalov_ex_2.png",
-    thumbnail: "/images/gallery/exterior/bungalov_ex_2.png",
+    url: "/images/gallery/exterior/bungalov_ex_2.jpg",
+    thumbnail: "/images/gallery/exterior/bungalov_ex_2.jpg",
     category: "exterior",
     caption: "Bungalov s rodinou"
   },
   {
     id: 86,
-    url: "/images/gallery/exterior/bungalov_ex_3.png",
-    thumbnail: "/images/gallery/exterior/bungalov_ex_3.png",
+    url: "/images/gallery/exterior/bungalov_ex_3.jpg",
+    thumbnail: "/images/gallery/exterior/bungalov_ex_3.jpg",
     category: "exterior",
     caption: "Bungalov - terasa"
   },
@@ -684,8 +684,8 @@ export const gallery = [
   },
   {
     id: 92,
-    url: "/images/gallery/exterior/dvojdum_3patra.png",
-    thumbnail: "/images/gallery/exterior/dvojdum_3patra.png",
+    url: "/images/gallery/exterior/dvojdum_3patra.jpg",
+    thumbnail: "/images/gallery/exterior/dvojdum_3patra.jpg",
     category: "exterior",
     caption: "Třípatrový dvojdomek"
   },
