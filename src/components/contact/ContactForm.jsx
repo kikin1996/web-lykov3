@@ -125,7 +125,7 @@ const ContactForm = () => {
         }),
       })
 
-      // Bezpečné parsování JSON odpovědi – ošetří prázdné tělo
+      // Bezpečné parsování JSON odpovědi – ošetří prázdné nebo neplatné tělo
       let result
       const rawText = await resendResponse.text()
       try {
@@ -135,8 +135,14 @@ const ContactForm = () => {
         throw new Error('Server vrátil neplatnou odpověď. Zkuste to prosím znovu nebo použijte email info@domypecerady.cz.')
       }
 
-      if (!resendResponse.ok || !result.success) {
-        const errorMessage = result.message || 'Chyba při odesílání emailu přes Resend API'
+      const ok = resendResponse.ok
+      const success = result && typeof result === 'object' ? result.success : undefined
+
+      if (!ok || success !== true) {
+        const errorMessage =
+          result && typeof result === 'object' && result.message
+            ? result.message
+            : 'Chyba při odesílání emailu přes Resend API'
         throw new Error(errorMessage)
       }
       

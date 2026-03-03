@@ -43,9 +43,15 @@ export const submitContactForm = async (data) => {
       console.error('Neplatná JSON odpověď z API (submitContactForm):', rawText)
       throw new Error('Server vrátil neplatnou odpověď při odesílání formuláře.')
     }
+
+    const success = result && typeof result === 'object' ? result.success : undefined
     
-    if (!result.success) {
-      throw new Error(result.message || 'Chyba při odesílání')
+    if (success !== true) {
+      const message =
+        result && typeof result === 'object' && result.message
+          ? result.message
+          : 'Chyba při odesílání'
+      throw new Error(message)
     }
     
     return result
@@ -103,9 +109,15 @@ export const submitInterestForm = async (data) => {
       console.error('Neplatná JSON odpověď z API (submitInterestForm):', rawText)
       throw new Error('Server vrátil neplatnou odpověď při odesílání formuláře.')
     }
+
+    const success = result && typeof result === 'object' ? result.success : undefined
     
-    if (!result.success) {
-      throw new Error(result.message || 'Chyba při odesílání')
+    if (success !== true) {
+      const message =
+        result && typeof result === 'object' && result.message
+          ? result.message
+          : 'Chyba při odesílání'
+      throw new Error(message)
     }
     
     return result
@@ -171,9 +183,15 @@ export const submitTourRequest = async (data) => {
       console.error('Neplatná JSON odpověď z API (submitTourRequest):', rawText)
       throw new Error('Server vrátil neplatnou odpověď při odesílání formuláře.')
     }
+
+    const success = result && typeof result === 'object' ? result.success : undefined
     
-    if (!result.success) {
-      throw new Error(result.message || 'Chyba při odesílání')
+    if (success !== true) {
+      const message =
+        result && typeof result === 'object' && result.message
+          ? result.message
+          : 'Chyba při odesílání'
+      throw new Error(message)
     }
     
     return result
