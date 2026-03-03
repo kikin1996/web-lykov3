@@ -35,7 +35,14 @@ export const submitContactForm = async (data) => {
       }),
     })
     
-    const result = await response.json()
+    const rawText = await response.text()
+    let result
+    try {
+      result = rawText ? JSON.parse(rawText) : null
+    } catch (e) {
+      console.error('Neplatná JSON odpověď z API (submitContactForm):', rawText)
+      throw new Error('Server vrátil neplatnou odpověď při odesílání formuláře.')
+    }
     
     if (!result.success) {
       throw new Error(result.message || 'Chyba při odesílání')
@@ -88,7 +95,14 @@ export const submitInterestForm = async (data) => {
       }),
     })
     
-    const result = await response.json()
+    const rawText = await response.text()
+    let result
+    try {
+      result = rawText ? JSON.parse(rawText) : null
+    } catch (e) {
+      console.error('Neplatná JSON odpověď z API (submitInterestForm):', rawText)
+      throw new Error('Server vrátil neplatnou odpověď při odesílání formuláře.')
+    }
     
     if (!result.success) {
       throw new Error(result.message || 'Chyba při odesílání')
@@ -149,7 +163,14 @@ export const submitTourRequest = async (data) => {
       }),
     })
     
-    const result = await response.json()
+    const rawText = await response.text()
+    let result
+    try {
+      result = rawText ? JSON.parse(rawText) : null
+    } catch (e) {
+      console.error('Neplatná JSON odpověď z API (submitTourRequest):', rawText)
+      throw new Error('Server vrátil neplatnou odpověď při odesílání formuláře.')
+    }
     
     if (!result.success) {
       throw new Error(result.message || 'Chyba při odesílání')

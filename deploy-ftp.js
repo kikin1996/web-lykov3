@@ -43,16 +43,18 @@ async function deployToFTP() {
 
     console.log(`📁 Nahrávání souborů z ${localDir} do ${remoteDir}...`)
 
-    // Vytvoř vzdálenou složku a přejdi do ní (ensureDir už přejde do složky)
-    try {
-      await client.ensureDir(remoteDir)
-      console.log(`✅ Vzdálená složka ${remoteDir} připravena`)
-    } catch (err) {
-      console.log(`ℹ️  Složka ${remoteDir} již existuje, přecházím do ní...`)
-      await client.cd(remoteDir)
-    }
+    // Vytvoř vzdálenou složku a přejdi do ní.
+    // POZOR: ensureDir už na konci skončí uvnitř té složky,
+    // proto zde NEPROVÁDÍME další cd(remoteDir), aby nevzniklo /web/web.
+    await client.ensureDir(remoteDir)
+    console.log(`✅ Vzdálená složka ${remoteDir} připravena`)
 
-    // Nahraj všechny soubory (jsme už ve správné složce)
+    // Smaž starý obsah složky (full replace)
+    console.log('🧹 Mazání staré verze webu ve vzdálené složce...')
+    await client.clearWorkingDir()
+    console.log('✅ Starý obsah byl odstraněn')
+
+    // Nahraj všechny soubory z "out"
     await client.uploadFromDir(localDir, '.')
     
     console.log('✅ Všechny soubory byly úspěšně nahrány!')
