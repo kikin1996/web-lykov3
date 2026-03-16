@@ -577,9 +577,9 @@ const HousePickerLayout = ({ EmbeddedPreviewComponent = EmbeddedSitePreview }) =
   const [housesData, setHousesData] = useState(houses)
 
   useEffect(() => {
-    fetch('/data/houses.json')
+    fetch('/api/houses')
       .then((res) => res.json())
-      .then((data) => setHousesData(data))
+      .then((data) => { if (Array.isArray(data)) setHousesData(data) })
       .catch(() => {})
   }, [])
 

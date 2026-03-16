@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
 import { cookies } from 'next/headers'
+import { kv } from '@vercel/kv'
 import fs from 'fs'
 import path from 'path'
 
@@ -14,15 +15,33 @@ function isAuthenticated() {
   return session?.value === token
 }
 
+function readLocalFile() {
+  try {
+    const data = fs.readFileSync(DATA_FILE, 'utf-8')
+    return JSON.parse(data)
+  } catch {
+    return null
+  }
+}
+
 export async function GET() {
   if (!isAuthenticated()) {
     return NextResponse.json({ error: 'Nepřihlášen' }, { status: 401 })
   }
 
   try {
-    const data = fs.readFileSync(DATA_FILE, 'utf-8')
-    return NextResponse.json(JSON.parse(data))
+    // Zkusit KV (Vercel), fallback na lokální soubor
+    const data = await kv.get('houses')
+    if (data) return NextResponse.json(data)
+
+    const local = readLocalFile()
+    if (local) return NextResponse.json(local)
+
+    return NextResponse.json({ error: 'Chyba čtení dat' }, { status: 500 })
   } catch {
+    // KV není dostupné (lokální vývoj bez KV) — použít soubor
+    const local = readLocalFile()
+    if (local) return NextResponse.json(local)
     return NextResponse.json({ error: 'Chyba čtení dat' }, { status: 500 })
   }
 }
@@ -34,7 +53,15 @@ export async function PUT(request) {
 
   try {
     const houses = await request.json()
-    fs.writeFileSync(DATA_FILE, JSON.stringify(houses, null, 2), 'utf-8')
+
+    try {
+      // Uložit do KV (Vercel)
+      await kv.set('houses', houses)
+    } catch {
+      // KV není dostupné — uložit lokálně
+      fs.writeFileSync(DATA_FILE, JSON.stringify(houses, null, 2), 'utf-8')
+    }
+
     return NextResponse.json({ success: true })
   } catch {
     return NextResponse.json({ error: 'Chyba zápisu dat' }, { status: 500 })

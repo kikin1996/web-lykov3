@@ -183,9 +183,9 @@ const AvailabilityTableOnly = ({ houses: housesProp }) => {
       setHouses(housesProp)
       return
     }
-    fetch('/data/houses.json')
+    fetch('/api/houses')
       .then((res) => res.json())
-      .then((data) => setHouses(data))
+      .then((data) => { if (Array.isArray(data)) setHouses(data) })
       .catch(() => {})
   }, [housesProp])
 
