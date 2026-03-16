@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import EmbeddedSitePreview from './EmbeddedSitePreview'
 import AvailabilityTableOnly from './AvailabilityTableOnly'
 import Lightbox from '../gallery/Lightbox'
@@ -17,7 +17,7 @@ const houses = [
     description: 'Síla, stabilita a moudrost. Moderní domov s důrazem na dlouhodobý komfort.',
     herbIcon: '/images/byliny/salvej.png',
     status: 'Volný',
-    price: 11490000,
+    price: 11604900,
     houseCardPdf: '/karty domu/Dum 1.pdf' // URL k PDF dokumentu
   },
   {
@@ -32,7 +32,7 @@ const houses = [
     description: 'Výraz přírodní elegance a charakteru. Dům, který vyniká osobitostí a nadčasovým stylem.',
     herbIcon: '/images/byliny/chrpa.png',
     status: 'Volný',
-    price: 11590000,
+    price: 11705900,
     houseCardPdf: '/karty domu/Dum 2.pdf'
   },
   {
@@ -47,7 +47,7 @@ const houses = [
     description: 'Přirozenost, lehkost a volnost. Domov, který nabízí prostor pro nové začátky a radost z bydlení.',
     herbIcon: '/images/byliny/pampeliska.png',
     status: 'Volný',
-    price: 10890000,
+    price: 10998900,
     houseCardPdf: '/karty domu/Dum 3.pdf'
   },
   {
@@ -62,7 +62,7 @@ const houses = [
     description: 'Klid, harmonie a přirozená rovnováha. Ideální místo pro odpočinek a každodenní pohodu.',
     herbIcon: '/images/byliny/hermanek.png',
     status: 'Volný',
-    price: 10890000,
+    price: 10998900,
     houseCardPdf: '/karty domu/Dum 4.pdf'
   },
   {
@@ -77,7 +77,7 @@ const houses = [
     description: 'Teplo domova a blízkost přírody. Útulné bydlení s klidnou, rodinnou atmosférou.',
     herbIcon: '/images/byliny/materidouška.png',
     status: 'Volný',
-    price: 11190000,
+    price: 11301900,
     houseCardPdf: '/karty domu/Dum 5.pdf'
   },
   {
@@ -92,7 +92,7 @@ const houses = [
     description: 'Lehkost a vzdušnost propojená s okolní krajinou. Dům plný světla a otevřených výhledů.',
     herbIcon: '/images/byliny/zvonek.png',
     status: 'Volný',
-    price: 11490000,
+    price: 11604900,
     houseCardPdf: '/karty domu/Dum 6.pdf'
   },
   {
@@ -107,7 +107,7 @@ const houses = [
     description: 'Nové začátky a svěžest. Světlý domov, který vítá každý nový den.',
     herbIcon: '/images/byliny/prvosenka.png',
     status: 'Volný',
-    price: 11490000,
+    price: 11604900,
     houseCardPdf: '/karty domu/Dum 7.pdf'
   },
   {
@@ -122,7 +122,7 @@ const houses = [
     description: 'Něžnost a elegance s klidnou atmosférou. Domov pro pohodové a harmonické bydlení.',
     herbIcon: '/images/byliny/violka.png',
     status: 'Volný',
-    price: 11590000,
+    price: 11705900,
     houseCardPdf: '/karty domu/Dum 8.pdf'
   },
   {
@@ -137,7 +137,7 @@ const houses = [
     description: 'Jemnost a trvalé hodnoty. Místo, ke kterému se budete vždy rádi vracet.',
     herbIcon: '/images/byliny/pomenka.png',
     status: 'Volný',
-    price: 14990000,
+    price: 15139900,
     houseCardPdf: '/karty domu/dum 9.pdf'
   },
   {
@@ -152,7 +152,7 @@ const houses = [
     description: 'Symbol štěstí a hojnosti. Promyšlené bydlení s důrazem na praktičnost a pohodu.',
     herbIcon: '/images/byliny/jetel.png',
     status: 'Volný',
-    price: 15290000,
+    price: 15442900,
     houseCardPdf: '/karty domu/dum 10.pdf'
   },
   {
@@ -167,7 +167,7 @@ const houses = [
     description: 'Jemnost a klid v harmonickém prostředí. Ideální místo pro pohodové a vyvážené bydlení.',
     herbIcon: '/images/byliny/sedmikraska.png',
     status: 'Volný',
-    price: 15590000,
+    price: 15745900,
     houseCardPdf: '/karty domu/Dum 11.pdf'
   },
   {
@@ -182,7 +182,7 @@ const houses = [
     description: 'Symbol jednoduchosti, světla a otevřeného prostoru. Dům s příjemnou atmosférou pro každodenní rodinný život.',
     herbIcon: '/images/byliny/kopretina.png',
     status: 'Volný',
-    price: 14900000,
+    price: 15049000,
     houseCardPdf: '/karty domu/Dum 12.pdf'
   }
 ]
@@ -573,9 +573,19 @@ const getInteriorImagesForHouse = (houseId, houseName) => {
 // EmbeddedPreviewComponent je volitelný – umožňuje na testovací stránce
 // použít jinou mapu/polygony bez zásahu do hlavní stránky.
 const HousePickerLayout = ({ EmbeddedPreviewComponent = EmbeddedSitePreview }) => {
+  // Živá data domů načítaná z JSON (fallback na hardcoded data)
+  const [housesData, setHousesData] = useState(houses)
+
+  useEffect(() => {
+    fetch('/data/houses.json')
+      .then((res) => res.json())
+      .then((data) => setHousesData(data))
+      .catch(() => {})
+  }, [])
+
   // Defaultně vybrán Dům 01
   const [selectedHouseId, setSelectedHouseId] = useState('1')
-  const selectedHouse = houses.find((house) => house.id === selectedHouseId)
+  const selectedHouse = housesData.find((house) => house.id === selectedHouseId)
   const floorplans = getFloorplansForHouse(selectedHouseId)
   const houseViewImages = getHouseViewImages(selectedHouseId)
   
@@ -864,7 +874,7 @@ const HousePickerLayout = ({ EmbeddedPreviewComponent = EmbeddedSitePreview }) =
 
           {/* Tabulka dostupnosti (bez mapy) */}
           <div className="mt-12">
-            <AvailabilityTableOnly />
+            <AvailabilityTableOnly houses={housesData} />
           </div>
         </div>
       </div>

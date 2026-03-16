@@ -14,8 +14,9 @@ const nextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     unoptimized: true, // Pro statický export musí být true - obrázky se optimalizují během buildu
   },
-  // Pro statické exporty (SSG) - pouze při buildu, ne v dev režimu
-  ...(process.env.NODE_ENV === 'production' && { 
+  // Pro statické exporty (FTP hosting) - použít: STATIC_EXPORT=true npm run build
+  // Pro Vercel/server deployment (s admin panelem): npm run build
+  ...(process.env.STATIC_EXPORT === 'true' && {
     output: 'export',
     // Zakázat generování RSC souborů při statickém exportu
     experimental: {

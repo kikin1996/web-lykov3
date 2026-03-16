@@ -1,7 +1,10 @@
-import Link from 'next/link'
+'use client'
 
-// Data domů - stejná jako v HousePickerLayout.jsx
-const houses = [
+import Link from 'next/link'
+import { useState, useEffect } from 'react'
+
+// Výchozí data domů (fallback pokud se nepodaří načíst JSON)
+const defaultHouses = [
   {
     id: '1',
     name: 'Dům 1 – Šalvěj',
@@ -10,7 +13,8 @@ const houses = [
     rooms: 5,
     bathrooms: 2,
     status: 'Volný',
-    price: 11490000,
+    priceWithoutVat: 10361518,
+    price: 11604900,
     floorplanImage: '/photos/F1 resize.jpg',
     herbIcon: '/images/byliny/salvej.png',
     houseCardPdf: '/karty domu/Dum 1.pdf'
@@ -23,7 +27,8 @@ const houses = [
     rooms: 5,
     bathrooms: 2,
     status: 'Volný',
-    price: 11590000,
+    priceWithoutVat: 10451696,
+    price: 11705900,
     floorplanImage: '/photos/web_f2.jpg',
     herbIcon: '/images/byliny/chrpa.png',
     houseCardPdf: '/karty domu/Dum 2.pdf'
@@ -36,7 +41,8 @@ const houses = [
     rooms: 5,
     bathrooms: 2,
     status: 'Volný',
-    price: 10890000,
+    priceWithoutVat: 9820446,
+    price: 10998900,
     floorplanImage: null,
     herbIcon: '/images/byliny/pampeliska.png',
     houseCardPdf: '/karty domu/Dum 3.pdf'
@@ -49,7 +55,8 @@ const houses = [
     rooms: 5,
     bathrooms: 2,
     status: 'Volný',
-    price: 10890000,
+    priceWithoutVat: 9820446,
+    price: 10998900,
     floorplanImage: null,
     herbIcon: '/images/byliny/hermanek.png',
     houseCardPdf: '/karty domu/Dum 4.pdf'
@@ -62,7 +69,8 @@ const houses = [
     rooms: 5,
     bathrooms: 2,
     status: 'Volný',
-    price: 11190000,
+    priceWithoutVat: 10090982,
+    price: 11301900,
     floorplanImage: null,
     herbIcon: '/images/byliny/materidouška.png',
     houseCardPdf: '/karty domu/Dum 5.pdf'
@@ -75,7 +83,8 @@ const houses = [
     rooms: 5,
     bathrooms: 2,
     status: 'Volný',
-    price: 11490000,
+    priceWithoutVat: 10361518,
+    price: 11604900,
     floorplanImage: null,
     herbIcon: '/images/byliny/zvonek.png',
     houseCardPdf: '/karty domu/Dum 6.pdf'
@@ -88,7 +97,8 @@ const houses = [
     rooms: 5,
     bathrooms: 2,
     status: 'Volný',
-    price: 11490000,
+    priceWithoutVat: 10361518,
+    price: 11604900,
     floorplanImage: null,
     herbIcon: '/images/byliny/prvosenka.png',
     houseCardPdf: '/karty domu/Dum 7.pdf'
@@ -101,7 +111,8 @@ const houses = [
     rooms: 5,
     bathrooms: 2,
     status: 'Volný',
-    price: 11590000,
+    priceWithoutVat: 10451696,
+    price: 11705900,
     floorplanImage: null,
     herbIcon: '/images/byliny/violka.png',
     houseCardPdf: '/karty domu/Dum 8.pdf'
@@ -114,7 +125,8 @@ const houses = [
     rooms: 7,
     bathrooms: 2,
     status: 'Volný',
-    price: 14990000,
+    priceWithoutVat: 12512314,
+    price: 15139900,
     floorplanImage: null,
     herbIcon: '/images/byliny/pomenka.png',
     houseCardPdf: '/karty domu/dum 9.pdf'
@@ -127,7 +139,8 @@ const houses = [
     rooms: 7,
     bathrooms: 2,
     status: 'Volný',
-    price: 15290000,
+    priceWithoutVat: 12762727,
+    price: 15442900,
     floorplanImage: null,
     herbIcon: '/images/byliny/jetel.png',
     houseCardPdf: '/karty domu/dum 10.pdf'
@@ -140,7 +153,8 @@ const houses = [
     rooms: 5,
     bathrooms: 2,
     status: 'Volný',
-    price: 15590000,
+    priceWithoutVat: 14058839,
+    price: 15745900,
     floorplanImage: null,
     herbIcon: '/images/byliny/sedmikraska.png',
     houseCardPdf: '/karty domu/Dum 11.pdf'
@@ -153,15 +167,28 @@ const houses = [
     rooms: 5,
     bathrooms: 2,
     status: 'Volný',
-    price: 14900000,
+    priceWithoutVat: 13436607,
+    price: 15049000,
     floorplanImage: null,
     herbIcon: '/images/byliny/kopretina.png',
     houseCardPdf: '/karty domu/Dum 12.pdf'
   }
 ]
 
-const AvailabilityTableOnly = () => {
-  // Zobrazit všechny domy
+const AvailabilityTableOnly = ({ houses: housesProp }) => {
+  const [houses, setHouses] = useState(housesProp || defaultHouses)
+
+  useEffect(() => {
+    if (housesProp) {
+      setHouses(housesProp)
+      return
+    }
+    fetch('/data/houses.json')
+      .then((res) => res.json())
+      .then((data) => setHouses(data))
+      .catch(() => {})
+  }, [housesProp])
+
   const availableHouses = houses
 
   const getStatusColor = (status) => {
@@ -212,7 +239,7 @@ const AvailabilityTableOnly = () => {
                   Užitná plocha
                 </th>
                 <th className="text-left py-4 px-6 text-body-small uppercase tracking-wider" style={{ color: '#000000', fontWeight: 'bold' }}>
-                  Prodejní cena
+                  Cena
                 </th>
                 <th className="text-left py-4 px-6 text-body-small uppercase tracking-wider" style={{ color: '#000000', fontWeight: 'bold' }}>
                   Stav
