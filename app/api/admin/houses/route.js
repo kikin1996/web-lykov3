@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server'
 import { cookies } from 'next/headers'
-import { kv } from '@vercel/kv'
 import fs from 'fs'
 import path from 'path'
 
@@ -17,10 +16,28 @@ function isAuthenticated() {
 
 function readLocalFile() {
   try {
-    const data = fs.readFileSync(DATA_FILE, 'utf-8')
-    return JSON.parse(data)
+    return JSON.parse(fs.readFileSync(DATA_FILE, 'utf-8'))
   } catch {
     return null
+  }
+}
+
+async function kvGet(key) {
+  try {
+    const { kv } = await import('@vercel/kv')
+    return await kv.get(key)
+  } catch {
+    return null
+  }
+}
+
+async function kvSet(key, value) {
+  try {
+    const { kv } = await import('@vercel/kv')
+    await kv.set(key, value)
+    return true
+  } catch {
+    return false
   }
 }
 
@@ -29,21 +46,13 @@ export async function GET() {
     return NextResponse.json({ error: 'Nepřihlášen' }, { status: 401 })
   }
 
-  try {
-    // Zkusit KV (Vercel), fallback na lokální soubor
-    const data = await kv.get('houses')
-    if (data) return NextResponse.json(data)
+  const kvData = await kvGet('houses')
+  if (kvData) return NextResponse.json(kvData)
 
-    const local = readLocalFile()
-    if (local) return NextResponse.json(local)
+  const local = readLocalFile()
+  if (local) return NextResponse.json(local)
 
-    return NextResponse.json({ error: 'Chyba čtení dat' }, { status: 500 })
-  } catch {
-    // KV není dostupné (lokální vývoj bez KV) — použít soubor
-    const local = readLocalFile()
-    if (local) return NextResponse.json(local)
-    return NextResponse.json({ error: 'Chyba čtení dat' }, { status: 500 })
-  }
+  return NextResponse.json({ error: 'Chyba čtení dat' }, { status: 500 })
 }
 
 export async function PUT(request) {
@@ -53,15 +62,10 @@ export async function PUT(request) {
 
   try {
     const houses = await request.json()
-
-    try {
-      // Uložit do KV (Vercel)
-      await kv.set('houses', houses)
-    } catch {
-      // KV není dostupné — uložit lokálně
+    const saved = await kvSet('houses', houses)
+    if (!saved) {
       fs.writeFileSync(DATA_FILE, JSON.stringify(houses, null, 2), 'utf-8')
     }
-
     return NextResponse.json({ success: true })
   } catch {
     return NextResponse.json({ error: 'Chyba zápisu dat' }, { status: 500 })

@@ -184,9 +184,14 @@ const AvailabilityTableOnly = ({ houses: housesProp }) => {
       return
     }
     fetch('/api/houses')
-      .then((res) => res.json())
+      .then((res) => { if (!res.ok) throw new Error(); return res.json() })
       .then((data) => { if (Array.isArray(data)) setHouses(data) })
-      .catch(() => {})
+      .catch(() => {
+        fetch('/data/houses.json')
+          .then((res) => res.json())
+          .then((data) => { if (Array.isArray(data)) setHouses(data) })
+          .catch(() => {})
+      })
   }, [housesProp])
 
   const availableHouses = houses

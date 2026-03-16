@@ -578,9 +578,14 @@ const HousePickerLayout = ({ EmbeddedPreviewComponent = EmbeddedSitePreview }) =
 
   useEffect(() => {
     fetch('/api/houses')
-      .then((res) => res.json())
+      .then((res) => { if (!res.ok) throw new Error(); return res.json() })
       .then((data) => { if (Array.isArray(data)) setHousesData(data) })
-      .catch(() => {})
+      .catch(() => {
+        fetch('/data/houses.json')
+          .then((res) => res.json())
+          .then((data) => { if (Array.isArray(data)) setHousesData(data) })
+          .catch(() => {})
+      })
   }, [])
 
   // Defaultně vybrán Dům 01

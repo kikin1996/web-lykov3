@@ -16,15 +16,17 @@ async function deployToFTP() {
   const client = new ftp.Client()
   client.ftp.verbose = true
 
+  const serverHost = process.env.FTP_HOST || '193.163.77.240'
+
   try {
     console.log('🔌 Připojování k FTP serveru...')
-    
+
     await client.access({
-      host: process.env.FTP_HOST || 'ftp.domypecerady.cz',
+      host: serverHost,
       port: parseInt(process.env.FTP_PORT || '21'),
       user: process.env.FTP_USER || 'kopka@domypecerady.cz',
       password: process.env.FTP_PASSWORD,
-      secure: false, // FTP (ne SFTP)
+      secure: true,
       secureOptions: {
         rejectUnauthorized: false
       }
@@ -43,18 +45,10 @@ async function deployToFTP() {
 
     console.log(`📁 Nahrávání souborů z ${localDir} do ${remoteDir}...`)
 
-    // Vytvoř vzdálenou složku a přejdi do ní.
-    // POZOR: ensureDir už na konci skončí uvnitř té složky,
-    // proto zde NEPROVÁDÍME další cd(remoteDir), aby nevzniklo /web/web.
     await client.ensureDir(remoteDir)
     console.log(`✅ Vzdálená složka ${remoteDir} připravena`)
 
-    // Smaž starý obsah složky (full replace)
-    console.log('🧹 Mazání staré verze webu ve vzdálené složce...')
-    await client.clearWorkingDir()
-    console.log('✅ Starý obsah byl odstraněn')
-
-    // Nahraj všechny soubory z "out"
+    // Nahraj všechny soubory (přepíše existující)
     await client.uploadFromDir(localDir, '.')
     
     console.log('✅ Všechny soubory byly úspěšně nahrány!')
