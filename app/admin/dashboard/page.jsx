@@ -16,6 +16,83 @@ const STATUS_COLORS = {
 const formatPrice = (price) =>
   new Intl.NumberFormat('cs-CZ', { maximumFractionDigits: 0 }).format(price)
 
+function AnalyticsSection() {
+  const [stats, setStats] = useState(null)
+
+  useEffect(() => {
+    fetch('/api/admin/analytics')
+      .then((r) => r.json())
+      .then(setStats)
+      .catch(() => {})
+  }, [])
+
+  if (!stats) return null
+
+  const maxCount = Math.max(...stats.daily.map((d) => d.count), 1)
+  const last7 = stats.daily.slice(-7)
+
+  return (
+    <div className="mb-8">
+      {/* Stat cards */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+        {[
+          { label: 'Celkem návštěv', value: stats.total },
+          { label: 'Dnes', value: stats.today },
+          { label: 'Tento týden', value: stats.week },
+          { label: 'Tento měsíc', value: stats.month },
+        ].map(({ label, value }) => (
+          <div key={label} className="bg-white rounded-xl p-4 shadow-sm text-center">
+            <p className="text-2xl font-bold text-neutral-darkNavy">{value}</p>
+            <p className="text-xs text-neutral-mediumGray mt-1">{label}</p>
+          </div>
+        ))}
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {/* Bar chart - last 7 days */}
+        <div className="bg-white rounded-xl p-5 shadow-sm">
+          <p className="text-xs font-semibold uppercase tracking-wider text-neutral-mediumGray mb-4">
+            Posledních 7 dní
+          </p>
+          <div className="flex items-end gap-2 h-24">
+            {last7.map(({ date, count }) => (
+              <div key={date} className="flex-1 flex flex-col items-center gap-1">
+                <span className="text-xs text-neutral-mediumGray">{count}</span>
+                <div
+                  className="w-full bg-primary-teal rounded-t opacity-80"
+                  style={{ height: `${Math.round((count / maxCount) * 80)}px`, minHeight: count > 0 ? '4px' : '0' }}
+                />
+                <span className="text-xs text-neutral-mediumGray" style={{ fontSize: '10px' }}>
+                  {date.slice(5)}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Top pages */}
+        <div className="bg-white rounded-xl p-5 shadow-sm">
+          <p className="text-xs font-semibold uppercase tracking-wider text-neutral-mediumGray mb-4">
+            Nejnavštěvovanější stránky
+          </p>
+          {stats.pages.length === 0 ? (
+            <p className="text-sm text-neutral-mediumGray">Zatím žádná data</p>
+          ) : (
+            <ul className="space-y-2">
+              {stats.pages.slice(0, 5).map(({ path, count }) => (
+                <li key={path} className="flex items-center justify-between text-sm">
+                  <span className="text-neutral-darkNavy truncate">{path || '/'}</span>
+                  <span className="ml-2 font-semibold text-neutral-mediumGray shrink-0">{count}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      </div>
+    </div>
+  )
+}
+
 export default function AdminDashboard() {
   const [houses, setHouses] = useState([])
   const [loading, setLoading] = useState(true)
@@ -100,6 +177,8 @@ export default function AdminDashboard() {
       </div>
 
       <div className="max-w-6xl mx-auto px-4 py-8">
+        <AnalyticsSection />
+
         {/* Actions bar */}
         <div className="flex items-center justify-between mb-6">
           <p className="text-neutral-mediumGray text-sm">
