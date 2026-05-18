@@ -84,6 +84,17 @@ export default function RootLayout({ children }) {
   return (
     <html lang="cs">
       <head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-WL5Q7K1LL0"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-WL5Q7K1LL0');
+            `,
+          }}
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
         <link rel="icon" type="image/png" href="/images/favicon_lykov.png" />
         <link rel="apple-touch-icon" href="/images/favicon_lykov.png" />
