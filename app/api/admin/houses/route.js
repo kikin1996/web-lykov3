@@ -1,11 +1,8 @@
 import { NextResponse } from 'next/server'
 import { cookies } from 'next/headers'
-import fs from 'fs'
-import path from 'path'
+import { supabase } from '../../../../src/lib/supabase'
 
 export const dynamic = 'force-dynamic'
-
-const DATA_FILE = path.join(process.cwd(), 'public', 'data', 'houses.json')
 
 function isAuthenticated() {
   const cookieStore = cookies()
@@ -14,45 +11,21 @@ function isAuthenticated() {
   return session?.value === token
 }
 
-function readLocalFile() {
-  try {
-    return JSON.parse(fs.readFileSync(DATA_FILE, 'utf-8'))
-  } catch {
-    return null
-  }
-}
-
-async function kvGet(key) {
-  try {
-    const { kv } = await import('@vercel/kv')
-    return await kv.get(key)
-  } catch {
-    return null
-  }
-}
-
-async function kvSet(key, value) {
-  try {
-    const { kv } = await import('@vercel/kv')
-    await kv.set(key, value)
-    return true
-  } catch {
-    return false
-  }
-}
-
 export async function GET() {
   if (!isAuthenticated()) {
     return NextResponse.json({ error: 'Nepřihlášen' }, { status: 401 })
   }
 
-  const kvData = await kvGet('houses')
-  if (kvData) return NextResponse.json(kvData)
+  const { data, error } = await supabase
+    .from('houses')
+    .select('*')
+    .order('id')
 
-  const local = readLocalFile()
-  if (local) return NextResponse.json(local)
+  if (error) {
+    return NextResponse.json({ error: 'Chyba čtení dat' }, { status: 500 })
+  }
 
-  return NextResponse.json({ error: 'Chyba čtení dat' }, { status: 500 })
+  return NextResponse.json(data)
 }
 
 export async function PUT(request) {
@@ -62,10 +35,30 @@ export async function PUT(request) {
 
   try {
     const houses = await request.json()
-    const saved = await kvSet('houses', houses)
-    if (!saved) {
-      fs.writeFileSync(DATA_FILE, JSON.stringify(houses, null, 2), 'utf-8')
+
+    const updates = houses.map((h) => ({
+      id: h.id,
+      name: h.name,
+      status: h.status,
+      price: h.price,
+      price_without_vat: h.priceWithoutVat,
+      usable_area: h.usableArea,
+      plot_area: h.plotArea,
+      rooms: h.rooms,
+      bathrooms: h.bathrooms,
+      hero_image: h.heroImage,
+      floorplan_image: h.floorplanImage,
+      herb_icon: h.herbIcon,
+      house_card_pdf: h.houseCardPdf,
+      description: h.description,
+    }))
+
+    const { error } = await supabase.from('houses').upsert(updates)
+
+    if (error) {
+      return NextResponse.json({ error: 'Chyba zápisu dat' }, { status: 500 })
     }
+
     return NextResponse.json({ success: true })
   } catch {
     return NextResponse.json({ error: 'Chyba zápisu dat' }, { status: 500 })

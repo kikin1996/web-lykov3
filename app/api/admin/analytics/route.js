@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server'
 import { cookies } from 'next/headers'
-import { kv } from '@vercel/kv'
+import { supabase } from '../../../../src/lib/supabase'
+
+export const dynamic = 'force-dynamic'
 
 export async function GET() {
   const cookieStore = cookies()
@@ -12,7 +14,20 @@ export async function GET() {
   }
 
   try {
-    const today = new Date().toISOString().split('T')[0]
+    const thirtyDaysAgo = new Date()
+    thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30)
+
+    const [totalRes, todayRes, weekRes, monthRes, dailyRes, pagesRes] = await Promise.all([
+      supabase.from('analytics').select('*', { count: 'exact', head: true }),
+      supabase.from('analytics').select('*', { count: 'exact', head: true })
+        .gte('visited_at', new Date().toISOString().split('T')[0]),
+      supabase.from('analytics').select('*', { count: 'exact', head: true })
+        .gte('visited_at', new Date(Date.now() - 7 * 86400000).toISOString()),
+      supabase.from('analytics').select('*', { count: 'exact', head: true })
+        .gte('visited_at', thirtyDaysAgo.toISOString()),
+      supabase.rpc('daily_visits', { days_back: 30 }),
+      supabase.rpc('top_pages', { limit_count: 10 }),
+    ])
 
     const days = Array.from({ length: 30 }, (_, i) => {
       const d = new Date()
@@ -20,33 +35,19 @@ export async function GET() {
       return d.toISOString().split('T')[0]
     })
 
-    const [total, ...dailyCounts] = await Promise.all([
-      kv.get('analytics:total'),
-      ...days.map((day) => kv.get(`analytics:day:${day}`)),
-    ])
-
-    const topPages = await kv.zrange('analytics:pages', 0, 9, {
-      rev: true,
-      withScores: true,
-    })
-
-    const pages = []
-    for (let i = 0; i < topPages.length; i += 2) {
-      pages.push({ path: topPages[i], count: topPages[i + 1] })
+    const dailyMap = {}
+    if (dailyRes.data) {
+      dailyRes.data.forEach((r) => { dailyMap[r.day] = r.count })
     }
-
-    const daily = days.map((date, i) => ({ date, count: Number(dailyCounts[i] || 0) }))
-    const todayCount = daily.find((d) => d.date === today)?.count || 0
-    const weekCount = daily.slice(-7).reduce((s, d) => s + d.count, 0)
-    const monthCount = daily.reduce((s, d) => s + d.count, 0)
+    const daily = days.map((date) => ({ date, count: Number(dailyMap[date] || 0) }))
 
     return NextResponse.json({
-      total: Number(total || 0),
-      today: todayCount,
-      week: weekCount,
-      month: monthCount,
+      total: totalRes.count || 0,
+      today: todayRes.count || 0,
+      week: weekRes.count || 0,
+      month: monthRes.count || 0,
       daily,
-      pages,
+      pages: pagesRes.data || [],
     })
   } catch {
     return NextResponse.json({ total: 0, today: 0, week: 0, month: 0, daily: [], pages: [] })

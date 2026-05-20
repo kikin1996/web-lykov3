@@ -1,17 +1,20 @@
 import { NextResponse } from 'next/server'
-import { kv } from '@vercel/kv'
-
-function getTodayKey() {
-  return new Date().toISOString().split('T')[0]
-}
 
 async function trackVisit(pathname) {
-  const today = getTodayKey()
-  await Promise.all([
-    kv.incr('analytics:total'),
-    kv.incr(`analytics:day:${today}`),
-    kv.zincrby('analytics:pages', 1, pathname),
-  ])
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL
+  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+  if (!url || !key) return
+
+  await fetch(`${url}/rest/v1/analytics`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'apikey': key,
+      'Authorization': `Bearer ${key}`,
+      'Prefer': 'return=minimal',
+    },
+    body: JSON.stringify({ path: pathname }),
+  })
 }
 
 export async function middleware(request) {
@@ -20,7 +23,6 @@ export async function middleware(request) {
   if (pathname.startsWith('/admin/dashboard')) {
     const session = request.cookies.get('admin_session')
     const token = process.env.ADMIN_TOKEN || 'admin_token'
-
     if (!session?.value || session.value !== token) {
       return NextResponse.redirect(new URL('/admin', request.url))
     }

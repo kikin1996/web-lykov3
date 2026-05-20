@@ -1,24 +1,34 @@
 import { NextResponse } from 'next/server'
-import fs from 'fs'
-import path from 'path'
+import { supabase } from '../../../src/lib/supabase'
 
 export const dynamic = 'force-dynamic'
 
-const DATA_FILE = path.join(process.cwd(), 'public', 'data', 'houses.json')
-
 export async function GET() {
-  try {
-    const { kv } = await import('@vercel/kv')
-    const data = await kv.get('houses')
-    if (data) return NextResponse.json(data)
-  } catch {
-    // KV nedostupné
+  const { data, error } = await supabase
+    .from('houses')
+    .select('*')
+    .order('id')
+
+  if (error || !data) {
+    return NextResponse.json([])
   }
 
-  try {
-    const data = fs.readFileSync(DATA_FILE, 'utf-8')
-    return NextResponse.json(JSON.parse(data))
-  } catch {
-    return NextResponse.json([], { status: 500 })
-  }
+  const houses = data.map((h) => ({
+    id: h.id,
+    name: h.name,
+    status: h.status,
+    price: h.price,
+    priceWithoutVat: h.price_without_vat,
+    usableArea: h.usable_area,
+    plotArea: h.plot_area,
+    rooms: h.rooms,
+    bathrooms: h.bathrooms,
+    heroImage: h.hero_image,
+    floorplanImage: h.floorplan_image,
+    herbIcon: h.herb_icon,
+    houseCardPdf: h.house_card_pdf,
+    description: h.description,
+  }))
+
+  return NextResponse.json(houses)
 }
