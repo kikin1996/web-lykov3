@@ -64,13 +64,13 @@ const Footer = () => {
             <h4 className="text-h4 mb-4">Kontakt</h4>
             <ul className="space-y-2 text-body-small text-white text-opacity-80">
               <li>
-                <a href="tel:+420725734095" className="hover:text-primary-teal transition-colors">
-                  +420 725 734 095
+                <a href="tel:+420728262435" className="hover:text-primary-teal transition-colors">
+                  +420 728 262 435
                 </a>
               </li>
               <li>
-                <a href="mailto:info@domypecerady.cz" className="hover:text-primary-teal transition-colors">
-                  info@domypecerady.cz
+                <a href="mailto:edvorakova@visionreality.cz" className="hover:text-primary-teal transition-colors">
+                  edvorakova@visionreality.cz
                 </a>
               </li>
               <li>
@@ -82,9 +82,14 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-white border-opacity-10 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-body-small text-white text-opacity-60">
-            © {currentYear} Luční Háj. Všechna práva vyhrazena.
-          </p>
+          <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4">
+            <p className="text-body-small text-white text-opacity-60">
+              © {currentYear} Luční Háj. Všechna práva vyhrazena.
+            </p>
+            <Link href="/gdpr" className="text-body-small text-white text-opacity-60 hover:text-primary-teal transition-colors">
+              Ochrana osobních údajů
+            </Link>
+          </div>
           <div className="flex gap-4">
             {/* Social Media Icons - placeholder */}
             <a href="#" className="text-white text-opacity-60 hover:text-primary-teal transition-colors" aria-label="Facebook">

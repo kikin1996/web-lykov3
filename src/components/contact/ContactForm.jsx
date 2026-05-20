@@ -31,7 +31,7 @@ const ContactForm = () => {
         return window.APP_CONFIG.RESEND_TEST_EMAIL
       }
     }
-    return process.env.NEXT_PUBLIC_RESEND_TEST_EMAIL || 'info@domypecerady.cz'
+    return process.env.NEXT_PUBLIC_RESEND_TEST_EMAIL || 'edvorakova@visionreality.cz'
   }
 
   const handleChange = (e) => {
@@ -132,7 +132,7 @@ const ContactForm = () => {
         result = rawText ? JSON.parse(rawText) : null
       } catch (e) {
         console.error('Neplatná JSON odpověď z API:', rawText)
-        throw new Error('Server vrátil neplatnou odpověď. Zkuste to prosím znovu nebo použijte email info@domypecerady.cz.')
+        throw new Error('Server vrátil neplatnou odpověď. Zkuste to prosím znovu nebo použijte email edvorakova@visionreality.cz.')
       }
 
       const ok = resendResponse.ok
@@ -158,10 +158,11 @@ const ContactForm = () => {
       })
     } catch (error) {
       console.error('Error submitting form:', error)
-      // Lepší chybová zpráva pro uživatele
-      let errorMessage = 'Chyba při odesílání formuláře. Zkuste to prosím znovu nebo použijte email info@domypecerady.cz.'
+      // Výchozí přívětivá hláška
+      let errorMessage = 'Chyba při odesílání formuláře. Zkuste to prosím znovu nebo napište na edvorakova@visionreality.cz.'
+
       if (error.message && (error.message.includes('testovací adresu') || error.message.includes('testing emails') || error.message.includes('verify a domain'))) {
-        // Pokud je to chyba o testovacích emailech, zobrazíme to jako úspěch s informací
+        // Chyba Resend testovacího režimu – bereme jako úspěch
         setSuccess(true)
         setFormData({
           firstName: '',
@@ -170,10 +171,14 @@ const ContactForm = () => {
           phone: '',
           message: '',
         })
-        return // Ukončíme, protože jsme zobrazili úspěch
-      } else if (error.message) {
+        return
+      }
+
+      // Pokud máme konkrétnější zprávu z backendu, použij ji, ale ignoruj generické technické hlášky
+      if (error.message && !error.message.startsWith('Chyba při odesílání emailu přes Resend API')) {
         errorMessage = error.message
       }
+
       setErrors({ submit: errorMessage })
     }
   }
@@ -188,8 +193,8 @@ const ContactForm = () => {
       </h2>
       <p className="text-slate-600 text-[15px] leading-6 mb-6 hidden md:block">
         Nebo nám napište přímo na{' '}
-        <a href="mailto:info@domypecerady.cz" className="text-[#00D9B5] underline underline-offset-2 hover:text-[#00B89A]">
-          info@domypecerady.cz
+        <a href="mailto:edvorakova@visionreality.cz" className="text-[#00D9B5] underline underline-offset-2 hover:text-[#00B89A]">
+          edvorakova@visionreality.cz
         </a>
       </p>
 
