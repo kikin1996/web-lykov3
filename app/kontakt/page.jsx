@@ -217,10 +217,10 @@ const ContactPageContent = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </div>
-                <h3 className="text-sm font-semibold text-slate-900 mb-1">E-mail podpora</h3>
+                <h3 className="text-sm font-semibold text-slate-900 mb-1">Eva Dvořáková</h3>
                 <p className="text-sm text-slate-600 mb-1 hidden md:block">Odpovíme co nejdříve.</p>
-                <a href="mailto:info@domypecerady.cz" className="text-sm text-[#00D9B5] underline hover:text-[#00B89A]">
-                  info@domypecerady.cz
+                <a href="mailto:edvorakova@visionreality.cz" className="text-sm text-[#00D9B5] underline hover:text-[#00B89A]">
+                  edvorakova@visionreality.cz
                 </a>
               </div>
 
@@ -251,8 +251,8 @@ const ContactPageContent = () => {
                 </div>
                 <h3 className="text-sm font-semibold text-slate-900 mb-1">Zavolejte nám</h3>
                 <p className="text-sm text-slate-600 mb-1 hidden md:block">K dispozici v pracovní době.</p>
-                <a href="tel:+420725734095" className="text-sm text-[#00D9B5] underline hover:text-[#00B89A]">
-                  (+420) 725 734 095
+                <a href="tel:+420728262435" className="text-sm text-[#00D9B5] underline hover:text-[#00B89A]">
+                  +420 728 262 435
                 </a>
               </div>
             </div>
@@ -330,8 +330,8 @@ export default function ContactPage() {
     "mainEntity": {
       "@type": "Organization",
       "name": "Luční Háj",
-      "email": "info@domypecerady.cz",
-      "telephone": "+420-725-734-095",
+      "email": "edvorakova@visionreality.cz",
+      "telephone": "+420-728-262-435",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Týnec nad Sázavou",
@@ -344,7 +344,7 @@ export default function ContactPage() {
     <>
       <SEO
         title="Kontakt - Prodej Domů"
-        description="Kontaktujte nás ohledně prodeje rodinných domů Luční Háj. Telefon +420 725 734 095, email info@domypecerady.cz. Sídlo: Pecerady 31, Týnec nad Sázavou."
+        description="Kontaktujte nás ohledně prodeje rodinných domů Luční Háj. Telefon +420 728 262 435, email edvorakova@visionreality.cz. Sídlo: Pecerady 31, Týnec nad Sázavou."
         keywords="kontakt Luční Háj, prodej domů Týnec, NIKASTAR kontakt, prohlídka vzorového domu, informace o prodeji domů"
         image="/images/contact_hero.jpg"
         url="/kontakt"
