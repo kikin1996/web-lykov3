@@ -1,7 +1,7 @@
 export const submitContactForm = async (data) => {
   try {
     // Formátování emailu pro PHP endpoint
-    const recipientEmail = 'info@domypecerady.cz'
+    const recipientEmail = 'edvorakova@visionreality.cz'
     let emailBody = 'Nová zpráva z kontaktního formuláře\n\n'
     emailBody += `Jméno: ${data.name || data.firstName || ''}\n`
     emailBody += `Email: ${data.email || ''}\n`
@@ -63,7 +63,7 @@ export const submitContactForm = async (data) => {
 
 export const submitInterestForm = async (data) => {
   try {
-    const recipientEmail = 'info@domypecerady.cz'
+    const recipientEmail = 'edvorakova@visionreality.cz'
     let emailBody = 'Zájem o byt/dům\n\n'
     emailBody += `Jméno: ${data.name || ''}\n`
     emailBody += `Email: ${data.email || ''}\n`
@@ -129,7 +129,7 @@ export const submitInterestForm = async (data) => {
 
 export const submitTourRequest = async (data) => {
   try {
-    const recipientEmail = 'info@domypecerady.cz'
+    const recipientEmail = 'edvorakova@visionreality.cz'
     let emailBody = 'Žádost o prohlídku\n\n'
     emailBody += `Jméno: ${data.name || ''}\n`
     emailBody += `Email: ${data.email || ''}\n`
