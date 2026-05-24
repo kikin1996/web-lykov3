@@ -31,5 +31,7 @@ export async function GET() {
     description: h.description,
   }))
 
-  return NextResponse.json(houses)
+  return NextResponse.json(houses, {
+    headers: { 'Cache-Control': 'no-store' }
+  })
 }
