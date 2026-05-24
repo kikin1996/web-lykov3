@@ -111,7 +111,7 @@ export default function AdminDashboard() {
         if (Array.isArray(data)) {
           setHouses(data)
         } else {
-          setMessage({ type: 'error', text: 'Chyba při načítání dat ze Supabase' })
+          setMessage({ type: 'error', text: `Chyba: ${data?.error || 'Neznámá chyba'} ${data?.code ? `(${data.code})` : ''}` })
         }
         setLoading(false)
       })

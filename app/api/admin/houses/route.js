@@ -22,7 +22,8 @@ export async function GET() {
     .order('id')
 
   if (error) {
-    return NextResponse.json({ error: 'Chyba čtení dat' }, { status: 500 })
+    console.error('Supabase houses error:', JSON.stringify(error))
+    return NextResponse.json({ error: error.message || 'Chyba čtení dat', code: error.code }, { status: 500 })
   }
 
   return NextResponse.json(data)
