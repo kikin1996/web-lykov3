@@ -56,22 +56,11 @@ export async function PUT(request) {
 
     const updates = houses.map((h) => ({
       id: h.id,
-      name: h.name,
       status: h.status,
       price: h.price,
-      price_without_vat: h.priceWithoutVat,
-      usable_area: h.usableArea,
-      plot_area: h.plotArea,
-      rooms: h.rooms,
-      bathrooms: h.bathrooms,
-      hero_image: h.heroImage,
-      floorplan_image: h.floorplanImage,
-      herb_icon: h.herbIcon,
-      house_card_pdf: h.houseCardPdf,
-      description: h.description,
     }))
 
-    const { error } = await supabase.from('houses').upsert(updates)
+    const { error } = await supabase.from('houses').upsert(updates, { onConflict: 'id' })
 
     if (error) {
       return NextResponse.json({ error: 'Chyba zápisu dat' }, { status: 500 })
