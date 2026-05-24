@@ -1,0 +1,12 @@
+update houses set usable_area = 149.4, plot_area = 411  where id = '1';
+update houses set usable_area = 149.4, plot_area = 410  where id = '2';
+update houses set usable_area = 149.4, plot_area = 403  where id = '3';
+update houses set usable_area = 149.4, plot_area = 402  where id = '4';
+update houses set usable_area = 149.4, plot_area = 401  where id = '5';
+update houses set usable_area = 149.4, plot_area = 401  where id = '6';
+update houses set usable_area = 149.4, plot_area = 401  where id = '7';
+update houses set usable_area = 149.4, plot_area = 401  where id = '8';
+update houses set usable_area = 207.7, plot_area = 401  where id = '9';
+update houses set usable_area = 207.7, plot_area = 401  where id = '10';
+update houses set usable_area = 197.7, plot_area = 1304 where id = '11';
+update houses set usable_area = 197.7, plot_area = 978  where id = '12';
