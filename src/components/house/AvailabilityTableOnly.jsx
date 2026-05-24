@@ -299,7 +299,7 @@ const AvailabilityTableOnly = ({ houses: housesProp }) => {
                   </td>
                   <td className="py-4 px-6">
                     <Link
-                      href={house.houseCardPdf || `/documents/dum-${house.id.padStart(2, '0')}-karta.pdf`}
+                      href={house.houseCardPdf ? encodeURI(house.houseCardPdf) : `/documents/dum-${house.id.padStart(2, '0')}-karta.pdf`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-block px-6 py-2 rounded text-body-small font-semibold transition-colors bg-primary-teal !text-white hover:bg-primary-tealDark"

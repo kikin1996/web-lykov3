@@ -779,7 +779,7 @@ const HousePickerLayout = ({ EmbeddedPreviewComponent = EmbeddedSitePreview }) =
                 {/* Tlačítko Karta domu */}
                 <div className="mb-6">
                   <a
-                    href={selectedHouse?.houseCardPdf || `/documents/dum-${selectedHouse?.id.padStart(2, '0')}-karta.pdf`}
+                    href={selectedHouse?.houseCardPdf ? encodeURI(selectedHouse.houseCardPdf) : `/documents/dum-${selectedHouse?.id.padStart(2, '0')}-karta.pdf`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2 w-full px-6 py-3 rounded-lg bg-[#00D9B5] hover:bg-[#00B89A] text-white font-semibold text-sm transition-all duration-200 shadow-[0_4px_12px_rgba(0,217,181,0.3)] hover:shadow-[0_6px_16px_rgba(0,217,181,0.4)]"
