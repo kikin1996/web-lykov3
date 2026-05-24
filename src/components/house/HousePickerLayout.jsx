@@ -583,7 +583,7 @@ const HousePickerLayout = ({ EmbeddedPreviewComponent = EmbeddedSitePreview }) =
         if (Array.isArray(data)) {
           setHousesData(houses.map((h) => {
             const live = data.find((d) => d.id === h.id)
-            return live ? { ...h, price: live.price, status: live.status } : h
+            return live ? { ...h, price: live.price } : h
           }))
         }
       })
