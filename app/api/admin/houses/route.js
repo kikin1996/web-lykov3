@@ -54,16 +54,16 @@ export async function PUT(request) {
   try {
     const houses = await request.json()
 
-    const updates = houses.map((h) => ({
-      id: h.id,
-      status: h.status,
-      price: h.price,
-    }))
+    const results = await Promise.all(
+      houses.map((h) =>
+        supabase.from('houses').update({ status: h.status, price: h.price }).eq('id', h.id)
+      )
+    )
 
-    const { error } = await supabase.from('houses').upsert(updates, { onConflict: 'id' })
-
+    const error = results.find((r) => r.error)?.error
     if (error) {
-      return NextResponse.json({ error: 'Chyba zápisu dat' }, { status: 500 })
+      console.error('Supabase update error:', JSON.stringify(error))
+      return NextResponse.json({ error: error.message || 'Chyba zápisu dat' }, { status: 500 })
     }
 
     return NextResponse.json({ success: true })
