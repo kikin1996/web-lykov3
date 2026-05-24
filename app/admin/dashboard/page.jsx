@@ -1,7 +1,5 @@
 'use client'
 
-export const dynamic = 'force-dynamic'
-
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 
@@ -26,7 +24,7 @@ function AnalyticsSection() {
       .catch(() => {})
   }, [])
 
-  if (!stats) return null
+  if (!stats || !Array.isArray(stats.daily)) return null
 
   const maxCount = Math.max(...stats.daily.map((d) => d.count), 1)
   const last7 = stats.daily.slice(-7)
@@ -110,10 +108,12 @@ export default function AdminDashboard() {
         return res.json()
       })
       .then((data) => {
-        if (data) {
+        if (Array.isArray(data)) {
           setHouses(data)
-          setLoading(false)
+        } else {
+          setMessage({ type: 'error', text: 'Chyba při načítání dat ze Supabase' })
         }
+        setLoading(false)
       })
       .catch(() => {
         setMessage({ type: 'error', text: 'Chyba při načítání dat' })
