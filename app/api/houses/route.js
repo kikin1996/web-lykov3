@@ -1,12 +1,13 @@
 import { NextResponse } from 'next/server'
-import { supabase } from '../../../src/lib/supabase'
+import { getSupabase } from '../../../src/lib/supabase'
 
 export const dynamic = 'force-dynamic'
 
 export async function GET() {
+  const supabase = getSupabase()
   const { data, error } = await supabase
     .from('houses')
-    .select('*')
+    .select('id, name, status, price, price_without_vat, usable_area, plot_area, rooms, bathrooms, hero_image, floorplan_image, herb_icon, house_card_pdf, description')
     .order('id')
 
   if (error || !data) {

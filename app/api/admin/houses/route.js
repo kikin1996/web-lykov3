@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 import { cookies } from 'next/headers'
-import { supabase } from '../../../../src/lib/supabase'
+import { getSupabase } from '../../../../src/lib/supabase'
 
 export const dynamic = 'force-dynamic'
 
@@ -16,9 +16,10 @@ export async function GET() {
     return NextResponse.json({ error: 'Nepřihlášen' }, { status: 401 })
   }
 
+  const supabase = getSupabase()
   const { data, error } = await supabase
     .from('houses')
-    .select('*')
+    .select('id, name, status, price, price_without_vat, usable_area, plot_area, rooms, bathrooms, hero_image, floorplan_image, herb_icon, house_card_pdf, description')
     .order('id')
 
   if (error) {
@@ -53,6 +54,7 @@ export async function PUT(request) {
 
   try {
     const houses = await request.json()
+    const supabase = getSupabase()
 
     const results = await Promise.all(
       houses.map((h) =>
@@ -60,14 +62,15 @@ export async function PUT(request) {
       )
     )
 
-    const error = results.find((r) => r.error)?.error
-    if (error) {
-      console.error('Supabase update error:', JSON.stringify(error))
-      return NextResponse.json({ error: error.message || 'Chyba zápisu dat' }, { status: 500 })
+    const failed = results.find((r) => r.error)
+    if (failed) {
+      console.error('Supabase update error:', JSON.stringify(failed.error))
+      return NextResponse.json({ error: failed.error.message || 'Chyba zápisu dat' }, { status: 500 })
     }
 
     return NextResponse.json({ success: true })
-  } catch {
+  } catch (e) {
+    console.error('PUT error:', e)
     return NextResponse.json({ error: 'Chyba zápisu dat' }, { status: 500 })
   }
 }

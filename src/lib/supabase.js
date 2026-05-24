@@ -11,11 +11,3 @@ export function getSupabase() {
   }
   return _supabase
 }
-
-export const supabase = new Proxy({}, {
-  get(_, prop) {
-    const client = getSupabase()
-    const value = client[prop]
-    return typeof value === 'function' ? value.bind(client) : value
-  }
-})

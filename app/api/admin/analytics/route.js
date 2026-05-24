@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 import { cookies } from 'next/headers'
-import { supabase } from '../../../../src/lib/supabase'
+import { getSupabase } from '../../../../src/lib/supabase'
 
 export const dynamic = 'force-dynamic'
 
@@ -14,6 +14,7 @@ export async function GET() {
   }
 
   try {
+    const supabase = getSupabase()
     const thirtyDaysAgo = new Date()
     thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30)
 
