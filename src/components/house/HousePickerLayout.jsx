@@ -579,13 +579,15 @@ const HousePickerLayout = ({ EmbeddedPreviewComponent = EmbeddedSitePreview }) =
   useEffect(() => {
     fetch('/api/houses')
       .then((res) => { if (!res.ok) throw new Error(); return res.json() })
-      .then((data) => { if (Array.isArray(data)) setHousesData(data) })
-      .catch(() => {
-        fetch('/data/houses.json')
-          .then((res) => res.json())
-          .then((data) => { if (Array.isArray(data)) setHousesData(data) })
-          .catch(() => {})
+      .then((data) => {
+        if (Array.isArray(data)) {
+          setHousesData(houses.map((h) => {
+            const live = data.find((d) => d.id === h.id)
+            return live ? { ...h, price: live.price, status: live.status } : h
+          }))
+        }
       })
+      .catch(() => {})
   }, [])
 
   // Defaultně vybrán Dům 01

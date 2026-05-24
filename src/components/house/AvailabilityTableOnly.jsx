@@ -185,13 +185,15 @@ const AvailabilityTableOnly = ({ houses: housesProp }) => {
     }
     fetch('/api/houses')
       .then((res) => { if (!res.ok) throw new Error(); return res.json() })
-      .then((data) => { if (Array.isArray(data)) setHouses(data) })
-      .catch(() => {
-        fetch('/data/houses.json')
-          .then((res) => res.json())
-          .then((data) => { if (Array.isArray(data)) setHouses(data) })
-          .catch(() => {})
+      .then((data) => {
+        if (Array.isArray(data)) {
+          setHouses(defaultHouses.map((h) => {
+            const live = data.find((d) => d.id === h.id)
+            return live ? { ...h, price: live.price, status: live.status } : h
+          }))
+        }
       })
+      .catch(() => {})
   }, [housesProp])
 
   const availableHouses = houses
