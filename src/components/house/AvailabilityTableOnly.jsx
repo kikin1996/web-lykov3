@@ -183,12 +183,19 @@ const AvailabilityTableOnly = ({ houses: housesProp }) => {
       setHouses(housesProp)
       return
     }
-    fetch('/api/houses', { cache: 'no-store' })
+    const url = process.env.NEXT_PUBLIC_SUPABASE_URL
+    const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+    if (!url || !key) return
+
+    fetch(`${url}/rest/v1/houses?select=id,price,status&order=id`, {
+      headers: { apikey: key, Authorization: `Bearer ${key}` },
+      cache: 'no-store',
+    })
       .then((res) => { if (!res.ok) throw new Error(); return res.json() })
       .then((data) => {
         if (Array.isArray(data)) {
           setHouses(defaultHouses.map((h) => {
-            const live = data.find((d) => d.id === h.id)
+            const live = data.find((d) => String(d.id) === String(h.id))
             return live ? { ...h, price: live.price, status: live.status } : h
           }))
         }
