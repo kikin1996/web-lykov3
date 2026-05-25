@@ -28,7 +28,12 @@ export async function middleware(request) {
     }
   }
 
+  const isPrefetch = request.headers.get('Next-Router-Prefetch') === '1'
+  const isRSC = request.headers.get('RSC') === '1'
+
   const shouldTrack =
+    !isPrefetch &&
+    !isRSC &&
     !pathname.startsWith('/api/') &&
     !pathname.startsWith('/_next/') &&
     !pathname.startsWith('/admin') &&
