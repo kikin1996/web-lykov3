@@ -583,7 +583,7 @@ const HousePickerLayout = ({ EmbeddedPreviewComponent = EmbeddedSitePreview }) =
         if (Array.isArray(data)) {
           setHousesData(houses.map((h) => {
             const live = data.find((d) => d.id === h.id)
-            return live ? { ...h, price: live.price } : h
+            return live ? { ...h, price: live.price, status: live.status } : h
           }))
         }
       })
@@ -750,7 +750,7 @@ const HousePickerLayout = ({ EmbeddedPreviewComponent = EmbeddedSitePreview }) =
                       className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold ${
                         selectedHouse.status === 'Volný'
                           ? 'bg-emerald-50 text-emerald-700 border border-emerald-200'
-                          : selectedHouse.status === 'Rezervováno'
+                          : selectedHouse.status === 'Rezervovaný'
                             ? 'bg-amber-50 text-amber-700 border border-amber-200'
                             : 'bg-slate-100 text-slate-600 border border-slate-200'
                       }`}

@@ -189,7 +189,7 @@ const AvailabilityTableOnly = ({ houses: housesProp }) => {
         if (Array.isArray(data)) {
           setHouses(defaultHouses.map((h) => {
             const live = data.find((d) => d.id === h.id)
-            return live ? { ...h, price: live.price } : h
+            return live ? { ...h, price: live.price, status: live.status } : h
           }))
         }
       })
