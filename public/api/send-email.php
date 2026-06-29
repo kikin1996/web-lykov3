@@ -30,10 +30,7 @@ if (!$apiKey) {
     }
 }
 
-// Fallback: hardcoded API key (not recommended for production, but works for static sites)
-if (!$apiKey) {
-    $apiKey = 're_PYkfyG8H_CXiS3e58fmTQ7e9ztWvJK1tJ';
-}
+// API key must be set via environment — never hardcode here
 
 if (!$apiKey) {
     http_response_code(500);
@@ -61,13 +58,12 @@ foreach ($required as $field) {
     }
 }
 
-// Prepare Resend API request
-// V ostrém režimu posíláme přímo na cílový email
-$recipientEmail = is_array($data['to']) ? $data['to'][0] : $data['to'];
+// Prepare Resend API request — recipient is always hardcoded, never from caller
+$recipientEmail = 'info@domypecerady.cz';
 $subject = $data['subject'];
 
 $resendData = [
-    'from' => $data['from'] ?? 'onboarding@resend.dev',
+    'from' => 'kontakt@domypecerady.cz',
     'to' => [$recipientEmail],
     'subject' => $subject,
     'html' => $data['html'],

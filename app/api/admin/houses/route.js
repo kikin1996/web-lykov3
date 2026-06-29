@@ -10,7 +10,7 @@ const DATA_FILE = path.join(process.cwd(), 'public', 'data', 'houses.json')
 function isAuthenticated() {
   const cookieStore = cookies()
   const session = cookieStore.get('admin_session')
-  const token = process.env.ADMIN_TOKEN || 'admin_token'
+  const token = process.env.ADMIN_TOKEN
   return session?.value === token
 }
 

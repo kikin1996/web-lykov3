@@ -11,7 +11,10 @@ export async function POST(request) {
 
   if (password === process.env.ADMIN_PASSWORD) {
     const response = NextResponse.json({ success: true })
-    response.cookies.set('admin_session', process.env.ADMIN_TOKEN || 'admin_token', {
+    if (!process.env.ADMIN_TOKEN) {
+      return NextResponse.json({ error: 'ADMIN_TOKEN není nakonfigurován' }, { status: 500 })
+    }
+    response.cookies.set('admin_session', process.env.ADMIN_TOKEN, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
       sameSite: 'strict',
