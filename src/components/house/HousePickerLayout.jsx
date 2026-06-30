@@ -760,7 +760,7 @@ const HousePickerLayout = ({ EmbeddedPreviewComponent = EmbeddedSitePreview }) =
                           : selectedHouse.status === 'Rezervovaný'
                             ? 'bg-amber-50 text-amber-700 border border-amber-200'
                             : selectedHouse.status === 'V jednání'
-                              ? 'bg-sky-50 text-sky-700 border border-sky-200'
+                              ? 'bg-orange-50 text-orange-700 border border-orange-200'
                               : 'bg-slate-100 text-slate-600 border border-slate-200'
                       }`}
                     >

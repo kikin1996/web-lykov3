@@ -210,7 +210,7 @@ const AvailabilityTableOnly = ({ houses: housesProp }) => {
       case 'Volný':
         return 'bg-emerald-500'
       case 'V jednání':
-        return 'bg-sky-500'
+        return 'bg-orange-500'
       case 'Rezervovaný':
         return 'bg-amber-400'
       case 'Prodaný':
