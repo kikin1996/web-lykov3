@@ -17,7 +17,7 @@ const houses = [
     description: 'Síla, stabilita a moudrost. Moderní domov s důrazem na dlouhodobý komfort.',
     herbIcon: '/images/byliny/salvej.png',
     status: 'Volný',
-    price: 11604900,
+    price: 11705900,
     houseCardPdf: '/karty domu/Dum 1.pdf' // URL k PDF dokumentu
   },
   {
@@ -32,7 +32,7 @@ const houses = [
     description: 'Výraz přírodní elegance a charakteru. Dům, který vyniká osobitostí a nadčasovým stylem.',
     herbIcon: '/images/byliny/chrpa.png',
     status: 'Volný',
-    price: 11705900,
+    price: 11604900,
     houseCardPdf: '/karty domu/Dum 2.pdf'
   },
   {
@@ -46,7 +46,7 @@ const houses = [
     floorplanImage: null,
     description: 'Přirozenost, lehkost a volnost. Domov, který nabízí prostor pro nové začátky a radost z bydlení.',
     herbIcon: '/images/byliny/pampeliska.png',
-    status: 'Volný',
+    status: 'V jednání',
     price: 10998900,
     houseCardPdf: '/karty domu/Dum 3.pdf'
   },
@@ -121,7 +121,7 @@ const houses = [
     floorplanImage: null,
     description: 'Něžnost a elegance s klidnou atmosférou. Domov pro pohodové a harmonické bydlení.',
     herbIcon: '/images/byliny/violka.png',
-    status: 'Volný',
+    status: 'Rezervovaný',
     price: 11705900,
     houseCardPdf: '/karty domu/Dum 8.pdf'
   },
@@ -151,7 +151,7 @@ const houses = [
     floorplanImage: null,
     description: 'Symbol štěstí a hojnosti. Promyšlené bydlení s důrazem na praktičnost a pohodu.',
     herbIcon: '/images/byliny/jetel.png',
-    status: 'Volný',
+    status: 'Rezervovaný',
     price: 15442900,
     houseCardPdf: '/karty domu/dum 10.pdf'
   },
@@ -759,7 +759,9 @@ const HousePickerLayout = ({ EmbeddedPreviewComponent = EmbeddedSitePreview }) =
                           ? 'bg-emerald-50 text-emerald-700 border border-emerald-200'
                           : selectedHouse.status === 'Rezervovaný'
                             ? 'bg-amber-50 text-amber-700 border border-amber-200'
-                            : 'bg-slate-100 text-slate-600 border border-slate-200'
+                            : selectedHouse.status === 'V jednání'
+                              ? 'bg-sky-50 text-sky-700 border border-sky-200'
+                              : 'bg-slate-100 text-slate-600 border border-slate-200'
                       }`}
                     >
                       {selectedHouse.status}

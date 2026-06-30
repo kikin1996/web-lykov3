@@ -13,8 +13,8 @@ const defaultHouses = [
     rooms: 5,
     bathrooms: 2,
     status: 'Volný',
-    priceWithoutVat: 10361518,
-    price: 11604900,
+    priceWithoutVat: 10451696,
+    price: 11705900,
     floorplanImage: '/photos/F1 resize.jpg',
     herbIcon: '/images/byliny/salvej.png',
     houseCardPdf: '/karty domu/Dum 1.pdf'
@@ -27,8 +27,8 @@ const defaultHouses = [
     rooms: 5,
     bathrooms: 2,
     status: 'Volný',
-    priceWithoutVat: 10451696,
-    price: 11705900,
+    priceWithoutVat: 10361518,
+    price: 11604900,
     floorplanImage: '/photos/web_f2.jpg',
     herbIcon: '/images/byliny/chrpa.png',
     houseCardPdf: '/karty domu/Dum 2.pdf'
@@ -40,7 +40,7 @@ const defaultHouses = [
     plotArea: 403,
     rooms: 5,
     bathrooms: 2,
-    status: 'Volný',
+    status: 'V jednání',
     priceWithoutVat: 9820446,
     price: 10998900,
     floorplanImage: null,
@@ -110,7 +110,7 @@ const defaultHouses = [
     plotArea: 401,
     rooms: 5,
     bathrooms: 2,
-    status: 'Volný',
+    status: 'Rezervovaný',
     priceWithoutVat: 10451696,
     price: 11705900,
     floorplanImage: null,
@@ -138,7 +138,7 @@ const defaultHouses = [
     plotArea: 401,
     rooms: 7,
     bathrooms: 2,
-    status: 'Volný',
+    status: 'Rezervovaný',
     priceWithoutVat: 12762727,
     price: 15442900,
     floorplanImage: null,
@@ -209,6 +209,8 @@ const AvailabilityTableOnly = ({ houses: housesProp }) => {
     switch (status) {
       case 'Volný':
         return 'bg-emerald-500'
+      case 'V jednání':
+        return 'bg-sky-500'
       case 'Rezervovaný':
         return 'bg-amber-400'
       case 'Prodaný':

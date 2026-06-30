@@ -3,10 +3,11 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 
-const STATUS_OPTIONS = ['Volný', 'Rezervovaný', 'Prodaný']
+const STATUS_OPTIONS = ['Volný', 'V jednání', 'Rezervovaný', 'Prodaný']
 
 const STATUS_COLORS = {
   'Volný': 'bg-emerald-100 text-emerald-700',
+  'V jednání': 'bg-sky-100 text-sky-700',
   'Rezervovaný': 'bg-amber-100 text-amber-700',
   'Prodaný': 'bg-gray-100 text-gray-500'
 }
