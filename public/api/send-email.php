@@ -63,7 +63,7 @@ $recipientEmail = 'info@domypecerady.cz';
 $subject = $data['subject'];
 
 $resendData = [
-    'from' => 'kontakt@domypecerady.cz',
+    'from' => $data['from'] ?? 'onboarding@resend.dev',
     'to' => [$recipientEmail],
     'subject' => $subject,
     'html' => $data['html'],
