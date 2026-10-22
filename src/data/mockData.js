@@ -760,6 +760,70 @@ export const gallery = [
     category: "location",
     caption: "Zřícenina hradu Zlenice"
   },
+  // Ze stavby (reálné fotky z průběhu výstavby)
+  {
+    id: 69,
+    url: "/images/aktuality/2026-09-23-asfalt/asfalt-1.jpg",
+    thumbnail: "/images/aktuality/2026-09-23-asfalt/asfalt-1.jpg",
+    category: "ze-stavby",
+    caption: "Letecký pohled na lokalitu"
+  },
+  {
+    id: 70,
+    url: "/images/aktuality/2026-09-23-asfalt/asfalt-2.jpg",
+    thumbnail: "/images/aktuality/2026-09-23-asfalt/asfalt-2.jpg",
+    category: "ze-stavby",
+    caption: "Dokončené domy s komunikací"
+  },
+  {
+    id: 71,
+    url: "/images/aktuality/2026-07-22-fasady-domy-1-8/fasady-domy-1-8-1.jpg",
+    thumbnail: "/images/aktuality/2026-07-22-fasady-domy-1-8/fasady-domy-1-8-1.jpg",
+    category: "ze-stavby",
+    caption: "Hotová fasáda dvojdomu"
+  },
+  {
+    id: 72,
+    url: "/images/aktuality/2026-07-22-vzorovy-dum-1/vzorovy-dum-1-1.jpg",
+    thumbnail: "/images/aktuality/2026-07-22-vzorovy-dum-1/vzorovy-dum-1-1.jpg",
+    category: "ze-stavby",
+    caption: "Obývací pokoj – vzorový dům č. 1"
+  },
+  {
+    id: 73,
+    url: "/images/aktuality/2026-07-22-vzorovy-dum-1/vzorovy-dum-1-2.jpg",
+    thumbnail: "/images/aktuality/2026-07-22-vzorovy-dum-1/vzorovy-dum-1-2.jpg",
+    category: "ze-stavby",
+    caption: "Kuchyně a schodiště – vzorový dům č. 1"
+  },
+  {
+    id: 74,
+    url: "/images/aktuality/2026-04-22-vzorovy-bungalov-11/vzorovy-bungalov-11-1.jpg",
+    thumbnail: "/images/aktuality/2026-04-22-vzorovy-bungalov-11/vzorovy-bungalov-11-1.jpg",
+    category: "ze-stavby",
+    caption: "Obývací pokoj – vzorový bungalov č. 11"
+  },
+  {
+    id: 75,
+    url: "/images/aktuality/2026-04-22-vzorovy-bungalov-11/vzorovy-bungalov-11-3.jpg",
+    thumbnail: "/images/aktuality/2026-04-22-vzorovy-bungalov-11/vzorovy-bungalov-11-3.jpg",
+    category: "ze-stavby",
+    caption: "Chodba – vzorový bungalov č. 11"
+  },
+  {
+    id: 76,
+    url: "/images/aktuality/2026-04-22-vzorovy-bungalov-11/vzorovy-bungalov-11-4.jpg",
+    thumbnail: "/images/aktuality/2026-04-22-vzorovy-bungalov-11/vzorovy-bungalov-11-4.jpg",
+    category: "ze-stavby",
+    caption: "Koupelna – vzorový bungalov č. 11"
+  },
+  {
+    id: 77,
+    url: "/images/aktuality/2026-07-22-masivni-podlahy/masivni-podlahy-1.jpg",
+    thumbnail: "/images/aktuality/2026-07-22-masivni-podlahy/masivni-podlahy-1.jpg",
+    category: "ze-stavby",
+    caption: "Masivní dubová podlaha"
+  },
 ]
 
 // PROJECT STATS

@@ -19,6 +19,7 @@ export default function GalleryPage() {
     { value: 'exterior', label: 'Exteriér' },
     { value: 'bungalov-interier', label: 'Interiér Bungalov' },
     { value: 'dvojdomek-interier', label: 'Interiér Dvojdomek' },
+    { value: 'ze-stavby', label: 'Ze stavby' },
     { value: 'location', label: 'Okolí' },
   ]
 
