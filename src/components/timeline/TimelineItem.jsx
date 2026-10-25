@@ -63,7 +63,7 @@ const TimelineItem = ({ item, index, isLast }) => {
   // Získání obrázků - podporuje jak image (single), tak images (array)
   const getImages = () => {
     if (item.images && Array.isArray(item.images) && item.images.length > 0) {
-      return item.images.slice(0, 3) // Max 3 obrázky
+      return item.images
     }
     if (item.image) {
       return [item.image]
