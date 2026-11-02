@@ -7,8 +7,8 @@ export const dynamic = 'force-dynamic'
 function isAuthenticated() {
   const cookieStore = cookies()
   const session = cookieStore.get('admin_session')
-  const token = process.env.ADMIN_TOKEN || 'admin_token'
-  return session?.value === token
+  const token = process.env.ADMIN_TOKEN
+  return Boolean(token) && session?.value === token
 }
 
 export async function GET() {

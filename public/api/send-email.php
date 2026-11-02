@@ -30,11 +30,6 @@ if (!$apiKey) {
     }
 }
 
-// Fallback: hardcoded API key (not recommended for production, but works for static sites)
-if (!$apiKey) {
-    $apiKey = 're_PYkfyG8H_CXiS3e58fmTQ7e9ztWvJK1tJ';
-}
-
 if (!$apiKey) {
     http_response_code(500);
     echo json_encode(['success' => false, 'message' => 'API key not configured']);

@@ -5,13 +5,13 @@ export const dynamic = 'force-dynamic'
 export async function POST(request) {
   const { password } = await request.json()
 
-  if (!process.env.ADMIN_PASSWORD) {
+  if (!process.env.ADMIN_PASSWORD || !process.env.ADMIN_TOKEN) {
     return NextResponse.json({ error: 'Admin není nakonfigurován' }, { status: 500 })
   }
 
   if (password === process.env.ADMIN_PASSWORD) {
     const response = NextResponse.json({ success: true })
-    response.cookies.set('admin_session', process.env.ADMIN_TOKEN || 'admin_token', {
+    response.cookies.set('admin_session', process.env.ADMIN_TOKEN, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
       sameSite: 'strict',

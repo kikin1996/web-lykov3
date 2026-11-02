@@ -7,9 +7,9 @@ export const dynamic = 'force-dynamic'
 export async function GET() {
   const cookieStore = cookies()
   const session = cookieStore.get('admin_session')
-  const token = process.env.ADMIN_TOKEN || 'admin_token'
+  const token = process.env.ADMIN_TOKEN
 
-  if (!session?.value || session.value !== token) {
+  if (!token || !session?.value || session.value !== token) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
 

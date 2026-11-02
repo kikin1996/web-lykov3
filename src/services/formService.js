@@ -21,7 +21,7 @@ export const submitContactForm = async (data) => {
     }
     htmlBody += '</table>'
 
-    const response = await fetch('/api/send-email.php', {
+    const response = await fetch('/api/send-email', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -87,7 +87,7 @@ export const submitInterestForm = async (data) => {
     }
     htmlBody += '</table>'
 
-    const response = await fetch('/api/send-email.php', {
+    const response = await fetch('/api/send-email', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -161,7 +161,7 @@ export const submitTourRequest = async (data) => {
     }
     htmlBody += '</table>'
 
-    const response = await fetch('/api/send-email.php', {
+    const response = await fetch('/api/send-email', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

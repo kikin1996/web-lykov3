@@ -13,27 +13,6 @@ const ContactForm = () => {
   const [errors, setErrors] = useState({})
   const [success, setSuccess] = useState(false)
 
-  // Funkce pro získání API klíče (z buildu nebo z runtime konfigurace)
-  const getResendApiKey = () => {
-    if (typeof window !== 'undefined') {
-      // Zkus načíst z runtime konfigurace (config.js)
-      if (window.APP_CONFIG?.RESEND_API_KEY && window.APP_CONFIG.RESEND_API_KEY !== '') {
-        return window.APP_CONFIG.RESEND_API_KEY
-      }
-    }
-    // Jinak použij z buildu
-    return process.env.NEXT_PUBLIC_RESEND_API_KEY || ''
-  }
-
-  const getResendTestEmail = () => {
-    if (typeof window !== 'undefined') {
-      if (window.APP_CONFIG?.RESEND_TEST_EMAIL) {
-        return window.APP_CONFIG.RESEND_TEST_EMAIL
-      }
-    }
-    return process.env.NEXT_PUBLIC_RESEND_TEST_EMAIL || 'edvorakova@visionreality.cz'
-  }
-
   const handleChange = (e) => {
     const { name, value } = e.target
     setFormData(prev => ({ ...prev, [name]: value }))
@@ -75,9 +54,6 @@ const ContactForm = () => {
     try {
       // Formátování emailu
       const subject = 'Nová zpráva z kontaktního formuláře'
-      // Načti API klíč
-      const RESEND_API_KEY = getResendApiKey()
-      const recipientEmail = getResendTestEmail()
 
       // Formátování těla emailu
       let emailBody = 'Nová zpráva z webového formuláře\n\n'
@@ -108,17 +84,13 @@ const ContactForm = () => {
       htmlBody += '<strong>Adresa:</strong> Kmochova 858/11, Smíchov, 150 00 Praha'
       htmlBody += '</p>'
 
-      // Odeslání přes PHP proxy endpoint (kvůli CORS)
-      // Web je v rootu, takže použijeme absolutní cestu
-      const apiPath = '/api/send-email.php'
-      const resendResponse = await fetch(apiPath, {
+      // Odeslání přes server-side API route (klíč k Resend zůstává jen na serveru)
+      const resendResponse = await fetch('/api/send-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          from: 'onboarding@resend.dev', // Testovací email - pro produkci použijte ověřenou doménu
-          to: [recipientEmail],
           subject: subject,
           html: htmlBody,
           text: emailBody,

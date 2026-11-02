@@ -4,8 +4,6 @@ const nextConfig = {
   // Environment proměnné pro client-side (NEXT_PUBLIC_ prefix)
   env: {
     NEXT_PUBLIC_GOOGLE_MAPS_API_KEY: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || '',
-    NEXT_PUBLIC_RESEND_API_KEY: process.env.NEXT_PUBLIC_RESEND_API_KEY || '',
-    NEXT_PUBLIC_RESEND_TEST_EMAIL: process.env.NEXT_PUBLIC_RESEND_TEST_EMAIL || 'info@domypecerady.cz',
   },
   images: {
     domains: ['domypecerady.cz'],

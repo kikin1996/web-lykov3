@@ -1,2 +1,4 @@
 <?php
-$RESEND_API_KEY = 're_PcQk3yfQ_MmWjbj35gbKUrNX2SDG1tvig';
+// Nastavte RESEND_API_KEY jako proměnnou prostředí na serveru (getenv('RESEND_API_KEY')).
+// Tento soubor už klíč neobsahuje – dřívější natvrdo zapsaný klíč byl veřejně vystavený a je potřeba ho v Resend zneplatnit.
+$RESEND_API_KEY = getenv('RESEND_API_KEY') ?: '';
