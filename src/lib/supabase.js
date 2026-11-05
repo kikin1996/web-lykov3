@@ -7,7 +7,8 @@ export function getSupabase() {
     const url = process.env.NEXT_PUBLIC_SUPABASE_URL
     const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
     if (!url || !key) throw new Error('Supabase env vars are not set')
-    _supabase = createClient(url, key)
+    const schema = process.env.NEXT_PUBLIC_SUPABASE_SCHEMA
+    _supabase = createClient(url, key, schema ? { db: { schema } } : undefined)
   }
   return _supabase
 }

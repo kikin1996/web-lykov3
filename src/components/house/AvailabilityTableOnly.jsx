@@ -186,9 +186,10 @@ const AvailabilityTableOnly = ({ houses: housesProp }) => {
     const url = process.env.NEXT_PUBLIC_SUPABASE_URL
     const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
     if (!url || !key) return
+    const schema = process.env.NEXT_PUBLIC_SUPABASE_SCHEMA
 
     fetch(`${url}/rest/v1/houses?select=id,price,status&order=id`, {
-      headers: { apikey: key, Authorization: `Bearer ${key}` },
+      headers: { apikey: key, Authorization: `Bearer ${key}`, ...(schema ? { 'Accept-Profile': schema } : {}) },
       cache: 'no-store',
     })
       .then((res) => { if (!res.ok) throw new Error(); return res.json() })

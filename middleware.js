@@ -4,6 +4,7 @@ async function trackVisit(pathname) {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
   if (!url || !key) return
+  const schema = process.env.NEXT_PUBLIC_SUPABASE_SCHEMA
 
   await fetch(`${url}/rest/v1/analytics`, {
     method: 'POST',
@@ -11,6 +12,7 @@ async function trackVisit(pathname) {
       'Content-Type': 'application/json',
       'apikey': key,
       'Authorization': `Bearer ${key}`,
+      ...(schema ? { 'Content-Profile': schema } : {}),
       'Prefer': 'return=minimal',
     },
     body: JSON.stringify({ path: pathname }),
