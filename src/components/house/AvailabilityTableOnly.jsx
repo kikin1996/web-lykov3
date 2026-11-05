@@ -188,7 +188,7 @@ const AvailabilityTableOnly = ({ houses: housesProp }) => {
     if (!url || !key) return
 
     fetch(`${url}/rest/v1/houses?select=id,price,status&order=id`, {
-      headers: { apikey: key, Authorization: `Bearer ${key}`, 'Accept-Profile': 'lucni_haj' },
+      headers: { apikey: key, Authorization: `Bearer ${key}` },
       cache: 'no-store',
     })
       .then((res) => { if (!res.ok) throw new Error(); return res.json() })
