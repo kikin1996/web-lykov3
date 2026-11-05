@@ -11,6 +11,7 @@ async function trackVisit(pathname) {
       'Content-Type': 'application/json',
       'apikey': key,
       'Authorization': `Bearer ${key}`,
+      'Content-Profile': 'lucni_haj',
       'Prefer': 'return=minimal',
     },
     body: JSON.stringify({ path: pathname }),
